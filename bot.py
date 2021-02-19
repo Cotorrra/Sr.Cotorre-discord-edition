@@ -1,8 +1,11 @@
 import os
 
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import requests
+
+from decks.deck import *
 from formating.formating import *
 from utils import *
 
@@ -24,7 +27,7 @@ raw_text = False
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
-    await bot.change_presence(activity=discord.Game(name="a mejorar mazos"))
+    await bot.change_presence(activity=discord.Game(name="probar nuevas cosas"))
 
 
 # @bot.command(name='t', help='Busca el registro de tabú de la carta pedida')
@@ -92,12 +95,11 @@ async def look_for_deck(ctx, code: str):
     deck = find_deck(code)
     if not deck:
         response = "Mazo no encontrado"
-        await ctx.send(response)
+        await dev_send(showing, ctx, response)
     else:
         deck_info = format_deck_cards(deck, ah_all_cards)
-        embed = format_deck(deck, deck_info)
-        response = "¡Mazo Encontrado!"
-        await ctx.send(response, embed=embed)
+        response = format_deck(deck, deck_info)
+        await dev_send(showing, ctx, response)
 
 
 # TODO: Armar los format_x...+
@@ -145,12 +147,6 @@ async def look_for_encounter(ctx, code: str):
             response += "\n\n Encontré otras cartas más: \n%s" % list_rest(r_cards[1:min(4, len(r_cards))])
     await dev_send(showing, ctx, response)
 
-"""
-@bot.command(name='s')
-async def look_for_scenario_card(ctx, code: str):
-    # Por scenario_card viene a ver acto/plan
-    response = "Trabajando en algo nuevo c:"
-    await dev_send(showing, ctx, response)
 
 @bot.command(name='l')
 async def look_for_location_card(ctx, code: str):
@@ -165,8 +161,14 @@ async def look_for_location_card(ctx, code: str):
 
     # Lugares
     response = "Trabajando en algo nuevo c:"
+@bot.command(name='hu')
+async def look_for_upgrades(ctx, code1: str, code2: str):
+    # Por scenario_card viene a ver acto/plan
+    deck1 = find_deck(code1)
+    deck2 = find_deck(code2)
+    info = check_upgrade_rules(deck1, deck2, ah_player)
+    response = format_upgraded_deck(deck1, info)
     await dev_send(showing, ctx, response)
-"""
 
 
 async def dev_send(debug, ctx, string):

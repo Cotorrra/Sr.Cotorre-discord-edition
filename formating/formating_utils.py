@@ -6,10 +6,10 @@ def format_deck_cards(deck, cards):
     info = {"assets": [], "events": [], "skills": [], "treachery": [], "permanents": [],
             "assets_q": 0, "events_q": 0, "skills_q": 0, "treachery_q": 0, "permanents_q": 0,
             "xp": 0}
+    taboo_version = "00" + str(deck['taboo_id'])
     for c_id, qty in deck['slots'].items():
         card = [c for c in cards if c['code'] == c_id][0]
         text = format_player_card_short(card, qty)
-        taboo_version = "00" + str(deck['taboo_id'])
         info["xp"] += calculate_xp(card, qty, taboo_version)
 
         if card['permanent']:
@@ -64,12 +64,19 @@ def format_inv_card_f_short(c):
     return text
 
 
-def format_player_card_short(c, qty):
+def crop_if_too_long(text):
+    if len(text) > 20:
+        return text.split()[0]
+    else:
+        return text
+
+
+def format_player_card_short(c, qty=0):
     formater = {"name": "%s" % c['name'],
                 "level": "%s" % format_xp(c),
                 "class": faction_order[c['faction_code']] + format_faction(c),
                 "quantity": "x%s" % str(qty) if qty > 1 else "",
-                "subname": ": _%s_" % c['subname'] if "subname" in c else ""
+                "subname": ": _%s_" % crop_if_too_long(c['subname'] if "subname" in c else "")
                 }
     text = "%(class)s %(name)s%(level)s%(subname)s %(quantity)s" % formater
     return text
@@ -135,24 +142,6 @@ def format_xp(c):
     else:
         text = ""
     return text
-
-
-def calculate_xp(c, qty, taboo_ver=current_taboo):
-    chain = 0
-    if is_in_taboo(c['code'], taboo_ver):
-        if 'xp' in get_tabooed_card(c['code'], taboo_ver):
-            chain = get_tabooed_card(c['code'], taboo_ver)['xp']
-
-    if "xp" in c:
-        if c['myriad']:
-            return c['xp'] + chain
-        elif c['exceptional']:
-            # Aunque debería haber 1 en el mazo...
-            return (c['xp'] + chain) * 2 * qty
-        else:
-            return (c['xp'] + chain) * qty
-    else:
-        return chain * qty
 
 
 def format_taboo_text(card_id, version=current_taboo):
@@ -268,4 +257,54 @@ faction_order = {
     "neutral": "5",
     "mythos": "6",
 }
+
+
+def in_out_len(info, prefix):
+    return max(len(info[prefix + "_in"]), len(info[prefix + "_out"]))
+
+
+def format_remove_upgr_duplicates(arr):
+    array = []
+    while len(arr) > 0:
+        q = 0
+        card = arr[0]
+        while card in arr:
+            q += 1
+            arr.remove(card)
+
+        text = format_player_card_short(card, q)
+        array.append(text)
+    array = sorted(array)
+    arr2 = []
+    for c in array:
+        text = c[1:]
+        arr2.append(text)
+
+    return arr2
+
+
+def format_in_out_upgr(info, prefix):
+    array_out = format_remove_upgr_duplicates(info[prefix + "_out"])
+    array_in = format_remove_upgr_duplicates(info[prefix + "_in"])
+    return array_out, array_in
+
+
+def format_upgrades(info, prefix):
+    pf_out, pf_in = format_in_out_upgr(info, prefix)
+    m_length = max(len(pf_out), len(pf_out))
+    text = ""
+    for i in range(m_length):
+        left = pf_out[i] if i < len(pf_out) else ""
+        right = pf_in[i] if i < len(pf_in) else ""
+        text += "\n %s <:Accion:789610653912399891> %s" % (left, right)
+
+    return text
+
+
+def format_special_upgr(info):
+    text = ""
+    buys = format_remove_upgr_duplicates(info['parallel_buy'])
+    for card in buys:
+        text += "%s \n" % buys
+    return text
 

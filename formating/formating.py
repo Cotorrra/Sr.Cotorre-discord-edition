@@ -1,4 +1,3 @@
-from taboo import *
 from formating.formating_utils import *
 
 
@@ -24,6 +23,31 @@ def format_deck(deck, info):
            "%(events)s " \
            "%(skills)s " \
            "%(treachery)s" % formater
+    return text
+
+
+def format_upgraded_deck(deck1, info):
+    formater = {"name": "**%s**" % deck1['name'],
+                "investigator": "_Mazo para %s_" % deck1['investigator_name'],
+                "xp": "Experiencia Utilizada: %s" % str(info['xp_diff']),
+                "purchases": "__Mejoras:__ %s \n" % format_upgrades(info, 'buys') if in_out_len(info,
+                                                                                                'buys') > 0 else "",
+                "adaptable": "__Adaptable:__  %s \n" % format_upgrades(info, 'adaptable') if in_out_len(info,
+                                                                                                        'adaptable') > 0 else "",
+                "arcane": "__Investigación Arcana:__ %s \n" % format_upgrades(info, 'arcane_upg')
+                if in_out_len(info, 'arcane_upg') > 0 else "",
+                "special": "__Especial (Agnes/Skids)__: %s \n" % format_special_upgr(info) if len(
+                    info['parallel_buy']) > 0 else "",
+                }
+    text = "¡Mejora Calculada!: \n\n" \
+           "%(name)s \n" \
+           "%(investigator)s \n" \
+           "%(xp)s \n" \
+           "%(upgrades)s" \
+           "%(purchases)s" \
+           "%(adaptable)s " \
+           "%(arcane)s " \
+           "%(special)s" % formater
     return text
 
 
