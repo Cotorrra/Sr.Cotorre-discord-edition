@@ -27,10 +27,11 @@ def format_deck_cards(deck, cards):
         text = format_player_card_short(card, qty)
         info["xp"] += calculate_xp(card, qty, taboo_version)
 
-        if card['permanent']:
-            info['permanents'].append(text)
-            info['permanents_q'] += qty
-        elif card['type_code'] == "asset":
+        # if card['permanent']:
+        #    info['permanents'].append(text)
+        #    info['permanents_q'] += qty
+        # el
+        if card['type_code'] == "asset":
             info['assets'].append(text)
             info['assets_q'] += qty
         elif card['type_code'] == "event":
@@ -87,6 +88,7 @@ def deck_to_array(deck):
         for i in range(qty):
             arr_deck.append(c_id)
     return arr_deck
+
 
 def check_upgrade_rules(deck1, deck2, cards):
     info = {"buys_in": [], "buys_out": [],
