@@ -13,7 +13,6 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='!a')
 
-
 ah_all_cards = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=1').json()
 
 ah_player = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=0').json()
@@ -27,7 +26,10 @@ raw_text = False
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
-    await bot.change_presence(activity=discord.Game(name="\"Arkham Horror LCG\""))
+
+    # await bot.change_presence(activity=discord.Game(name="\"Arkham Horror LCG\""))
+
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Eric Zann'))
 
 
 # @bot.command(name='t', help='Busca el registro de tabú de la carta pedida')
@@ -39,10 +41,13 @@ async def send_help(ctx):
           "" \
           "\n- !ahj [nombre] ~[subtitulo]~ ([extra]): Busca cartas en ArkhamDB.\n" \
           "[extra] puede contener ser lo siguiente: '0-5' nivel de la carta, " \
-          "'G/B/R/M/S/N' la clase de la carta, P para permanente, U para único, E para excepcional.\n" \
+          "'G/B/R/M/S/N' la clase de la carta, P para permanente, U para único, E para excepcional, C para característica.\n" \
           "Por ejemplo: \"!ahj Whisky (3S)\" devolverá el Whisky de Mosto Ácido de Supervivente de nivel 3. \n" \
           "\n- !ahm [nombre] ~[subtitulo]~: Busca cartas de encuentros (lugares, actos, escenarios, etc.) que no " \
           "sean cartas de jugador estándar. (¡Spoilers!) \n" \
+          "\n- !ahback [nombre] ~[subtitulo]~ ([extra]): Muestra la parte de atrás de ciertas cartas que lo permiten. \n" \
+          "El [extra] de !ahback y !ahm permiten buscar cartas por tipo: S: Escenario, A: Acto, P: Plan, T: Traicion, " \
+          "E: Enemigo, L: Lugar y J: Por cartas de jugador de encuentros." \
           "\n- !ahd [numero]: Busca en ArkhamDB el mazo dado y lo muestra, tanto público como privado.\n" \
           "\n- !ahu [numero] [numero] Busca en ArkhamDB ambos mazos y muestra las mejoras realizadas en los mazos." \
           "Si mejoraste el mazo con ArkhamDB puedes también entregarle sólo el número del mazo más reciente." \
@@ -50,7 +55,53 @@ async def send_help(ctx):
     await ctx.send(res)
 
 
+@bot.command(name='hback')
+async def look_for_card_back(ctx):
+    skip = False
+    query = ' '.join(ctx.message.content.split()[1:])
 
+    f_cards = [c for c in ah_all_cards if c["double_sided"]]
+    r_cards = card_search(query, f_cards, use_ec_keywords)
+
+    if r_cards:
+        if r_cards[0]['type_code'] == "investigator":
+            response = "¡Carta de Investigador encontrada!"
+            embed = format_inv_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == "enemy":
+            response = "¡Carta de Enemigo encontrada!"
+            embed = format_general_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == "treachery":
+            response = "¡Carta de Traición encontrada!"
+            embed = format_general_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == 'act':
+            response = "¡Carta de Acto encontrada!"
+            embed = format_general_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == 'agenda':
+            response = "¡Carta de Plan encontrada!"
+            embed = format_general_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == 'location':
+            response = "¡Carta de Lugar encontrada!"
+            embed = format_location_card_b(r_cards[0])
+
+        elif r_cards[0]['type_code'] == 'scenario':
+            response = "¡Carta de Escenario encontrada!"
+            embed = format_scenario_card(r_cards[0])
+        else:
+            response = "¡Carta de Jugador encontrada!"
+            embed = format_player_card(r_cards[0])
+    else:
+        response = "No encontré ninguna carta"
+        embed = False
+
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
 
 
 @bot.command(name='hj')
@@ -111,7 +162,7 @@ async def look_for_deck(ctx, code: str):
 async def look_for_encounter(ctx, code: str):
     query = ' '.join(ctx.message.content.split()[1:])
 
-    r_cards = card_search(query, ah_player, use_ec_keywords)
+    r_cards = card_search(query, ah_encounter, use_ec_keywords)
 
     if r_cards:
         if r_cards[0]['type_code'] == "investigator":
@@ -136,7 +187,7 @@ async def look_for_encounter(ctx, code: str):
 
         elif r_cards[0]['type_code'] == 'location':
             response = "¡Carta de Lugar encontrada!"
-            embed = format_location_card(r_cards[0])
+            embed = format_location_card_f(r_cards[0])
 
         elif r_cards[0]['type_code'] == 'scenario':
             response = "¡Carta de Escenario encontrada!"
