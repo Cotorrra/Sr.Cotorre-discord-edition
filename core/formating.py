@@ -67,6 +67,15 @@ def format_card_text(c, tag="text"):
     return text
 
 
+def format_illus_pack(c):
+    formater = {"pack": format_set(c),
+                "artist": "%s \n" % format_illustrator(c) if c['type_code'] != "scenario" else ""
+                }
+    footitng = "%(artist)s" \
+               "%(pack)s" % formater
+    return footitng
+
+
 def format_victory(c):
     if "victory" in c:
         return "> **Victoria %s.**\n" % c['victory']

@@ -78,16 +78,12 @@ async def look_for_card_back(ctx):
         await ctx.send(response)
 
 
-
 @bot.command(name='hj')
 async def look_for_player_card(ctx):
     skip = False
     query = ' '.join(ctx.message.content.split()[1:])
-
     r_cards = card_search(query, ah_player, use_pc_keywords)
-
     response, embed = resolve_search(r_cards)
-
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -110,10 +106,8 @@ async def look_for_deck(ctx, code: str):
 @bot.command(name='hm')
 async def look_for_encounter(ctx, code: str):
     query = ' '.join(ctx.message.content.split()[1:])
-
     r_cards = card_search(query, ah_encounter, use_ec_keywords)
     response, embed = resolve_search(r_cards)
-
     if embed:
         await ctx.send(response, embed=embed)
     else:

@@ -1,7 +1,8 @@
 import discord
 
 from core.formating import format_text
-from p_cards.formating import format_inv_card_f_short, format_player_card_short
+from p_cards.formating import format_player_card_short
+
 from p_cards.utils import get_color_by_investigator
 from taboo.taboo import calculate_xp
 
@@ -79,6 +80,7 @@ def format_upgraded_deck(deck1, info):
     #                    value=format_list_of_cards(format_in_out_upgr(info, "adaptable")[1]), inline=True)
 
     return embed
+
 
 def format_deck_cards(deck, cards):
     info = {"assets": [], "events": [], "skills": [], "treachery": [], "permanents": [], "assets_q": 0, "events_q": 0,
@@ -182,12 +184,4 @@ def make_string(info, tag, prefix=""):
     return info["%s_q" % tag], text
 
 
-def list_rest(array):
-    text = ""
-    for c in array:
-        if c['type_code'] == "investigator":
-            text += "%s \n" % format_inv_card_f_short(c)
-        else:
-            text += "%s \n" % format_player_card_short(c, 1)[1:]
-    return text
 

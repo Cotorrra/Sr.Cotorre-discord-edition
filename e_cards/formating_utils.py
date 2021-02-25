@@ -30,3 +30,23 @@ def format_attack(c):
     }
     return format_text("%(damage)s%(horror)s" % formater)
 
+
+def extract_token_info(t):
+    lines = t.split("\n")
+    symbols = ["", "", "", ""]  # Skull / Cultist / Tablet / Elder
+    for line in lines:
+        if "[skull]" in line:
+            symbols[0] = "[skull]: %s " + line.split(": ")[1][:2]
+        if "[cultist]" in line:
+            symbols[1] = "[cultist]: %s " + line.split(": ")[1][:2]
+        if "[tablet]" in line:
+            symbols[2] = "[tablet]: %s " + line.split(": ")[1][:2]
+        if "[elder_thing]" in line:
+            symbols[3] = "[elder_thing]: %s " + line.split(": ")[1][:2]
+
+    text = "["
+    for s in symbols:
+        if s:
+            text += s
+    text += "]"
+    return format_text(text)

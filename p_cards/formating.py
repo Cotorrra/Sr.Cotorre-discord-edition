@@ -1,7 +1,7 @@
 import discord.embeds
 
 from core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
-    format_illustrator, format_set, set_thumbnail_image, color_picker, faction_order, format_victory
+    set_thumbnail_image, color_picker, faction_order, format_victory
 from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills
 from taboo.taboo import format_taboo_text
 
@@ -18,8 +18,6 @@ def format_player_card(c):
                 "costs": "Coste: %s \n" % format_number(c['cost']) if "cost" in c else "",
                 "text": "> %s \n" % format_card_text(c),
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
-                "artist": format_illustrator(c),
-                "pack": format_set(c),
                 "health_sanity": "%s \n" % format_health_sanity(c) if format_health_sanity(c) != "" else "",
                 "taboo_text": format_taboo_text(c['code']),
                 "victory": format_victory(c),
@@ -34,11 +32,7 @@ def format_player_card(c):
                     "%(health_sanity)s\n" \
                     "%(flavour)s " \
                     "%(taboo_text)s\n" % formater
-    m_footnote = "%(artist)s \n" \
-                 "%(pack)s" % formater
-
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
-    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -50,8 +44,6 @@ def format_inv_card_f(c):
                 "skills": "%s \n" % format_inv_skills(c),
                 "health_sanity": format_text("%s%s\n" % ("[health] %s " % c['health'], "[sanity] %s" % c['sanity'])),
                 "ability": "> %s \n" % format_card_text(c),
-                "artist": format_illustrator(c),
-                "pack": format_set(c),
                 "traits": "*%s*\n" % c['traits'],
                 "taboo_text": format_taboo_text(c['code']),
                 "flavour": "_%s_\n" % c['flavor'] if "flavor" in c else "",
@@ -64,11 +56,8 @@ def format_inv_card_f(c):
                     "%(health_sanity)s \n" \
                     "%(flavour)s" \
                     "%(taboo_text)s \n" % formater
-    m_footnote = "%(artist)s \n" \
-                 "%(pack)s" % formater
 
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
-    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -92,5 +81,3 @@ def format_inv_card_f_short(c):
                 }
     text = "%(class)s %(name)s %(skills)s| %(health_sanity)s" % formater
     return text
-
-
