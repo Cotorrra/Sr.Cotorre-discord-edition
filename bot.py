@@ -33,8 +33,8 @@ async def on_ready():
 
     # await bot.change_presence(activity=discord.Game(name="Mod de Parri"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Eric Zann'))
-    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='tus Pensamientos'))
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='El Rey de Amarillo (Acto 2)'))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='tus Pensamientos'))
+    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='El Rey de Amarillo (Acto 2)'))
 
 
 # @bot.command(name='t', help='Busca el registro de tabú de la carta pedida')
@@ -80,7 +80,6 @@ async def look_for_card_back(ctx):
 
 @bot.command(name='hj')
 async def look_for_player_card(ctx):
-    skip = False
     query = ' '.join(ctx.message.content.split()[1:])
     r_cards = card_search(query, ah_player, use_pc_keywords)
     response, embed = resolve_search(r_cards)
@@ -136,8 +135,5 @@ async def look_for_upgrades(ctx):
         await ctx.send(response, embed=embed)
     else:
         await ctx.send(response)
-
-
-
 
 bot.run(TOKEN)

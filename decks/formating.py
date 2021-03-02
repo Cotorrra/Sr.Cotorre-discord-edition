@@ -28,20 +28,17 @@ def format_deck(deck, info):
     inline = False
 
     embed = discord.Embed(title=m_title, description=m_description, color=info['color'])
-    if len(info['assets']) > 0:
-        embed.add_field(name="%(assets)s" % formater, value=make_string(info, 'assets')[1], inline=inline)
+    if info['assets_q'] > 0:
+        embed.add_field(name="%(assets)s" % formater, value=format_all_assets(info), inline=inline)
 
-    if len(info['permanents']) > 0:
-        embed.add_field(name="%(permanents)s" % formater, value=make_string(info, 'permanents')[1], inline=inline)
+    if info['events_q'] > 0:
+        embed.add_field(name="%(events)s" % formater, value=format_list_of_cards(info['events']), inline=inline)
 
-    if len(info['events']) > 0:
-        embed.add_field(name="%(events)s" % formater, value=make_string(info, 'events')[1], inline=inline)
+    if info['skills_q'] > 0:
+        embed.add_field(name="%(skills)s" % formater, value=format_list_of_cards(info['skills']), inline=inline)
 
-    if len(info['skills']) > 0:
-        embed.add_field(name="%(skills)s" % formater, value=make_string(info, 'skills')[1], inline=inline)
-
-    if len(info['skills']) > 0:
-        embed.add_field(name="%(treachery)s" % formater, value=make_string(info, 'treachery')[1], inline=inline)
+    if info['treachery_q'] > 0:
+        embed.add_field(name="%(treachery)s" % formater, value=format_list_of_cards(info['treachery']), inline=inline)
 
     return embed
 
