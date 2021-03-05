@@ -2,6 +2,7 @@ from core.search import find_by_id
 from core.utils import has_trait, get_qty
 from p_cards.utils import get_color_by_investigator
 from taboo.taboo import *
+from taboo.taboo import calculate_xp
 
 
 def diff_decks(a_deck1, a_deck2):
