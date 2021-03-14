@@ -42,7 +42,12 @@ def format_deck(deck, info):
     m_description = "%(investigator)s \n" \
                     "%(xp)s" % formater
 
-    embed = discord.Embed(title=m_title, description=m_description, color=info['color'])
+    inline = False
+    if deck['user_id']:
+        url = "https://es.arkhamdb.com/decklist/view/%s" % deck['id']
+    else:
+        url = "https://es.arkhamdb.com/deck/view/%s" % deck['id']
+    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
     if info['assets_q'] > 0:
         embed.add_field(name="%(assets)s" % formater, value=format_all_assets(info))
 
@@ -68,7 +73,8 @@ def format_upgraded_deck(deck1, info):
     m_description = "%(investigator)s \n" \
                     "%(xp)s" % formater
 
-    embed = discord.Embed(title=m_title, description=m_description, color=info['color'])
+    url = "https://es.arkhamdb.com/deck/view/%s" % deck1['id']
+    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
     if len(info['buys_out']) > 0:
         embed.add_field(name="Cambios (-):",

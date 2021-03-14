@@ -27,8 +27,10 @@ def format_enemy_card(c):
                     "%(vengeance)s\n" \
                     "%(attack)s\n" \
                     "%(flavour)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -58,8 +60,10 @@ def format_act_card_f(c):
                     "%(clues)s\n" \
                     "%(flavour)s" \
                     "%(text)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c),  url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -88,8 +92,11 @@ def format_agenda_card_f(c):
                     "%(doom)s\n" \
                     "%(flavour)s" \
                     "%(text)s\n" % formater
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
 
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -121,8 +128,10 @@ def format_location_card_f(c):
                     "%(victory)s" \
                     "%(vengeance)s\n" \
                     "%(flavour)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -147,8 +156,10 @@ def format_scenario_card(c):
     m_title = "%(name)s" % formater
     m_description = "%(text)s \n" \
                     "%(b_text)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -176,8 +187,10 @@ def format_treachery_card(c):
                     "%(traits)s \n" \
                     "%(text)s \n" \
                     "%(flavour)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 

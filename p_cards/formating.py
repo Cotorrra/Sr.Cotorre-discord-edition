@@ -1,7 +1,7 @@
 import discord.embeds
 
 from core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
-    set_thumbnail_image, color_picker, faction_order, format_victory
+    set_thumbnail_image, color_picker, faction_order, format_victory, format_illus_pack
 from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills
 from taboo.taboo import format_taboo_text
 
@@ -32,7 +32,10 @@ def format_player_card(c):
                     "%(health_sanity)s\n" \
                     "%(flavour)s " \
                     "%(taboo_text)s\n" % formater
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -56,8 +59,10 @@ def format_inv_card_f(c):
                     "%(health_sanity)s \n" \
                     "%(flavour)s" \
                     "%(taboo_text)s \n" % formater
-
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c))
+    m_footnote = format_illus_pack(c)
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
+    embed.set_footer(text=m_footnote)
     set_thumbnail_image(c, embed)
     return embed
 
