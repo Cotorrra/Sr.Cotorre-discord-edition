@@ -22,7 +22,7 @@ def card_search(query, cards, keyword_func):
 
     r_cards = search(query, f_cards)
 
-    if len(r_cards) == 0 or len(r_cards) == len(f_cards):
+    if len(r_cards) == 0 or len(r_cards) == len(cards):
         return []
     else:
         return r_cards
