@@ -61,10 +61,6 @@
     "text": "Esta carta tiene el rasgo [[Humanoide]] adem\u00e1s de [[Criminal]] y [[\u00c9lite]]."
   },
   {
-    "code": "02174",
-    "text": "Esta carta deber\u00eda decir: \u00abGasta 3 recursos: Descubre 1 pista en el Vag\u00f3n de lujo.\u00bb."
-  },
-  {
     "code": "02205",
     "text": "La primera capacidad de esta carta deber\u00eda decir: \u00ab\u003cb\u003eObligado\u003c\/b\u003e \u2013 Despu\u00e9s de que fracases en una prueba de habilidad al investigar las Ruinas calcinadas: Dale la vuelta a 1 ficha de Pista de las Ruinas calcinadas para que muestre su lado de perdici\u00f3n.\u00bb."
   },
@@ -78,11 +74,11 @@
   },
   {
     "code": "02302",
-    "text": "La capacidad [reaction] de esta carta deber\\u00eda decir: \\u00abCuando robes una carta de\nEncuentros del mazo de Encuentros...\\u00bb."
+    "text": "La capacidad [reaction] de esta carta deber\u00eda decir: \u00abCuando robes una carta de Encuentros del mazo de Encuentros...\u00bb."
   },
   {
     "code": "02305",
-    "text": "Todos los s\\u00edmbolos [free] de esta carta deber\\u00edan ser s\\u00edmbolos [reaction]."
+    "text": "Todos los s\u00edmbolos [free] de esta carta deber\u00edan ser s\u00edmbolos [reaction]."
   },
   {
     "code": "03006",
@@ -102,15 +98,15 @@
   },
   {
     "code": "03121",
-    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+    "text": "La primera habilidad de este plan deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb"
   },
   {
     "code": "03122",
-    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+    "text": "La primera habilidad de este plan deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb"
   },
   {
     "code": "03123",
-    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+    "text": "La primera habilidad de este plan deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb"
   },
   {
     "code": "03130",
@@ -142,948 +138,79 @@
   },
 
   {
-    "code": "",
-    "text": ""
+    "code": "03232",
+    "text": "La capacidad [free] deber\u00eda decir: \u00ab... Cualquier investigador en este lugar puede activar esta capacidad.\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "03252",
+    "text": "La capacidad de este Lugar deber\u00eda decir: \u00ab--- Si tienes \u00e9xito, mira el lado revelado de cualquier Lugar Catacumbas que est\u00e9 en juego\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "03258",
+    "text": "La capacidad de este Enemigo deber\u00eda decir: \u00ab--- Si tienes \u00e9xito, mira el lado revelado de cualquier Lugar Catacumbas que est\u00e9 en juego\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "03311",
+    "text": "La segunda parte de la habilidad de esta carta deber\u00eda decir: \u00abDeshaz esa acci\u00f3n (haz que el estado del juego vuelva a ser exactamente igual a como era antes de que se realizara la acci\u00f3n, excepto haber jugado Distorsi\u00f3n temporal y su coste).\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "03338",
+    "text": "La capacidad \u003cb\u003eRevelaci\u00f3n\u003c\/b\u003e de esta carta deber\u00eda decir: \u00abDescarta cartas de tu zona de juego y/o de tu mano\u2026\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "04004",
+    "text": "La capacidad [reaction] de esta carta deber\u00eda decir: \u00abCuando un investigador revele una ficha de caos [auto_fail]...\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "04035",
+    "text": "La capacidad [free] de esta carta deber\u00eda decir: \u00abDescarta la primera carta de tu mazo. L\u00edmite de una vez por fase. \u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "04270",
+    "text": "La capacidad [action] de esta carta deber\u00eda decir: \u00abSi La llave maestra est\u00e1 en tu zona de juego, vincula La llave maestra a tu Lugar\u2026\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05033",
+    "text": "La capacidad de juego de esta carta deber\u00eda decir: \u00abJuega esta carta cuando fueses a resolver un efecto de una carta [mystic] que se active \u00abcuando\u00bb, \u00absi,\u00bb o\u00abdespu\u00e9s\u00bb de revelar un s\u00edmbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]."
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05163",
+    "text": "La capacidad de esta carta deber\u00eda decir: \u00abNo se les puede dar la vuelta a los Lugares hacia su lado no [[Espectral]].\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05164",
+    "text": "La capacidad de esta carta deber\u00eda decir: \u00abNo se les puede dar la vuelta a los Lugares hacia su lado no [[Espectral]].\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05178",
+    "text_back": "La primera capacidad de estas cartas deber\u00eda decir: \u00abMant\u00e9n esta carta en tu zona de amenaza (con este lado boca arriba). Si eres eliminado, dale la vuelta a esta carta.\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05329",
+    "text_back": "La primera l\u00ednea del segundo p\u00e1rrafo deber\u00eda decir: \u00abRetira el Acceso c\u00f3smico de la partida y devuelve cada espacio vac\u00edo al mazo de su propietario y bar\u00e1jalo\u00bb."
   },
   {
-    "code": "",
-    "text": ""
+    "code": "05330",
+    "text_back": "La primera l\u00ednea del segundo p\u00e1rrafo deber\u00eda decir: \u00abRetira el Palacio espantoso de la partida y devuelve cada espacio vac\u00edo al mazo de su propietario y bar\u00e1jalo\u00bb."
   },
   {
-    "code": "",
-    "text": ""
+    "code": "06005",
+    "text": "Esta carta tiene el rasgo [[Int\u00e9rprete]] en lugar de Artista."
   },
   {
-    "code": "",
-    "text": ""
+    "code": "06195",
+    "text": "Esta carta deber\u00eda decir: \u00ab[action] Gasta 1 munici\u00f3n: \u003cb\u003eCombatir\u003c\/b\u003e\u2026\u00bb"
   },
   {
-    "code": "",
-    "text": ""
+    "code": "07002",
+    "text": "La capacidad [reaction] de esta carta deber\u00eda decir \u00ab\u003cb\u003eObligado\u003c\/b\u003e\u00bb en su lugar."
   },
   {
-    "code": "",
-    "text": ""
+    "code": "50004",
+    "text": "La capacidad continua de esta carta deber\u00eda decir: \u00abCada vez que un Enemigo que no sea \u00c9lite fuera a aparecer en el Lugar vinculado, en lugar de eso haz que aparezca en un Lugar conectado si es posible."
   },
   {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
-  },
-  {
-    "code": "",
-    "text": ""
+    "code": "60102",
+    "text": "El s\u00edmbolos [free] de esta carta deber\u00edan ser un s\u00edmbolo [reaction]."
   }
-
 ]}

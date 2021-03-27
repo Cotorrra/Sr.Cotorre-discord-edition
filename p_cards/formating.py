@@ -33,8 +33,8 @@ def format_player_card(c):
                     "%(victory)s" \
                     "%(health_sanity)s\n" \
                     "%(flavour)s " \
-                    "%(taboo_text)s" \
-                    "%(errata_text)s\n" % formater
+                    "%(errata_text)s" \
+                    "%(taboo_text)s\n" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
@@ -62,8 +62,8 @@ def format_inv_card_f(c):
                     "%(ability)s" \
                     "%(health_sanity)s \n" \
                     "%(flavour)s" \
-                    "%(taboo_text)s" \
-                    "%(errata_text)s\n" % formater
+                    "%(errata_text)s" \
+                    "%(taboo_text)s\n" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
