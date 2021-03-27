@@ -1,3 +1,26 @@
+import discord
+
+
+def create_embed(c, title, description, footnote=""):
+    url = "https://es.arkhamdb.com/card/%s" % c['code']
+    embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
+    if footnote:
+        embed.set_footer(text=footnote)
+    set_thumbnail_image(c, embed)
+    return embed
+
+
+def hide_if_spoiler(text, c):
+    if text:
+        if "spoiler" in c:
+            if c['pack_code'] == 'core':
+                if c['encounter_code'] in ['torch', 'arkham', 'tentacles']:
+                    return "||%s||" % text
+                else:
+                    return text
+            else:
+                return "||%s||" % text
+    return text
 
 
 def format_text(text):
@@ -64,7 +87,7 @@ def format_card_text(c, tag="text"):
     text = format_text(c[tag]) if tag in c else ""
     for key, value in formating.items():
         text = text.replace(key, value)
-    return text
+    return hide_if_spoiler(text, c)
 
 
 def format_illus_pack(c):
@@ -78,14 +101,16 @@ def format_illus_pack(c):
 
 def format_victory(c):
     if "victory" in c:
-        return "> **Victoria %s.**\n" % c['victory']
+        text = "**Victoria %s.**" % c['victory']
+        return "> %s \n" % hide_if_spoiler(text, c)
     else:
         return ""
 
 
 def format_vengeance(c):
     if "vengeance" in c:
-        return "> **Venganza %s.**\n" % c['vengeance']
+        text = "**Venganza %s.**" % c['vengeance']
+        return "> %s \n" % hide_if_spoiler(text, c)
     else:
         return ""
 

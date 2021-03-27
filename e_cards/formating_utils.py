@@ -23,6 +23,12 @@ def format_clues(c):
         return format_text("[clues] -")
 
 
+def format_location_data(c):
+    formater = {"shroud": "Velo: %s" % str(c['shroud']),
+                "clues": format_clues(c)}
+    return "%(shroud)s | %(clues)s \n" % formater
+
+
 def format_attack(c):
     formater = {
         "damage": "[health]" * c['enemy_damage'] if "enemy_damage" in c else "",

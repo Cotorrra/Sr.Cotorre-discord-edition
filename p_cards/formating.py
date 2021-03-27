@@ -1,7 +1,5 @@
-import discord.embeds
-
 from core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
-    set_thumbnail_image, color_picker, faction_order, format_victory, format_illus_pack
+    faction_order, format_victory, format_illus_pack, create_embed
 from errata.errata import format_errata_text
 from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills
 from taboo.taboo import format_taboo_text
@@ -36,11 +34,7 @@ def format_player_card(c):
                     "%(errata_text)s" \
                     "%(taboo_text)s\n" % formater
     m_footnote = format_illus_pack(c)
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
-    embed.set_footer(text=m_footnote)
-    set_thumbnail_image(c, embed)
-    return embed
+    return create_embed(c, m_title, m_description, m_footnote)
 
 
 def format_inv_card_f(c):
@@ -65,11 +59,8 @@ def format_inv_card_f(c):
                     "%(errata_text)s" \
                     "%(taboo_text)s\n" % formater
     m_footnote = format_illus_pack(c)
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
-    embed.set_footer(text=m_footnote)
-    set_thumbnail_image(c, embed)
-    return embed
+    return create_embed(c, m_title, m_description, m_footnote)
+
 
 
 def format_player_card_short(c, qty=0):

@@ -1,7 +1,6 @@
 import discord
 
-from core.formating import format_text
-from p_cards.formating import format_inv_card_f_short, format_player_card_short
+from p_cards.formating import format_player_card_short
 
 
 def format_assets(arr, title):
