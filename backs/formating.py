@@ -2,6 +2,7 @@ import discord.embeds
 
 from core.formating import format_faction, format_name, format_subtext, format_card_text, format_illustrator, \
     format_set, color_picker, set_thumbnail_image, format_illus_pack
+from errata.errata import format_errata_text
 
 
 def format_inv_card_b(c):
@@ -10,10 +11,12 @@ def format_inv_card_b(c):
                 "subname": format_subtext(c),
                 "deck_req": "> %s \n" % format_card_text(c, "back_text") if "back_text" in c else "",
                 "flavour": "_%s_\n" % c['back_flavor'] if "back_flavor" in c else "",
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
     m_title = "%(class)s %(name)s %(subname)s " % formater
     m_description = "%(deck_req)s \n" \
-                    "%(flavour)s" % formater
+                    "%(flavour)s \n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)

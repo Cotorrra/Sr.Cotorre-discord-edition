@@ -1,0 +1,1089 @@
+{"cards": [
+  {
+    "code": "01006",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01008",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01010",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01012",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01014",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "02001",
+    "text_back": "En las \u003cb\u003eOpciones de creaci\u00f3n de mazos\u003c\/b\u003e de esta carta deber\u00eda decir: \u00ab...hasta otras cinco cartas de nivel cero de cualquier otra clase ([seeker], [rogue], [mystic] y/o [survivor]).\u00bb"
+  },
+  {
+    "code": "02002",
+    "text_back": "En las \u003cb\u003eOpciones de creaci\u00f3n de mazos\u003c\/b\u003e de esta carta deber\u00eda decir: \u00ab...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [rogue], [mystic] y/o [survivor]).\u00bb"
+  },
+  {
+    "code": "02003",
+    "text_back": "En las \u003cb\u003eOpciones de creaci\u00f3n de mazos\u003c\/b\u003e de esta carta deber\u00eda decir: \u00ab...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [mystic] y/o [survivor]).\u00bb"
+  },
+  {
+    "code": "02004",
+    "text": "Esta carta tiene el rasgo [[Int\u00e9rprete]] en lugar de Artista.",
+    "text_back": "En las \u003cb\u003eOpciones de creaci\u00f3n de mazos\u003c\/b\u003e de esta carta deber\u00eda decir: \u00ab...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [rogue] y/o [survivor]).\u00bb"
+  },
+  {
+    "code": "02005",
+    "text_back": "En las \u003cb\u003eOpciones de creaci\u00f3n de mazos\u003c\/b\u003e de esta carta deber\u00eda decir: \u00ab...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [rogue] y/o [mystic]).\u00bb"
+  },
+  {
+    "code": "02006",
+    "text": "La capacidad \u003cb\u003eObligado\u003c\/b\u003e de esta carta deber\u00eda decir: \u00abSi el Enemigo vinculado est\u00e1 en juego cuando termine la partida: Zoey Samaras sufre 1 trauma mental.\u201d."
+  },
+  {
+    "code": "02011",
+    "text": "La capacidad \u003cb\u003eObligado\u003c\/b\u003e de esta carta deber\u00eda decir: \u00abSi Buscando a Izzie est\u00e1 en juego cuando termine la partida: Jenny Barnes sufre 1 trauma mental.\u00bb."
+  },
+  {
+    "code": "02020",
+    "text": "La primera habilidad de esta carta deber\u00eda decir: \u00abTu tama\u00f1o de mano m\u00e1ximo aumenta en 2.\u00bb"
+  },
+  {
+    "code": "02040",
+    "text": "La capacidad y de esta carta deber\u00eda decir: \u00abDespu\u00e9s de que robes una carta que no sea de Debilidad, descarta esa carta...\u00bb."
+  },
+  {
+    "code": "02078",
+    "text": "Esta carta tiene el rasgo [[Humanoide]] adem\u00e1s de [[Criminal]] y [[\u00c9lite]]."
+  },
+  {
+    "code": "02174",
+    "text": "Esta carta deber\u00eda decir: \u00abGasta 3 recursos: Descubre 1 pista en el Vag\u00f3n de lujo.\u00bb."
+  },
+  {
+    "code": "02205",
+    "text": "La primera capacidad de esta carta deber\u00eda decir: \u00ab\u003cb\u003eObligado\u003c\/b\u003e \u2013 Despu\u00e9s de que fracases en una prueba de habilidad al investigar las Ruinas calcinadas: Dale la vuelta a 1 ficha de Pista de las Ruinas calcinadas para que muestre su lado de perdici\u00f3n.\u00bb."
+  },
+  {
+    "code": "02230",
+    "text": "La capacidad de esta carta deber\u00eda decir: \u00abDespu\u00e9s de que reveles una ficha de Caos que no sea z, gasta 2 recursos: Ignora esa ficha de Caos y revela otra para resolverla. Si esa ficha tiene un s\u00edmbolo z, retira los Dados de la suerte de la partida (no se puede ignorar/cancelar).\u00bb."
+  },
+  {
+    "code": "02277",
+    "text_back": "Las dos instrucciones en la carta deber\u00edan ser intercambiadas de la siguiente manera: \u00abRetira todas las pistas de cada Lugar que est\u00e9 en juego. La presencia arcana que ocultaba el camino que sube por la colina ha desaparecido. Revela el Sendero Ascendente\u00bb."
+  },
+  {
+    "code": "02302",
+    "text": "La capacidad [reaction] de esta carta deber\\u00eda decir: \\u00abCuando robes una carta de\nEncuentros del mazo de Encuentros...\\u00bb."
+  },
+  {
+    "code": "02305",
+    "text": "Todos los s\\u00edmbolos [free] de esta carta deber\\u00edan ser s\\u00edmbolos [reaction]."
+  },
+  {
+    "code": "03006",
+    "text": "Esta carta tiene el rasgo [[Int\u00e9rprete]] en lugar de Artista."
+  },
+  {
+    "code": "03041",
+    "text": "La segunda capacidad de esta carta deber\u00eda decir: \u00abTu tama\u00f1o de mano m\u00e1ximo queda reducido en 5.\u00bb"
+  },
+  {
+    "code": "03088",
+    "text": "La primera capacidad de esta carta ha de ser ignorada: \u00abPresa - M\u00e1s horror.\u00bb"
+  },
+  {
+    "code": "03102",
+    "text": "La capacidad Revelaci\u00f3n de esta carta deber\u00eda decir: \u00abDescarta Apoyos [[Objeto]] de tu zona de juego y/o de tu mano...\u00bb."
+  },
+  {
+    "code": "03121",
+    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+  },
+  {
+    "code": "03122",
+    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+  },
+  {
+    "code": "03123",
+    "text": "El primer p\u00e1rrafo del texto de reglas deber\u00eda decir: \u00abOmite el paso \u00abColoca 1 ficha de Perdici\u00f3n sobre el plan en curso\u00bb de la fase de Mitos.\u00bb."
+  },
+  {
+    "code": "03130",
+    "text": "Esta carta deber\u00eda decir: \u00abAl investigar este Lugar, tu [intellect] no puede ser aumentado.\u00bb."
+  },
+  {
+    "code": "03132",
+    "text": "Esta carta deber\u00eda decir: \u00abAl investigar este Lugar, tu [intellect] no puede ser aumentado.\u00bb."
+  },
+  {
+    "code": "03178",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+  },
+  {
+    "code": "03179",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+  },
+  {
+    "code": "03180",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+  },
+  {
+    "code": "03181",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+  },
+  {
+    "code": "03179",
+    "text": "La acci\u00f3n de esta carta deber\u00eda decir: \u00ab\u2026; recuerda que \u00ablos investigadores soltaron a un paciente peligroso\u00bb.\u00bb"
+  },
+
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  },
+  {
+    "code": "",
+    "text": ""
+  }
+
+]}

@@ -2,6 +2,7 @@ import discord.embeds
 
 from core.formating import *
 from e_cards.formating_utils import format_enemy_stats, format_attack, format_clues, extract_token_info
+from errata.errata import format_errata_text
 
 
 def format_enemy_card(c):
@@ -16,6 +17,7 @@ def format_enemy_card(c):
                 "attack": "Ataque: %s\n" % format_attack(c) if format_attack(c) != "" else "",
                 "victory": format_victory(c),
                 "vengeance": format_vengeance(c),
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
 
     m_title = " %(faction)s %(name)s%(subtext)s" % formater
@@ -26,7 +28,8 @@ def format_enemy_card(c):
                     "%(victory)s" \
                     "%(vengeance)s\n" \
                     "%(attack)s\n" \
-                    "%(flavour)s \n" % formater
+                    "%(flavour)s \n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
@@ -53,13 +56,15 @@ def format_act_card_f(c):
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "clues": "%s\n" % format_clues(c),
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
 
     m_title = "%(name)s " % formater
     m_description = "%(stage)s" \
                     "%(clues)s\n" \
                     "%(flavour)s" \
-                    "%(text)s \n" % formater
+                    "%(text)s \n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c),  url=url)
@@ -84,14 +89,16 @@ def format_agenda_card_f(c):
                 "stage": "__Plan %s__\n" % c['stage'],
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "doom": format_text("[doom] %s" % (c['doom'] if "doom" in c else "-")),
-                "text": "> %s \n" % format_card_text(c) if "text" in c else ""
+                "text": "> %s \n" % format_card_text(c) if "text" in c else "",
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
 
     m_title = "%(name)s " % formater
     m_description = "%(stage)s" \
                     "%(doom)s\n" \
                     "%(flavour)s" \
-                    "%(text)s\n" % formater
+                    "%(text)s\n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
 
@@ -120,6 +127,7 @@ def format_location_card_f(c):
                 "clues": format_clues(c),
                 "victory": format_victory(c),
                 "vengeance": format_vengeance(c),
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
     m_title = "%(name)s%(subtext)s" % formater
     m_description = "%(traits)s" \
@@ -127,7 +135,8 @@ def format_location_card_f(c):
                     "%(text)s" \
                     "%(victory)s" \
                     "%(vengeance)s\n" \
-                    "%(flavour)s \n" % formater
+                    "%(flavour)s \n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
@@ -179,14 +188,16 @@ def format_treachery_card(c):
                 "type": "__%s__\n" % c['type_name'],
                 "traits": "*%s*\n" % c['traits'],
                 "text": "> %s \n" % format_card_text(c),
-                "flavour": "_%s_\n" % c['flavor'] if "flavor" in c else ""
+                "flavour": "_%s_\n" % c['flavor'] if "flavor" in c else "",
+                "errata_text": format_errata_text(c['code'], back=True),
                 }
 
     m_title = "%(faction)s %(name)s" % formater
     m_description = "%(type)s" \
                     "%(traits)s \n" \
                     "%(text)s \n" \
-                    "%(flavour)s \n" % formater
+                    "%(flavour)s \n" \
+                    "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)

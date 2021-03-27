@@ -2,6 +2,7 @@ import discord.embeds
 
 from core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
     set_thumbnail_image, color_picker, faction_order, format_victory, format_illus_pack
+from errata.errata import format_errata_text
 from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills
 from taboo.taboo import format_taboo_text
 
@@ -20,6 +21,7 @@ def format_player_card(c):
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "health_sanity": "%s \n" % format_health_sanity(c) if format_health_sanity(c) != "" else "",
                 "taboo_text": format_taboo_text(c['code']),
+                "errata_text": format_errata_text(c['code']),
                 "victory": format_victory(c),
                 }
     m_title = "%(faction)s %(name)s%(subtext)s%(level)s" % formater
@@ -31,7 +33,8 @@ def format_player_card(c):
                     "%(victory)s" \
                     "%(health_sanity)s\n" \
                     "%(flavour)s " \
-                    "%(taboo_text)s\n" % formater
+                    "%(taboo_text)s" \
+                    "%(errata_text)s\n" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
@@ -49,6 +52,7 @@ def format_inv_card_f(c):
                 "ability": "> %s \n" % format_card_text(c),
                 "traits": "*%s*\n" % c['traits'],
                 "taboo_text": format_taboo_text(c['code']),
+                "errata_text": format_errata_text(c['code']),
                 "flavour": "_%s_\n" % c['flavor'] if "flavor" in c else "",
                 }
 
@@ -58,7 +62,8 @@ def format_inv_card_f(c):
                     "%(ability)s" \
                     "%(health_sanity)s \n" \
                     "%(flavour)s" \
-                    "%(taboo_text)s \n" % formater
+                    "%(taboo_text)s" \
+                    "%(errata_text)s\n" % formater
     m_footnote = format_illus_pack(c)
     url = "https://es.arkhamdb.com/card/%s" % c['code']
     embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
