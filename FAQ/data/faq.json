@@ -1,0 +1,332 @@
+{
+  "cards": [
+    {
+      "code": "01001",
+      "text": "- Puedes activar la capacidad [reaction] de Roland despu\u00e9s de que cualquier carta que controles derrota a un enemigo (como Perro Guardi\u00e1n). \n- S\u00f3lo puedes \"descubrir\" una pista s\u00f3lo si hay una pista en tu lugar. \n- Puedes tanto activar la capacidad [reaction] de Roland, como jugar \u00a1Una Prueba! con un misma derrota enemiga."
+    },
+    {
+      "code": "01002",
+      "text": "- La acci\u00f3n adicional de Daisy s\u00f3lo sirve para activar capacidades [action] en apoyos [[Tomo]], no incluye jugar apoyos [[Tomo]]. \n- Cuando pierdes una o m\u00e1s acciones, las primeras que se pierden son tus 3 acciones principales, despu\u00e9s de eso tus acciones adicionales."
+    },
+    {
+      "code": "01004",
+      "text": "- No se puede utilizar la [reaction] de Agnes si asignas horror a un Apoyo."
+    },
+    {
+      "code": "01005",
+      "text": "- Si usas la capacidad [reaction] de Wendy para 'cancelar una ficha de caos' significa que nunca la has revelado en lo absoluto para efectos de cuando una ficha en particular es revelada (como [auto_fail] en el Bate de B\u00e9isbol). \n- Si una prueba de habilidad tiene \u00e9xito autom\u00e1tico, entonces la dificultad de \u00e9sta se reduce a 0."
+    },
+    {
+      "code": "01006",
+      "text": "- S\u00f3lo se consideran como \"pistas en tu lugar\" las pistas no descubiertas en tu lugar. \n- S\u00f3lo puedes tener la cantidad requerida de cartas caracter\u00edsticas de investigador en tu mazo, si no se indica la cantidad de cartas, entonces s\u00f3lo puedes tener una copia en tu mazo.\n- Utilizar la capacidad de esta carta cuesta 1 acci\u00f3n, tal como lo indica la [action] de la capacidad. \n- Para utilizar la capacidad [action] debes tener al menos una munici\u00f3n para poder ser gastada. \n- Una vez que se acaban los (Usos X) de este apoyo, \u00e9ste no se descarta autom\u00e1ticamente. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que est\u00e1 enfrentado a otro investigador al activar esta carta, ese investigador recibe 2 de da\u00f1o."
+    },
+    {
+      "code": "01007",
+      "text": "- Para poder remover pistas de esta carta tiene que haber al menos la misma cantidad de pistas en tu lugar que fueses a descubrir (por ejemplo, tiene que haber 2 pistas en tu lugar para descartar 2 pistas si investigas utilizando Deducci\u00f3n). \n- Tanto descubrir pistas por investigar como por efectos de cartas (como \u00a1Una Prueba! o la capacidad [reaction] de Roland) pueden descartar pistas de Encubrimiento. \n- La capacidad [reaction] de esta carta no es obligatoria, es opcional utilizarla para descartar pistas de Encubrimiento. \n- Una vez que descubres todas las pistas de Encubrimiento, \u00e9sta sigue en tu zona de amenaza hasta el final del escenario. \n- Si Roland es eliminado ya sea porque es Derrotado o bien porque us\u00f3 realiz\u00f3 la acci\u00f3n de **Desistir** mientras Encubrimiento est\u00e9 en juego, el efecto **Obligado** se gatilla. \n- Cualquier investigador en tu lugar puede activar la capacidad [reaction] de esta carta."
+    },
+    {
+      "code": "01008",
+      "text": "- S\u00f3lo puedes tener la cantidad requerida de cartas caracter\u00edsticas de investigador en tu mazo, si no se indica la cantidad de cartas, entonces s\u00f3lo puedes tener una copia en tu mazo. \n- Si alg\u00fan efecto del juego hace que el Bolso de mano de Daisy se descarte, debes descartar apoyos [[Tomo]] que utilizen espacio de mano hasta que tengas la nueva cantidad de espacio Mano v\u00e1lido."
+    },
+    {
+      "code": "01009",
+      "text": "- Si agregas esta carta a tu mano de cualquier forma (i.e por Bibliotecario Investigador), su capacidad **Revelaci\u00f3n** se gatilla de todas formas. \n- Mover da\u00f1o u horror es diferente a \"recibir\" y/o \"causar\" da\u00f1o u horror, as\u00ed que este efecto no permite al jugador reasignar el da\u00f1o u horror."
+    },
+    {
+      "code": "01010",
+      "text": "- S\u00f3lo puedes tener la cantidad requerida de cartas caracter\u00edsticas de investigador en tu mazo, si no se indica la cantidad de cartas, entonces s\u00f3lo puedes tener una copia en tu mazo. \n- Los ataques de oportunidad tambi\u00e9n cuentan como ataques."
+    },
+    {
+      "code": "01011",
+      "text": "- Si Malasombra es eliminado ya sea porque es Derrotado o bien porque us\u00f3 realiz\u00f3 la acci\u00f3n de **Desistir** mientras Deudas del Hospital est\u00e1 en juego, el efecto **Obligado** se gatilla. \n- Cualquier investigador en tu lugar puede activar la capacidad [free] de esta carta, para agregar sus recursos a esta carta. \n"
+    },
+    {
+      "code": "01012",
+      "text": "- S\u00f3lo puedes tener la cantidad requerida de cartas caracter\u00edsticas de investigador en tu mazo, si no se indica la cantidad de cartas, entonces s\u00f3lo puedes tener una copia en tu mazo. \n- Cada vez que juegas una carta [[Hechizo]] puedes activar esta carta, ya sean Eventos o Apoyos."
+    },
+    {
+      "code": "01013",
+      "text": "- Debes o bien jugar esta carta (gastar una acci\u00f3n y 2 recursos para colocar una ficha de perdici\u00f3n en el plan) y colocarla en la pila de descartes o bien recibir 2 de horror al final de cada turno mientras siga en tu mano. \n- No puedes elegir descartar una Debilidad de tu mano, si alg\u00fan efecto del juego te obliga a elegir y descartar cartas, debes elegir otras cartas est\u00e1ndar antes que \u00e9sta. Sin embargo, puede ser descartada si es descartada al azar, si se descarta toda tu mano o si un efecto de carta te obliga descartar todos tus eventos."
+    },
+    {
+      "code": "01014",
+      "text": "- S\u00f3lo puedes tener la cantidad requerida de cartas caracter\u00edsticas de investigador en tu mazo, si no se indica la cantidad de cartas, entonces s\u00f3lo puedes tener una copia en tu mazo. \n- **Jugar** y **Asignar** son t\u00e9rminos diferentes del juego. El Amuleto de Wendy s\u00f3lo te permite **Jugar** tu primer evento que est\u00e9 en tu pila de descartes, no puedes asignarlo a una prueba de habilidad. \n- El efecto **Obligado** se gatilla cuando juegas un evento ya sea desde tu mano o bien de tu pila de descartes, sin embargo no se gatilla si asignas un evento desde tu mano a una prueba de habilidad. \n- El efecto **Obligado** se gatilla despu\u00e9s de que un evento se juegue, pero antes de que \u00e9ste entre a tu pila de descartes, si el evento no entra en tu pila de descartes en ese momento (como Eventos que se vinculan en lugares tales como Cebo), entonces la capacidad **Obligado** no tiene efecto."
+    },
+    {
+      "code": "01015",
+      "text": "- El horror directo lo recibe la carta de investigador, no puede ser asignado a otro apoyo. \n- Este efecto retira las cartas de la partida, por la duraci\u00f3n de \u00e9sta. \u00c9stas siguen siendo parte de tu mazo durante la campa\u00f1a."
+    },
+    {
+      "code": "01016",
+      "text": "- Utilizar la capacidad de esta carta cuesta 1 acci\u00f3n, como lo indica la [action] de la capacidad. \n- Para utilizar la capacidad [action] debes tener al menos una munici\u00f3n para poder ser gastada. \n- Una vez que se acaban los (Usos X) de este apoyo, \u00e9ste no se descarta autom\u00e1ticamente. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que est\u00e1 enfrentado a otro investigador al activar esta carta, ese investigador recibe 2 de da\u00f1o."
+    },
+    {
+      "code": "01017",
+      "text": "- Puedes utilizar la capacidad [free] tantas veces como puedas pagarla dentro de una misma prueba de habilidad, no hay l\u00edmites."
+    },
+    {
+      "code": "01018",
+      "text": "- No puedes usar la capacidad [free] del Polic\u00eda Raso momentos despu\u00e9s de asignarle da\u00f1o y/u horror letal, dado que no existe una ventana de oportunidad [free] entre asignar y aplicar da\u00f1o/horror."
+    },
+    {
+      "code": "01019",
+      "text": "- El Machete no te dar\u00e1 el da\u00f1o extra si el enemigo que est\u00e1s atacando no est\u00e1 enfrentado a nadie (evitado o [[Indiferente]]) o a otro jugador, debes gastar una acci\u00f3n de **Enfrentar** para tener el da\u00f1o extra. \n- El da\u00f1o se otorga si el enemigo es el \u00fanico enemigo enfrentado a ti, no importa si hay m\u00e1s enemigos en tu lugar o bien \u00e9ste es [[Descomunal]]. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que est\u00e1 enfrentado a otro investigador al activar esta carta, ese investigador recibe s\u00f3lo 1 de da\u00f1o."
+    },
+    {
+      "code": "01020",
+      "text": "- Puedes usar la capacidad [reaction] del Perro Guardi\u00e1n con el da\u00f1o que lo fuese de derrotar."
+    },
+    {
+      "code": "01021",
+      "text": "- Debes darle el golpe que derrota al enemigo para poder jugar \u00a1Una Prueba!. \n- S\u00f3lo puedes \"descubrir\" una pista s\u00f3lo si hay una pista en tu lugar. \n- Puedes tanto activar la capacidad [reaction] de Roland, como jugar \u00a1Una Prueba! con un misma derrota enemiga."
+    },
+    {
+      "code": "01022",
+      "text": "- Los ataques de oportunidad tambi\u00e9n cuentan como ataques. \n - Esquivar hace que cualquier habilidad **Obligado** que se fuese activar de un enemigo \"Cuando Ataque\" o bien \"Despu\u00e9s de que Ataque\" no ocurra. \n- Si un enemigo [[Descomunal]] fuese atacar, Esquivar s\u00f3lo cancela uno de esos ataques. \n- Si el ataque fue cancelado durante la fase de Enemigos, el enemigo atacante se agota de todas formas."
+    },
+    {
+      "code": "01024",
+      "text": "- Como esta carta no tiene un indicador de acci\u00f3n de **Combatir**, cuando fueses a jugar Explosi\u00f3n de Dinamita mientras est\u00e1s enfrentado con uno o m\u00e1s enemigos, primero gastas la acci\u00f3n y los costes de la carta, luego cada enemigo enfrentado a ti te realiza un ataque de oportunidad, y despu\u00e9s de esto los efectos de la carta se resuelven (si sigues con vida, claro). Si los ataques enemigos te derrotan, el evento no se resuelve en lo absoluto."
+    },
+    {
+      "code": "01025",
+      "text": "- Si fallas un ataque contra un enemigo que est\u00e1 enfrentado a otro investigador con esta carta asignada, el otro investigador s\u00f3lo recibe el da\u00f1o de las otras fuentes de da\u00f1o del ataque."
+    },
+    {
+      "code": "01026",
+      "text": "- S\u00f3lo puedes colocarle fichas de munici\u00f3n a Apoyos [[Arma de fuego]] que tengan Usos (X munici\u00f3n), tambi\u00e9n puedes poner m\u00e1s fichas de las indicadas en Usos (X munici\u00f3n)."
+    },
+    {
+      "code": "01028",
+      "text": "- No puedes usar la capacidad [free] del Polic\u00eda Raso momentos despu\u00e9s de asignarle da\u00f1o y/u horror letal, dado que no existe una ventana de oportunidad [free] entre asignar y aplicar da\u00f1o/horror."
+    },
+    {
+      "code": "01030",
+      "text": "- La bonificaci\u00f3n de [intellect] \u00fanicamente cuenta al momento de realizar acciones de investigaci\u00f3n, cualquiera que \u00e9sta sea."
+    },
+    {
+      "code": "01031",
+      "text": "- No buscas tu mazo por una carta en particular, s\u00f3lo miras las 3 primeras cartas de tu mazo, elijes la que m\u00e1s te gusta y despu\u00e9s barajas tu mazo. \n- Nada te impide elegir una carta de debilidad al momento robar una carta. \n- Para activar la capacidad [action] de esta carta, \u00e9sta  necesita agotarse, si ya est\u00e1 agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
+    },
+    {
+      "code": "01032",
+      "text": "- Puedes **Investigar** con \u00e9xito en un lugar sin pistas. \n- Cualquier acci\u00f3n que diga **Investigar** cuenta para el \u00e9xito para efectos de esta carta (por ejemplo Hurto)."
+    },
+    {
+      "code": "01034",
+      "text": "- Puedes utilizar la capacidad [free] tantas veces como puedas pagarla dentro de una misma prueba de habilidad, no hay l\u00edmites."
+    },
+    {
+      "code": "01036",
+      "text": "- Cuando realices una prueba de [combat] o [agility] mientras esta carta est\u00e1 activa, s\u00f3lo puedes asignar cartas con \u00edconos de [intellect] y obtener bonificaciones a tu [intellect]. \n- Debes jugar esta carta antes de que empiece la prueba de habilidad de [combat] o [agility] dado que el tipo de prueba se determina antes de que tengas la oportunidad de jugar cartas R\u00e1pido. \n- Como esta carta s\u00f3lo la puedes jugar durante tu turno (que es en la fase de Investigaci\u00f3n), no puedes jugarla en la fase de Mitos."
+    },
+    {
+      "code": "01037",
+      "text": "- S\u00f3lo puedes \"descubrir\" una pista s\u00f3lo si hay una pista en tu lugar."
+    },
+    {
+      "code": "01038",
+      "text": "- Barricada s\u00f3lo previene que enemigos se muevan al lugar donde Barricada est\u00e1 vinculada. No previene que enemigos aparezcan adentro. \n- Si un investigador enfrentado con enemigo se mueve a un lugar que tiene Barricada vinculada, \u00e9ste enemigo dejar\u00e1 de estar enfrentado a \u00e9ste investigador y se quedar\u00e1 en el lugar anterior."
+    },
+    {
+      "code": "01039",
+      "text": "- La palabra \"adicional\" se refiere \"adicionalmente a las otras pistas que descubras\", por lo que modifica la cantidad de pistas que fueses a descubrir, si descubres pistas durante la prueba de investigaci\u00f3n. Si asignas Deducci\u00f3n durante una prueba al resolver Hurto, sigues no obteniendo ninguna pista. \n- Si asignas Deducci\u00f3n durante la prueba de investigaci\u00f3n de otro investigador, ese investigador descubr\u00eda una pista adicional si tiene \u00e9xito."
+    },
+    {
+      "code": "01040",
+      "text": "- La bonificaci\u00f3n de [intellect] \u00fanicamente cuenta al momento de realizar acciones de investigaci\u00f3n, cualquiera que \u00e9sta sea."
+    },
+    {
+      "code": "01041",
+      "text": "- Descartar a un enemigo no es lo mismo que derrotarlo por lo que se va directamente a la pila de descartes, independiente si tiene puntos de victoria. Tampoco se pueden gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e \u00a1Una Prueba!)."
+    },
+    {
+      "code": "01042",
+      "text": "- Para activar la capacidad [action] de esta carta, \u00e9sta necesita agotarse, si ya est\u00e1 agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
+    },
+    {
+      "code": "01044",
+      "text": "- Un Apoyo con la palabra clave R\u00e1pido se puede jugar durante tu turno sin gastar acciones y/o recibir ataques de oportunidad."
+    },
+    {
+      "code": "01045",
+      "text": "- Puedes usar la [action] de Hurto sin tener la necesidad de que haya pistas en tu lugar. \n- Para activar la capacidad [action] de esta carta, \u00e9sta necesita agotarse, si ya est\u00e1 agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
+    },
+    {
+      "code": "01046",
+      "text": "- Si durante la activaci\u00f3n de esta carta robas una carta con la misma condici\u00f3n para ser jugada (por ejemplo Por los pelos (2)), puedes jugar dicha carta inmediatamente en la misma ventana de reacci\u00f3n."
+    },
+    {
+      "code": "01047",
+      "text": "- Utilizar la capacidad de esta carta cuesta 1 acci\u00f3n, como lo indica la [action] de la capacidad. \n- Para utilizar la capacidad [action] debes tener al menos una munici\u00f3n para poder ser gastada. \n- Una vez que se acaban los (Usos X) de este apoyo, \u00e9ste no se descarta autom\u00e1ticamente. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que est\u00e1 enfrentado a otro investigador al activar esta carta, ese investigador recibe 1 de da\u00f1o."
+    },
+    {
+      "code": "01048",
+      "text": "- Cuando pierdes una o m\u00e1s acciones, las primeras que se pierden son tus 3 acciones principales, despu\u00e9s de eso tus acciones adicionales. \n- Cuando realizas acciones durante tu turno tus acciones adicionales se utilizan primero, si es posible."
+    },
+    {
+      "code": "01049",
+      "text": "- Puedes utilizar la capacidad [free] tantas veces como puedas pagarla dentro de una misma prueba de habilidad, no hay l\u00edmites."
+    },
+    {
+      "code": "01050",
+      "text": "-\"Dejar de estar enfrentado\" no es lo mismo que agotar a un enemigo, \u00e9ste sigue preparado y se puede enfrentar a otro investigador en su lugar. \n- No es necesario que tengas enemigos enfrentados a ti para que puedas jugar Escurridizo. \n- Puedes moverte a cualquier lugar revelado sin enemigos, no tiene que ser un lugar conectado. \n- Debes moverte al jugar Escurridizo, no es un efecto opcional, salvo si no hay otros revelados y/o un efecto te proh\u00edbe moverte."
+    },
+    {
+      "code": "01051",
+      "text": "- Pu\u00f1alada por la espalda te hace hacer una prueba de [agility] (en vez de [combat]) contra el valor de [combat] de un enemigo (no su [agility]), por lo que s\u00f3lo puedes asignar cartas [agility] y/o [wild] a la prueba de habilidad."
+    },
+    {
+      "code": "01052",
+      "text": "- Durante tu turno (o el de alguien m\u00e1s), agotas a un enemigo evadi\u00e9ndolo, luego puedes jugar Ataque por sorpresa, no puedes jugarla durante la fase de enemigos."
+    },
+    {
+      "code": "01054",
+      "text": "- Cuando pierdes una o m\u00e1s acciones, las primeras que se pierden son tus 3 acciones principales, despu\u00e9s de eso tus acciones adicionales. \n- Cuando realizan acciones durante tu turno tus acciones adicionales se utilizan primero, si es posible."
+    },
+    {
+      "code": "01056",
+      "text": "- Jugar sobre seguro tambi\u00e9n funciona con los valores de las fichas s\u00edmbolo ([skull], [cultist], [tabler], [elder_thing])."
+    },
+    {
+      "code": "01058",
+      "text": "- Mover secretos de Conocimiento prohibido a tu reserva de recursos no cuenta como \"ganar\" recursos, por lo que puede ser usado en situaciones donde el investigador no pueda obtener recursos."
+    },
+    {
+      "code": "01059",
+      "text": "- Rosario sagrado s\u00f3lo tiene valor de Cordura, por lo que s\u00f3lo se le puede asignar horror a \u00e9ste."
+    },
+    {
+      "code": "01060",
+      "text": "- Para utilizar la capacidad [action] debes tener al menos una carga para poder ser gastada. \n- El efecto \"Si un s\u00edmbolo es revelado\" se gatilla en el Paso 3 de la Resoluci\u00f3n de las pruebas de habilidad. Por lo que si revelas un s\u00edmbolo [skull], [cultist], [tabler] o [elder_thing] mientras realizas un ataque con Consunci\u00f3n y el horror te derrota, no se aplica el da\u00f1o. \n- Una vez que se acaban los (Usos X) de este apoyo, \u00e9ste no se descarta autom\u00e1ticamente."
+    },
+    {
+      "code": "01061",
+      "text": "- Para activar la capacidad [action] de esta carta, \u00e9sta necesita agotarse y gastar una carga, si ya est\u00e1 agotada o no tiene cargas, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento, tambi\u00e9n existen efectos de cartas que pueden colocar fichas de carga en apoyos (i.e Recarga (2))."
+    },
+    {
+      "code": "01062",
+      "text": "- Puedes utilizar la capacidad [free] tantas veces como puedas pagarla dentro de una misma prueba de habilidad, no hay l\u00edmites."
+    },
+    {
+      "code": "01063",
+      "text": "- Toda la perdici\u00f3n en juego cuenta para el umbral de perdici\u00f3n durante el paso \"Comprueba el umbral de perdici\u00f3n\" en la Fase de Mitos, una vez que avanza la carta de Plan, se retira toda la perdici\u00f3n de todas las cartas que tengan fichas de perdici\u00f3n (salvo si un efecto de una carta indique lo contrario). \n- Si mientras Iniciada en lo arcano tenga perdici\u00f3n, \u00e9sta es derrotada, la ficha de perdici\u00f3n es devuelta a la reserva de fichas. \n- Mientras est\u00e9s resolviendo la capacidad [free] de la iniciada en lo arcano si hay una carta [[Hechizo]] entre las primeras 3 cartas del mazo debes robarla s\u00ed o s\u00ed, incluso si es Recuerdo Oscuro."
+    },
+    {
+      "code": "01064",
+      "text": "- S\u00f3lo puedes \"descubrir\" una pista s\u00f3lo si hay una pista en tu lugar. \n- Primero resuelves todas las palabras clave (como Oleada) y capacidades **Revelaci\u00f3n** de la carta de encuentros que robes antes de descubrir pistas. \n- Si juegas Atracci\u00f3n por la llama y robas una carta de traiciones que te mueve a otro lugar, terminas descubriendo las pistas en el lugar que est\u00e1s al terminar de resolver la(s) carta(s) de encuentro(s)."
+    },
+    {
+      "code": "01065",
+      "text": "- S\u00f3lo puedes cancelar traiciones de cartas que el investigador haya robado. \n- S\u00f3lo cancelas el efecto de **Revelaci\u00f3n** de la carta, si la carta tiene Oleada, debes resolver dicho efecto (salvo si lo dice en el efecto de **Revelaci\u00f3n**). "
+    },
+    {
+      "code": "01067",
+      "text": "- Si asignas esta carta a una prueba de habilidad de otro jugador, y la prueba es exitosa, t\u00fa te curas el punto de horror (no el otro jugador)."
+    },
+    {
+      "code": "01068",
+      "text": "- Los textos de **Victoria X**, **Venganza X**, etc. cuentan como parte de la caja de texto del enemigo, por lo que si usas borrado mental en un enemigo con dichas palabras clave, \u00e9stas no se gatillan al ser derrotado (i.e ir a la zona de victoria y darte experiencia si tiene **Victoria X**). \n- Los valores de Da\u00f1o y/o Horror del enemigo no se borran con Borrado Mental."
+    },
+    {
+      "code": "01069",
+      "text": "- El efecto \"Si un s\u00edmbolo es revelado\" se gatilla en el Paso 3 de la Resoluci\u00f3n de las pruebas de habilidad. Por lo que si revelas un s\u00edmbolo [skull], [cultist], [tabler] o [elder_thing] mientras realizas un intento de evasi\u00f3n con Luz Cegadora (2) y el horror te derrota, no se aplica el da\u00f1o ni se evade el enemigo."
+    },
+    {
+      "code": "01070",
+      "text": "- El Libro de las Sombras (3) es de nivel 3, por lo que Daisy Walker no lo puede agregar a su mazo (pero su versi\u00f3n trasera paralela s\u00ed). \n- Para activar la capacidad [action] de esta carta, \u00e9sta necesita agotarse, si ya est\u00e1 agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
+    },
+    {
+      "code": "01071",
+      "text": "- Si usas la capacidad [reaction] de la Estatua grotesca (4) para 'cancelar una ficha de caos' significa que nunca la has revelado en lo absoluto para efectos de cuando una ficha en particular es revelada (como [auto_fail] en el Bate de B\u00e9isbol o Consunci\u00f3n)."
+    },
+    {
+      "code": "01072",
+      "text": "- Abrigo de cuero s\u00f3lo tiene valor de Salid, por lo que s\u00f3lo se le puede asignar da\u00f1o a \u00e9ste."
+    },
+    {
+      "code": "01073",
+      "text": "- Puedes usar la [raction] de Reutilizar sin tener la necesidad de que haya pistas en tu lugar y en cualquier acci\u00f3n de **Investigaci\u00f3n** en la que hayas tenido \u00e9xito por 2 o m\u00e1s. \n- Para activar la capacidad [raction] de esta carta, \u00e9sta necesita agotarse, si ya est\u00e1 agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento. \n- El \u00e9xito se determina en el Paso 6 de la Resoluci\u00f3n de las pruebas de habilidad, por lo que no puedes usar Reutilizar para recuperar cartas [[Objeto]] que has asignado en la prueba de habilidad de la investigaci\u00f3n."
+    },
+    {
+      "code": "01074",
+      "text": "- Cuando una ficha de la bolsa del caos es \"cancelada\" o \"ignorada\" en su totalidad (v\u00eda la [reaction] de Wendy Adams o Estatua grotesca (4)), considera que dicha ficha nunca se revel\u00f3, por lo que efectos que se gatillan al ser revelada dicha ficha **no** se gatillan. Sin embargo cuando la ficha es parcialmente cancelada o ignorada como en Desaf\u00edo, dicha ficha los efectos que se gatillan al ser revelada dicha ficha **s\u00ed** se gatillan. \n- A diferencia de Consunci\u00f3n y Luz cegadora, Bate de B\u00e9isbol se descarta despu\u00e9s de que la prueba termine, por lo que si es revelado un s\u00edmbolo [skull] o [auto_fail] durante la prueba de habilidad, s\u00ed se aplica el da\u00f1o adicional y la bonificaci\u00f3n extra de [combat]."
+    },
+    {
+      "code": "01075",
+      "text": "- Si durante la activaci\u00f3n de esta carta robas una carta con la misma condici\u00f3n para ser jugada (por ejemplo \"\u00a1Mira lo que he encontrado!\"), puedes jugar dicha carta inmediatamente en la misma ventana de reacci\u00f3n."
+    },
+    {
+      "code": "01076",
+      "text": "- Puedes utilizar la habilidad [free] del Gato callejero para evitar autom\u00e1ticamente a cualquier enemigo que no sea [\u00c9lite] que est\u00e9 en tu lugar. \n- Al evitar autom\u00e1ticamente no se realiza prueba de habilidad, por lo que no se considera como un intento de evitar exitoso."
+    },
+    {
+      "code": "01077",
+      "text": "- Puedes utilizar la capacidad [free] tantas veces como puedas pagarla dentro de una misma prueba de habilidad, no hay l\u00edmites."
+    },
+    {
+      "code": "01078",
+      "text": "- Distracci\u00f3n astuta evita autom\u00e1ticamente a todos los enemigos, enfrentados a ti, a otros investigadores y [indiferentes], en tu lugar. \n- Al evitar autom\u00e1ticamente no se realiza prueba de habilidad, por lo que no se considera como un intento de evitar exitoso."
+    },
+    {
+      "code": "01079",
+      "text": "- S\u00f3lo puedes \"descubrir\" una pista s\u00f3lo si hay una pista en tu lugar. \n- Descubrir pistas con \"\u00a1Mira lo que he encontrado!\" no se considera como un investigaci\u00f3n exitosa."
+    },
+    {
+      "code": "01080",
+      "text": "- La ventana de activaci\u00f3n de \u00a1Qu\u00e9 suerte! de \"cuando fueses a fracasar en una prueba de habilidad\" viene antes de \"despu\u00e9s de que fracases en una prueba de habilidad\", por lo que no puedes jugar \u00a1Qu\u00e9 suerte! despu\u00e9s de que sus la [reaction] de la Pata de Conejo o juegues \"\u00a1Mira lo que he encontrado!\". \n- El +2 al valor de habilidad se considera dentro de toda la suma de tu valor de habilidad vs el valor modificado m\u00e1s que agregarlo al resultado final. Por ejemplo, est\u00e1s realizando una prueba de dificultad 2 y tu valor de habilidad es de 2, revelas una ficha de caos -3, que deja tu valor de habilidad final en 0 (ya que no puede haber valores negativos), sin embargo necesitas jugar dos \u00a1Qu\u00e9 suerte! para poder tener \u00e9xito en la prueba. \n- La ficha [auto_fail] fija tu valor de habilidad en 0, ignorando cualquier modificador por lo que no puedes usar \u00a1Qu\u00e9 suerte! para superar la prueba (aunque la prueba sea de dificultad 2)."
+    },
+    {
+      "code": "01081",
+      "text": "- El p\u00e1rrafo \"el investigador que evita puede dejar de estar enfrentado autom\u00e1ticamente a cada uno de los dem\u00e1s Enemigos\" da a escoger si se quiere dejar o no de estar enfrentado a cada uno de los dem\u00e1s enemigos, no permite escoger qu\u00e9 enemigos dejan de estar enfrentados del investigador."
+    },
+    {
+      "code": "01092",
+      "text": "- Aquinnah(1) necesita que otro enemigo reciba el da\u00f1o para poder redirigir el da\u00f1o recibido."
+    },
+    {
+      "code": "01084",
+      "text": "- La ventana de activaci\u00f3n de \u00a1Qu\u00e9 suerte! de \"cuando fueses a fracasar en una prueba de habilidad\" viene antes de \"despu\u00e9s de que fracases en una prueba de habilidad\", por lo que no puedes jugar \u00a1Qu\u00e9 suerte! despu\u00e9s de que sus la [reaction] de la Pata de Conejo o juegues \"\u00a1Mira lo que he encontrado!\". \n- El +2 al valor de habilidad se considera dentro de toda la suma de tu valor de habilidad vs el valor modificado m\u00e1s que agregarlo al resultado final. Por ejemplo, est\u00e1s realizando una prueba de dificultad 2 y tu valor de habilidad es de 2, revelas una ficha de caos -3, que deja tu valor de habilidad final en 0 (ya que no puede haber valores negativos), sin embargo necesitas jugar dos \u00a1Qu\u00e9 suerte! para poder tener \u00e9xito en la prueba. \n- La ficha [auto_fail] fija tu valor de habilidad en 0, ignorando cualquier modificador por lo que no puedes usar \u00a1Qu\u00e9 suerte! para superar la prueba (aunque la prueba sea de dificultad 2)."
+    },
+    {
+      "code": "01085",
+      "text": "- Voluntad de supervivencia hace que saltes los pasos 3 y 4 de la Resoluci\u00f3n de las pruebas de Habilidad durante el resto de la ronda."
+    },
+    {
+      "code": "01086",
+      "text": "- Puedes o bien **Combatir** con +1 de [combat] realizando 1 de da\u00f1o sin descartar el cuchillo, o bien descartar el Cuchillo para **Combatir** con +2 de [combat] realizando +1 de da\u00f1o."
+    },
+    {
+      "code": "01087",
+      "text": "- Si reduces el valor de velo a 0, investigar este lugar tendr\u00e1 \u00e9xito asegurado incluso si revelas una ficha de caos -8 ya que tu valor de habilidad ser\u00e1 0 de todas formas (siendo \u00e9xito versus la dificultad 0 de la investigaci\u00f3n). A\u00fan as\u00ed [auto_fail] te har\u00e1 fallar si lo revelas."
+    },
+    {
+      "code": "01089",
+      "text": "- M\u00e1ximo de 1 asignada por prueba de habilidad, se considera a lo largo de todos los jugadores. \n- Si asignas esta carta a una prueba de habilidad de otro jugador, y la prueba es exitosa, t\u00fa robas la carta (no el otro jugador)."
+    },
+    {
+      "code": "01090",
+      "text": "- M\u00e1ximo de 1 asignada por prueba de habilidad, se considera a lo largo de todos los jugadores. \n- Si asignas esta carta a una prueba de habilidad de otro jugador, y la prueba es exitosa, t\u00fa robas la carta (no el otro jugador)."
+    },
+    {
+      "code": "01091",
+      "text": "- M\u00e1ximo de 1 asignada por prueba de habilidad, se considera a lo largo de todos los jugadores. \n- Si asignas esta carta a una prueba de habilidad de otro jugador, y la prueba es exitosa, t\u00fa robas la carta (no el otro jugador)."
+    },
+    {
+      "code": "01092",
+      "text": "- M\u00e1ximo de 1 asignada por prueba de habilidad, se considera a lo largo de todos los jugadores. \n- Si asignas esta carta a una prueba de habilidad de otro jugador, y la prueba es exitosa, t\u00fa robas la carta (no el otro jugador)."
+    },
+    {
+      "code": "01093",
+      "text": "- M\u00e1ximo de 1 asignada por prueba de habilidad, se considera a lo largo de todos los jugadores."
+    },
+    {
+      "code": "01094",
+      "text": "- Chaleco antibalas (4) s\u00f3lo tiene valor de Salid, por lo que s\u00f3lo se le puede asignar da\u00f1o a \u00e9ste."
+    },
+    {
+      "code": "01095",
+      "text": "- Amuleto del s\u00edmbolo arcano (4) s\u00f3lo tiene valor de Cordura, por lo que s\u00f3lo se le puede asignar horror a \u00e9ste."
+    }
+  ]
+}

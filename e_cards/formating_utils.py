@@ -9,7 +9,7 @@ def format_enemy_stats(c):
                 "agility": "[agility] %s" % (format_number(c['enemy_evade']) if "enemy_evade" in c else "-")
                 }
 
-    return format_text("%(combat)s | %(health)s | %(agility)s\n" % formater)
+    return format_text("%(combat)s | %(health)s | %(agility)s" % formater)
 
 
 def format_clues(c):

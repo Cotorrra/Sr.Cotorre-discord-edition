@@ -10,9 +10,9 @@ def create_embed(c, title, description, footnote=""):
     return embed
 
 
-def hide_if_spoiler(text, c):
+def hide_if_spoiler(text, c, override_spoiler=False):
     if text:
-        if "spoiler" in c:
+        if "spoiler" in c and not override_spoiler:
             if c['pack_code'] == 'core':
                 if c['encounter_code'] in ['torch', 'arkham', 'tentacles']:
                     return "||%s||" % text
@@ -82,35 +82,37 @@ def format_set(c):
     return text
 
 
-def format_card_text(c, tag="text"):
+def format_card_text(c, tag="text", override_spoiler=False):
     formating = {"\n": "\n> "}
     text = format_text(c[tag]) if tag in c else ""
     for key, value in formating.items():
         text = text.replace(key, value)
-    return hide_if_spoiler(text, c)
+    return hide_if_spoiler(text, c, override_spoiler)
 
 
-def format_illus_pack(c):
+def format_illus_pack(c, only_pack=False):
     formater = {"pack": format_set(c),
                 "artist": "%s \n" % format_illustrator(c) if c['type_code'] != "scenario" else ""
                 }
-    footitng = "%(artist)s" \
+    if only_pack:
+        return "%(pack)s" % formater
+    else:
+        return "%(artist)s" \
                "%(pack)s" % formater
-    return footitng
 
 
-def format_victory(c):
+def format_victory(c, override_spoiler=False):
     if "victory" in c:
         text = "**Victoria %s.**" % c['victory']
-        return "> %s \n" % hide_if_spoiler(text, c)
+        return "> %s \n" % hide_if_spoiler(text, c, override_spoiler=False)
     else:
         return ""
 
 
-def format_vengeance(c):
+def format_vengeance(c, override_spoiler=False):
     if "vengeance" in c:
         text = "**Venganza %s.**" % c['vengeance']
-        return "> %s \n" % hide_if_spoiler(text, c)
+        return "> %s \n" % hide_if_spoiler(text, c, override_spoiler=False)
     else:
         return ""
 

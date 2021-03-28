@@ -62,8 +62,7 @@ def format_inv_card_f(c):
     return create_embed(c, m_title, m_description, m_footnote)
 
 
-
-def format_player_card_short(c, qty=0):
+def format_player_card_deck(c, qty=0):
     formater = {"name": "%s" % c['name'],
                 "level": "%s" % format_xp(c),
                 "class": faction_order[c['faction_code']] + format_faction(c),
@@ -74,11 +73,23 @@ def format_player_card_short(c, qty=0):
     return text
 
 
+def format_player_card_short(c):
+    formater = {"type": "[%s" % c['type_name'],
+                "slot": ": %s]" % format_slot(c) if format_slot(c) else "]",
+                "icons": "[I: %s]" % format_skill_icons(c) if format_skill_icons(c) != "" else "",
+                "costs": "[C: %s]" % format_number(c['cost']) if "cost" in c else "",
+                "health_sanity": "[%s]" % format_health_sanity(c) if format_health_sanity(c) != "" else "",
+                "victory": "[VP:%s]" % format_victory(c) if format_victory(c) else "",
+                }
+    text = "%(type)s%(slot)s%(costs)s%(icons)s%(health_sanity)s%(victory)s" % formater
+    return text
+
+
 def format_inv_card_f_short(c):
     formater = {"class": format_text("[%s]" % c['faction_code']),
                 "name": "%s" % c['name'],
                 "skills": format_inv_skills(c),
                 "health_sanity": format_text("%s%s" % ("[health] %s " % c['health'], "[sanity] %s" % c['sanity'])),
                 }
-    text = "%(class)s %(name)s %(skills)s| %(health_sanity)s" % formater
+    text = "[%(skills)s][%(health_sanity)s]" % formater
     return text

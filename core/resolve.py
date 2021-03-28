@@ -1,8 +1,8 @@
 from core.formating import format_illus_pack
 from e_cards.formating import format_enemy_card, format_treachery_card, format_act_card_f, format_agenda_card_f, \
     format_location_card_f, format_scenario_card, format_enemy_card_short, format_treachery_card_short, \
-    format_act_card_f_short, format_agenda_card_f_short, format_scenario_card_short, format_location_card_short
-from p_cards.formating import format_inv_card_f, format_player_card, format_inv_card_f_short, format_player_card_short
+    format_act_card_f_short, format_agenda_card_f_short, format_scenario_card_short, format_location_card_f_short
+from p_cards.formating import format_inv_card_f, format_player_card, format_inv_card_f_short, format_player_card_deck
 
 
 def resolve_search(r_cards):
@@ -70,10 +70,10 @@ def list_rest(array, max_entries=4):
             text += "%s \n" % format_agenda_card_f_short(c)
 
         elif c['type_code'] == 'location':
-            text += "%s \n" % format_location_card_short(c)
+            text += "%s \n" % format_location_card_f_short(c)
 
         elif c['type_code'] == 'scenario':
             text += "%s \n" % format_scenario_card_short(c)
         else:
-            text += format_player_card_short(c, 1)[1:]
+            text += format_player_card_deck(c, 1)[1:]
     return text

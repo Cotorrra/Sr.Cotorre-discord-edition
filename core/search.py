@@ -82,19 +82,22 @@ def find_and_extract(string: str, start_s: str, end_s: str):
         enable = string.find(start_s) > 0
     else:
         enable = string.__contains__(start_s) and string.__contains__(end_s)
-    fst_occ = string.find(start_s) + 1
-    snd_occ = string[fst_occ:].find(end_s)
-    extract = string[fst_occ: fst_occ + snd_occ]
-    base = string.replace(" %s%s%s" % (start_s, extract, end_s), "", 1)
-    return base, extract, enable
+    if enable:
+        fst_occ = string.find(start_s) + 1
+        snd_occ = string[fst_occ:].find(end_s)
+        extract = string[fst_occ: fst_occ + snd_occ]
+        base = string.replace(" %s%s%s" % (start_s, extract, end_s), "", 1)
+        return base, extract, enable
+    else:
+        return string, "", enable
 
 
 def hits_in_string(query: str, find: str):
     """
     Retorna la cantidad de veces únicas en las que un string contiene una palabra en el otro.
     Va por palabras.6,mnbvcxz<
-    :param s1:
-    :param s2:
+    :param find:
+    :param query:
     :return:
     """
     hits = 0

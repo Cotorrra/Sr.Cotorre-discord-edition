@@ -12,7 +12,7 @@ def format_enemy_card(c):
                 "traits": hide_if_spoiler("*%s*\n" % c['traits'] if "traits" in c else "", c),
                 "text": "> %s \n" % format_card_text(c),
                 "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
-                "stats": hide_if_spoiler(format_enemy_stats(c), c),
+                "stats": "%s \n" % hide_if_spoiler(format_enemy_stats(c), c),
                 "attack": hide_if_spoiler("Ataque: %s\n" % format_attack(c) if format_attack(c) != "" else "", c),
                 "victory": format_victory(c),
                 "vengeance": format_vengeance(c),
@@ -136,17 +136,17 @@ def format_enemy_card_short(c):
                 "victory": " [VP:%s]" % c['victory'] if "victory" in c else "",
                 }
 
-    text = "%(faction)s %(name)s %(stats)s%(attack)s%(victory)s" % formater
+    text = "%(stats)s%(attack)s%(victory)s" % formater
     return text
 
 
 def format_act_card_f_short(c):
     formater = {"name": format_name(c),
-                "stage": "[A:%s]\n" % c['stage'],
+                "stage": "[A:%s]" % c['stage'],
                 "clues": "[%s]" % format_clues(c),
                 }
 
-    text = "%(name)s %(stage)s %(clues)s" % formater
+    text = "%(stage)s %(clues)s" % formater
 
     return text
 
@@ -156,18 +156,17 @@ def format_agenda_card_f_short(c):
                 "stage": "[P %s]" % c['stage'],
                 "doom": format_text("[[doom] %s]" % (c['doom'] if "doom" in c else "-")),
                 }
-    text = "%(name)s %(stage)s %(doom)s" % formater
+    text = "%(stage)s %(doom)s" % formater
     return text
 
 
-def format_location_card_short(c):
+def format_location_card_f_short(c):
     formater = {"name": format_name(c),
                 "shroud": "[V: %s]" % str(c['shroud']),
                 "clues": format_clues(c),
                 "victory": format_victory(c),
                 }
-    text = "%(name)s %(shroud)s %(clues)s %(victory)s" % formater
-
+    text = "%(shroud)s %(clues)s %(victory)s" % formater
     return text
 
 
@@ -176,7 +175,7 @@ def format_scenario_card_short(c):
                 "text": "[F/N: %s]" % extract_token_info(c['text']),
                 "b_text": "[D/E: %s]" % extract_token_info(c['back_text'])}
 
-    text = "%(name)s %(text)s %(b_text)s" % formater
+    text = "%(text)s %(b_text)s" % formater
     return text
 
 
@@ -184,5 +183,5 @@ def format_treachery_card_short(c):
     formater = {"name": format_name(c),
                 "faction": format_faction(c)}
 
-    text = "%(faction)s %(name)s" % formater
+    text = "" % formater
     return text

@@ -1,6 +1,6 @@
 import discord
 
-from p_cards.formating import format_player_card_short
+from p_cards.formating import format_player_card_deck
 
 
 def format_assets(arr, title):
@@ -9,7 +9,7 @@ def format_assets(arr, title):
         text += "_%s:_" % title
         aux = []
         for (c, q) in arr:
-            aux.append(format_player_card_short(c, q))
+            aux.append(format_player_card_deck(c, q))
         aux = sorted(aux)
         for c in aux:
             text += "\n%s" % c[1:]
@@ -103,7 +103,7 @@ def format_list_of_cards(arr):
     text = ""
     aux = []
     for (c, q) in arr:
-        aux.append(format_player_card_short(c, q))
+        aux.append(format_player_card_deck(c, q))
     aux = sorted(aux)
     for c in aux:
         text += "\n%s" % c[1:]

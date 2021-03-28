@@ -5,6 +5,7 @@ import requests
 from discord.ext import commands
 from dotenv import load_dotenv
 
+from FAQ.formating import format_faq
 from backs.search import resolve_back_search
 from core.resolve import resolve_search
 from core.search import card_search
@@ -24,8 +25,6 @@ ah_player = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=0')
 
 # Encounter p_cards include: Special player p_cards, Weaknesses, enemies, acts, plans, etc.
 ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
-
-raw_text = False
 
 
 @bot.event
@@ -189,6 +188,17 @@ async def look_for_upgrades(ctx):
         await ctx.send(response, embed=embed)
     else:
         await ctx.send(response)
+
+
+@bot.command(name='hp')
+async def look_for_faq(ctx):
+    query = ' '.join(ctx.message.content.split()[1:])
+    r_cards = card_search(query, ah_all_cards, use_ec_keywords)
+    if r_cards:
+        embed = format_faq(r_cards[0])
+        await ctx.send("¡Tengo un FAQ!", embed=embed)
+    else:
+        await ctx.send("No encontré la carta.")
 
 
 bot.run(TOKEN)
