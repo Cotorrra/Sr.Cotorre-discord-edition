@@ -96,7 +96,7 @@ async def send_help(ctx):
              "**L**: para Lugares\n" \
              "**J**: para Cartas de jugador de encuentros."
     ahd = "``!ahd [id]``\n" \
-          ">>> Busca en ArkhamDB el mazo dado y lo muestra, si es público o privado." \
+          ">>> Busca en ArkhamDB el mazo dado y lo muestra, si es público o privado. \n" \
           "Si el link es ``https://es.arkhamdb.com/deck/view/1320033`` entonces su id será ``1320033``."
     ahu = "``!ahu [id]``\n " \
           ">>> Busca en ArkhamDB el historial de mazos y calcula la mejora según el mazo anterior en ArkhamDB."
@@ -182,7 +182,7 @@ async def look_for_location_card(ctx, code: str):
     response = "Trabajando en algo nuevo c:"
 @bot.command(name='hu')
 async def look_for_upgrades(ctx):
-    query = ctx.message.content.split()[1:]
+    query = ' '.join(ctx.message.content.split()[1:])
 
     response, embed = search_for_upgrades(query, ah_player)
     if embed:
