@@ -31,41 +31,94 @@ raw_text = False
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='tus Miedos'))
 
-    # await bot.change_presence(activity=discord.Game(name="Mod de Parri"))
-    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='Eric Zann'))
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='tus Pensamientos'))
-    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='El Rey de Amarillo (Acto 2)'))
-
-
-# @bot.command(name='t', help='Busca el registro de tabú de la carta pedida')
-# async def look_for_taboo(ctx):
 
 @bot.command(name='hhelp')
+async def send_help_short(ctx):
+    title = "¿Necesitas ayuda?"
+    description = "Estos son los comandos de este Bot:"
+    ahj = "``!ahj [nombre] ~[subtitulo]~ ([extra])``\n > Busca cartas de jugador y las muestra aquí."
+    ahm = "``!ahm [nombre] ~[subtitulo]~ ([extra])``\n > Busca cartas de encuentros (lugares, actos, escenarios)."
+    ahback = "``!ahback [nombre] ~[subtitulo]~ ([extra])``\n > Muestra la parte de atrás de ciertas cartas."
+    ahd = "``!ahd [id]``\n > Busca en ArkhamDB el mazo dado."
+    ahu = "``!ahu [id]``\n > Busca en ArkhamDB el mazo y calcula la mejora más reciente."
+    ahhelp = "``!ahhelp``\n" \
+             "> Devuelve la versión corta de la ayuda (esta)." \
+             "``!ahhelpme``\n" \
+             "> Devuelve la versión larga de la ayuda."
+    embed = discord.Embed(title=title, description=description)
+    embed.add_field(name="Cartas de Jugador:", value=ahj, inline=False)
+    embed.add_field(name="Cartas de Encuentros:", value=ahm, inline=False)
+    embed.add_field(name="Partes traseras de Cartas:", value=ahback, inline=False)
+    embed.add_field(name="Mazos de ArkhamDB:", value=ahd, inline=False)
+    embed.add_field(name="Mejoras de Mazos de ArkhamDB:", value=ahu, inline=False)
+    embed.add_field(name="Ayuda:", value=ahhelp, inline=False)
+    await ctx.send(embed=embed)
+
+
+@bot.command(name='hhelpme')
 async def send_help(ctx):
-    res = "¿Necesitas ayuda?: \n" \
-          "" \
-          "\n- !ahj [nombre] ~[subtitulo]~ ([extra]): Busca cartas en ArkhamDB.\n" \
-          "[extra] puede contener ser lo siguiente: '0-5' nivel de la carta, " \
-          "'G/B/R/M/S/N' la clase de la carta, P para permanente, U para único, E para excepcional, " \
-          "C para característica.\n" \
-          "Por ejemplo: \"!ahj Whisky (3S)\" devolverá el Whisky de Mosto Ácido de Supervivente de nivel 3. \n" \
-          "\n- !ahm [nombre] ~[subtitulo]~: Busca cartas de encuentros (lugares, actos, escenarios, etc.) que no " \
-          "sean cartas de jugador estándar. (¡Spoilers!) \n" \
-          "\n- !ahback [nombre] ~[subtitulo]~ ([extra]): Muestra la parte de atrás de ciertas cartas que lo permiten." \
-          "\n" \
-          "El [extra] de !ahback y !ahm permiten buscar cartas por tipo: S: Escenario, A: Acto, P: Plan, T: Traicion," \
-          "E: Enemigo, L: Lugar y J: Por cartas de jugador de encuentros." \
-          "\n- !ahd [numero]: Busca en ArkhamDB el mazo dado y lo muestra, tanto público como privado.\n" \
-          "\n- !ahu [numero] [numero] Busca en ArkhamDB ambos mazos y muestra las mejoras realizadas en los mazos." \
-          "Si mejoraste el mazo con ArkhamDB puedes también entregarle sólo el número del mazo más reciente." \
-          ""
-    await ctx.send(res)
+    title = "¿Necesitas ayuda?"
+    description = "Estos son los comandos de este Bot:"
+    ahj = "``!ahj [nombre] ~[subtitulo]~ ([extra])``\n" \
+          ">>> Busca cartas en ArkhamDB y las muestra aquí.\n" \
+          "``[extra]`` puede ser cualquier combinación de lo siguiente: \n" \
+          "**0-5** para el Nivel\n" \
+          "**G**, **B**, **R**, **M**, **S** y **N** para la Clase.\n" \
+          "**P**: para cartas Permanentes\n" \
+          "**U**: para cartas Únicas\n" \
+          "**E**: para cartas Excepcionales\n" \
+          "**C**: para cartas Características\n" \
+          "**A**: para cartas Avanzadas de los investigadores paralelos.\n" \
+          "Ejemplo: \n" \
+          "``!ahj Whisky (3S)`` devolverá: https://es.arkhamdb.com/card/05191\n" \
+          "``!ahj Solución ~Acido~`` devolverá: https://es.arkhamdb.com/card/02263"
+    ahm = "``!ahm [nombre] ~[subtitulo]~ ([extra])``\n" \
+          ">>> Busca cartas de encuentros (lugares, actos, escenarios, " \
+          "etc.) que no sean cartas de jugador estándar. (¡Ojo con los Spoilers!) \n" \
+          "``[extra]`` puede contener lo siguiente:\n " \
+          "**S**: para Escenario\n" \
+          "**A**: para Actos\n" \
+          "**P**: para Planes\n" \
+          "**T**: para Traiciones\n" \
+          "**E**: para Enemigos\n" \
+          "**L**: Lugares\n" \
+          "**J**: Para cartas de jugador."
+    ahback = "``!ahback [nombre] ~[subtitulo]~ ([extra])``\n" \
+             ">>> Muestra la parte de atrás de ciertas cartas. \n" \
+             "``[extra]`` puede contener lo siguiente:\n" \
+             "**S**: para Escenarios\n" \
+             "**A**: para Actos\n" \
+             "**P**: para Planes\n" \
+             "**T**: para Traiciones\n" \
+             "**E**: para Enemigos\n" \
+             "**L**: para Lugares\n" \
+             "**J**: para Cartas de jugador de encuentros."
+    ahd = "``!ahd [id]``\n" \
+          ">>> Busca en ArkhamDB el mazo dado y lo muestra, si es público o privado." \
+          "Si el link es ``https://es.arkhamdb.com/deck/view/1320033`` entonces su id será ``1320033``."
+    ahu = "``!ahu [id]``\n " \
+          ">>> Busca en ArkhamDB el historial de mazos y calcula la mejora según el mazo anterior en ArkhamDB."
+    ahhelp = "``!ahhelp``\n" \
+             "> Devuelve la versión corta de la ayuda." \
+             "``!ahhelpme``\n" \
+             "> Devuelve la versión larga de la ayuda (esta)."
+    footnote = "El Sr. \"Co-Torre\"™ es desarrollado por Cotorra."
+    embed = discord.Embed(title=title, description=description)
+    embed.add_field(name="Cartas de Jugador:", value=ahj, inline=False)
+    embed.add_field(name="Cartas de Encuentros:", value=ahm, inline=False)
+    embed.add_field(name="Partes traseras de Cartas:", value=ahback, inline=False)
+    embed.add_field(name="Mazos de ArkhamDB:", value=ahd, inline=False)
+    embed.add_field(name="Mejoras de Mazos de ArkhamDB:", value=ahu, inline=False)
+    embed.add_field(name="Ayuda:", value=ahhelp, inline=False)
+
+    embed.set_footer(text=footnote)
+    await ctx.send(embed=embed)
 
 
 @bot.command(name='hback')
 async def look_for_card_back(ctx):
-
     query = ' '.join(ctx.message.content.split()[1:])
 
     f_cards = [c for c in ah_all_cards if c["double_sided"]]
@@ -136,5 +189,6 @@ async def look_for_upgrades(ctx):
         await ctx.send(response, embed=embed)
     else:
         await ctx.send(response)
+
 
 bot.run(TOKEN)
