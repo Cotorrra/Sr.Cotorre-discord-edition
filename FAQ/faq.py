@@ -8,8 +8,8 @@ def load_faq():
     Carga el archivo de taboo.
     :return:
     """
-    with open('FAQ/data/faq.json') as errata:
-        info = json.load(errata)
+    with open('FAQ/data/faq.json', encoding='utf-8') as faq:
+        info = json.load(faq)
 
     info['cards'] = json.dumps(info['cards'])
     info['cards'] = json.loads(info['cards'])
@@ -24,7 +24,7 @@ def has_faq(card_id):
     :param version:
     :return:
     """
-    for card in errata_info['cards']:
+    for card in faq_info['cards']:
         if card['code'] == card_id:
             return True
     return False
@@ -37,7 +37,7 @@ def get_faq(card_id):
     :param version:
     :return:
     """
-    for card in errata_info['cards']:
+    for card in faq_info['cards']:
         if card['code'] == card_id:
             return card
     return {}
@@ -56,4 +56,4 @@ def format_faq_text(card_id, back=False):
         return "Esta carta no tiene FAQ _(aún)_"
 
 
-errata_info = load_faq()
+faq_info = load_faq()
