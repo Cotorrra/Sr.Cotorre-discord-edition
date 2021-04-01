@@ -1,0 +1,720 @@
+{
+  "concepts": [
+    {
+      "keyword": "Oro",
+      "title": "La Regla de Oro",
+      "text": "Si el texto de una carta contradice directamente el texto del  reglamento para aprender a jugar o de la referencia de reglas, el texto de la carta prevalece."
+    },
+    {
+      "keyword": "Nefasta",
+      "title": "La Regla Nefasta",
+      "text": "Si los jugadores no logran encontrar la respuesta a un conflicto de reglas o de orden de resolución en esta referencia de reglas, el conflicto debe resolverse de la forma que los jugadores consideren la peor posible en ese momento de cara a superar el escenario, y a continuación se prosigue la partida. \nEsto no implica que en cada elección debas invocar esta regla, por ejemplo: si robas Puerta cerrada con llave y hay múltiples lugares válidos para colocarla, puedes elegir cualquier lugar válido donde ponerla, no ponerla en el \"peor\" lugar posible."
+    },
+    {
+      "keyword": "Acción",
+      "title": "Acción",
+      "text": "Durante su turno, un investigador puede realizar hasta tres acciones. Al realizar una acción, en primer lugar se pagan todos los costes de la misma. A continuación, se resuelven las consecuencias de la acción.\n- Si un investigador debe perder 1 o más acciones, el número de acciones que podrá realizar en esa ronda se verá reducido en esa cantidad.\n- Para ver una lista completa de las acciones disponibles, consulta el concepto “Acciones posibles”."
+    },
+    {
+      "keyword": "Abandonar el juego",
+      "title": "Abandona el juego",
+      "text": "La expresión “abandona el juego” se refiere a cualquier momento en el que una carta realice una transición de un estado en juego a un estado fuera del juego (ver “En juego y fuera del juego”).\nSi una carta abandona el juego, tienen lugar las siguientes consecuencias de forma simultánea al abandono del juego por parte de la carta:\n- Todas las fichas que hubiera sobre la carta son devueltas a la reserva de fichas.\n- Todas las cartas Vinculadas que hubiera sobre la carta son descartadas.\n- Todos los efectos persistentes y/o postergados que afectaran a la carta mientras estaba en juego terminan para esa carta.\n"
+    },
+    {
+      "keyword": "Continuación",
+      "title": "A continuación",
+      "text": "Si el efecto de una capacidad incluye la expresión “a continuación”, el texto que antecede a la expresión “a continuación” debe resolverse por completo y con éxito antes de que pueda resolverse el resto del efecto descrito tras la expresión “a continuación”.\n- Si la parte anterior a “a continuación” de un efecto se resuelve por\ncompleto y con éxito, entonces la parte posterior a “a continuación” del efecto también debe resolverse.\n- La parte posterior a “a continuación” de un efecto tiene prioridad de orden de resolución sobre todas las demás consecuencias indirectas de la resolución de la parte anterior a “a continuación”. Por ejemplo, si un efecto dice: “Roba una carta de Encuentro. A continuación, recibe 1 de horror.”, y un jugador controla una capacidad que dice “Después de que robes una carta de Encuentro...”, la parte “recibe 1 de horror” posterior a “a continuación” tendrá lugar antes de que pueda iniciarse la capacidad “Después de que robes una carta de Encuentro...”."
+    },
+    {
+      "keyword": "Activar",
+      "title": "Acción de Activar",
+      "text": "“Activar” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación. Cuando se realiza esta acción, el investigador inicia una capacidad que tenga uno o más iconos [action] como parte de su coste. \nLa cantidad de iconos [action] que haya en el coste de la capacidad determina cuántas acciones debe usar el investigador para esta acción de activar. Al realizar una acción de activar, todos los costes de la acción se pagan de forma simultánea. A continuación, se resuelven las consecuencias de la acción.\n Un investigador puede activar capacidades de las siguientes fuentes:\n- Una carta en juego y bajo su control, incluida su carta de Investigador.\n- Una carta de Escenario que esté en juego y en el mismo Lugar que el investigador. Esto incluye el propio Lugar, las cartas de Encuentro colocadas en ese Lugar y todas las cartas de Encuentro que haya en la zona de amenaza de cualquier investigador que esté en ese Lugar. \n- La carta de Acto o de Plan en curso.\n"
+    },
+    {
+      "keyword": "Investigar",
+      "title": "Acción de investigar",
+      "text": "“Investigar” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación. Cada vez que un investigador efectúe esta acción, realiza una prueba de [intellect] contra el valor de velo de ese Lugar (ver “Pruebas de habilidad”).\n Si la prueba tiene éxito, el investigador ha logrado investigar el Lugar y descubre una de las pistas que contiene. Esto ocurre durante el paso 7 de la prueba de habilidad.\nEn cualquier momento en el que un investigador descubra una pista de un Lugar, ese jugador coge la pista del Lugar y la coloca en su carta de Investigador, bajo su control.\nSi la prueba fracasa, el investigador no ha tenido éxito investigando el Lugar y no se descubren pistas."
+    },
+    {
+      "keyword": "Jugar",
+      "title": "Acción de jugar",
+      "text": "“Jugar” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación. \nCuando un investigador realice esta acción, elige una carta de Apoyo o de Evento de su mano, paga su coste de recursos y la juega (véase “Jugar”).\n- Las cartas con la palabra clave “Rápido” no se juegan usando esta acción (véase “Rápido”).\n- Las cartas de Habilidad no se “juegan”, sino que se asignan a una prueba de habilidad desde la mano del jugador para usar sus capacidades."
+    },
+    {
+      "keyword": "Combatir",
+      "title": "Acción de combatir",
+      "text": "“Combatir” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación.\nPara combatir a un Enemigo que esté en su Lugar, el investigador resuelve un ataque contra dicho Enemigo realizando una prueba de combate contra el valor de combate del Enemigo (veáse “Pruebas de habilidad”).\n Si la prueba tiene éxito, el ataque impacta e inflige daño al Enemigo atacado. El daño por defecto que infligen los ataques es 1. Algunas armas, hechizos y otros ataques especiales pueden modificar este daño; esto tiene lugar durante el paso 7 de la prueba de habilidad.\n Si la prueba fracasa, no se inflige daño al Enemigo atacado. Sin embargo, si un investigador fracasa en esta prueba contra un Enemigo que esté enfrentado a otro investigador, el daño del ataque se le inflige al investigador enfrentado a ese Enemigo. \n- Un investigador puede combatir a un Enemigo al que esté enfrentado o un Enemigo al que no esté enfrentado pero esté en su mismo Lugar (salvo si es Indiferente) o un Enemigo enfrentado a otro investigador que esté en el mismo Lugar."
+    },
+    {
+      "keyword": "Movimiento",
+      "title": "Acción de movimiento",
+      "text": "“Movimiento” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación.\nCuando un investigador realice esta acción, se mueve (usando su carta pequeña) a cualquier otro Lugar que esté indicado como Lugar conectado con su Lugar actual (veáse “Moverse”)."
+    },
+    {
+      "keyword": "",
+      "title": "Acción de recursos",
+      "text": "“Recursos” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación.\nCuando un investigador realice esta acción, obtiene 1 recurso cogiéndolo de la reserva de fichas y añadiéndolo a su reserva de recursos."
+    },
+    {
+      "keyword": "",
+      "title": "Acción de robar",
+      "text": "“Robar” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación.\nCuando un investigador realice esta acción, roba 1 carta de su mazo.\n"
+    },
+    {
+      "keyword": "",
+      "title": "Acción de enfrentarse",
+      "text": "“Enfrentarse” es una acción que pueden realizar los investigadores durante su turno en la fase de Investigación.\nPara enfrentarse a un Enemigo en el mismo Lugar (por ejemplo, para enfrentarse a un Enemigo agotado, a un Enemigo Indiferente o a un Enemigo enfrentado a otro investigador), el investigador coloca el Enemigo elegido en su zona de amenaza. El investigador y el Enemigo ahora están enfrentados."
+    },
+    {
+      "keyword": "Afectado",
+      "title": "Afectado",
+      "text": "Un investigador afectado por una Debilidad es el que empezó la partida con dicha Debilidad en su mazo o en su zona de juego (véase “Debilidad”)."
+    },
+    {
+      "keyword": "Agotar Agotado",
+      "title": "Agotar, Agotado",
+      "text": "En ocasiones, la capacidad de una carta o un paso de juego harán que una carta se agote para indicar que se ha usado para realizar una función.\nCuando una carta se agota, se gira 90 grados. Una carta que esté en ese estado se considera agotada.\n- Una carta agotada no puede volver a agotarse hasta que haya sido preparada (generalmente debido a un paso de juego o a la capacidad de una carta)."
+    },
+    {
+      "keyword": "Buscar Busca",
+      "title": "Buscar",
+      "text": "Cuando un jugador deba buscar una carta, puede mirar todas las cartas de las zonas en las que está buscando sin revelárselas a los demás jugadores. \n- Al resolver un efecto de búsqueda, el jugador está obligado a encontrar el objeto de la búsqueda si hay una o más opciones válidas en la zona en la que se está buscando.\n- Mientras se esté buscando en las cartas, no se considera que éstas hayan abandonado la zona de juego donde se encontraban. \n- Si un efecto busca en todo un mazo, tras completar la búsqueda se\ndebe barajar el mazo."
+    },
+    {
+      "keyword": "Aparición",
+      "title": "Aparición",
+      "text": "Algunos Enemigos, al ser robados del mazo de Encuentros, aparecen en un Lugar concreto que aparece indicado por la instrucción “Aparición” en su cuadro de texto de reglas.\n- La instrucción de aparición de un Enemigo se resuelve cuando éste entra en juego, independientemente de cómo entrara en juego. \n- Si un Enemigo no tiene instrucción de aparición, aparece enfrentado al investigador que lo robara.\n -Si un Enemigo no tiene un Lugar válido en el que aparecer (por ejemplo, si su instrucción de aparición especifica un Lugar que no está en juego, o si ninguno de los Lugares en juego cumple su instrucción de aparición), entonces no aparece y es descartado.\n- Si la instrucción de aparición de un Enemigo tiene varios Lugares válidos, el investigador que lo ha hecho aparecer decide en cuál de ellos aparece.\n- Si la capacidad de una carta indica a los jugadores que aparece un Enemigo en un Lugar concreto (por ejemplo: “Busca un Acólito en el mazo de Encuentros y hazlo aparecer en el Barrio Sur”), considera la capacidad que hace que la carta entre en juego como la instrucción de aparición del Enemigo, que prevalece sobre cualquier otra instrucción de aparición."
+    },
+    {
+      "keyword": "Calificativos",
+      "title": "Calificativos",
+      "text": "Si el texto de una carta incluye un calificativo seguido o precedido de varios términos, el calificativo se aplica a todos los términos de la lista.\nPor ejemplo, en la frase “cada aliado y objeto único”, la palabra “único” es un calificativo que se aplica tanto a “aliado” como a “objeto”."
+    },
+    {
+      "keyword": "Atacante Atacado",
+      "title": "Atacante, Atacado",
+      "text": "Un “atacante” es una entidad (generalmente un Enemigo o un investigador) que está resolviendo su ataque contra otra entidad. La entidad que está siendo atacada se denomina “Enemigo atacado” o “investigador atacado”.\n"
+    },
+    {
+      "keyword": "Ataques Oportunidad",
+      "title": "Ataques de Oportunidad",
+      "text": "Cada vez que un investigador esté enfrentado a uno o más Enemigos\npreparados y realice una acción que no sea <b>Combatir</b>, <b>Evitar</b> o activar una capacidad <b>Negociar</b> o <b>Desistir</b>, cada uno de esos Enemigos realiza un ataque de oportunidad contra el investigador, en el orden que éste elija. Cada ataque inflige al investigador el daño y horror de ese Enemigo.\n= Los ataques de oportunidad se realizan inmediatamente después de que se hayan pagado todos los costes de iniciar la acción que provocó el ataque, pero antes de aplicar el efecto de la acción en el estado de la partida.\n- Una capacidad que cueste más de una acción sólo provoca un ataque de oportunidad de cada Enemigo enfrentado.\n- Los Enemigos no se agotan al realizar ataques de oportunidad.\n= Después de haber realizado todos los ataques de oportunidad, prosigue la resolución de la acción que instigó el ataque.\n- Los ataques de oportunidad cuentan como ataques enemigos a efectos de las capacidades de las cartas."
+    },
+    {
+      "keyword": "Mulligan",
+      "title": "Cambiar la mano inicial",
+      "text": "Después de que un jugador robe su mano inicial durante la preparación, tiene una oportunidad de declarar que quiere cambiar cualquier cantidad de las cartas robadas como mano inicial. Para ello, pone aparte las cartas que no quiera conservar, roba esa misma cantidad de cartas del mazo y las añade a su mano inicial. Las cartas que ha puesto aparte se devuelven al mazo del jugador y se baraja éste.\n- Los jugadores aceptan o rechazan la posibilidad de cambiar la mano inicial en el orden de juego."
+    },
+    {
+      "keyword": "Cancelar",
+      "title": "Cancelar",
+      "text": "Algunas capacidades de las cartas pueden “cancelar” otras cartas o efectos de juego. Las capacidades de cancelación interrumpen el inicio de un efecto y evitan que se inicie.\n= En cualquier momento en el que los efectos de una capacidad sean cancelados, la capacidad (excluyendo sus efectos) se sigue considerando iniciada y se habrán pagado sus costes. Sin embargo, se evita que los efectos de la capacidad se inicien, y por lo tanto no se resuelven.\n= Si se cancelan los efectos de una carta de Evento, la carta se sigue considerando como jugada y se coloca en la pila de descartes de su propietario.\n= Si se cancelan los efectos de una carta de Traición, la carta se sigue considerando robada y se coloca en la pila de descartes de Encuentros."
+    },
+    {
+      "keyword": "Capacidad",
+      "title": "Capacidad",
+      "text": "Una capacidad es el texto de juego especializado que indica cómo afecta a la partida una carta.\n= Las capacidades de las cartas interactúan con el juego si la carta que posee la capacidad está en juego, a menos que la capacidad (o las reglas del tipo de carta) especifiquen que su uso se produce desde una zona fuera del juego.\n- Las capacidades de las cartas sólo interactúan con otras cartas que estén en juego, a menos que la capacidad especifique una interacción con cartas que estén en una zona fuera del juego.\n- Si hay varias copias de la misma capacidad en juego, cada una de ellas interactúa (o puede interactuar) con el estado de la partida de forma individual.\n- Los distintos tipos de capacidades de las cartas son: capacidades continuas, capacidades <b>Obligado</b>, capacidades <b>Revelación</b>, capacidades activadas, palabras clave e instrucciones de Enemigos (aparición y presa)."
+    },
+    {
+      "keyword": "Capacidad Reacción",
+      "title": "Capacidades activadas por reacción",
+      "text": "Las capacidades activadas [reaction] que tengan una condición de activación concreta se pueden activar en cualquier momento en el que se cumpla dicha condición de activación. Por ejemplo: “[reaction] Después de que derrotes a un Enemigo:”.\n -Una capacidad [reaction] que tenga una condición de activación que\ncomience por la palabra “cuando” puede usarse después de que se inicie la condición de activación especificada, pero antes de que se resuelva su impacto en el estado de la partida. \n- Una capacidad [reaction] que tenga una condición de activación que comience por la palabra “después...” puede usarse inmediatamente después de que se haya resuelto el impacto en el estado de la partida de esa condición de activación.\n- Cada capacidad [reaction] sólo puede activarse una vez por cada vez que\nse cumpla la condición especificada en la capacidad. Por ejemplo, una capacidad que se active “Después de que ocurra X” podrá usarse una vez cada vez que ocurra “X”."
+    },
+    {
+      "keyword": "Capacidad continua",
+      "title": "Capacidades continuas",
+      "text": "Las capacidades continuas se indican en las cartas sin ningún formato especial. Las capacidades continuas siempre están interactuando con el estado de la partida mientras la carta esté en juego. Algunas capacidades continuas buscan en todo momento una condición concreta, indicada por palabras como “durante” o “mientras”; los efectos de estas capacidades están activos en cualquier momento en el que se cumpla la condición especificada. Las capacidades continuas no tienen punto de inicio."
+    },
+    {
+      "keyword": "Capacidad Obligado",
+      "title": "Capacidades Obligado",
+      "text": "Las capacidades “<b>Obligado</b>” se identifican mediante la palabra “<b>Obligado –</b>”. \nLas capacidades “<b>Obligado</b>” se inician e interactúan con el estado de la partida automáticamente en un punto de resolución especificado generalmente por palabras como “cuando”, “después”, “si” o “en”.\n- Si una capacidad “Obligado” no tiene el potencial de cambiar el estado de la partida, la capacidad no se inicia.\n- Es obligatorio iniciar una capacidad “Obligado” que tenga el potencial de cambiar el estado de la partida cada vez que se cumpla su punto de resolución."
+    },
+    {
+      "keyword": "Capacidades activadas",
+      "title": "Capacidades activadas",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "keyword": "",
+      "title": "",
+      "text": ""
+    }
+  ]
+}
+
