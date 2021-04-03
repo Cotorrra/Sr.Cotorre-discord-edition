@@ -34,7 +34,6 @@ def resolve_search(r_cards):
         footing = format_illus_pack(r_cards[0])
         embed.set_footer(text=footing)
 
-
     else:
         response = "No encontré ninguna carta"
         embed = False
