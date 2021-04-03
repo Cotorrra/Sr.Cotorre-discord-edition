@@ -151,7 +151,7 @@ async def look_for_deck(ctx, code: str):
     else:
         deck_info = extract_deck_info(deck, ah_all_cards)
         embed = format_deck(deck, deck_info)
-        response = "¡Mazo Encontrado!"
+        response = ""
         await ctx.send(response, embed=embed)
 
 
@@ -196,9 +196,19 @@ async def look_for_faq(ctx):
     r_cards = card_search(query, ah_all_cards, use_ec_keywords)
     if r_cards:
         embed = format_faq(r_cards[0])
-        await ctx.send("¡Tengo un FAQ!", embed=embed)
+        await ctx.send("", embed=embed)
     else:
         await ctx.send("No encontré la carta.")
 
+
+@bot.command(name='hc')
+async def look_for_concept(ctx):
+    query = ' '.join(ctx.message.content.split()[1:])
+    search = search_for_concept(query)
+    if search:
+        embed = format_concept(search)
+        await ctx.send("", embed=embed)
+    else:
+        await ctx.send("Hm... No encontré nada.")
 
 bot.run(TOKEN)
