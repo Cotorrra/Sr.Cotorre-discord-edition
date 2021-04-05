@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 
 from FAQ.formating import format_faq
 from backs.search import resolve_back_search
+from rules.rules import search_for_concept
+from rules.formating import format_concept
 from core.resolve import resolve_search
 from core.search import card_search
 from decks.formating import format_deck
@@ -42,6 +44,9 @@ async def send_help_short(ctx):
     ahback = "``!ahback [nombre] ~[subtitulo]~ ([extra])``\n > Muestra la parte de atrás de ciertas cartas."
     ahd = "``!ahd [id]``\n > Busca en ArkhamDB el mazo dado."
     ahu = "``!ahu [id]``\n > Busca en ArkhamDB el mazo y calcula la mejora más reciente."
+    ahp = "``!ahp [nombre] ~[subtitulo]~ ([extra])`` \n > Muestra los datos de la carta con las preguntas frecuentes." \
+          " [WIP]"
+    ahc = "``!ahr [nombre]`` \n > Busca reglas o palabras clave del manual del juego. [WIP]"
     ahhelp = "``!ahhelp``\n" \
              "> Devuelve la versión corta de la ayuda (esta)." \
              "``!ahhelpme``\n" \
@@ -99,6 +104,10 @@ async def send_help(ctx):
           "Si el link es ``https://es.arkhamdb.com/deck/view/1320033`` entonces su id será ``1320033``."
     ahu = "``!ahu [id]``\n " \
           ">>> Busca en ArkhamDB el historial de mazos y calcula la mejora según el mazo anterior en ArkhamDB."
+    ahp = "``!ahp [nombre] ~[subtitulo]~ ([extra])`` \n > Muestra los datos de la carta con las preguntas frecuentes," \
+          " interacciones extrañas y alguno que otro consejo para jugar esta carta. "
+    ahc = "``!ahr [nombre]`` \n > Busca reglas o palabras clave del manual del juego (o adaptados del manual, " \
+          "porque mucho texto). "
     ahhelp = "``!ahhelp``\n" \
              "> Devuelve la versión corta de la ayuda." \
              "``!ahhelpme``\n" \
@@ -201,7 +210,7 @@ async def look_for_faq(ctx):
         await ctx.send("No encontré la carta.")
 
 
-@bot.command(name='hc')
+@bot.command(name='hr')
 async def look_for_concept(ctx):
     query = ' '.join(ctx.message.content.split()[1:])
     search = search_for_concept(query)

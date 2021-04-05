@@ -1,5 +1,5 @@
 {
-  "concepts": [
+  "rules": [
     {
       "keyword": "Oro",
       "title": "La Regla de Oro",
@@ -364,7 +364,7 @@
     {
       "keyword": "Peligro",
       "title": "Peligro",
-      "text": "Peligro es una capacidad de palabra clave que puede aparecer en cartas de Traición.\n\n >>>Al resolver el robo de una carta de Encuentro que tenga la palabra clave Peligro, un investigador no puede consultar al resto de jugadores respecto a la carta. \n\n Otros jugadores tampoco no pueden jugar cartas, activar capacidades o asignar cartas a las pruebas de habilidad de ese investigador mientras se esté resolviendo el Encuentro Peligro."
+      "text": "Peligro es una capacidad de palabra clave que puede aparecer en cartas de Traición.\n\n >>> Al resolver el robo de una carta de Encuentro que tenga la palabra clave Peligro, un investigador no puede consultar al resto de jugadores respecto a la carta. \n\n Otros jugadores tampoco no pueden jugar cartas, activar capacidades o asignar cartas a las pruebas de habilidad de ese investigador mientras se esté resolviendo el Encuentro Peligro."
     },
     {
       "keyword": "Alerta",

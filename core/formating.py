@@ -15,11 +15,11 @@ def hide_if_spoiler(text, c, override_spoiler=False):
         if "spoiler" in c and not override_spoiler:
             if c['pack_code'] == 'core':
                 if c['encounter_code'] in ['torch', 'arkham', 'tentacles']:
-                    return "||%s||" % text
+                    return "||%s||" % text if text[-1:] != "\n" else "||%s||\n" % text[:-1]
                 else:
                     return text
             else:
-                return "||%s||" % text
+                return "||%s||" % text if text[-1:] != "\n" else "||%s||\n" % text[:-1]
     return text
 
 
