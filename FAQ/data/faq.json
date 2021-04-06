@@ -246,7 +246,7 @@
     },
     {
       "code": "01073",
-      "text": "- Puedes usar la [raction] de Reutilizar sin tener la necesidad de que haya pistas en tu lugar y en cualquier activación de una capacidad con el indicador de **Investigación** en la que hayas tenido éxito por 2 o más. \n- Para activar la capacidad [raction] de esta carta, ésta necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento. \n- El éxito se determina en el Paso 6 de la Resolución de las pruebas de habilidad, por lo que no puedes usar Reutilizar para recuperar cartas [[Objeto]] que hayan sido asignadas en la prueba de habilidad de la investigación."
+      "text": "- Puedes usar la [reaction] de Reutilizar sin tener la necesidad de que haya pistas en tu lugar y en cualquier activación de una capacidad con el indicador de **Investigación** en la que hayas tenido éxito por 2 o más. \n- Para activar la capacidad [reaction] de esta carta, ésta necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento. \n- El éxito se determina en el Paso 6 de la Resolución de las pruebas de habilidad, por lo que no puedes usar Reutilizar para recuperar cartas [[Objeto]] que hayan sido asignadas en la prueba de habilidad de la investigación."
     },
     {
       "code": "01074",
@@ -282,7 +282,7 @@
     },
     {
       "code": "01092",
-      "text": "- Aquinnah (1) necesita que otro enemigo reciba el daño para poder redirigir el daño recibido."
+      "text": "- Aquinnah (1) necesita que haya otro enemigo en juego para que éste reciba el daño redirigido."
     },
     {
       "code": "01084",

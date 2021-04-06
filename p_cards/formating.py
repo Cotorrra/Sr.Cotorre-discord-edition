@@ -1,7 +1,8 @@
 from core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
     faction_order, format_victory, format_illus_pack, create_embed
 from errata.errata import format_errata_text
-from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills
+from p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
+    format_sub_text_short
 from taboo.taboo import format_taboo_text
 
 
@@ -67,7 +68,7 @@ def format_player_card_deck(c, qty=0):
                 "level": "%s" % format_xp(c),
                 "class": faction_order[c['faction_code']] + format_faction(c),
                 "quantity": "x%s" % str(qty) if qty > 1 else "",
-                "subname": ": _%s_" % c['subname'] if ("subname" in c and "Campaign Log" in c['real_text']) else ""
+                "subname": format_sub_text_short(c)
                 }
     text = "%(class)s %(name)s%(level)s %(quantity)s" % formater
     return text

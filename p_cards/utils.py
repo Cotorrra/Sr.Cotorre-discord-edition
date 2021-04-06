@@ -66,3 +66,10 @@ def get_color_by_investigator(deck, cards):
     inv_id = deck['investigator_code']
     inv_card = find_by_id(inv_id, cards)
     return color_picker(inv_card)
+
+
+def format_sub_text_short(c):
+    if 'real_text' in c:
+        if "subname" in c and "Campaign Log" in c['real_text']:
+            return ": _%s_" % c['subname']
+    return ""
