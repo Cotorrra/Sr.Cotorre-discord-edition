@@ -17,7 +17,7 @@ def format_player_card(c):
                 "icons": "Iconos de Habilidad: %s\n" % format_skill_icons(c) if format_skill_icons(c) != "" else "",
                 "costs": "Coste: %s \n" % format_number(c['cost']) if "cost" in c else "",
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
-                "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
+                "flavour": "_%s_\n\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "health_sanity": "%s \n" % format_health_sanity(c) if format_health_sanity(c) != "" else "",
                 "taboo_text": format_taboo_text(c['code']),
                 "errata_text": format_errata_text(c['code']),
@@ -48,7 +48,7 @@ def format_inv_card_f(c):
                 "traits": "*%s*\n" % c['traits'],
                 "taboo_text": format_taboo_text(c['code']),
                 "errata_text": format_errata_text(c['code']),
-                "flavour": "_%s_\n" % c['flavor'] if "flavor" in c else "",
+                "flavour": "_%s_\n\n" % c['flavor'] if "flavor" in c else "",
                 }
 
     m_title = "%(class)s %(name)s %(subname)s " % formater

@@ -32,7 +32,7 @@ ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='tus Miedos'))
+    await bot.change_presence(activity=discord.Game('Wingspan'))
 
 
 @bot.command(name='hhelp')
@@ -48,7 +48,7 @@ async def send_help_short(ctx):
           " [WIP]"
     ahc = "``!ahr [nombre]`` \n > Busca reglas o palabras clave del manual del juego. [WIP]"
     ahhelp = "``!ahhelp``\n" \
-             "> Devuelve la versión corta de la ayuda (esta)." \
+             "> Devuelve la versión corta de la ayuda (esta). \n" \
              "``!ahhelpme``\n" \
              "> Devuelve la versión larga de la ayuda."
     embed = discord.Embed(title=title, description=description)
@@ -88,7 +88,7 @@ async def send_help(ctx):
           "**T**: para Traiciones\n" \
           "**E**: para Enemigos\n" \
           "**L**: Lugares\n" \
-          "**J**: Para cartas de jugador."
+          "**J**: Para cartas de jugador (Apoyos de Historia)."
     ahback = "``!ahback [nombre] ~[subtitulo]~ ([extra])``\n" \
              ">>> Muestra la parte de atrás de ciertas cartas. \n" \
              "``[extra]`` puede contener lo siguiente:\n" \
@@ -101,17 +101,18 @@ async def send_help(ctx):
              "**J**: para Cartas de jugador de encuentros."
     ahd = "``!ahd [id]``\n" \
           ">>> Busca en ArkhamDB el mazo dado y lo muestra, si es público o privado. \n" \
-          "Si el link es ``https://es.arkhamdb.com/deck/view/1320033`` entonces su id será ``1320033``."
+          "Si el link es ``https://es.arkhamdb.com/deck/view/1320033`` entonces el id será ``1320033``. \n"
     ahu = "``!ahu [id]``\n " \
           ">>> Busca en ArkhamDB el historial de mazos y calcula la mejora según el mazo anterior en ArkhamDB."
     ahp = "``!ahp [nombre] ~[subtitulo]~ ([extra])`` \n > Muestra los datos de la carta con las preguntas frecuentes," \
-          " interacciones extrañas y alguno que otro consejo para jugar esta carta. "
+          " interacciones extrañas y alguno que otro consejo para jugar esta carta. " \
+          "\n [extra] Es el mismo que para ``!ahback`` y ``!ahm``"
     ahc = "``!ahr [nombre]`` \n > Busca reglas o palabras clave del manual del juego (o adaptados del manual, " \
           "porque mucho texto). "
     ahhelp = "``!ahhelp``\n" \
              "> Devuelve la versión corta de la ayuda." \
              "``!ahhelpme``\n" \
-             "> Devuelve la versión larga de la ayuda (esta)."
+             "> Devuelve la versión larga de la ayuda (esta).\n"
     footnote = "El Sr. \"Co-Torre\"™ es desarrollado por Cotorra."
     embed = discord.Embed(title=title, description=description)
     embed.add_field(name="Cartas de Jugador:", value=ahj, inline=False)

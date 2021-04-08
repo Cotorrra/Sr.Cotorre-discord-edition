@@ -11,7 +11,7 @@ def format_enemy_card(c):
                 "type": "__%s__\n" % c['type_name'],
                 "traits": hide_if_spoiler("*%s*\n" % c['traits'] if "traits" in c else "", c),
                 "text": "> %s \n" % format_card_text(c),
-                "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
+                "flavour": hide_if_spoiler("_%s_\n\n" % format_text(c['flavor']) if "flavor" in c else "", c),
                 "stats": "%s \n" % hide_if_spoiler(format_enemy_stats(c), c),
                 "attack": hide_if_spoiler("Ataque: %s\n" % format_attack(c) if format_attack(c) != "" else "", c),
                 "victory": format_victory(c),
@@ -27,7 +27,7 @@ def format_enemy_card(c):
                     "%(victory)s" \
                     "%(vengeance)s\n" \
                     "%(attack)s\n" \
-                    "%(flavour)s \n" \
+                    "%(flavour)s" \
                     "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
     return create_embed(c, m_title, m_description, m_footnote)

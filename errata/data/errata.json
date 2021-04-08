@@ -66,7 +66,7 @@
   },
   {
     "code": "02230",
-    "text": "La capacidad de esta carta deber\u00eda decir: \u00abDespu\u00e9s de que reveles una ficha de Caos que no sea z, gasta 2 recursos: Ignora esa ficha de Caos y revela otra para resolverla. Si esa ficha tiene un s\u00edmbolo z, retira los Dados de la suerte de la partida (no se puede ignorar/cancelar).\u00bb."
+    "text": "La capacidad de esta carta deber\u00eda decir: \u00abDespu\u00e9s de que reveles una ficha de Caos que no sea [auto_fail], gasta 2 recursos: Ignora esa ficha de Caos y revela otra para resolverla. Si esa ficha tiene un s\u00edmbolo [auto_fail], retira los Dados de la suerte de la partida (no se puede ignorar/cancelar).\u00bb."
   },
   {
     "code": "02277",
@@ -118,19 +118,19 @@
   },
   {
     "code": "03178",
-    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
   },
   {
     "code": "03179",
-    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
   },
   {
     "code": "03180",
-    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
   },
   {
     "code": "03181",
-    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]]."
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
   },
   {
     "code": "03179",
@@ -211,6 +211,6 @@
   },
   {
     "code": "60102",
-    "text": "El s\u00edmbolos [free] de esta carta deber\u00edan ser un s\u00edmbolo [reaction]."
+    "text": "El s\u00edmbolo [free] de esta carta deber\u00eda ser un s\u00edmbolo [reaction]."
   }
 ]}
