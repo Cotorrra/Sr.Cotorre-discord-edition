@@ -605,6 +605,558 @@
       "text": "[doom]"
     },
     {
+      "code": "02001",
+      "text": "- Cuando un enemigo [[Descomunal]] entra al lugar de Zoey (o viceversa) en ningún punto éste se enfrenta a Zoey (sólo se considera que éste está enfrentado a Zoey), por lo que Zoey no obtiene el recurso por su habilidad [reaction]."
+    },
+    {
+      "code": "02002",
+      "text": "- Puedes utilizar la [reaction] de Rex para descubrir una pista incluso si el intento de investigar no descubre pistas (por ejemplo en Hurtar)."
+    },
+    {
+      "code": "02003",
+      "text": "- El efecto de obtener un recurso adicional de Jenny se considera un efecto de carta."
+    },
+    {
+      "code": "02004",
+      "text": "- La habilidad de Jim sólo trata el [[modificador]] de las fichas [skull] como 0. Sigue siendo una ficha [skull] para propósitos de otros efectos (la carta de referencia de escenario, [[Hechizos]], etc.)."
+    },
+    {
+      "code": "02005",
+      "text": "- No debes pagar el coste de Duke cuando empiezas la partida."
+    },
+    {
+      "code": "02006",
+      "text": "- Cuando un enemigo [[Descomunal]] entra al lugar de Zoey (o viceversa) en ningún punto éste se enfrenta a Zoey (sólo se considera que éste está enfrentado a Zoey), por lo que Zoey no pude activar la capacidad [reaction] de la Cruz."
+    },
+    {
+      "code": "02007",
+      "text": "- Cualquier investigador puede derrotar al enemigo que tiene vinculado Destruir a los malvados. \n- Si Zoey es eliminada ya sea porque es Derrotada o bien porque usó realizó la acción de **Desistir** mientras  Destruir a los malvados esté en juego, el efecto <b>Obligado</b> se gatilla. \n- Si mientras resuelves el efecto [[Revelación]] de Destruir a los malvados y el mazo de Encuentros se queda sin cartas mientras estás descartando cartas sin encontrar un enemigo, el efecto falla y Destruir a los malvados se descarta. \n- Destruir a los malvados tiene prioridad a la hora de determinar el lugar de aparición del enemigo."
+    },
+    {
+      "code": "02009",
+      "text": "- Si mientras La maldición de Rex está en juego, si su efecto te hace sacar un [elder_sign], puedes elegir fallar automáticamente para devolver esta carta al mazo de Rex. \n- Al devolver una ficha de caos por el efecto de La maldición de Rex, sólo se ignora el valor de ésta, por lo debes resolver los efectos de la ficha recién sacada que puedan haber (por ejemplo los efectos extras de [skull], [cultist], [tablet] o [elder_thing])."
+    },
+    {
+      "code": "02010",
+      "text": "- Al utilizar Truco de Manos para poner en juego las .45 gemelas de Jenny, nunca pagas el coste de éstas, por lo que nunca le das un valor a X. Como X no está definido, entonces su valor es 0."
+    },
+    {
+      "code": "02011",
+      "text": "Cualquier investigador en tu lugar puede activar la [action][action] de esta carta para descartarla. \n- Si Jenny es eliminada ya sea porque es Derrotada o bien porque usó realizó la acción de **Desistir** mientras Buscando a Izzie está en juego, el efecto <b>Obligado</b> se gatilla."
+    },
+    {
+      "code": "02013",
+      "text": "- Revelas las 5 fichas al mismo tiempo."
+    },
+    {
+      "code": "02014",
+      "text": "- Mientras utilizas la habilidad de [[Investigar]] de Duke, primero pagas los costes (agotar Duke), luego sufres los ataques de oportunidad en tu lugar actual (si hay) y después te mueves a un lugar conectado y lo investigas. Los enemigos en el nuevo lugar no van a provocar nuevos ataques de oportunidad. \n- Si tienes Paralizado por el Miedo en tu zona de amenaza, sólo la primera habilidad de Duke te costará una acción adicional."
+    },
+    {
+      "code": "02015",
+      "text": "Cualquier investigador en tu lugar puede activar la [action][action] de esta carta para descartarla. \n- Los apoyos agotados que no necesiten agotarse como parte de su coste se pueden seguir utilizando."
+    },
+    {
+      "code": "02018",
+      "text": "- Sólo puedes intercambiar apoyos en juego, no puedes intercambiar cartas de la mano. \n- Sólo puedes intercambiar recursos entre un investigador a otro, no puedes colocar fichas de una carta a otra. \n- Un investigador no puede controlar cartas características de otros investigadores, por lo que se pueden intercambiar por medio de Trabajo en Equipo."
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
+      "code": "",
+      "text": ""
+    },
+    {
       "code": "",
       "text": ""
     },
