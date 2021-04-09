@@ -1,6 +1,7 @@
 import os
 
 import discord
+from discord_slash import SlashCommand
 import requests
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -20,6 +21,7 @@ from p_cards.search import use_pc_keywords
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='!a')
+slash = SlashCommand(bot, sync_commands=True)
 
 ah_all_cards = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=1').json()
 
@@ -220,5 +222,12 @@ async def look_for_concept(ctx):
         await ctx.send("", embed=embed)
     else:
         await ctx.send("Hm... No encontré nada.")
+
+guild_ids = [804912893589585964]  #
+
+
+@slash.slash(name="ping", guild_ids=guild_ids)
+async def _ping(ctx): # Defines a new "context" (ctx) command called "ping."
+    await ctx.send(f"Pong! ({bot.latency*1000}ms)")
 
 bot.run(TOKEN)
