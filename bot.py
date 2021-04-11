@@ -4,10 +4,12 @@ import discord
 from discord_slash import SlashCommand
 import requests
 from discord.ext import commands
+from discord_slash.utils.manage_commands import create_choice, create_option
 from dotenv import load_dotenv
 
 from FAQ.formating import format_faq
 from backs.search import resolve_back_search
+from core.formating import format_text
 from rules.rules import search_for_concept
 from rules.formating import format_concept
 from core.resolve import resolve_search
@@ -15,8 +17,8 @@ from core.search import card_search
 from decks.formating import format_deck
 from decks.deck import extract_deck_info
 from decks.search import search_for_upgrades, find_deck
-from e_cards.search import use_ec_keywords
-from p_cards.search import use_pc_keywords
+from e_cards.search import use_ec_keywords, format_query_ec
+from p_cards.search import use_pc_keywords, format_query_pc
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -34,7 +36,7 @@ ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
-    await bot.change_presence(activity=discord.Game('Wingspan'))
+    await bot.change_presence(activity=discord.Game('hacer /'))
 
 
 @bot.command(name='hhelp')
@@ -192,10 +194,8 @@ async def look_for_location_card(ctx, code: str):
     # Lugares
     response = "Trabajando en algo nuevo c:"
 @bot.command(name='hu')
-async def look_for_upgrades(ctx):
-    query = ' '.join(ctx.message.content.split()[1:])
-
-    response, embed = search_for_upgrades(query, ah_player)
+async def look_for_upgrades(ctx, code):
+    response, embed = search_for_upgrades(code, ah_player)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -223,11 +223,167 @@ async def look_for_concept(ctx):
     else:
         await ctx.send("Hm... No encontré nada.")
 
-guild_ids = [804912893589585964]  #
+
+@slash.slash(name="ah",
+             description="Busca cartas de jugador en ArkhamDB.",
+             options=[
+                 create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
+                 create_option(name="nivel", description="Nivel de la carta", option_type=4, required=False),
+                 create_option(name="clase", description="Clase de la carta.", option_type=3, required=False,
+                               choices=[
+                                   create_choice(name="Guardián", value="G"),
+                                   create_choice(name="Buscador", value="B"),
+                                   create_choice(name="Rebelde", value="R"),
+                                   create_choice(name="Místico", value="M"),
+                                   create_choice(name="Superviviente", value="S"),
+                                   create_choice(name="Neutral", value="N"),
+                               ]),
+                 create_option(name="extras", description="Extras", option_type=3, required=False,
+                               choices=[
+                                   create_choice(name="Permanente", value="P"),
+                                   create_choice(name="Excepcional", value="E"),
+                                   create_choice(name="Avanzada", value="A"),
+                                   create_choice(name="Única", value="U"),
+                                   create_choice(name="Característica", value="C"),
+                               ]),
+             ])
+async def ah_s(ctx, *args):
+    query = format_query_pc(ctx.kwargs)
+    r_cards = card_search(query, ah_player, use_pc_keywords)
+    response, embed = resolve_search(r_cards)
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
 
 
-@slash.slash(name="ping", guild_ids=guild_ids)
-async def _ping(ctx): # Defines a new "context" (ctx) command called "ping."
-    await ctx.send(f"Pong! ({bot.latency*1000}ms)")
+@slash.slash(name="ahMazo",
+             description="Muestra tu mazo de ArkhamDB.",
+             options=[
+                 create_option(name="id",
+                               description="Código del mazo en ArkhamDB.",
+                               option_type=4,
+                               required=True)])
+async def ahMazo_s(ctx, *args):
+    deck = find_deck(ctx.kwargs.get('id'))
+    if not deck:
+        response = "Mazo no encontrado"
+        await ctx.send(response)
+    else:
+        deck_info = extract_deck_info(deck, ah_all_cards)
+        embed = format_deck(deck, deck_info)
+        response = ""
+        await ctx.send(response, embed=embed)
+
+
+@slash.slash(name="ahMejora",
+             description="Muestra la mejora de tu mazo de ArkhamDB",
+             options=[
+                 create_option(name="id",
+                               description="Código del mazo en ArkhamDB.",
+                               option_type=4,
+                               required=True)])
+async def ahMejora_s(ctx, *args):
+    response, embed = search_for_upgrades(ctx.kwargs.get('id'), ah_player)
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
+
+
+@slash.slash(name="ahe",
+             description="Busca cartas de encuentros en ArkhamDB.",
+             options=[
+                 create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
+                 create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
+                               choices=[
+                                   create_choice(name="Escenario", value="S"),
+                                   create_choice(name="Acto", value="A"),
+                                   create_choice(name="Plan", value="P"),
+                                   create_choice(name="Traición", value="T"),
+                                   create_choice(name="Enemigo", value="E"),
+                                   create_choice(name="Lugares", value="L"),
+                                   create_choice(name="Cartas de Jugador", value="J"),
+                               ]),
+             ])
+async def ahe_s(ctx, *args):
+    query = format_query_ec(ctx.kwargs)
+    r_cards = card_search(query, ah_encounter, use_ec_keywords)
+    response, embed = resolve_search(r_cards)
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
+
+
+@slash.slash(name="ahFAQ",
+             description="Busca FAQs en cartas.",
+             options=[
+                 create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
+                 create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
+                               choices=[
+                                   create_choice(name="Escenario", value="S"),
+                                   create_choice(name="Acto", value="A"),
+                                   create_choice(name="Plan", value="P"),
+                                   create_choice(name="Traición", value="T"),
+                                   create_choice(name="Enemigo", value="E"),
+                                   create_choice(name="Lugares", value="L"),
+                                   create_choice(name="Cartas de Jugador", value="J"),
+                               ]),
+             ])
+async def ahfaq_s(ctx, *args):
+    query = format_query_ec(ctx.kwargs)
+    r_cards = card_search(query, ah_all_cards, use_ec_keywords)
+    if r_cards:
+        embed = format_faq(r_cards[0])
+        await ctx.send("", embed=embed)
+    else:
+        await ctx.send("No encontré la carta.")
+
+
+@slash.slash(name="ahReglas",
+             description="Busca Reglas/Conceptos del juego.",
+             options=[create_option(name="regla",
+                                    description="Nombre de la regla/concepto.",
+                                    option_type=3,
+                                    required=True)])
+async def ahReglas_s(ctx):
+    query = ctx.kwargs.get('regla')
+    search = search_for_concept(query)
+    if search:
+        embed = format_concept(search)
+        await ctx.send("", embed=embed)
+    else:
+        await ctx.send("Hm... No encontré nada.")
+
+
+@slash.slash(name="ahb",
+             description="Busca las partes traseras de cartas.",
+             options=[
+                 create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
+                 create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
+                               choices=[
+                                   create_choice(name="Escenario", value="S"),
+                                   create_choice(name="Acto", value="A"),
+                                   create_choice(name="Plan", value="P"),
+                                   create_choice(name="Traición", value="T"),
+                                   create_choice(name="Enemigo", value="E"),
+                                   create_choice(name="Lugares", value="L"),
+                                   create_choice(name="Cartas de Jugador", value="J"),
+                               ]),
+             ])
+async def ahback_s(ctx):
+    query = format_query_ec(ctx.kwargs)
+    f_cards = [c for c in ah_all_cards if c["double_sided"]]
+    r_cards = card_search(query, f_cards, use_ec_keywords)
+    response, embed = resolve_back_search(r_cards)
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
 
 bot.run(TOKEN)

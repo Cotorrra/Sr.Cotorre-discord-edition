@@ -36,3 +36,13 @@ def use_pc_keywords(cards: list, key_list: str):
             filtered_cards = [c for c in filtered_cards if "Advanced." in c['real_text']]
 
     return filtered_cards
+
+
+def format_query_pc(kwargs):
+    name = kwargs.get('nombre')
+    subtitle = f" ~{kwargs.get('subtitulo')}~" if kwargs.get('subtitulo') else " "
+    lvl = str(kwargs.get('nivel')) if kwargs.get('nivel') else ""
+    clase = kwargs.get('clase') if kwargs.get('clase') else ""
+    ex = kwargs.get('extra') if kwargs.get('extra') else ""
+    extra = f" ({str(lvl) + clase + ex})"
+    return name + subtitle + extra

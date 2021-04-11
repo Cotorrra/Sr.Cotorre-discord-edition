@@ -24,12 +24,15 @@ def use_ec_keywords(cards: list, key_list: str):
             filtered_cards = [c for c in filtered_cards if c['type_code'] == "scenario"]
         if char == "l":
             filtered_cards = [c for c in filtered_cards if c['type_code'] == "location"]
-        if char == "i":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'investigator']
         if char == "j":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'neutral']
+            filtered_cards = [c for c in filtered_cards if c['type_code'] in ['asset', 'event', 'skill']]
 
     return filtered_cards
 
 
-
+def format_query_ec(kwargs):
+    name = kwargs.get('nombre')
+    subtitle = f" ~{kwargs.get('subtitulo')}~" if kwargs.get('subtitulo') else " "
+    tipo = kwargs.get('tipo') if kwargs.get('clase') else ""
+    extra = f" ({tipo})"
+    return name + subtitle + extra

@@ -11,14 +11,14 @@ def find_deck(code: str):
         link = 'https://es.arkhamdb.com/api/public/decklist/%s' % code
         req = requests.get(link)
         if req.url != link:
-            return False
+            return {}
     return req.json()
 
 
 def find_former_deck(code: str):
     curr_deck = find_deck(code)
     if curr_deck:
-        former_code = str(curr_deck["previous_deck"])
+        former_code = str(curr_deck['previous_deck'])
         former_deck = find_deck(former_code)
         if former_deck:
             return former_deck
@@ -27,9 +27,9 @@ def find_former_deck(code: str):
     return False
 
 
-def search_for_upgrades(query, cards):
-    deck1 = find_deck(query)
-    deck2 = find_former_deck(query)
+def search_for_upgrades(code, cards):
+    deck1 = find_deck(code)
+    deck2 = find_former_deck(code)
     if not deck1:
         response = "No encontré el mazo."
         embed = False
