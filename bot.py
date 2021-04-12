@@ -228,7 +228,6 @@ async def look_for_concept(ctx):
              description="Busca cartas de jugador en ArkhamDB.",
              options=[
                  create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
-                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
                  create_option(name="nivel", description="Nivel de la carta", option_type=4, required=False),
                  create_option(name="clase", description="Clase de la carta.", option_type=3, required=False,
                                choices=[
@@ -247,6 +246,7 @@ async def look_for_concept(ctx):
                                    create_choice(name="Única", value="U"),
                                    create_choice(name="Característica", value="C"),
                                ]),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
              ])
 async def ah_s(ctx, *args):
     query = format_query_pc(ctx.kwargs)
@@ -296,7 +296,6 @@ async def ahMejora_s(ctx, *args):
              description="Busca cartas de encuentros en ArkhamDB.",
              options=[
                  create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
-                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
                  create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
                                choices=[
                                    create_choice(name="Escenario", value="S"),
@@ -307,6 +306,7 @@ async def ahMejora_s(ctx, *args):
                                    create_choice(name="Lugares", value="L"),
                                    create_choice(name="Cartas de Jugador", value="J"),
                                ]),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
              ])
 async def ahe_s(ctx, *args):
     query = format_query_ec(ctx.kwargs)
@@ -322,7 +322,6 @@ async def ahe_s(ctx, *args):
              description="Busca FAQs en cartas.",
              options=[
                  create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
-                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
                  create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
                                choices=[
                                    create_choice(name="Escenario", value="S"),
@@ -333,6 +332,8 @@ async def ahe_s(ctx, *args):
                                    create_choice(name="Lugares", value="L"),
                                    create_choice(name="Cartas de Jugador", value="J"),
                                ]),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
+
              ])
 async def ahfaq_s(ctx, *args):
     query = format_query_ec(ctx.kwargs)
@@ -350,7 +351,7 @@ async def ahfaq_s(ctx, *args):
                                     description="Nombre de la regla/concepto.",
                                     option_type=3,
                                     required=True)])
-async def ahReglas_s(ctx):
+async def ahReglas_s(ctx, *args):
     query = ctx.kwargs.get('regla')
     search = search_for_concept(query)
     if search:
@@ -364,7 +365,6 @@ async def ahReglas_s(ctx):
              description="Busca las partes traseras de cartas.",
              options=[
                  create_option(name="nombre", description="Nombre de la carta.", option_type=3, required=True),
-                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
                  create_option(name="tipo", description="Tipo de la carta.", option_type=3, required=False,
                                choices=[
                                    create_choice(name="Escenario", value="S"),
@@ -375,8 +375,9 @@ async def ahReglas_s(ctx):
                                    create_choice(name="Lugares", value="L"),
                                    create_choice(name="Cartas de Jugador", value="J"),
                                ]),
+                 create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
              ])
-async def ahback_s(ctx):
+async def ahback_s(ctx, *args):
     query = format_query_ec(ctx.kwargs)
     f_cards = [c for c in ah_all_cards if c["double_sided"]]
     r_cards = card_search(query, f_cards, use_ec_keywords)
