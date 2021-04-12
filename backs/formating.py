@@ -25,11 +25,10 @@ def format_inv_card_b(c):
     return embed
 
 
-
 def format_location_card_b(c):
     formater = {"name": format_name(c),
                 "back": "> %s \n" % format_card_text(c, "back_text") if "back_text" in c else "",
-                "flavour": "_%s_\n" % c['back_flavor'] if "back_flavor" in c else "",
+                "flavour": "_%s_\n" % format_card_text(c, "back_flavor") if "back_flavor" in c else "",
                 }
     m_title = "%(name)s" % formater
     m_description = "%(back)s \n" \
