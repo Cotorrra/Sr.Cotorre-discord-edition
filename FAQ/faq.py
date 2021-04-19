@@ -3,12 +3,13 @@ import json
 from core.formating import format_text
 
 
-def load_faq():
+def load_faq(card_id):
     """
     Carga el archivo de taboo.
     :return:
     """
-    with open('FAQ/data/faq.json', encoding='utf-8') as faq:
+    code = card_id[:2]
+    with open(f'FAQ/data/faq{code}.json', encoding='utf-8') as faq:
         info = json.load(faq)
 
     info['cards'] = json.dumps(info['cards'])
@@ -17,11 +18,11 @@ def load_faq():
     return info
 
 
-def has_faq(card_id):
+def has_faq(card_id, faq_info):
     """
-    Devuelve True si la carta posee una errata
+    Devuelve True si la carta posee FAQ
+    :param faq_info:
     :param card_id:
-    :param version:
     :return:
     """
     for card in faq_info['cards']:
@@ -30,11 +31,11 @@ def has_faq(card_id):
     return False
 
 
-def get_faq(card_id):
+def get_faq(card_id, faq_info):
     """
-    Devuelve la informacion de la carta dada en la informacion de erratas.
-    :param card_id:
-    :param version:
+    Devuelve la informacion de la carta dada en la informacion de FAQ.
+    :param faq_info: Información del FAQ
+    :param card_id: Id de la carta
     :return:
     """
     for card in faq_info['cards']:
@@ -44,9 +45,10 @@ def get_faq(card_id):
 
 
 def format_faq_text(card_id, back=False):
+    faq_info = load_faq(card_id)
     text = "**Preguntas Frecuentes**: \n"
-    if has_faq(card_id):
-        card = get_faq(card_id)
+    if has_faq(card_id, faq_info):
+        card = get_faq(card_id, faq_info)
         if back and ('text_back' in card):
             text += ">>> %s \n" % format_text(card['text_back'])
         elif 'text' in card:
@@ -55,5 +57,3 @@ def format_faq_text(card_id, back=False):
     else:
         return "Esta carta no tiene FAQ _(aún)_"
 
-
-faq_info = load_faq()

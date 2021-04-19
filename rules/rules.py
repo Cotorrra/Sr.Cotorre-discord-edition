@@ -18,6 +18,7 @@ def load_concepts():
 
 
 def search_for_concept(query: str):
+    concepts = load_concepts()
     search = sorted(concepts['rules'],
                     key=lambda con: -hits_in_string(query, con['title']) - 3 * hits_in_string(query, con['keyword'], False))
     if search:
@@ -26,4 +27,4 @@ def search_for_concept(query: str):
         return {}
 
 
-faq_info = load_concepts()
+
