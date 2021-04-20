@@ -30,7 +30,7 @@ def format_all_assets(info):
 def format_deck(deck, info):
     formater = {"name": "%s" % deck['name'],
                 "investigator": "_Mazo para %s_" % deck['investigator_name'],
-                "xp": "Experiencia Necesaria: %s" % str(info['xp']),
+                "xp": "Experiencia necesaria: %s" % str(info['xp']),
                 "assets": "Apoyos: (%s)" % str(info["assets_q"]) if info['assets_q'] > 0 else "",
                 "events": "Eventos: (%s)" % str(info["events_q"]) if info['events_q'] > 0 else "",
                 "skills": "Habilidades: (%s)" % str(info["skills_q"]) if info['skills_q'] > 0 else "",
@@ -65,7 +65,7 @@ def format_deck(deck, info):
 def format_upgraded_deck(deck1, info):
     formater = {"name": "%s" % deck1['name'],
                 "investigator": "_Mazo para %s_" % deck1['investigator_name'],
-                "xp": "Experiencia Utilizada: %s" % str(info['xp_diff']),
+                "xp": "Experiencia utilizada: %s" % str(info['xp_diff']),
                 }
 
     m_title = "%(name)s" % formater
@@ -80,7 +80,7 @@ def format_upgraded_deck(deck1, info):
                         value=format_list_of_cards_upgr(info["buys_in"]), inline=True)
 
     if len(info['buys_out']) > 0:
-        embed.add_field(name="Cambios retiradas:",
+        embed.add_field(name="Cartas retiradas:",
                         value=format_list_of_cards_upgr(info["buys_out"]), inline=True)
 
     return embed

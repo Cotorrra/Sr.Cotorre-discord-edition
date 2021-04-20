@@ -92,10 +92,11 @@ def find_and_extract(string: str, start_s: str, end_s: str):
         return string, "", enable
 
 
-def hits_in_string(query: str, find: str):
+def hits_in_string(query: str, find: str, pos_hit=True):
     """
     Retorna la cantidad de veces únicas en las que un string contiene una palabra en el otro.
-    Va por palabras.6,mnbvcxz<
+    Va por palabras.
+    :param pos_hit:
     :param find:
     :param query:
     :return:
@@ -111,7 +112,7 @@ def hits_in_string(query: str, find: str):
             if w1_c == w2_c and w1_c not in hit_list:
                 hits += 1
                 hit_list.append(w1_c)
-                if set1.index(w1) == set2.index(w2):
+                if set1.index(w1) == set2.index(w2) and pos_hit:
                     hits += 1
     return hits
 

@@ -30,15 +30,13 @@ def resolve_search(r_cards):
         else:
             embed = format_player_card(r_cards[0])
 
-        response = ""
         footing = format_illus_pack(r_cards[0])
         embed.set_footer(text=footing)
 
     else:
-        response = "No encontré ninguna carta"
         embed = False
 
-    return response, embed
+    return embed
 
 
 def list_rest(array, max_entries=4):

@@ -1,9 +1,10 @@
 import json
 
 from core.formating import format_text
+from core.search import hits_in_string
 
 
-def load_concepts():
+def load_rules():
     """
     Carga el archivo de taboo.
     :return:
@@ -17,14 +18,12 @@ def load_concepts():
     return info
 
 
-def search_for_concept(query: str):
-    concepts = load_concepts()
-    search = sorted(concepts['rules'],
-                    key=lambda con: -hits_in_string(query, con['title']) - 3 * hits_in_string(query, con['keyword'], False))
+def search_for_rules(query: str):
+    rules = load_rules()
+    search = sorted(rules['rules'],
+                    key=lambda con: - hits_in_string(query, con['title']) - 3 * hits_in_string(query, con['keyword'],
+                                                                                               False))
     if search:
         return search[0]
     else:
         return {}
-
-
-
