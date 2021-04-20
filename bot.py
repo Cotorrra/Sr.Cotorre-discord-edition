@@ -180,19 +180,6 @@ async def look_for_encounter(ctx, code: str):
         await ctx.send(response)
 
 
-@bot.command(name='l')
-async def look_for_location_card(ctx, code: str):
-    query = ' '.join(ctx.message.content.split()[1:])
-    query, keyword_query, keyword_mode = find_and_extract(query, "(", ")")
-    query, sub_query, sub_text_mode = find_and_extract(query, "~", "~")
-    r_cards = search(query, ah_encounter)
-    if sub_text_mode:
-        r_cards = [c for c in r_cards if filter_by_subtext_ec(c, sub_query)]
-    if keyword_mode:
-        r_cards = use_ec_keywords(r_cards, keyword_query)
-
-    # Lugares
-    response = "Trabajando en algo nuevo c:"
 @bot.command(name='hu')
 async def look_for_upgrades(ctx, code):
     response, embed = search_for_upgrades(code, ah_player)
@@ -278,7 +265,7 @@ async def ahMazo_s(ctx, *args):
 
 
 @slash.slash(name="ahMejora",
-             description="Muestra la mejora de tu mazo de ArkhamDB",
+             description="Muestra la mejora de tu mazo de ArkhamDB.",
              options=[
                  create_option(name="id",
                                description="Código del mazo en ArkhamDB.",
@@ -386,5 +373,6 @@ async def ahback_s(ctx, *args):
         await ctx.send(response, embed=embed)
     else:
         await ctx.send(response)
+
 
 bot.run(TOKEN)

@@ -38,7 +38,7 @@ def search_for_upgrades(code, cards):
         embed = False
     else:
         info = check_upgrade_rules(deck2, deck1, cards)
-        response = "¡Encontré una Mejora!"
+        response = ""
         embed = format_upgraded_deck(deck1, info)
 
     return response, embed

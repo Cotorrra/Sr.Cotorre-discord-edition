@@ -75,28 +75,36 @@ def format_upgraded_deck(deck1, info):
     url = "https://es.arkhamdb.com/deck/view/%s" % deck1['id']
     embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
-    if len(info['buys_out']) > 0:
-        embed.add_field(name="Cambios (-):",
-                        value=format_list_of_cards(info["buys_out"]), inline=True)
-
     if len(info['buys_in']) > 0:
-        embed.add_field(name="Cambios (+):",
-                        value=format_list_of_cards(info["buys_in"]), inline=True)
+        embed.add_field(name="Cartas añadidas:",
+                        value=format_list_of_cards_upgr(info["buys_in"]), inline=True)
 
-    # if in_out_len(info, 'arcane_upg') > 0:
-    #   embed.add_field(name="Mejora de Investigación Arcana", value=format_upgrades(info, 'arcane_upg'), inline=False)
-
-    # if len(info['parallel_buy']) > 0:
-    #    embed.add_field(name="Mejora Especial (Agnes/Skids)", value=format_special_upgr(info), inline=False)
-
-    # if in_out_len(info, 'adaptable') > 0:
-    #    embed.add_field(name="Cambios por Adaptable (-):",
-    #                    value=format_list_of_cards(format_in_out_upgr(info, "adaptable")[0]), inline=True)
-
-    #    embed.add_field(name="Cambios por Adaptable (+)",
-    #                    value=format_list_of_cards(format_in_out_upgr(info, "adaptable")[1]), inline=True)
+    if len(info['buys_out']) > 0:
+        embed.add_field(name="Cambios retiradas:",
+                        value=format_list_of_cards_upgr(info["buys_out"]), inline=True)
 
     return embed
+
+
+def format_list_of_cards_upgr(arr):
+    copy_arr = arr.copy()
+    array = []
+
+    while len(copy_arr) > 0:
+        q = 0
+        card = copy_arr[0]
+        while card in copy_arr:
+            q += 1
+            copy_arr.remove(card)
+
+        text = format_player_card_deck(card, q)
+        array.append(text)
+    array = sorted(array)
+    text = ""
+    for c in array:
+        text += "\n%s" % c[1:]
+
+    return text
 
 
 def format_list_of_cards(arr):
@@ -109,4 +117,3 @@ def format_list_of_cards(arr):
         text += "\n%s" % c[1:]
 
     return text
-
