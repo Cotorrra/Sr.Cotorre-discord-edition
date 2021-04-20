@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d075538e-7566-478f-80d6-275c221f88a4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1nc9D4t0dJg1tJYtgdvO0Dv9qrO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Proyects\Discord Bot\concepts" />
+      <recent name="D:\Proyects\Discord Bot\FAQ\data" />
+      <recent name="D:\Proyects\Discord Bot\backs" />
+      <recent name="D:\Proyects\Discord Bot" />
+      <recent name="D:\Proyects\arkhamAI" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Proyects\Discord Bot\errata\data" />
+      <recent name="D:\Proyects\Discord Bot\taboo" />
+      <recent name="D:\Proyects\Discord Bot\formating" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.testing">
+    <configuration name="deck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Discord Bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/decks" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/decks/deck.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Discord Bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.testing" />
+        <item itemvalue="Python.deck" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d075538e-7566-478f-80d6-275c221f88a4" name="Default Changelist" comment="" />
+      <created>1611678388961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611678388961</updated>
+      <workItem from="1611678390046" duration="22998000" />
+      <workItem from="1611791266891" duration="19470000" />
+      <workItem from="1611837059846" duration="21822000" />
+      <workItem from="1611942389502" duration="7168000" />
+      <workItem from="1611949945106" duration="3482000" />
+      <workItem from="1612029199470" duration="6160000" />
+      <workItem from="1612121276073" duration="760000" />
+      <workItem from="1612201185702" duration="22869000" />
+      <workItem from="1612253140942" duration="2414000" />
+      <workItem from="1612255793112" duration="156000" />
+      <workItem from="1612255976908" duration="1781000" />
+      <workItem from="1612282171013" duration="90000" />
+      <workItem from="1612282288718" duration="12947000" />
+      <workItem from="1612311099646" duration="1746000" />
+      <workItem from="1612412024460" duration="2038000" />
+      <workItem from="1612466985086" duration="1544000" />
+      <workItem from="1612540680909" duration="12314000" />
+      <workItem from="1612568963435" duration="1238000" />
+      <workItem from="1612639411399" duration="3873000" />
+      <workItem from="1612725104368" duration="24960000" />
+      <workItem from="1612834228561" duration="5919000" />
+      <workItem from="1612869311574" duration="1466000" />
+      <workItem from="1612912531519" duration="4636000" />
+      <workItem from="1613237664638" duration="5101000" />
+      <workItem from="1613703442953" duration="38662000" />
+      <workItem from="1613762986057" duration="101000" />
+      <workItem from="1613809906517" duration="12712000" />
+      <workItem from="1613921427267" duration="4360000" />
+      <workItem from="1613993826438" duration="17859000" />
+      <workItem from="1614015649093" duration="8657000" />
+      <workItem from="1614027017578" duration="18556000" />
+      <workItem from="1614083695429" duration="7006000" />
+      <workItem from="1614188274680" duration="595000" />
+      <workItem from="1614231879666" duration="30487000" />
+      <workItem from="1614332275801" duration="4715000" />
+      <workItem from="1614347400322" duration="10412000" />
+      <workItem from="1614424524226" duration="57179000" />
+      <workItem from="1614630673403" duration="2977000" />
+      <workItem from="1614634840513" duration="12996000" />
+      <workItem from="1614650654421" duration="37000" />
+      <workItem from="1614697114839" duration="5334000" />
+      <workItem from="1614773523225" duration="1941000" />
+      <workItem from="1614879561095" duration="2196000" />
+      <workItem from="1614946322158" duration="20575000" />
+      <workItem from="1615051493599" duration="4644000" />
+      <workItem from="1615313863903" duration="10000" />
+      <workItem from="1615493789226" duration="594000" />
+      <workItem from="1615680024203" duration="4152000" />
+      <workItem from="1615778285498" duration="4273000" />
+      <workItem from="1615836207037" duration="758000" />
+      <workItem from="1615844668872" duration="2620000" />
+      <workItem from="1616452186899" duration="343000" />
+      <workItem from="1616622655649" duration="2051000" />
+      <workItem from="1616691914241" duration="5738000" />
+      <workItem from="1616763883669" duration="3925000" />
+      <workItem from="1616796680238" duration="10597000" />
+      <workItem from="1616866871098" duration="31837000" />
+      <workItem from="1616964908099" duration="14095000" />
+      <workItem from="1617017974227" duration="4742000" />
+      <workItem from="1617163327106" duration="93000" />
+      <workItem from="1617163439784" duration="5000" />
+      <workItem from="1617170227971" duration="318000" />
+      <workItem from="1617190764420" duration="593000" />
+      <workItem from="1617255537840" duration="1830000" />
+      <workItem from="1617299925417" duration="21000" />
+      <workItem from="1617303625340" duration="526000" />
+      <workItem from="1617318377301" duration="27246000" />
+      <workItem from="1617412189520" duration="17370000" />
+      <workItem from="1617527713982" duration="577000" />
+      <workItem from="1617573716764" duration="40000" />
+      <workItem from="1617625608864" duration="7150000" />
+      <workItem from="1617712788509" duration="662000" />
+      <workItem from="1617718418192" duration="1329000" />
+      <workItem from="1617750245292" duration="765000" />
+      <workItem from="1617773046632" duration="3144000" />
+      <workItem from="1617833314575" duration="25000" />
+      <workItem from="1617834425475" duration="1572000" />
+      <workItem from="1617874988094" duration="3639000" />
+      <workItem from="1617935303387" duration="901000" />
+      <workItem from="1617968825209" duration="3448000" />
+      <workItem from="1617972705955" duration="2678000" />
+      <workItem from="1618095050826" duration="22672000" />
+      <workItem from="1618158217033" duration="290000" />
+      <workItem from="1618205335622" duration="2568000" />
+      <workItem from="1618226902270" duration="205000" />
+      <workItem from="1618232696229" duration="1674000" />
+      <workItem from="1618328969850" duration="41000" />
+      <workItem from="1618433213380" duration="637000" />
+      <workItem from="1618585246590" duration="678000" />
+      <workItem from="1618753720536" duration="3586000" />
+      <workItem from="1618836389602" duration="11940000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/sr-cotorre" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Discord_Bot$extractor.coverage" NAME="extractor Coverage Results" MODIFIED="1614637578680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../arkhamAI" />
+    <SUITE FILE_PATH="coverage/Discord_Bot$testing.coverage" NAME="testing Coverage Results" MODIFIED="1617343640548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Discord_Bot$deck.coverage" NAME="deck Coverage Results" MODIFIED="1614647482011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/decks" />
+  </component>
+</project>
