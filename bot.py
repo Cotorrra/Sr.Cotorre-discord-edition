@@ -28,7 +28,10 @@ ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo para usarse c:')
-    await bot.change_presence(activity=discord.Game('hacer /'))
+    # await bot.change_presence(activity=discord.Game('a'))
+    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
+    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
 
 
 @bot.command(name='hhelp')

@@ -46,7 +46,7 @@ def get_faq(card_id, faq_info):
 
 def format_faq_text(card_id, back=False):
     faq_info = load_faq(card_id)
-    text = "**Preguntas Frecuentes**: \n"
+    text = "**Preguntas frecuentes**: \n"
     if has_faq(card_id, faq_info):
         card = get_faq(card_id, faq_info)
         if back and ('text_back' in card):

@@ -289,6 +289,7 @@ def general_card_slash_options():
                               create_choice(name="Enemigo", value="E"),
                               create_choice(name="Lugares", value="L"),
                               create_choice(name="Cartas de Jugador", value="J"),
+                              create_choice(name="Encuentros", value="M"),
                           ]),
             create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False)]
 

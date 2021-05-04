@@ -26,6 +26,8 @@ def use_ec_keywords(cards: list, key_list: str):
             filtered_cards = [c for c in filtered_cards if c['type_code'] == "location"]
         if char == "j":
             filtered_cards = [c for c in filtered_cards if c['type_code'] in ['asset', 'event', 'skill']]
+        if char == "m":
+            filtered_cards = [c for c in filtered_cards if c['faction_code'] == "mythos"]
 
     return filtered_cards
 
