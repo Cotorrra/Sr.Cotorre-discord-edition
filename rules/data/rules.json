@@ -434,17 +434,17 @@
     {
       "keyword": "Fase Mantenimiento",
       "title": "Fase de Mantenimiento",
-      "text": "Estos son los pasos de resolución de la Fase de Mantenimiento: \n>> 1. Comienza la fase de Mantenimiento.\n Ventana de Oportunidad [fast]\n 2. Reinicia las acciones.\n 3. Prepara todas las cartas agotadas.\n 4. Cada investigador roba 1 carta y obtiene 1 recurso.\n 5. Cada investigador comprueba el tamaño de su mano.\n 6. Termina la fase de Mantenimiento. \n Termina la ronda."
+      "text": "Estos son los pasos de resolución de la Fase de Mantenimiento: \n>>> 1. Comienza la fase de Mantenimiento.\n Ventana de Oportunidad [fast]\n 2. Reinicia las acciones.\n 3. Prepara todas las cartas agotadas.\n 4. Cada investigador roba 1 carta y obtiene 1 recurso.\n 5. Cada investigador comprueba el tamaño de su mano.\n 6. Termina la fase de Mantenimiento. \n Termina la ronda."
     },
     {
       "keyword": "Prueba Habilidad",
       "title": "Prueba de Habilidad",
-      "text": "Estos son los pasos de resolución de una prueba de Habilidad: \n>> 1. Determina la habilidad de la prueba. \nVentana de Oportunidad [fast]\n 2. Asigna cartas de la mano a la prueba de habilidad.\n Ventana de Oportunidad [fast]\n 3. Revela la ficha de Caos.\n 4. Resuelve los efectos del símbolo de caos.\n 5. Determina el valor de habilidad modificado del investigador.\n 6. Determina el éxito o fracaso de la prueba de habilidad.\n 7. Aplica los resultados de la prueba de habilidad.\n 8. Termina la prueba de habilidad."
+      "text": "Estos son los pasos de resolución de una prueba de Habilidad: \n>>> 1. Determina la habilidad de la prueba. \nVentana de Oportunidad [fast]\n 2. Asigna cartas de la mano a la prueba de habilidad.\n Ventana de Oportunidad [fast]\n 3. Revela la ficha de Caos.\n 4. Resuelve los efectos del símbolo de caos.\n 5. Determina el valor de habilidad modificado del investigador.\n 6. Determina el éxito o fracaso de la prueba de habilidad.\n 7. Aplica los resultados de la prueba de habilidad.\n 8. Termina la prueba de habilidad."
     },
     {
       "keyword": "Preparación partida",
       "title": "Preparación de la partida",
-      "text": "Para preparar una partida, sigue estos pasos en orden:\n>>> ```1. - Elegir investigadores\n2. - Recibir daño/horror de traumas\n3. - Elegir investigador jefe\n4. - Crear y barajar los mazos de investigador.\n5. - Formar la reserva de fichas.\n6. - Formar la bolsa de caos.\n7. - Coger los recursos iniciales\n8. - Robar la mano inicial\n9. - Leer la introducción del escenario en la guía de campaña.\n10. - Realizar las instrucciones de preparación del escenario.\n11. - Preparar el mazo de Plan.\n12. - Preparar el mazo de Acto.\n13. - Colocar la carta de referencia de escenario.``` \n\n <b>Nota</b>: Durante la preparación no hay oportunidades ([fast]) de los jugadores, sólo se pueden activar capacidades de cartas de Jugador durante la preparación.\n"
+      "text": "Para preparar una partida, sigue estos pasos en orden:\n>>> 1. - Elegir investigadores\n2. - Recibir daño/horror de traumas\n3. - Elegir investigador jefe\n4. - Crear y barajar los mazos de investigador.\n5. - Formar la reserva de fichas.\n6. - Formar la bolsa de caos.\n7. - Coger los recursos iniciales\n8. - Robar la mano inicial\n9. - Leer la introducción del escenario en la guía de campaña.\n10. - Realizar las instrucciones de preparación del escenario.\n11. - Preparar el mazo de Plan.\n12. - Preparar el mazo de Acto.\n13. - Colocar la carta de referencia de escenario. \n\n <b>Nota</b>: Durante la preparación no hay oportunidades ([fast]) de los jugadores, sólo se pueden activar capacidades de cartas de Jugador durante la preparación.\n"
     },
     {
       "keyword": "Zona victoria",
