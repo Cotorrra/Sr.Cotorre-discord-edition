@@ -6,11 +6,11 @@
     },
     {
       "code": "01002",
-      "text": "- La acción adicional de Daisy sólo sirve para activar capacidades [action] en apoyos [[Tomo]], no incluye jugar apoyos [[Tomo]]. \n- Cuando pierdes una o más acciones, las primeras que se pierden son tus 3 acciones principales, después de eso tus acciones adicionales."
+      "text": "- La acción adicional de Daisy sólo sirve para activar capacidades [action] en apoyos <b><em>Tomo</em></b>, no incluye jugar apoyos <b><em>Tomo</b></em>. \n- Cuando pierdes una o más acciones, las primeras que se pierden son tus 3 acciones principales, después de eso tus acciones adicionales."
     },
     {
       "code": "01004",
-      "text": "- No se puede utilizar la [reaction] de Agnes si asignas horror a un Apoyo."
+      "text": "- No se puede utilizar la [reaction] de Agnes si sólo le asignas horror a un Apoyo."
     },
     {
       "code": "01005",
@@ -22,15 +22,15 @@
     },
     {
       "code": "01007",
-      "text": "- Para poder remover pistas de esta carta tiene que haber al menos la misma cantidad de pistas en tu lugar que fueses a descubrir (por ejemplo, tiene que haber 2 pistas en tu lugar para descartar 2 pistas si investigas utilizando Deducción). \n- Tanto descubrir pistas por investigar como por efectos de cartas (como ¡Una Prueba! o la capacidad [reaction] de Roland) pueden descartar pistas de Encubrimiento. \n- La capacidad [reaction] de esta carta no es obligatoria, es opcional utilizarla para descartar pistas de Encubrimiento.\n- Una vez que descubres todas las pistas de Encubrimiento, ésta sigue en tu zona de amenaza hasta el final del escenario. \n- Si Roland es eliminado ya sea porque es Derrotado o bien porque usó realizó la acción de **Desistir** mientras Encubrimiento esté en juego, el efecto <b>Obligado</b> se gatilla. \n- Cualquier investigador en tu lugar puede activar la capacidad [reaction] de esta carta."
+      "text": "- Para poder remover pistas de esta carta tiene que haber al menos la misma cantidad de pistas en tu lugar que fueses a descubrir (por ejemplo, tiene que haber 2 pistas en tu lugar para descartar 2 pistas si investigas utilizando Deducción). \n- Tanto descubrir pistas por investigar como por efectos de cartas (como ¡Una Prueba! o la capacidad [reaction] de Roland) pueden descartar pistas de Encubrimiento. \n- La capacidad [reaction] de esta carta no es obligatoria, es opcional utilizarla para descartar pistas de Encubrimiento.\n- Una vez que descubres todas las pistas de Encubrimiento, ésta sigue en tu zona de amenaza hasta el final del escenario. \n- Si Roland es eliminado ya sea porque es Derrotado o bien porque usó realizó la acción de <b>Desistir</b> mientras Encubrimiento esté en juego, el efecto <b>Obligado</b> se activa. \n- Cualquier investigador en tu lugar puede activar la capacidad [reaction] de esta carta."
     },
     {
       "code": "01008",
-      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- Si algún efecto del juego hace que el Bolso de mano de Daisy se descarte, debes descartar apoyos [[Tomo]] que utilizen espacio de mano hasta que tengas la nueva cantidad de espacio Mano válido.\n"
+      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- Si algún efecto del juego hace que el Bolso de mano de Daisy se descarte, debes descartar apoyos <b><em>Tomo</em></b> que utilicen espacio de mano hasta que tengas la nueva cantidad de espacio Mano válido.\n"
     },
     {
       "code": "01009",
-      "text": "- Si agregas esta carta a tu mano de cualquier forma (i.e por Bibliotecario Investigador), su capacidad <b>Revelación</b> se gatilla de todas formas.\n- Mover daño u horror es diferente a \"recibir\" y/o \"causar\" daño u horror, así que este efecto no permite al jugador reasignar el daño u horror.\n."
+      "text": "- Si agregas esta carta a tu mano de cualquier forma (i.e por Bibliotecario Investigador), su capacidad <b>Revelación</b> se activa de todas formas.\n- Mover daño u horror es diferente a \"recibir\" y/o \"causar\" daño u horror, así que este efecto no permite al jugador reasignar el daño u horror.\n."
     },
     {
       "code": "01010",
@@ -38,11 +38,11 @@
     },
     {
       "code": "01011",
-      "text": "- Si Malasombra es eliminado ya sea porque es Derrotado o bien porque usó realizó la acción de <b>Desistir</b> mientras Deudas del Hospital está en juego, el efecto **Obligado** se gatilla. \n- Cualquier investigador en tu lugar puede activar la capacidad [free] de esta carta, para agregar sus recursos a esta carta. "
+      "text": "- Si Malasombra es eliminado ya sea porque es Derrotado o bien porque usó realizó la acción de <b>Desistir</b> mientras Deudas del Hospital está en juego, el efecto <b>Obligado</b> se activa. \n- Cualquier investigador en tu lugar puede activar la capacidad [free] de esta carta, para agregar sus recursos a esta carta. "
     },
     {
       "code": "01012",
-      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- Cada vez que juegas una carta [[Hechizo]] puedes activar esta carta, ya sean Eventos o Apoyos."
+      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- Cada vez que juegas una carta <b><em>Hechizo</em></b> puedes activar esta carta, ya sean Eventos o Apoyos."
     },
     {
       "code": "01013",
@@ -50,11 +50,11 @@
     },
     {
       "code": "01014",
-      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- **Jugar** y **Asignar** son términos diferentes del juego. El Amuleto de Wendy sólo te permite **Jugar** tu primer evento que esté en tu pila de descartes, no puedes asignarlo a una prueba de habilidad. \n- El efecto **Obligado** se gatilla cuando juegas un evento ya sea desde tu mano o bien de tu pila de descartes, sin embargo no se gatilla si asignas un evento desde tu mano a una prueba de habilidad. \n- El efecto **Obligado** se gatilla después de que un evento se juegue, pero antes de que éste entre a tu pila de descartes, si el evento no entra en tu pila de descartes en ese momento (como Eventos que se vinculan en lugares tales como Cebo), entonces la capacidad **Obligado** no tiene efecto."
+      "text": "- Sólo puedes tener la cantidad requerida de cartas características de investigador en tu mazo, si no se indica la cantidad de cartas, entonces sólo puedes tener una copia en tu mazo. \n- <b>Jugar</b> y <b>Asignar</b> son términos diferentes del juego. El Amuleto de Wendy sólo te permite <b>Jugar</b> tu primer evento que esté en tu pila de descartes, no puedes asignarlo a una prueba de habilidad. \n- El efecto <b>Obligado</b> se activa cuando juegas un evento ya sea desde tu mano o bien de tu pila de descartes, sin embargo no se activa si asignas un evento desde tu mano a una prueba de habilidad. \n- El efecto <b>Obligado</b> se activa después de que un evento se juegue, pero antes de que éste entre a tu pila de descartes, si el evento no entra en tu pila de descartes en ese momento (como Eventos que se vinculan en lugares tales como Cebo), entonces la capacidad <b>Obligado</b> no tiene efecto."
     },
     {
       "code": "01015",
-      "text": "- El horror directo lo recibe la carta de investigador, no puede ser asignado a otro apoyo. \n- Este efecto retira las cartas de la partida, por la duraci\u00f3n de \u00e9sta. \u00c9stas siguen siendo parte de tu mazo durante la campa\u00f1a."
+      "text": "- El horror directo lo recibe la carta de investigador, no puede ser asignado a otro apoyo. \n- Este efecto retira las cartas de la partida, por la duración de ésta. Estas siguen siendo parte de tu mazo durante la campaña."
     },
     {
       "code": "01016",
@@ -70,7 +70,7 @@
     },
     {
       "code": "01019",
-      "text": "- El Machete no te dará el daño extra si el enemigo que estás atacando no está enfrentado a nadie (evitado o [[Indiferente]]) o a otro jugador, debes gastar una acción de **Enfrentar** para tener el daño extra. \n- El daño se otorga si el enemigo es el único enemigo enfrentado a ti, no importa si hay más enemigos en tu lugar o bien éste es [[Descomunal]]. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que está enfrentado a otro investigador al activar esta carta, ese investigador recibe sólo 1 de daño."
+      "text": "- El Machete no te dará el daño extra si el enemigo que estás atacando no está enfrentado a nadie (evitado o <b><em>Indiferente</em></b>) o a otro jugador, debes gastar una acción de <b>Enfrentar</b> para tener el daño extra. \n- El daño se otorga si el enemigo es el único enemigo enfrentado a ti, no importa si hay más enemigos en tu lugar o bien éste es <b><em>Descomunal</em></b>. \n- Si fallas una prueba de habilidad durante un ataque contra un enemigo que está enfrentado a otro investigador al activar esta carta, ese investigador recibe sólo 1 de daño."
     },
     {
       "code": "01020",
@@ -82,11 +82,11 @@
     },
     {
       "code": "01022",
-      "text": "- Los ataques de oportunidad también cuentan como ataques. \n - Esquivar hace que cualquier habilidad **Obligado** que se fuese activar de un enemigo \"Cuando Ataque\" o bien \"Después de que Ataque\" no ocurra. \n- Si un enemigo [[Descomunal]] fuese atacar, Esquivar sólo cancela uno de esos ataques. \n- Si el ataque fue cancelado durante la fase de Enemigos, el enemigo atacante se agota de todas formas."
+      "text": "- Los ataques de oportunidad también cuentan como ataques. \n - Esquivar hace que cualquier habilidad <b>Obligado</b> que se fuese activar de un enemigo \"Cuando Ataque\" o bien \"Después de que Ataque\" no ocurra. \n- Si un enemigo <b><em>Descomunal</em></b> fuese atacar, Esquivar sólo cancela uno de esos ataques. \n- Si el ataque fue cancelado durante la fase de Enemigos, el enemigo atacante se agota de todas formas."
     },
     {
       "code": "01024",
-      "text": "- Como esta carta no tiene un indicador de acción de **Combatir**, cuando fueses a jugar Explosión de Dinamita mientras estás enfrentado con uno o más enemigos, primero gastas la acción y los costes de la carta, luego cada enemigo enfrentado a ti te realiza un ataque de oportunidad, y después de esto los efectos de la carta se resuelven (si sigues con vida, claro). Si los ataques enemigos te derrotan, el evento no se resuelve en lo absoluto."
+      "text": "- Como esta carta no tiene un indicador de acción de <b>Combatir</b>, cuando fueses a jugar Explosión de Dinamita mientras estás enfrentado con uno o más enemigos, primero gastas la acción y los costes de la carta, luego cada enemigo enfrentado a ti te realiza un ataque de oportunidad, y después de esto los efectos de la carta se resuelven (si no eres derrotado, claro). Si los ataques enemigos te derrotan, el evento no se resuelve en lo absoluto."
     },
     {
       "code": "01025",
@@ -94,7 +94,7 @@
     },
     {
       "code": "01026",
-      "text": "- Sólo puedes colocarle fichas de munición a Apoyos [[Arma de fuego]] que tengan Usos (X munición), también puedes poner más fichas de las indicadas en Usos (X munición)."
+      "text": "- Sólo puedes colocarle fichas de munición a Apoyos <b><em>Arma de fuego</em></b> que tengan Usos (X munición), también puedes poner más fichas de las indicadas en Usos (X munición)."
     },
     {
       "code": "01028",
@@ -106,11 +106,11 @@
     },
     {
       "code": "01031",
-      "text": "- No buscas tu mazo por una carta en particular, sólo miras las 3 primeras cartas de tu mazo, elijes la que más te gusta y después barajas tu mazo. \n- Nada te impide elegir una carta de debilidad al momento robar una carta. \n- Para activar la capacidad [action] de esta carta, ésta  necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
+      "text": "- No buscas tu mazo por una carta en particular, sólo miras las 3 primeras cartas de tu mazo, eliges la que más te gusta y después barajas tu mazo. \n- Nada te impide elegir una carta de debilidad al momento robar una carta. \n- Para activar la capacidad [action] de esta carta, ésta necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento."
     },
     {
       "code": "01032",
-      "text": "- Puedes **Investigar** con éxito en un lugar sin pistas. \n- Cualquier acción que diga **Investigar** cuenta para el éxito para efectos de esta carta (por ejemplo Hurto)."
+      "text": "- Puedes <b>Investigar</b> con éxito en un lugar sin pistas. \n- Cualquier acción que diga <b>Investigar</b> cuenta para el éxito para efectos de esta carta (por ejemplo Hurto)."
     },
     {
       "code": "01034",
@@ -138,7 +138,7 @@
     },
     {
       "code": "01041",
-      "text": "- Descartar a un enemigo no es lo mismo que derrotarlo, por lo que se va directamente a la pila de descartes, ignorando si tiene puntos de victoria y sin la posibilidad gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!)."
+      "text": "- Descartar a un enemigo no es lo mismo que derrotarlo, por lo que se va directamente a la pila de descartes, ignorando si tiene puntos de victoria y sin la posibilidad activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!)."
     },
     {
       "code": "01042",
@@ -186,7 +186,7 @@
     },
     {
       "code": "01056",
-      "text": "- Jugar sobre seguro también funciona con los valores de las fichas símbolo ([skull], [cultist], [tabler] y [elder_thing])."
+      "text": "- Jugar sobre seguro también funciona con los valores de las fichas símbolo ([skull], [cultist], [tablet] y [elder_thing])."
     },
     {
       "code": "01058",
@@ -198,7 +198,7 @@
     },
     {
       "code": "01060",
-      "text": "- Para utilizar la capacidad [action] debes tener al menos una carga para poder ser gastada. \n- El efecto \"Si un símbolo es revelado\" se gatilla en el Paso 3 de la Resolución de las pruebas de habilidad. Por lo que si revelas un símbolo [skull], [cultist], [tabler] o [elder_thing] mientras realizas un ataque con Consunción y el horror te derrota, no se aplica el daño aunque tuvieses éxito.. \n- Una vez que se acaban los (Usos X) de este apoyo, éste no se descarta."
+      "text": "- Para utilizar la capacidad [action] debes tener al menos una carga para poder ser gastada. \n- El efecto \"Si un símbolo es revelado\" se activa en el Paso 3 de la Resolución de las pruebas de habilidad. Por lo que si revelas un símbolo [skull], [cultist], [tablet] o [elder_thing] mientras realizas un ataque con Consunción y el horror te derrota, no se aplica el daño aunque tuvieses éxito.. \n- Una vez que se acaban los (Usos X) de este apoyo, éste no se descarta."
     },
     {
       "code": "01061",
@@ -210,15 +210,15 @@
     },
     {
       "code": "01063",
-      "text": "- Toda la perdición en juego cuenta para el umbral de perdición durante el paso \"Comprueba el umbral de perdición\" en la Fase de Mitos, al avanzar el Mazo de Plan, se retira toda la perdición de todas las cartas que tengan fichas de perdición (salvo si un efecto de una carta indique lo contrario). \n- Si mientras Iniciada en lo arcano tenga perdición, ésta es derrotada, la ficha de perdición es devuelta a la reserva de fichas. \n- Mientras estés resolviendo la capacidad [free] de la iniciada en lo arcano si hay una carta [[Hechizo]] entre las primeras 3 cartas del mazo debes robarla sí o sí, incluso si es Recuerdo Oscuro."
+      "text": "- Toda la perdición en juego cuenta para el umbral de perdición durante el paso \"Comprueba el umbral de perdición\" en la Fase de Mitos, al avanzar el Mazo de Plan, se retira toda la perdición de todas las cartas que tengan fichas de perdición (salvo si un efecto de una carta indique lo contrario). \n- Si mientras Iniciada en lo arcano tenga perdición, ésta es derrotada, la ficha de perdición es devuelta a la reserva de fichas. \n- Mientras estés resolviendo la capacidad [free] de la iniciada en lo arcano si hay una carta <b><em>Hechizo</em></b> entre las primeras 3 cartas del mazo debes robarla sí o sí, incluso si es Recuerdo Oscuro."
     },
     {
       "code": "01064",
-      "text": "- Sólo puedes \"descubrir\" una pista sólo si hay una pista en tu lugar. \n- Primero resuelves todas las palabras clave (como Oleada) y capacidades **Revelación** de la carta de encuentros que robes antes de descubrir pistas. \n- Si juegas Atracción por la llama y robas una carta de traiciones que te mueve a otro lugar, terminas descubriendo las pistas en el lugar que estás al terminar de resolver la(s) carta(s) de encuentro(s).\n"
+      "text": "- Sólo puedes \"descubrir\" una pista sólo si hay una pista en tu lugar. \n- Primero resuelves todas las palabras clave (como Oleada) y capacidades <b>Revelación</b> de la carta de encuentros que robes antes de descubrir pistas. \n- Si juegas Atracción por la llama y robas una carta de traiciones que te mueve a otro lugar, terminas descubriendo las pistas en el lugar que estás al terminar de resolver la(s) carta(s) de encuentro(s).\n"
     },
     {
       "code": "01065",
-      "text": "- Sólo puedes cancelar traiciones de cartas que el investigador haya robado. \n- Sólo cancelas el efecto de <b>Revelación</b> de la carta, si la carta tiene Oleada, debes resolver dicho efecto (salvo si lo la carta obtiene Oleada en su efecto de </b>Revelación</b>). "
+      "text": "- Sólo puedes cancelar traiciones de cartas que el investigador haya robado. \n- Sólo cancelas el efecto de <b>Revelación</b> de la carta, si la carta tiene Oleada, debes resolver dicho efecto (salvo si lo la carta obtiene Oleada en su efecto de <b>Revelación</b>). "
     },
     {
       "code": "01067",
@@ -226,11 +226,11 @@
     },
     {
       "code": "01068",
-      "text": "- Los textos de <b>Victoria X</b>, <b>Venganza X</b>, etc. cuentan como parte de la caja de texto del enemigo, por lo que si usas borrado mental en un enemigo con dichas palabras clave, éstas no se gatillan al ser derrotado (i.e ir a la zona de victoria y darte experiencia si tiene **Victoria X**). \n- Los valores de Daño y/o Horror del enemigo no se borran con Borrado Mental."
+      "text": "- Los textos de <b>Victoria X</b>, <b>Venganza X</b>, etc. cuentan como parte de la caja de texto del enemigo, por lo que si usas borrado mental en un enemigo con dichas palabras clave, éstas no se activan al ser derrotado (i.e ir a la zona de victoria y darte experiencia si tiene <b>Victoria X</b>). \n- Los valores de Daño y/o Horror del enemigo no se borran con Borrado Mental."
     },
     {
       "code": "01069",
-      "text": "- El efecto \"Si un símbolo es revelado\" se gatilla en el Paso 3 de la Resolución de las pruebas de habilidad. Por lo que si revelas un símbolo [skull], [cultist], [tabler] o [elder_thing] mientras realizas un intento de evasión con Luz Cegadora (2) y dicho horror te derrota, no se aplica el daño ni se evade el enemigo aunque tuvieses éxito."
+      "text": "- El efecto \"Si un símbolo es revelado\" se activa en el Paso 3 de la Resolución de las pruebas de habilidad. Por lo que si revelas un símbolo [skull], [cultist], [tablet] o [elder_thing] mientras realizas un intento de evasión con Luz Cegadora (2) y dicho horror te derrota, no se aplica el daño ni se evade el enemigo aunque tuvieses éxito."
     },
     {
       "code": "01070",
@@ -242,15 +242,15 @@
     },
     {
       "code": "01072",
-      "text": "- Abrigo de cuero sólo tiene valor de Salid, por lo que sólo se le puede asignar daño a éste."
+      "text": "- Abrigo de cuero sólo tiene valor de Salud, por lo que sólo se le puede asignar daño a éste."
     },
     {
       "code": "01073",
-      "text": "- Puedes usar la [raction] de Reutilizar sin tener la necesidad de que haya pistas en tu lugar y en cualquier activación de una capacidad con el indicador de **Investigación** en la que hayas tenido éxito por 2 o más. \n- Para activar la capacidad [raction] de esta carta, ésta necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento. \n- El éxito se determina en el Paso 6 de la Resolución de las pruebas de habilidad, por lo que no puedes usar Reutilizar para recuperar cartas [[Objeto]] que hayan sido asignadas en la prueba de habilidad de la investigación."
+      "text": "- Puedes usar la [reaction] de Reutilizar sin tener la necesidad de que haya pistas en tu lugar y en cualquier activación de una capacidad con el indicador de <b>Investigación</b> en la que hayas tenido éxito por 2 o más. \n- Para activar la capacidad [reaction] de esta carta, ésta necesita agotarse, si ya está agotada, no se puede activar dicha capacidad. Cada carta se prepara al principio de la fase de mantenimiento. \n- El éxito se determina en el Paso 6 de la Resolución de las pruebas de habilidad, por lo que no puedes usar Reutilizar para recuperar cartas <b><em>Objeto</em></b> que hayan sido asignadas en la prueba de habilidad de la investigación."
     },
     {
       "code": "01074",
-      "text": "- Cuando una ficha de la bolsa del caos es \"cancelada\" o \"ignorada\" en su totalidad (vía la [reaction] de Wendy Adams o Estatua grotesca (4)), considera que dicha ficha nunca se reveló, por lo que efectos que se gatillan al ser revelada dicha ficha <b>no</b> se gatillan. Sin embargo cuando la ficha es parcialmente cancelada o ignorada como en Desafío, hace que los efectos que se gatillan al ser revelada dicha ficha <b>sí</b> se gatillen. \n- Bate de Béisbol se descarta después de que la prueba termine, por lo que si es revelado un símbolo [skull] o [auto_fail] durante la prueba de habilidad, sí se aplica el daño adicional y la bonificación extra de [combat].."
+      "text": "- Cuando una ficha de la bolsa del caos es \"cancelada\" o \"ignorada\" en su totalidad (vía la [reaction] de Wendy Adams o Estatua grotesca (4)), considera que dicha ficha nunca se reveló, por lo que efectos que se activan al ser revelada dicha ficha <b>no</b> se activan. Sin embargo cuando la ficha es parcialmente cancelada o ignorada como en Desafío, hace que los efectos que se activan al ser revelada dicha ficha <b>sí</b> se activan. \n- Bate de Béisbol se descarta después de que la prueba termine, por lo que si es revelado un símbolo [skull] o [auto_fail] durante la prueba de habilidad, sí se aplica el daño adicional y la bonificación extra de [combat].."
     },
     {
       "code": "01075",
@@ -322,7 +322,7 @@
     },
     {
       "code": "01094",
-      "text": "- Chaleco antibalas (4) sólo tiene valor de Salid, por lo que sólo se le puede asignar daño a éste."
+      "text": "- Chaleco antibalas (4) sólo tiene valor de Salud, por lo que sólo se le puede asignar daño a éste."
     },
     {
       "code": "01095",
@@ -350,11 +350,11 @@
     },
     {
       "code": "01101",
-      "text": "- Descartar a un enemigo no es lo mismo que derrotarlo, por lo que se va directamente a la pila de descartes, ignorando si tiene puntos de victoria y sin la posibilidad gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!)."
+      "text": "- Descartar a un enemigo no es lo mismo que derrotarlo, por lo que se va directamente a la pila de descartes, ignorando si tiene puntos de victoria y sin la posibilidad activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!)."
     },
     {
       "code": "01102",
-      "text": "- Si el ataque del Acólito del Crepúsculo de Plata es cancelado (como por ejemplo por Evadir) no se coloca perdición en el Plan Actual."
+      "text": "- Si el ataque del Acólito del Crepúsculo de Plata es cancelado (como por ejemplo por Esquivar) no se coloca perdición en el plan en curso."
     },
     {
       "code": "01103",
@@ -374,7 +374,7 @@
     },
     {
       "code": "01110",
-      "text": "Las capacidades <b>Objetivo</b> son obligatorias, se gatillan tan pronto como la condición se cumpla, en este caso cuando derrotes al Sacerdote Gul, por lo que no podrás activar capacidades \"Cuando Derrotes a un enemigo\"."
+      "text": "Las capacidades <b>Objetivo</b> son obligatorias, se activan tan pronto como la condición se cumpla, en este caso cuando derrotes al Sacerdote Gul, por lo que no podrás activar capacidades \"Cuando Derrotes a un enemigo\"."
     },
     {
       "code": "01111",
@@ -438,7 +438,7 @@
     },
     {
       "code": "01129",
-      "text": "- No hay límite en la cantidad de veces que puedes activar esta capacidad. \n -Mientras estés resolviendo la capacidad [action] de este lugar si hay una carta [[Hechizo]] o [[Tomo]] entre las primeras 6 cartas del mazo debes robarla sí o sí, incluso si es Recuerdo Oscuro o el Necronomicón (Traducción de John Dee)."
+      "text": "- No hay límite en la cantidad de veces que puedes activar esta capacidad. \n -Mientras estés resolviendo la capacidad [action] de este lugar si hay una carta <b><em>Hechizo</em></b> o <b><em>Tomo</em></b> entre las primeras 6 cartas del mazo debes robarla sí o sí, incluso si es Recuerdo Oscuro o el Necronomicón (Traducción de John Dee)."
     },
     {
       "code": "01130",
@@ -450,7 +450,7 @@
     },
     {
       "code": "01132",
-      "text": "- El coste se reduce cada vez que juegas un Apoyo [[Aliado]], por ejemplo utilizar la [reaction] de Leo Anderson mientras él está en este lugar hará que ponga en juego un Apoyo [[Aliado]] reduciendo su coste en 3. \n- Para que la reducción funcione el Apoyo debe tener el rasgo [[Aliado]], no ocupar un espacio de Aliado."
+      "text": "- El coste se reduce cada vez que juegas un Apoyo <b><em>Aliado</em></b>, por ejemplo utilizar la [reaction] de Leo Anderson mientras él está en este lugar hará que ponga en juego un Apoyo <b><em>Aliado</em></b> reduciendo su coste en 3. \n- Para que la reducción funcione el Apoyo debe tener el rasgo <b><em>Aliado</em></b>, no ocupar un espacio de Aliado."
     },
     {
       "code": "01134",
@@ -470,19 +470,19 @@
     },
     {
       "code": "01138",
-      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
+      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
     },
     {
       "code": "01139",
-      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
+      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
     },
     {
       "code": "01140",
-      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
+      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
     },
     {
       "code": "01141",
-      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible gatillar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
+      "text": "- Añadir a un enemigo a la zona de victoria mediante usando la acción <b>Negociar</b> descrita en la carta no es lo mismo que derrotarlo, por lo que no es posible activar efectos de \"Cuando derrotas a un Enemigo\" (i.e ¡Una Prueba!). \n- Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria. \n- Utilizar la capacidad de <b>Negociar</b> de este enemigo no causará ataques de oportunidad por parte de los enemigos enfrentados a ti"
     },
     {
       "code": "01144",
@@ -506,11 +506,11 @@
     },
     {
       "code": "01157",
-      "text": "- Umôrdhoth tiene 6 más 4 de vida <b>por Investigador</b>, por lo que tendrá 10/14/18/22 de vida según la cantidad de investigadores que empezaron el escenario. \n- Después de que comienza la Fase de Enemigos, cada enemigo Cazador que no esté enfrentado a un investigador se mueve una vez hacia un lugar en la ruta más corta donde esté el investigador más cercano, si hay múltiples investigadores a la misma distancia, se elige al investigador que cumpla mejor como su <b>Presa</b>, si no tiene <b>Presa</b> (o si hay empate con respecto a quién es la presa), entonces el Investigador Jefe elige dónde va. \n-Notar que la capacidad [action] de Umôrdhoh no es de <b>Negociar</b>, por lo que recibirás ataques de oportunidad si la activas y puedes ser derrotado antes de que ésta se resulva. \n-Notar tambien que Umôrdhoth no tiene rasgo [[Monstruo]], por lo que no recibirá daño extra por parte de Lita Chantler. \n- Este enemigo es [[Descomunal]], éste no va a la zona de amenaza de un investigador al enfrentarse sino que éste se considera enfrentado a <b>todos</b> los investigadores que estén en su lugar, si un investigador se mueve fuera del lugar de un enemigo descomunal este enemigo ya no estará enfrentado a ese investigador porque éste estará en otro lugar, eso si el investigador recibe un ataque de oportunidad por parte el enemigo si aplica."
+      "text": "- Umôrdhoth tiene 6 más 4 de vida <b>por Investigador</b>, por lo que tendrá 10/14/18/22 de vida según la cantidad de investigadores que empezaron el escenario. \n- Después de que comienza la Fase de Enemigos, cada enemigo Cazador que no esté enfrentado a un investigador se mueve una vez hacia un lugar en la ruta más corta donde esté el investigador más cercano, si hay múltiples investigadores a la misma distancia, se elige al investigador que cumpla mejor como su <b>Presa</b>, si no tiene <b>Presa</b> (o si hay empate con respecto a quién es la presa), entonces el Investigador Jefe elige dónde va. \n-Notar que la capacidad [action] de Umôrdhoh no es de <b>Negociar</b>, por lo que recibirás ataques de oportunidad si la activas y puedes ser derrotado antes de que ésta se resuelva. \n-Notar también que Umôrdhoth no tiene rasgo <b><em>Monstruo</em></b>, por lo que no recibirá daño extra por parte de Lita Chantler. \n- Este enemigo es <b><em>Descomunal</em></b>, éste no va a la zona de amenaza de un investigador al enfrentarse sino que éste se considera enfrentado a <b>todos</b> los investigadores que estén en su lugar, si un investigador se mueve fuera del lugar de un enemigo descomunal este enemigo ya no estará enfrentado a ese investigador porque éste estará en otro lugar, eso si el investigador recibe un ataque de oportunidad por parte el enemigo si aplica."
     },
     {
       "code": "01158",
-      "text": "- Si fallas la prueba de habilidad puedes repartir los efectos de la prueba de habilidad: Por ejemplo si fallas por 5 (sacando [auto_fail]), puedes elegir y descartar 5 cartas de tu mano, recibir 5 de daño y horror, o cualquier combinación entre ambas como elegir y descartar 3 cartas y recibvir 2 de daño y horror, sin embargo si no puedes descartar cartas de tu mano, debes recibir el daño y horror. \n -No puedes elegir y descartar cartas de Debilidad/Traición de tu mano."
+      "text": "- Si fallas la prueba de habilidad puedes repartir los efectos de la prueba de habilidad: Por ejemplo si fallas por 5 (sacando [auto_fail]), puedes elegir y descartar 5 cartas de tu mano, recibir 5 de daño y horror, o cualquier combinación entre ambas como elegir y descartar 3 cartas y recibir 2 de daño y horror, sin embargo si no puedes descartar cartas de tu mano, debes recibir el daño y horror. \n -No puedes elegir y descartar cartas de Debilidad/Traición de tu mano."
     },
     {
       "code": "01159",
@@ -554,7 +554,7 @@
     },
     {
       "code": "01171",
-      "text": "- O bien colocas dos fichas de Perdición sobre un enemigo [[Sectario]] existente o buscas un [[Sectario]] de tu elección y lo robas. \n - Si hay un camino válido hacia un determinado enemigo [[Sectario]] para determinar el \"Enemigo [[Sectario]] más cercano\" ese [[Sectario]] aún cuenta cómo un \"Enemigo [[Sectario]] más cercano\" para efectos de esta carta."
+      "text": "- O bien colocas dos fichas de Perdición sobre un enemigo <b><em>Sectario</em></b> existente o buscas un <b><em>Sectario</em></b> de tu elección y lo robas. \n - Si hay un camino válido hacia un determinado enemigo <b><em>Sectario</em></b> para determinar el \"Enemigo <b><em>Sectario</em></b> más cercano\" ese <b><em>Sectario</em></b> aún cuenta cómo un \"Enemigo <b><em>Sectario</em></b> más cercano\" para efectos de esta carta."
     },
     {
       "code": "01172",
@@ -562,11 +562,11 @@
     },
     {
       "code": "01173",
-      "text": "- Si fallas la prueba, recibes 1 de daño, 1 de horror y luego te mueves a un lugar con el rasgo [[Central]] (Barrio Fluvial, etc.)"
+      "text": "- Si fallas la prueba, recibes 1 de daño, 1 de horror y luego te mueves a un lugar con el rasgo <b><em>Central</em></b> (Barrio Fluvial, etc.)"
     },
     {
       "code": "01174",
-      "text": "- Esta carta se vincula al [[lugar revelado con más pistas]] que no tenga vinculada Puerta cerrada con llave y no necesariamente es tu lugar, si hay empate con respecto a qué lugar, el Investigador Jefe elige donde colocarla (por favor no uses la regla nefasta)."
+      "text": "- Esta carta se vincula al <b><em>lugar revelado con más pistas</em></b> que no tenga vinculada Puerta cerrada con llave y no necesariamente es tu lugar, si hay empate con respecto a qué lugar, el Investigador Jefe elige donde colocarla (por favor no uses la regla nefasta)."
     },
     {
       "code": "01175",
@@ -574,11 +574,11 @@
     },
     {
       "code": "01176",
-      "text": "- Si fallas la prueba y tienes robas Psicosis su capacidad <b>Obligado</b> va inmediatamente a gatillarse y recibirás 1 de daño directo."
+      "text": "- Si fallas la prueba y tienes robas Psicosis su capacidad <b>Obligado</b> va inmediatamente a activar y recibirás 1 de daño directo."
     },
     {
       "code": "01177",
-      "text": "- Si juegas utilizas una acción (sin el indicador <b>Atacar</b>, <b>Evitar</b>, <b>Desistir</b> o <b>Negociar</b>) para jugar una carta mientras estás enfrentado al Observador yithiano te hará un ataque de oportundiad, después de que pagues los costes de la carta pero antes de entrar en juego debes resolver la capacidad <b>Obligado</b>, si dicha habilidad te hace descartar esa misma carta, habrás jugado la carta por nada. \n - Si el ataque de Observador yithiano se cancela (i.e Esquivar), su efecto <b>Obligado</b> no se activa. \n - Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria."
+      "text": "- Si juegas utilizas una acción (sin el indicador <b>Atacar</b>, <b>Evitar</b>, <b>Desistir</b> o <b>Negociar</b>) para jugar una carta mientras estás enfrentado al Observador yithiano te hará un ataque de oportunidad, después de que pagues los costes de la carta pero antes de entrar en juego debes resolver la capacidad <b>Obligado</b>, si dicha habilidad te hace descartar esa misma carta, habrás jugado la carta por nada. \n - Si el ataque de Observador yithiano se cancela (i.e Esquivar), su efecto <b>Obligado</b> no se activa. \n - Este enemigo tiene <b>Victoria X</b>, si lo derrotas, en vez de ir a la pila de descartes de encuentros, éste se va la zona de Victoria."
     },
     {
       "code": "01178",
