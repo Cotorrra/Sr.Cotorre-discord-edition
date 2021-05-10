@@ -40,9 +40,9 @@ def use_pc_keywords(cards: list, key_list: str):
 
 def format_query_pc(kwargs):
     name = kwargs.get('nombre')
-    subtitle = f" ~{kwargs.get('subtitulo')}~" if kwargs.get('subtitulo') else " "
-    lvl = str(kwargs.get('nivel')) if kwargs.get('nivel') else ""
-    clase = kwargs.get('clase') if kwargs.get('clase') else ""
-    ex = kwargs.get('extra') if kwargs.get('extra') else ""
-    extra = f" ({str(lvl) + clase + ex})"
+    subtitle = f" ~{kwargs.get('subtitulo')}~" if kwargs.get('subtitulo') else ""
+    lvl = kwargs.get('nivel') if "nivel" in kwargs else ""
+    clase = kwargs.get('clase') if "clase" in kwargs else ""
+    ex = kwargs.get('extras') if "extras" in kwargs else ""
+    extra = f" ({str(lvl) + clase + ex})" if lvl or clase or ex else ""
     return name + subtitle + extra

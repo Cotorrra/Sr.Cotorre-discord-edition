@@ -98,7 +98,7 @@
     },
     {
       "code": "02037",
-      "text": "- Las reglas no especifican si se puede conocer cual es la debilidad aleatoria del mazo antes de que comience el juego, así que lo puedes hacer de cualquier forma. Si te gusta sorprenderte, puedes barajar tu pozo de debilidades básicas aleatorias boca abajo, pero dejando esta carta boca arriba. Así si robas Endeudado, lo sabrás, pero si robas cualquier otra cosa, no sabrás cual será hasta que la robes."
+      "text": "- Permanente es una capacidad de palabra clave de creación de mazos que aparece en algunas cartas de Jugador. \n- Una carta Permanente no cuenta para tu tamaño de mazo pero sigue contando como parte de tu mazo, y por tanto debe cumplir todas las demás restricciones de creación de mazos (clase, nivel, etc.).\n- Una carta Permanente comienza cada partida en juego y no se añade a tu mazo de Investigador durante la preparación. \n- Una carta Permanente no puede ser descartada de ningún modo. \n- Las reglas no especifican si se puede conocer cual es la debilidad aleatoria del mazo antes de que comience el juego, así que lo puedes hacer de cualquier forma. Si te gusta sorprenderte, puedes barajar tu pozo de debilidades básicas aleatorias boca abajo, pero dejando esta carta boca arriba. Así si robas Endeudado, lo sabrás, pero si robas cualquier otra cosa, no sabrás cual será hasta que la robes."
     },
     {
       "code": "02038",
