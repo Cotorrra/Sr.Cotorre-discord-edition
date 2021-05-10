@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
+from decks.search import format_query_deck
 from e_cards.search import format_query_ec
 from p_cards.search import format_query_pc
 from response.response import help_short, help_long, player_card_slash_options, general_card_slash_options, \
@@ -32,84 +33,6 @@ async def on_ready():
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
-
-
-@bot.command(name='hhelp')
-async def send_help_short(ctx):
-    await ctx.send(embed=help_short())
-
-
-@bot.command(name='hhelpme')
-async def send_help(ctx):
-    await ctx.send(embed=help_long())
-
-
-@bot.command(name='hback')
-async def ahback(ctx):
-    query = ' '.join(ctx.message.content.split()[1:])
-    response, embed = look_for_card_back(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hj')
-async def ahj(ctx):
-    query = ' '.join(ctx.message.content.split()[1:])
-    response, embed = look_for_player_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hd')
-async def ahd(ctx, code: str):
-    response, embed = look_for_deck(code)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hm')
-async def ahm(ctx, code: str):
-    query = ' '.join(ctx.message.content.split()[1:])
-    response, embed = look_for_mythos_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hu')
-async def ahu(ctx, code):
-    response, embed = look_for_upgrades(code)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hp')
-async def ahp(ctx):
-    query = ' '.join(ctx.message.content.split()[1:])
-    response, embed = look_for_faq(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
-
-
-@bot.command(name='hr')
-async def ahr(ctx):
-    query = ' '.join(ctx.message.content.split()[1:])
-    response, embed = look_for_rule(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
 
 
 @slash.slash(name="ah",
