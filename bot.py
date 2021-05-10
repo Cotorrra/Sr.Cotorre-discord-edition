@@ -9,13 +9,13 @@ from dotenv import load_dotenv
 from decks.search import format_query_deck
 from e_cards.search import format_query_ec
 from p_cards.search import format_query_pc
-from response.response import help_short, help_long, player_card_slash_options, general_card_slash_options, \
+from response.response import player_card_slash_options, general_card_slash_options, \
     deck_slash_options, look_for_rule, rules_slash_options, look_for_mythos_card, look_for_player_card, \
     look_for_card_back, look_for_deck, look_for_upgrades, look_for_faq
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-bot = commands.Bot(command_prefix='!a')
+bot = commands.Bot(command_prefix='!SrCotorre')
 slash = SlashCommand(bot, sync_commands=True)
 
 ah_all_cards = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=1').json()

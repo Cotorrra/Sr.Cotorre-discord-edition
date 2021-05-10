@@ -104,6 +104,7 @@ def hits_in_string(query: str, find: str, pos_hit=True):
     hits = 0
     set1 = query.lower().split()
     set2 = find.lower().split()
+    length_bonus = 2 if len(set1) == len(set2) else 1
     hit_list = []
     for w1 in set1:
         for w2 in set2:
@@ -114,6 +115,6 @@ def hits_in_string(query: str, find: str, pos_hit=True):
                 hit_list.append(w1_c)
                 if set1.index(w1) == set2.index(w2) and pos_hit:
                     hits += 1
-    return hits
+    return hits * length_bonus
 
 
