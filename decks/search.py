@@ -8,15 +8,15 @@ def find_deck(code: str, deck_mode):
     if deck_mode:
         link = f'https://es.arkhamdb.com/api/public/{deck_mode}/{code}'
         req = requests.get(link)
-        if req.url != link:
+        if not req.text:
             return {}
     else:
         link = 'https://es.arkhamdb.com/api/public/decklist/%s' % code
         req = requests.get(link)
-        if req.url != link:
+        if not req.text:
             link = 'https://es.arkhamdb.com/api/public/deck/%s' % code
             req = requests.get(link)
-            if req.url != link:
+            if not req.text:
                 return {}
     return req.json()
 
