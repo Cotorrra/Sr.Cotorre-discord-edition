@@ -178,13 +178,14 @@ def look_for_card_back(query: str):
     return response, embed
 
 
-def look_for_deck(code):
+def look_for_deck(code, deck_type):
     """
     Given a ArkhamDB deckcode, returns a Discord.Embed that contains the information of that deck.
+    :param deck_type:
     :param code: ArkhamDB ID
     :return:
     """
-    deck = find_deck(code)
+    deck = find_deck(code, deck_type)
     if not deck:
         response = "Mazo no encontrado"
         embed = False
@@ -195,13 +196,14 @@ def look_for_deck(code):
     return response, embed
 
 
-def look_for_upgrades(code):
+def look_for_upgrades(code, deck_type):
     """
     Given a ArkhamDB deckcode, returns a Discord.Embed the contains the upgrade information of that deck if any.
+    :param deck_type:
     :param code: ArkhamDB ID
     :return:
     """
-    return search_for_upgrades(code, ah_player)
+    return search_for_upgrades(code, ah_player, deck_type)
 
 
 def look_for_faq(query) -> discord.Embed:
@@ -271,7 +273,13 @@ def deck_slash_options():
     return [create_option(name="id",
                           description="Código del mazo en ArkhamDB.",
                           option_type=4,
-                          required=True), ]
+                          required=True),
+            create_option(name="tipo", description="Tipo de Mazo", option_type=3, required=False,
+                          choices=[
+                              create_choice(name="Público", value="decklist"),
+                              create_choice(name="Privado", value="deck"),
+                          ]),
+            ]
 
 
 def general_card_slash_options():

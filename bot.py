@@ -48,11 +48,11 @@ async def ah_s(ctx, *args):
 
 
 @slash.slash(name="ahMazo",
-             description="Muestra tu mazo de ArkhamDB.",
+             description="Muestra mazos de ArkhamDB.",
              options=deck_slash_options())
 async def ahMazo_s(ctx, *args):
-    query = ctx.kwargs.get('id')
-    response, embed = look_for_deck(query)
+    query, deck_type = format_query_deck(ctx.kwargs)
+    response, embed = look_for_deck(query, deck_type)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -60,11 +60,11 @@ async def ahMazo_s(ctx, *args):
 
 
 @slash.slash(name="ahMejora",
-             description="Muestra la mejora de tu mazo de ArkhamDB.",
+             description="Muestra la mejora de un mazo de ArkhamDB.",
              options=deck_slash_options())
 async def ahMejora_s(ctx, *args):
-    query = ctx.kwargs.get('id')
-    response, embed = look_for_upgrades(query)
+    query, deck_type = format_query_deck(ctx.kwargs)
+    response, embed = look_for_upgrades(query, deck_type)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -96,7 +96,7 @@ async def ahfaq_s(ctx, *args):
 
 
 @slash.slash(name="ahReglas",
-             description="Busca Reglas/Conceptos del juego.",
+             description="Busca Reglas/Conceptos del manual del juego.",
              options=rules_slash_options())
 async def ahReglas_s(ctx, *args):
     query = ctx.kwargs.get('regla')
@@ -108,7 +108,7 @@ async def ahReglas_s(ctx, *args):
 
 
 @slash.slash(name="ahb",
-             description="Busca las partes traseras de cartas.",
+             description="Busca el texto de partes traseras de cartas.",
              options=general_card_slash_options())
 async def ahback_s(ctx, *args):
     query = format_query_ec(ctx.kwargs)

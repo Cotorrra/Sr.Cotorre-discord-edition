@@ -4,22 +4,28 @@ from decks.deck import check_upgrade_rules
 from decks.formating import format_upgraded_deck
 
 
-def find_deck(code: str):
-    link = 'https://es.arkhamdb.com/api/public/deck/%s' % code
-    req = requests.get(link)
-    if req.url != link:
-        link = 'https://es.arkhamdb.com/api/public/decklist/%s' % code
+def find_deck(code: str, deck_mode):
+    if deck_mode:
+        link = f'https://es.arkhamdb.com/api/public/{deck_mode}/{code}'
         req = requests.get(link)
         if req.url != link:
             return {}
+    else:
+        link = 'https://es.arkhamdb.com/api/public/decklist/%s' % code
+        req = requests.get(link)
+        if req.url != link:
+            link = 'https://es.arkhamdb.com/api/public/deck/%s' % code
+            req = requests.get(link)
+            if req.url != link:
+                return {}
     return req.json()
 
 
-def find_former_deck(code: str):
-    curr_deck = find_deck(code)
+def find_former_deck(code: str, deck_mode):
+    curr_deck = find_deck(code, deck_mode)
     if curr_deck:
         former_code = str(curr_deck['previous_deck'])
-        former_deck = find_deck(former_code)
+        former_deck = find_deck(former_code, deck_mode)
         if former_deck:
             return former_deck
         else:
@@ -27,9 +33,9 @@ def find_former_deck(code: str):
     return False
 
 
-def search_for_upgrades(code, cards):
-    deck1 = find_deck(code)
-    deck2 = find_former_deck(code)
+def search_for_upgrades(code, cards, deck_mode):
+    deck1 = find_deck(code, deck_mode)
+    deck2 = find_former_deck(code, deck_mode)
     if not deck1:
         response = "No encontré el mazo."
         embed = False
@@ -42,3 +48,9 @@ def search_for_upgrades(code, cards):
         embed = format_upgraded_deck(deck1, info)
 
     return response, embed
+
+
+def format_query_deck(kwargs):
+    code = kwargs.get('id')
+    deck_type = kwargs.get('tipo') if "tipo" in kwargs else ""
+    return code, deck_type
