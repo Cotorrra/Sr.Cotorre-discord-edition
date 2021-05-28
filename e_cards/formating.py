@@ -8,7 +8,7 @@ def format_enemy_card(c):
     formater = {"name": format_name(c),
                 "subtext": format_subtext(c),
                 "faction": format_faction(c),
-                "type": "__%s__\n" % c['type_name'],
+                "type": "***%s***\n" % c['type_name'],
                 "traits": "*%s*\n" % c['traits'] if "traits" in c else "",
                 "text": "> %s \n" % format_card_text(c),
                 "flavour": "_%s_\n\n" % format_text(c['flavor']) if "flavor" in c else "",
@@ -35,7 +35,7 @@ def format_enemy_card(c):
 
 def format_act_card_f(c):
     formater = {"name": format_name(c),
-                "stage": "__Acto %s__\n" % c['stage'],
+                "stage": "***Acto %s***\n" % c['stage'],
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "clues": "%s\n" % format_clues(c),
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
@@ -54,7 +54,7 @@ def format_act_card_f(c):
 
 def format_agenda_card_f(c):
     formater = {"name": format_name(c),
-                "stage": "__Plan %s__\n" % c['stage'],
+                "stage": "***Plan %s***\n" % c['stage'],
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "doom": format_text("[doom] %s" % (c['doom'] if "doom" in c else "-")),
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
@@ -110,7 +110,7 @@ def format_scenario_card(c):
 def format_treachery_card(c):
     formater = {"name": format_name(c),
                 "faction": format_faction(c),
-                "type": "__%s__\n" % c['type_name'],
+                "type": "***%s***\n" % c['type_name'],
                 "traits": "*%s*\n" % c['traits'] if "traits" in c else "",
                 "text": "> %s \n" % format_card_text(c),
                 "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
