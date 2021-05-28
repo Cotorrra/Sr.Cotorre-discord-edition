@@ -9,14 +9,14 @@ def format_enemy_card(c):
                 "subtext": format_subtext(c),
                 "faction": format_faction(c),
                 "type": "__%s__\n" % c['type_name'],
-                "traits": hide_if_spoiler("*%s*\n" % c['traits'] if "traits" in c else "", c),
+                "traits": "*%s*\n" % c['traits'] if "traits" in c else "",
                 "text": "> %s \n" % format_card_text(c),
-                "flavour": hide_if_spoiler("_%s_\n\n" % format_text(c['flavor']) if "flavor" in c else "", c),
-                "stats": "%s \n" % hide_if_spoiler(format_enemy_stats(c), c),
-                "attack": hide_if_spoiler("Ataque: %s\n" % format_attack(c) if format_attack(c) != "" else "", c),
+                "flavour": "_%s_\n\n" % format_text(c['flavor']) if "flavor" in c else "",
+                "stats": "%s \n" % format_enemy_stats(c),
+                "attack": "Ataque: %s\n" % format_attack(c) if format_attack(c) != "" else "",
                 "victory": format_victory(c),
                 "vengeance": format_vengeance(c),
-                "errata_text": hide_if_spoiler(format_errata_text(c['code']), c),
+                "errata_text": format_errata_text(c['code']),
                 }
 
     m_title = " %(faction)s %(name)s%(subtext)s" % formater
@@ -36,10 +36,10 @@ def format_enemy_card(c):
 def format_act_card_f(c):
     formater = {"name": format_name(c),
                 "stage": "__Acto %s__\n" % c['stage'],
-                "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
-                "clues": hide_if_spoiler("%s\n" % format_clues(c), c),
+                "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
+                "clues": "%s\n" % format_clues(c),
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
-                "errata_text": hide_if_spoiler(format_errata_text(c['code']), c),
+                "errata_text": format_errata_text(c['code']),
                 }
 
     m_title = "%(name)s " % formater
@@ -55,10 +55,10 @@ def format_act_card_f(c):
 def format_agenda_card_f(c):
     formater = {"name": format_name(c),
                 "stage": "__Plan %s__\n" % c['stage'],
-                "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
-                "doom": hide_if_spoiler(format_text("[doom] %s" % (c['doom'] if "doom" in c else "-")), c),
+                "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
+                "doom": format_text("[doom] %s" % (c['doom'] if "doom" in c else "-")),
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
-                "errata_text":  hide_if_spoiler(format_errata_text(c['code']), c),
+                "errata_text":  format_errata_text(c['code']),
                 }
 
     m_title = "%(name)s " % formater
@@ -74,10 +74,10 @@ def format_agenda_card_f(c):
 def format_location_card_f(c):
     formater = {"name": format_name(c),
                 "subtext": format_subtext(c),
-                "traits": hide_if_spoiler("*%s*\n" % c['traits'] if "traits" in c else "", c),
+                "traits": "*%s*\n" % c['traits'] if "traits" in c else "",
                 "text": "> %s \n" % format_card_text(c) if "text" in c else "",
-                "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
-                "location_data": hide_if_spoiler(format_location_data(c), c),
+                "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
+                "location_data": format_location_data(c),
                 "victory": format_victory(c),
                 "vengeance": format_vengeance(c),
                 "errata_text": format_errata_text(c['code'], back=True),
@@ -111,9 +111,9 @@ def format_treachery_card(c):
     formater = {"name": format_name(c),
                 "faction": format_faction(c),
                 "type": "__%s__\n" % c['type_name'],
-                "traits": hide_if_spoiler("*%s*\n" % c['traits'] if "traits" in c else "", c),
+                "traits": "*%s*\n" % c['traits'] if "traits" in c else "",
                 "text": "> %s \n" % format_card_text(c),
-                "flavour": hide_if_spoiler("_%s_\n" % format_text(c['flavor']) if "flavor" in c else "", c),
+                "flavour": "_%s_\n" % format_text(c['flavor']) if "flavor" in c else "",
                 "errata_text": format_errata_text(c['code'], back=True),
                 }
 
