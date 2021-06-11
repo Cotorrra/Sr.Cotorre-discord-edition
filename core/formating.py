@@ -10,19 +10,6 @@ def create_embed(c, title, description, footnote=""):
     return embed
 
 
-def hide_if_spoiler(text, c, override_spoiler=False):
-    if text:
-        if "spoiler" in c and not override_spoiler:
-            if c['pack_code'] == 'core':
-                if c['encounter_code'] in ['torch', 'arkham', 'tentacles']:
-                    return "||%s||" % text if text[-1:] != "\n" else "||%s||\n" % text[:-1]
-                else:
-                    return text
-            else:
-                return "||%s||" % text if text[-1:] != "\n" else "||%s||\n" % text[:-1]
-    return text
-
-
 def format_text(text):
     text_format = {"[free]": "<:Libre:789610643262799913>",
                    "[fast]": "<:Libre:789610643262799913>",
@@ -87,7 +74,7 @@ def format_card_text(c, tag="text", override_spoiler=False):
     text = format_text(c[tag]) if tag in c else ""
     for key, value in formating.items():
         text = text.replace(key, value)
-    return hide_if_spoiler(text, c, override_spoiler)
+    return text
 
 
 def format_illus_pack(c, only_pack=False):
@@ -104,7 +91,7 @@ def format_illus_pack(c, only_pack=False):
 def format_victory(c, override_spoiler=False):
     if "victory" in c:
         text = "**Victoria %s.**" % c['victory']
-        return "> %s \n" % hide_if_spoiler(text, c, override_spoiler=False)
+        return "> %s \n" % text
     else:
         return ""
 
@@ -112,7 +99,7 @@ def format_victory(c, override_spoiler=False):
 def format_vengeance(c, override_spoiler=False):
     if "vengeance" in c:
         text = "**Venganza %s.**" % c['vengeance']
-        return "> %s \n" % hide_if_spoiler(text, c, override_spoiler=False)
+        return "> %s \n" % text
     else:
         return ""
 

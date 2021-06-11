@@ -2,31 +2,31 @@ from core.formating import *
 
 
 def format_enemy_stats(c):
-    formater = {"health": "[health] %s%s " % (format_number(c['health']) if "health" in c else "-",
-                                              "[per_investigator]" if c[
-                                                  "health_per_investigator"] else ""),
-                "combat": "[combat] %s " % (format_number(c['enemy_fight']) if "enemy_fight" in c else "-"),
-                "agility": "[agility] %s" % (format_number(c['enemy_evade']) if "enemy_evade" in c else "-")
+    formater = {"health": "[health]: %s%s " % (format_number(c['health']) if "health" in c else "-",
+                                               "[per_investigator]" if c[
+                                                   "health_per_investigator"] else ""),
+                "combat": "[combat]: %s " % (format_number(c['enemy_fight']) if "enemy_fight" in c else "-"),
+                "agility": "[agility]: %s" % (format_number(c['enemy_evade']) if "enemy_evade" in c else "-")
                 }
 
-    return format_text("%(combat)s | %(health)s | %(agility)s" % formater)
+    return format_text("%(combat)s  %(health)s  %(agility)s" % formater)
 
 
 def format_clues(c):
     if "clues" in c:
         clues = str(c['clues'])
-        if c['clues_fixed'] or c['clues'] == 0:
-            return format_text("[clues] %s" % clues)
+        if 'clues_fixed' in c or c['clues'] == 0:
+            return format_text("Pistas: %s" % clues)
         else:
-            return format_text("[clues] %s [per_investigator]" % clues)
+            return format_text("Pistas: %s [per_investigator]" % clues)
     else:
-        return format_text("[clues] -")
+        return format_text("Pistas: -")
 
 
 def format_location_data(c):
     formater = {"shroud": "Velo: %s" % str(c['shroud']),
                 "clues": format_clues(c)}
-    return "%(shroud)s | %(clues)s \n" % formater
+    return "%(shroud)s\n%(clues)s \n" % formater
 
 
 def format_attack(c):
