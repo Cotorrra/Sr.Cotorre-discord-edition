@@ -1,5 +1,4 @@
 import os
-
 import discord
 import requests
 from discord.ext import commands
@@ -9,9 +8,10 @@ from dotenv import load_dotenv
 from decks.search import format_query_deck
 from e_cards.search import format_query_ec
 from p_cards.search import format_query_pc
-from response.response import player_card_slash_options, general_card_slash_options, \
-    deck_slash_options, look_for_rule, rules_slash_options, look_for_mythos_card, look_for_player_card, \
+from response.response import look_for_rule, look_for_mythos_card, look_for_player_card, \
     look_for_card_back, look_for_deck, look_for_upgrades, look_for_faq
+from response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
+    rules_slash_options
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -28,7 +28,7 @@ ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
 
 @bot.event
 async def on_ready():
-    print(f'{bot.user.name} está listo para usarse c:')
+    print(f'{bot.user.name} está listo! :parrot:')
     # await bot.change_presence(activity=discord.Game('a'))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))

@@ -36,6 +36,5 @@ def format_query_ec(kwargs):
     name = kwargs.get('nombre')
     subtitle = f" ~{kwargs.get('subtitulo')}~" if 'subtitulo' in kwargs else ""
     tipo = f" ({kwargs.get('tipo')})" if 'tipo' in kwargs else ""
-    return name + subtitle + tipo
-
-
+    pack = f" [{kwargs.get('pack')}]" if 'pack' in kwargs else ""
+    return name + subtitle + tipo + pack

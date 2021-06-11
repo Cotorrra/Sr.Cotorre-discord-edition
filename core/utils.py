@@ -1,3 +1,17 @@
+import json
+
+
+def load_pack_data():
+    """
+    Carga el archivo de taboo.
+    :return:
+    """
+    with open('core/data/pack.json') as pack:
+        info = json.load(pack)
+
+    return info
+
+
 def is_lvl(card: dict, lvl: int):
     """
     Equipara el nivel de una carta con el numero dado, si no tiene nivel, se equipara con 0.

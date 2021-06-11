@@ -45,4 +45,5 @@ def format_query_pc(kwargs):
     clase = kwargs.get('clase') if "clase" in kwargs else ""
     ex = kwargs.get('extras') if "extras" in kwargs else ""
     extra = f" ({lvl + clase + ex})" if lvl or clase or ex else ""
-    return name + subtitle + extra
+    pack = f" [{kwargs.get('pack')}]" if "pack" in kwargs else ""
+    return name + subtitle + extra + pack

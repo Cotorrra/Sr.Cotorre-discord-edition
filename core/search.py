@@ -1,5 +1,8 @@
 import re
 import unidecode
+from core.utils import load_pack_data
+
+pack_data = load_pack_data()
 
 
 def card_search(query, cards, keyword_func):
@@ -12,6 +15,7 @@ def card_search(query, cards, keyword_func):
     """
     query, keyword_query, keyword_mode = find_and_extract(query, "(", ")")
     query, sub_query, sub_text_mode = find_and_extract(query, "~", "~")
+    query, pack_query, pack_mode = find_and_extract(query, "[", "]")
     f_cards = cards.copy()
 
     if sub_text_mode:
@@ -20,9 +24,19 @@ def card_search(query, cards, keyword_func):
     if keyword_mode:
         f_cards = keyword_func(f_cards, keyword_query)
 
+    if pack_mode:
+        pack_search = sorted([pd['name'] for pd in pack_data], key=lambda pd: -hits_in_string(pack_query, pd))
+        if len(pack_search) > 0:
+            pack_tag = [pd["code"] for pd in pack_data if pd["name"].lower() == pack_search[0].lower()][0]
+            f_cards = [c for c in f_cards if c["pack_code"] == pack_tag]
+
+    cards_were_filtered = len(cards) > len(f_cards)
+
     r_cards = search(query, f_cards)
 
-    if len(r_cards) == 0 or len(r_cards) == len(cards):
+    if len(r_cards) == 0 \
+            or (not cards_were_filtered and len(r_cards) == len(f_cards)) \
+            or (cards_were_filtered and len(r_cards) == len(cards)):
         return []
     else:
         return r_cards
