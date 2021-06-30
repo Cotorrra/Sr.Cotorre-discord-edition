@@ -8,7 +8,7 @@ def load_errata():
     Carga el archivo de taboo.
     :return:
     """
-    with open('errata/data/errata.json') as errata:
+    with open('errata/data/errata.json', encoding='utf-8') as errata:
         info = json.load(errata)
 
     info['cards'] = json.dumps(info['cards'])

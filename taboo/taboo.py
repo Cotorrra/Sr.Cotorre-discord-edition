@@ -2,7 +2,7 @@ import json
 
 from core.formating import format_text
 
-current_taboo = "003"
+current_taboo = "004"
 
 
 def load_taboo():
@@ -10,7 +10,7 @@ def load_taboo():
     Carga el archivo de taboo.
     :return:
     """
-    with open('taboo/data/taboos.json') as taboo:
+    with open('taboo/data/taboos.json', encoding='utf-8') as taboo:
         info = list(json.load(taboo))
 
     for t in info:
