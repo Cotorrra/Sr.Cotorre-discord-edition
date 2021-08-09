@@ -1,0 +1,255 @@
+{"cards": [
+  {
+    "code": "01006",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01008",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01010",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01012",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0)."
+  },
+  {
+    "code": "01014",
+    "text": "Esta carta no tiene nivel (en lugar de ser de nivel 0). La capacidad <b>Obligado</b> de esta carta debería decir: Después de que juegues un evento o descartes del juego un evento:...»"
+  },
+  {
+    "code": "02001",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas de nivel cero de cualquier otra clase ([seeker], [rogue], [mystic] y/o [survivor]).»"
+  },
+  {
+    "code": "02002",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [rogue], [mystic] y/o [survivor]).»"
+  },
+  {
+    "code": "02003",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [mystic] y/o [survivor]).»"
+  },
+  {
+    "code": "02004",
+    "text": "Esta carta tiene el rasgo [[Intérprete]] en lugar de [[Artista]].",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [rogue] y/o [survivor]).»"
+  },
+  {
+    "code": "02005",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas de nivel cero de cualquier otra clase ([guardian], [seeker], [rogue] y/o [mystic]).»"
+  },
+  {
+    "code": "02007",
+    "text": "La capacidad <b>Obligado</b> de esta carta debería decir: «Si el Enemigo vinculado está en juego cuando termine la partida: Zoey Samaras sufre 1 trauma mental.\u201d."
+  },
+  {
+    "code": "02011",
+    "text": "La capacidad <b>Obligado</b> de esta carta debería decir: «Si Buscando a Izzie está en juego cuando termine la partida: Jenny Barnes sufre 1 trauma mental.»."
+  },
+  {
+    "code": "02020",
+    "text": "La primera habilidad de esta carta debería decir: «Tu tamaño de mano máximo aumenta en 2.»"
+  },
+  {
+    "code": "02040",
+    "text": "La capacidad y de esta carta debería decir: «Después de que robes una carta que no sea de Debilidad, descarta esa carta...»."
+  },
+  {
+    "code": "02078",
+    "text": "Esta carta tiene el rasgo [[Humanoide]] además de [[Criminal]] y [[Élite]]."
+  },
+  {
+    "code": "02205",
+    "text": "La primera capacidad de esta carta debería decir: «<b>Obligado</b>: Después de que fracases en una prueba de habilidad al investigar las Ruinas calcinadas: Dale la vuelta a 1 ficha de Pista de las Ruinas calcinadas para que muestre su lado de perdición.»."
+  },
+  {
+    "code": "02230",
+    "text": "La capacidad de esta carta debería decir: «Después de que reveles una ficha de Caos que no sea [auto_fail], gasta 2 recursos: Ignora esa ficha de Caos y revela otra para resolverla. Si esa ficha tiene un símbolo [auto_fail], retira los Dados de la suerte de la partida (no se puede ignorar/cancelar).»."
+  },
+  {
+    "code": "02277",
+    "text_back": "Las dos instrucciones en la carta deberían ser intercambiadas de la siguiente manera: «Retira todas las pistas de cada Lugar que esté en juego. La presencia arcana que ocultaba el camino que sube por la colina ha desaparecido. Revela el Sendero Ascendente»."
+  },
+  {
+    "code": "02302",
+    "text": "La capacidad [reaction] de esta carta debería decir: «Cuando robes una carta de Encuentros del mazo de Encuentros...»."
+  },
+  {
+    "code": "02305",
+    "text": "Todos los símbolos [free] de esta carta deberían ser símbolos [reaction]."
+  },
+  {
+    "code": "03006",
+    "text": "Esta carta tiene el rasgo [[Intérprete]] en lugar de Artista."
+  },
+  {
+    "code": "03041",
+    "text": "La segunda capacidad de esta carta debería decir: «Tu tamaño de mano máximo queda reducido en 5.»"
+  },
+  {
+    "code": "03088",
+    "text": "La primera capacidad de esta carta ha de ser ignorada: «Presa - Más horror.»"
+  },
+  {
+    "code": "03102",
+    "text": "La capacidad Revelación de esta carta debería decir: «Descarta Apoyos [[Objeto]] de tu zona de juego y/o de tu mano...»."
+  },
+  {
+    "code": "03121",
+    "text": "La primera habilidad de este plan debería decir: «Omite el paso «Coloca 1 ficha de Perdición sobre el plan en curso» de la fase de Mitos.»"
+  },
+  {
+    "code": "03122",
+    "text": "La primera habilidad de este plan debería decir: «Omite el paso «Coloca 1 ficha de Perdición sobre el plan en curso» de la fase de Mitos.»"
+  },
+  {
+    "code": "03123",
+    "text": "La primera habilidad de este plan debería decir: «Omite el paso «Coloca 1 ficha de Perdición sobre el plan en curso» de la fase de Mitos.»"
+  },
+  {
+    "code": "03130",
+    "text": "Esta carta debería decir: «Al investigar este Lugar, tu [intellect] no puede ser aumentado.»."
+  },
+  {
+    "code": "03132",
+    "text": "Esta carta debería decir: «Al investigar este Lugar, tu [intellect] no puede ser aumentado.»."
+  },
+  {
+    "code": "03178",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
+  },
+  {
+    "code": "03179",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
+  },
+  {
+    "code": "03180",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
+  },
+  {
+    "code": "03181",
+    "text": "Este lugar no tiene el rasgo [[Manicomio Arkham]], por lo que tienes gastar una pista para entrar a este lugar."
+  },
+  {
+    "code": "03179",
+    "text": "La acción de esta carta debería decir: «...; recuerda que «los investigadores soltaron a un paciente peligroso».»"
+  },
+  {
+    "code": "03232",
+    "text": "La capacidad [free] debería decir: «... Cualquier investigador en este lugar puede activar esta capacidad.»"
+  },
+  {
+    "code": "03252",
+    "text": "La capacidad de este Lugar debería decir: «... Si tienes éxito, mira el lado revelado de cualquier Lugar Catacumbas que esté en juego»"
+  },
+  {
+    "code": "03258",
+    "text": "La capacidad de este Enemigo debería decir: «... Si tienes éxito, mira el lado revelado de cualquier Lugar Catacumbas que esté en juego»"
+  },
+  {
+    "code": "03311",
+    "text": "La segunda parte de la habilidad de esta carta debería decir: «Deshaz esa acción (haz que el estado del juego vuelva a ser exactamente igual a como era antes de que se realizara la acción, excepto haber jugado Distorsión temporal y su coste).»"
+  },
+  {
+    "code": "03338",
+    "text": "La capacidad <b>Revelación</b> de esta carta debería decir: «Descarta cartas de tu zona de juego y/o de tu mano...»"
+  },
+  {
+    "code": "04004",
+    "text": "La capacidad [reaction] de esta carta debería decir: «Cuando un investigador revele una ficha de caos [auto_fail]...»"
+  },
+  {
+    "code": "04035",
+    "text": "La capacidad [free] de esta carta debería decir: «Descarta la primera carta de tu mazo. Límite de una vez por fase. »"
+  },
+  {
+    "code": "04270",
+    "text": "La capacidad [action] de esta carta debería decir: «Si La llave maestra está en tu zona de juego, vincula La llave maestra a tu Lugar...»"
+  },
+  {
+    "code": "05033",
+    "text": "La capacidad de juego de esta carta debería decir: «Juega esta carta cuando fueses a resolver un efecto de una carta [mystic] que se active «cuando», «si,» o«después» de revelar un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]."
+  },
+  {
+    "code": "05163",
+    "text": "La capacidad de esta carta debería decir: «No se les puede dar la vuelta a los Lugares hacia su lado no [[Espectral]].»"
+  },
+  {
+    "code": "05164",
+    "text": "La capacidad de esta carta debería decir: «No se les puede dar la vuelta a los Lugares hacia su lado no [[Espectral]].»"
+  },
+  {
+    "code": "05178",
+    "text_back": "La primera capacidad de estas cartas debería decir: «Mantén esta carta en tu zona de amenaza (con este lado boca arriba). Si eres eliminado, dale la vuelta a esta carta.»"
+  },
+  {
+    "code": "05236",
+    "text": "La capacidad <b>Obligado</b> de esta carta debería decir: «Cuando el Espíritu guía es derrotado por horror: Exílialo»"
+  },
+  {
+    "code": "05282",
+    "text": "Esta carta tiene el rasgo [[Truco]] en lugar de [[Táctica]]."
+  },
+  {
+    "code": "05329",
+    "text_back": "La primera línea del segundo párrafo debería decir: «Retira el Acceso cósmico de la partida y devuelve cada espacio vacío al mazo de su propietario y barájalo»."
+  },
+  {
+    "code": "05330",
+    "text_back": "La primera línea del segundo párrafo debería decir: «Retira el Palacio espantoso de la partida y devuelve cada espacio vacío al mazo de su propietario y barájalo»."
+  },
+  {
+    "code": "06005",
+    "text": "Esta carta tiene el rasgo [[Intérprete]] en lugar de [[Artista]]."
+  },
+  {
+    "code": "06018",
+    "text": "El coste adicional de esta carta debería decir: «Como coste adicional para jugar esta carta...»."
+  },
+  {
+    "code": "06024",
+    "text": "El coste adicional de esta carta debería decir: «Como coste adicional para jugar esta carta...»."
+  },
+  {
+    "code": "06195",
+    "text": "Esta carta debería decir: «[action] Gasta 1 munición: <b>Combatir</b>...»"
+  },
+  {
+    "code": "06253",
+    "text": "La capacidad <b>Obligado</b> de esta carta debería decir: «Después de que un enemigo con una o más pistas sea derrotado: Toma el control de cada una de esas pistas.»"
+  },
+  {
+    "code": "07002",
+    "text": "La capacidad [reaction] de esta carta debería decir «<b>Obligado</b>» en su lugar."
+  },
+  {
+    "code": "07223",
+    "text": "La capacidad [fast] de esta carta debería decir: «... Límite una vez por prueba.»"
+  },
+  {
+    "code": "07315",
+    "text": "El <b>Objetivo</b> de esta carta debería decir: «... pueden elegir avanzar.» en vez de «... avanza.»"
+  },
+  {
+    "code": "50004",
+    "text": "La capacidad continua de esta carta debería decir: «Cada vez que un Enemigo que no sea Élite fuese a aparecer en el Lugar vinculado, en lugar de eso haz que aparezca en un Lugar conectado si es posible.»"
+  },
+  {
+    "code": "60102",
+    "text": "El símbolo [free] de esta carta debería ser un símbolo [reaction]."
+  },
+  {
+    "code": "60227",
+    "text": "La capacidad de esta carta debería decir: «... Si tienes éxito, en lugar de descubrir una pista en tu lugar, descubre 2 pistas en total entre tu Lugar y los Lugares conectados.»"
+  },
+  {
+    "code": "98007",
+    "text_back": "En las <b>Opciones de creación de mazos</b> de esta carta debería decir: «...hasta otras cinco cartas Místico ([mystic]) de nivel 0.»"
+  },
+  {
+    "code": "98018",
+    "text_back": "La capacidad constante de esta carta debería decir: «No puedes jugar Apoyos o poner Apoyos en juego.»"
+  }
+]}

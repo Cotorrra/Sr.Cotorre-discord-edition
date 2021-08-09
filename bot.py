@@ -1,16 +1,17 @@
 import os
+
 import discord
 import requests
 from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
-from decks.search import format_query_deck
-from e_cards.search import format_query_ec
-from p_cards.search import format_query_pc
-from response.response import look_for_rule, look_for_mythos_card, look_for_player_card, \
-    look_for_card_back, look_for_deck, look_for_upgrades, look_for_faq
-from response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
+from src.decks.search import format_query_deck
+from src.e_cards.search import format_query_ec
+from src.p_cards.search import format_query_pc
+from src.response.response import look_for_mythos_card, look_for_player_card, \
+    look_for_deck, look_for_card_back, look_for_faq, look_for_upgrades, look_for_rule
+from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
     rules_slash_options
 
 load_dotenv()
