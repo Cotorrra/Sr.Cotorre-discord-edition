@@ -1,6 +1,7 @@
 import json
 
 from src.core.formating import format_text
+from src.core.utils import load_from_repo
 
 
 def load_faq(card_id):
@@ -9,8 +10,8 @@ def load_faq(card_id):
     :return:
     """
     code = card_id[:2]
-    with open(f'data/faq/faq{code}.json', encoding='utf-8') as faq:
-        info = json.load(faq)
+    file_src = f'data/faq/faq{code}.json'
+    info = load_from_repo(file_src)
 
     info['cards'] = json.dumps(info['cards'])
     info['cards'] = json.loads(info['cards'])

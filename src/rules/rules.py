@@ -2,6 +2,7 @@ import json
 
 from src.core.formating import format_text
 from src.core.search import hits_in_string
+from src.core.utils import load_from_repo
 
 
 def load_rules():
@@ -9,8 +10,9 @@ def load_rules():
     Carga el archivo de taboo.
     :return:
     """
-    with open('data/rules/rules.json', encoding='utf-8') as faq:
-        info = json.load(faq)
+    file_src = 'data/rules/rules.json'
+
+    info = load_from_repo(file_src)
 
     info['rules'] = json.dumps(info['rules'])
     info['rules'] = json.loads(info['rules'])

@@ -14,6 +14,6 @@ def format_faq(c):
                 }
 
     title = " %(faction)s%(name)s%(subtext)s%(level)s" % formater
-    description = "%(text)s\n%(FAQ)s" % formater
+    description = "%(text)s\n%(faq)s" % formater
     m_footnote = format_illus_pack(c)
     return create_embed(c, title, description, m_footnote)

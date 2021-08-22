@@ -44,11 +44,6 @@ def deck_slash_options():
                               create_choice(name="Público", value="decklist"),
                               create_choice(name="Privado", value="deck"),
                           ]),
-            create_option(name="mejora", description="¿Mostrar mejora?", option_type=3, required=False,
-                          choices=[
-                              create_choice(name="Sí", value="si"),
-                              create_choice(name="No", value="no"),
-                          ])
             ]
 
 
@@ -70,13 +65,7 @@ def general_card_slash_options():
                               create_choice(name="Mitos (Encuentros)", value="M"),
                           ]),
             create_option(name="subtitulo", description="Subtitulo de la carta.", option_type=3, required=False),
-
             create_option(name="pack", description="Nombre del pack de la carta.", option_type=3, required=False),
-            create_option(name="mejora", description="¿Mostrar parte trasera?", option_type=3, required=False,
-                          choices=[
-                              create_choice(name="Sí", value="si"),
-                              create_choice(name="No", value="no"),
-                          ])
             ]
 
 

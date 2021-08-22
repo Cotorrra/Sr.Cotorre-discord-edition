@@ -1,4 +1,34 @@
 import json
+import os
+
+import requests
+
+
+def load_from_repo(file_src):
+    try:
+        with open(file_src, "r", encoding='utf-8') as pack:
+            info = json.load(pack)
+    except FileNotFoundError as e:
+        # Get the file from and download it to
+        url = f"https://raw.githubusercontent.com/Cotorrra/Sr.Cotorre-Data/main/{file_src}"
+        req = requests.get(url)
+        path = split_files(file_src)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        with open(file_src, 'w', encoding='utf-8') as pack:
+            pack.write(req.text)
+
+        info = json.loads(req.text)
+
+    return info
+
+
+def split_files(src: str):
+    splits = src.split("/")
+    rest = ""
+    for a in splits[:-1]:
+        rest += f"{a}/"
+    return rest
 
 
 def load_pack_data():
@@ -6,10 +36,8 @@ def load_pack_data():
     Carga el archivo de taboo.
     :return:
     """
-    with open('data/core/pack.json') as pack:
-        info = json.load(pack)
-
-    return info
+    file_src = 'data/core/pack.json'
+    return load_from_repo(file_src)
 
 
 def is_lvl(card: dict, lvl: int):

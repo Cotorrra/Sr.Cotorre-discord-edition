@@ -1,6 +1,6 @@
 import json
-
 from src.core.formating import format_text
+from src.core.utils import load_from_repo
 
 
 def load_errata():
@@ -8,8 +8,8 @@ def load_errata():
     Carga el archivo de taboo.
     :return:
     """
-    with open('data/errata/errata.json', encoding='utf-8') as errata:
-        info = json.load(errata)
+    file_src = 'data/errata/errata.json'
+    info = load_from_repo(file_src)
 
     info['cards'] = json.dumps(info['cards'])
     info['cards'] = json.loads(info['cards'])
