@@ -1,7 +1,6 @@
 import os
 
 import discord
-import requests
 from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
@@ -9,27 +8,20 @@ from dotenv import load_dotenv
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
 from src.response.response import look_for_mythos_card, look_for_player_card, \
-    look_for_deck, look_for_card_back, look_for_faq, look_for_upgrades, look_for_rule
+    look_for_deck, look_for_card_back, look_for_faq, look_for_upgrades, look_for_rule, look_for_tarot
 from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
-    rules_slash_options
+    rules_slash_options, tarot_slash_options
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='!SrCotorre')
 slash = SlashCommand(bot, sync_commands=True)
 
-ah_all_cards = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=1').json()
-
-ah_player = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=0').json()
-
-# Encounter p_cards include: Special player p_cards, Weaknesses, enemies, acts, plans, etc.
-ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
-
 
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo! :parrot:')
-    await bot.change_presence(activity=discord.Game('Liga de Arkham'))
+    await bot.change_presence(activity=discord.Game('leer el Tarot'))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
@@ -110,6 +102,17 @@ async def ahReglas_s(ctx, regla):
 async def ahback_s(ctx, nombre, tipo="", subtitulo="", pack=""):
     query = format_query_ec(nombre, tipo, subtitulo, pack)
     response, embed = look_for_card_back(query)
+    if embed:
+        await ctx.send(response, embed=embed)
+    else:
+        await ctx.send(response)
+
+
+@slash.slash(name="ahTarot",
+             description="Busca cartas Tarot del Regreso al Circulo Roto",
+             options=tarot_slash_options())
+async def ahTarot(ctx, nombre=""):
+    response, embed = look_for_tarot(nombre)
     if embed:
         await ctx.send(response, embed=embed)
     else:

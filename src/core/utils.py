@@ -31,15 +31,6 @@ def split_files(src: str):
     return rest
 
 
-def load_pack_data():
-    """
-    Carga el archivo de taboo.
-    :return:
-    """
-    file_src = 'data/core/pack.json'
-    return load_from_repo(file_src)
-
-
 def is_lvl(card: dict, lvl: int):
     """
     Equipara el nivel de una carta con el numero dado, si no tiene nivel, se equipara con 0.

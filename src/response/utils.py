@@ -78,3 +78,14 @@ def rules_slash_options():
                           description="Nombre de la regla/concepto.",
                           option_type=3,
                           required=True)]
+
+
+def tarot_slash_options():
+    """
+    Returns the slash command options for Tarot cards.
+    :return:
+    """
+    return [create_option(name="nombre",
+                          description="Nombre de la carta, si no hay nombre se devuelve una al azar",
+                          option_type=3,
+                          required=False)]

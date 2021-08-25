@@ -10,7 +10,9 @@ from src.decks.search import find_deck, search_for_upgrades
 from src.e_cards.search import use_ec_keywords
 from src.p_cards.search import use_pc_keywords
 from src.rules.formating import format_rule
-from src.rules.rules import search_for_rules
+from src.rules.search import search_for_rules
+from src.tarot.formating import format_tarot
+from src.tarot.search import search_for_tarot
 
 """
     Aquí están todas las respuestas que tiene el bot, aquí es donde se hace la magia del bot, a partir de aquí
@@ -133,4 +135,21 @@ def look_for_rule(query):
     else:
         embed = False
         response = "No se encontró la regla."
+    return response, embed
+
+
+def look_for_tarot(query):
+    """
+    Given a query, returns a embed containing a tarot card of the game.
+    If the query is empty, returns a random tarot card.
+    :param query:  A query string.
+    :return:
+    """
+    search = search_for_tarot(query)
+    if search:
+        embed = format_tarot(search)
+        response = ""
+    else:
+        embed = False
+        response = "No se encontró la carta."
     return response, embed

@@ -3,18 +3,16 @@ import json
 from src.core.utils import load_from_repo
 
 
-def load_rules():
+def load_tarot():
     """
     Carga el archivo de taboo.
     :return:
     """
-    file_src = 'data/rules/rules.json'
+    file_src = 'data/tarot/tarot.json'
 
     info = load_from_repo(file_src)
 
-    info['rules'] = json.dumps(info['rules'])
-    info['rules'] = json.loads(info['rules'])
+    info['tarot'] = json.dumps(info['tarot'])
+    info['tarot'] = json.loads(info['tarot'])
 
     return info
-
-
