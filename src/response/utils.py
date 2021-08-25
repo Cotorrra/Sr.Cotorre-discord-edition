@@ -35,7 +35,7 @@ def deck_slash_options():
     Returns the slash command options for decks.
     :return:
     """
-    return [create_option(name="id",
+    return [create_option(name="codigo",
                           description="Código del mazo en ArkhamDB.",
                           option_type=4,
                           required=True),

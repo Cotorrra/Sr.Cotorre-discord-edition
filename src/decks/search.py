@@ -49,8 +49,3 @@ def search_for_upgrades(code, cards, deck_mode):
 
     return response, embed
 
-
-def format_query_deck(kwargs):
-    code = kwargs.get('id')
-    deck_type = kwargs.get('tipo') if "tipo" in kwargs else ""
-    return code, deck_type

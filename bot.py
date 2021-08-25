@@ -6,7 +6,6 @@ from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
-from src.decks.search import format_query_deck
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
 from src.response.response import look_for_mythos_card, look_for_player_card, \
@@ -30,17 +29,17 @@ ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo! :parrot:')
-    # await bot.change_presence(activity=discord.Game('a'))
+    await bot.change_presence(activity=discord.Game('Liga de Arkham'))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
+    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
 
 
 @slash.slash(name="ah",
              description="Busca cartas de jugador en ArkhamDB.",
              options=player_card_slash_options())
-async def ah_s(ctx, *args):
-    query = format_query_pc(ctx.kwargs)
+async def ah_s(ctx, nombre, nivel="", clase="", extras="", subtitulo="", pack=""):
+    query = format_query_pc(nombre, nivel, clase, extras, subtitulo, pack)
     response, embed = look_for_player_card(query)
     if embed:
         await ctx.send(response, embed=embed)
@@ -51,9 +50,8 @@ async def ah_s(ctx, *args):
 @slash.slash(name="ahMazo",
              description="Muestra mazos de ArkhamDB.",
              options=deck_slash_options())
-async def ahMazo_s(ctx, *args):
-    query, deck_type = format_query_deck(ctx.kwargs)
-    response, embed = look_for_deck(query, deck_type)
+async def ahMazo_s(ctx, codigo, tipo=""):
+    response, embed = look_for_deck(codigo, tipo)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -63,9 +61,8 @@ async def ahMazo_s(ctx, *args):
 @slash.slash(name="ahMejora",
              description="Muestra la mejora de un mazo de ArkhamDB.",
              options=deck_slash_options())
-async def ahMejora_s(ctx, *args):
-    query, deck_type = format_query_deck(ctx.kwargs)
-    response, embed = look_for_upgrades(query, deck_type)
+async def ahMejora_s(ctx, codigo, tipo=""):
+    response, embed = look_for_upgrades(codigo, tipo)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -75,8 +72,8 @@ async def ahMejora_s(ctx, *args):
 @slash.slash(name="ahe",
              description="Busca cartas de encuentros en ArkhamDB.",
              options=general_card_slash_options())
-async def ahe_s(ctx, *args):
-    query = format_query_ec(ctx.kwargs)
+async def ahe_s(ctx, nombre, tipo="", subtitulo="", pack=""):
+    query = format_query_ec(nombre, tipo, subtitulo, pack)
     response, embed = look_for_mythos_card(query)
     if embed:
         await ctx.send(response, embed=embed)
@@ -87,8 +84,8 @@ async def ahe_s(ctx, *args):
 @slash.slash(name="ahFAQ",
              description="Busca FAQs en cartas.",
              options=general_card_slash_options())
-async def ahfaq_s(ctx, *args):
-    query = format_query_ec(ctx.kwargs)
+async def ahfaq_s(ctx, nombre, tipo="", subtitulo="", pack=""):
+    query = format_query_ec(nombre, tipo, subtitulo, pack)
     response, embed = look_for_faq(query)
     if embed:
         await ctx.send(response, embed=embed)
@@ -99,9 +96,8 @@ async def ahfaq_s(ctx, *args):
 @slash.slash(name="ahReglas",
              description="Busca Reglas/Conceptos del manual del juego.",
              options=rules_slash_options())
-async def ahReglas_s(ctx, *args):
-    query = ctx.kwargs.get('regla')
-    response, embed = look_for_rule(query)
+async def ahReglas_s(ctx, regla):
+    response, embed = look_for_rule(regla)
     if embed:
         await ctx.send(response, embed=embed)
     else:
@@ -111,8 +107,8 @@ async def ahReglas_s(ctx, *args):
 @slash.slash(name="ahb",
              description="Busca el texto de partes traseras de cartas.",
              options=general_card_slash_options())
-async def ahback_s(ctx, *args):
-    query = format_query_ec(ctx.kwargs)
+async def ahback_s(ctx, nombre, tipo="", subtitulo="", pack=""):
+    query = format_query_ec(nombre, tipo, subtitulo, pack)
     response, embed = look_for_card_back(query)
     if embed:
         await ctx.send(response, embed=embed)

@@ -32,9 +32,8 @@ def use_ec_keywords(cards: list, key_list: str):
     return filtered_cards
 
 
-def format_query_ec(kwargs):
-    name = kwargs.get('nombre')
-    subtitle = f" ~{kwargs.get('subtitulo')}~" if 'subtitulo' in kwargs else ""
-    tipo = f" ({kwargs.get('tipo')})" if 'tipo' in kwargs else ""
-    pack = f" [{kwargs.get('pack')}]" if 'pack' in kwargs else ""
-    return name + subtitle + tipo + pack
+def format_query_ec(nombre, tipo, subtitulo, pack):
+    sub = f" ~{subtitulo}~" if subtitulo else ""
+    extra = f" ({tipo})" if 'tipo' else ""
+    pack = f" [{pack}]" if 'pack'  else ""
+    return nombre + sub + extra + pack

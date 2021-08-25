@@ -38,12 +38,9 @@ def use_pc_keywords(cards: list, key_list: str):
     return filtered_cards
 
 
-def format_query_pc(kwargs):
-    name = kwargs.get('nombre')
-    subtitle = f" ~{kwargs.get('subtitulo')}~" if kwargs.get('subtitulo') else ""
-    lvl = str(kwargs.get('nivel')) if "nivel" in kwargs else ""
-    clase = kwargs.get('clase') if "clase" in kwargs else ""
-    ex = kwargs.get('extras') if "extras" in kwargs else ""
-    extra = f" ({lvl + clase + ex})" if lvl or clase or ex else ""
-    pack = f" [{kwargs.get('pack')}]" if "pack" in kwargs else ""
-    return name + subtitle + extra + pack
+def format_query_pc(nombre, nivel, clase, extras, subtitulo, pack):
+    subtitle = f" ~{subtitulo}~" if subtitulo else ""
+    lvl_txt = str(nivel) if nivel != "" else ""
+    extra = f" ({lvl_txt + clase + extras})" if nivel or clase or extras else ""
+    package = f" [{pack}]" if pack else ""
+    return nombre + subtitle + extra + package
