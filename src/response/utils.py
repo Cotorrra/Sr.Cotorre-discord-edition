@@ -21,7 +21,7 @@ def player_card_slash_options():
                           choices=[
                               create_choice(name="Permanente", value="P"),
                               create_choice(name="Excepcional", value="E"),
-                              create_choice(name="Avanzada", value="A"),
+                              create_choice(name="Avanzada/Paralela", value="A"),
                               create_choice(name="Única", value="U"),
                               create_choice(name="Característica", value="C"),
                           ]),

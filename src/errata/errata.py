@@ -44,13 +44,13 @@ def get_errata_card(card_id):
 
 
 def format_errata_text(card_id, back=False):
-    text = "> **Errata**:\n"
+    text = ""
     if has_errata(card_id):
         card = get_errata_card(card_id)
         if back and ('text_back' in card):
-            text += "> %s \n\n" % format_text(card['text_back'])
+            text += "> **Errata**:\n> %s \n\n" % format_text(card['text_back'])
         elif 'text' in card:
-            text += "> %s \n\n" % format_text(card['text'])
+            text += "> **Errata**:\n> %s \n\n" % format_text(card['text'])
         return text
     else:
         return ""
