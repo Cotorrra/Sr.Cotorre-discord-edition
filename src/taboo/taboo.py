@@ -91,6 +91,7 @@ def format_taboo_text(card_id, version=current_taboo):
                 text += "> Desencadenada: %d de experiencia \n" % card['xp']
         if 'text' in card:
             text += "> %s \n" % format_text(card['text'])
+        text += "\n"
         return text
     else:
         return ""

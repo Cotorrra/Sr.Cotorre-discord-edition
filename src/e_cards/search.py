@@ -8,7 +8,7 @@ def use_ec_keywords(cards: list, key_list: str):
     :param key_list: Argumentos dados
     :return:
     """
-    filtered_cards = cards
+    filtered_cards = cards.copy()
     for char in key_list.lower():
         if char.isdigit():
             filtered_cards = [c for c in filtered_cards if is_lvl(c, int(char))]
@@ -34,6 +34,6 @@ def use_ec_keywords(cards: list, key_list: str):
 
 def format_query_ec(nombre, tipo, subtitulo, pack):
     sub = f" ~{subtitulo}~" if subtitulo else ""
-    extra = f" ({tipo})" if 'tipo' else ""
-    pack = f" [{pack}]" if 'pack'  else ""
+    extra = f" ({tipo})" if tipo else ""
+    pack = f" [{pack}]" if pack else ""
     return nombre + sub + extra + pack

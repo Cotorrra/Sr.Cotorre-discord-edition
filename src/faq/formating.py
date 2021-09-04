@@ -9,7 +9,7 @@ def format_faq(c):
                 "subtext": format_subtext(c),
                 "faction": format_faction(c),
                 "level": format_xp(c),
-                "text": "> %s \n" % format_card_text(c, override_spoiler=True) if "text" in c else "",
+                "text": "> %s \n" % format_card_text(c) if "text" in c else "",
                 "faq": format_faq_text(c['code'], back=False)
                 }
 

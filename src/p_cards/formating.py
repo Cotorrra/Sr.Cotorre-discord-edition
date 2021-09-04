@@ -33,7 +33,7 @@ def format_player_card(c):
                     "%(health_sanity)s\n" \
                     "%(flavour)s " \
                     "%(errata_text)s" \
-                    "%(taboo_text)s\n" % f
+                    "%(taboo_text)s" % f
     m_footnote = format_illus_pack(c)
     return create_embed(c, m_title, m_description, m_footnote)
 

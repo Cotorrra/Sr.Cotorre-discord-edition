@@ -8,7 +8,7 @@ def use_pc_keywords(cards: list, key_list: str):
     :param key_list: Argumentos dados
     :return:
     """
-    filtered_cards = cards
+    filtered_cards = cards.copy()
     for char in key_list.lower():
         if char.isdigit():
             filtered_cards = [c for c in filtered_cards if is_lvl(c, int(char))]
@@ -33,7 +33,7 @@ def use_pc_keywords(cards: list, key_list: str):
         if char == "c":
             filtered_cards = [c for c in filtered_cards if "deck only." in c['real_text']]
         if char == "a":
-            filtered_cards = [c for c in filtered_cards if "Advanced." in c['real_text']]
+            filtered_cards = [c for c in filtered_cards if "Advanced." in c['real_text'] or c['id']]
 
     return filtered_cards
 

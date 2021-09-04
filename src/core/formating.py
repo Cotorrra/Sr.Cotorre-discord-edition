@@ -69,7 +69,7 @@ def format_set(c):
     return text
 
 
-def format_card_text(c, tag="text", override_spoiler=False):
+def format_card_text(c, tag="text"):
     formating = {"\n": "\n> "}
     text = format_text(c[tag]) if tag in c else ""
     for key, value in formating.items():
