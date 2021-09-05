@@ -1,5 +1,4 @@
 import json
-from src.core.formating import format_text
 from src.core.utils import load_from_repo
 
 
@@ -41,19 +40,6 @@ def get_errata_card(card_id):
         if card['code'] == card_id:
             return card
     return {}
-
-
-def format_errata_text(card_id, back=False):
-    text = ""
-    if has_errata(card_id):
-        card = get_errata_card(card_id)
-        if back and ('text_back' in card):
-            text += "> **Errata**:\n> %s \n\n" % format_text(card['text_back'])
-        elif 'text' in card:
-            text += "> **Errata**:\n> %s \n\n" % format_text(card['text'])
-        return text
-    else:
-        return ""
 
 
 errata_info = load_errata()

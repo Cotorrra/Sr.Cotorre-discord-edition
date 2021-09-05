@@ -117,8 +117,8 @@ def hits_in_string(query: str, find: str, pos_hit=True):
     :return:
     """
     hits = 0
-    set1 = query.lower().split()
-    set2 = find.lower().split()
+    set1 = query.lower().replace("-", " ").split()
+    set2 = find.lower().replace("-", " ").split()
     hit_list = []
     for w1 in set1:
         for w2 in set2:

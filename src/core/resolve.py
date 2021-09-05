@@ -1,8 +1,10 @@
 from src.core.formating import format_illus_pack
 from src.e_cards.formating import format_enemy_card, format_treachery_card, format_act_card_f, format_agenda_card_f, \
-    format_location_card_f, format_scenario_card, format_enemy_card_short, format_treachery_card_short, \
-    format_act_card_f_short, format_agenda_card_f_short, format_scenario_card_short, format_location_card_f_short
-from src.p_cards.formating import format_inv_card_f, format_player_card, format_inv_card_f_short, format_player_card_deck
+    format_location_card_f, format_scenario_card
+from src.e_cards.formating_short import format_location_card_f_short, format_scenario_card_short, \
+    format_agenda_card_f_short, format_act_card_f_short, format_treachery_card_short, format_enemy_card_short
+from src.p_cards.formating import format_inv_card_f, format_player_card, format_player_card_deck
+from src.p_cards.formating_short import format_inv_card_f_short
 
 
 def resolve_search(r_cards):
@@ -29,9 +31,6 @@ def resolve_search(r_cards):
             embed = format_scenario_card(r_cards[0])
         else:
             embed = format_player_card(r_cards[0])
-
-        footing = format_illus_pack(r_cards[0])
-        embed.set_footer(text=footing)
 
     else:
         embed = False

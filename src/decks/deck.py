@@ -52,7 +52,7 @@ def extract_deck_info(deck, cards):
         text = (card, qty)
         info["xp"] += calculate_xp(card, qty, taboo_version)
 
-        if card['type_code'] == 'permanents':
+        if 'Permanent.' in card['real_text']:
             info['permanents'].append(text)
             info['permanents_q'] += qty
 

@@ -1,9 +1,9 @@
 from src.core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, format_text, \
     faction_order, format_victory, format_illus_pack, create_embed
-from src.errata.errata import format_errata_text
+from src.errata.formating import format_errata_text
 from src.p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
     format_sub_text_short
-from src.taboo.taboo import format_taboo_text
+from src.taboo.formating import format_taboo_text
 
 
 def format_player_card(c):
@@ -74,23 +74,3 @@ def format_player_card_deck(c, qty=0):
     return text
 
 
-def format_player_card_short(c):
-    formater = {"type": "[%s" % c['type_name'],
-                "slot": ": %s]" % format_slot(c) if format_slot(c) else "]",
-                "icons": "[I: %s]" % format_skill_icons(c) if format_skill_icons(c) != "" else "",
-                "costs": "[C: %s]" % format_number(c['cost']) if "cost" in c else "",
-                "health_sanity": "[%s]" % format_health_sanity(c) if format_health_sanity(c) != "" else "",
-                "victory": "[VP:%s]" % format_victory(c) if format_victory(c) else "",
-                }
-    text = "%(type)s%(slot)s%(costs)s%(icons)s%(health_sanity)s%(victory)s" % formater
-    return text
-
-
-def format_inv_card_f_short(c):
-    formater = {"class": format_text("[%s]" % c['faction_code']),
-                "name": "%s" % c['name'],
-                "skills": format_inv_skills(c),
-                "health_sanity": format_text("%s%s" % ("[health] %s " % c['health'], "[sanity] %s" % c['sanity'])),
-                }
-    text = "[%(skills)s][%(health_sanity)s]" % formater
-    return text

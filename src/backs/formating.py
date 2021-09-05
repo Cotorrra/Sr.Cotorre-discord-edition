@@ -1,7 +1,6 @@
-import discord.embeds
-
-from src.core.formating import format_faction, format_name, format_subtext, format_card_text, format_set, color_picker, set_thumbnail_image, format_illus_pack
-from src.errata.errata import format_errata_text
+from src.core.formating import format_faction, format_name, format_subtext, format_card_text, format_set, \
+    format_illus_pack, create_embed
+from src.errata.formating import format_errata_text
 
 
 def format_inv_card_b(c):
@@ -17,10 +16,7 @@ def format_inv_card_b(c):
                     "%(flavour)s \n" \
                     "%(errata_text)s" % formater
     m_footnote = format_illus_pack(c)
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
-    embed.set_footer(text=m_footnote)
-    set_thumbnail_image(c, embed, True)
+    embed = create_embed(c, m_title, m_description, m_footnote)
     return embed
 
 
@@ -33,11 +29,7 @@ def format_location_card_b(c):
     m_description = "%(back)s \n" \
                     "%(flavour)s" % formater
     m_footnote = format_illus_pack(c)
-
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
-    embed.set_footer(text=m_footnote)
-    set_thumbnail_image(c, embed, True)
+    embed = create_embed(c, m_title, m_description, m_footnote)
     return embed
 
 
@@ -52,9 +44,5 @@ def format_general_card_b(c):
     m_description = "%(back)s \n" \
                     "%(flavour)s" % formater
     m_footnote = "%(pack)s" % formater
-
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
-    embed = discord.Embed(title=m_title, description=m_description, color=color_picker(c), url=url)
-    embed.set_footer(text=m_footnote)
-    set_thumbnail_image(c, embed, True)
+    embed = create_embed(c, m_title, m_description, m_footnote)
     return embed
