@@ -1,5 +1,5 @@
 from src.core.formating import *
-from src.e_cards.formating_utils import format_enemy_stats, format_attack, format_clues, extract_token_info, \
+from src.e_cards.formating_utils import format_enemy_stats, format_attack, format_clues, \
     format_location_data
 from src.errata.formating import format_errata_text
 
@@ -127,3 +127,16 @@ def format_treachery_card(c):
     return create_embed(c, m_title, m_description, m_footnote)
 
 
+def format_general_card(c):
+    formater = {"name": format_name(c),
+                "subname": format_subtext(c),
+                "text": "%s \n" % format_card_text(c, "text") if "text" in c else "",
+                "pack": format_set(c),
+                "flavour": format_text("<i>%s</i>\n" % c['flavor'] if "flavor" in c else ""),
+                }
+    m_title = "%(name)s %(subname)s" % formater
+    m_description = "%(flavour)s \n" \
+                    "%(text)s" % formater
+    m_footnote = "%(pack)s" % formater
+    embed = create_embed(c, m_title, m_description, m_footnote)
+    return embed
