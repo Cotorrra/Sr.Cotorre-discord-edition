@@ -112,8 +112,10 @@ def format_number(n):
 
 
 def format_faction(c):
-    if 'faction2_code' in c:
-        return format_text("[%s]/[%s]" % (c['faction_code'], c['faction2_code']))
+    if 'faction3_code' in c:
+        return format_text("[%s][%s][%s]" % (c['faction_code'], c['faction2_code'], c['faction3_code']))
+    elif 'faction2_code' in c:
+        return format_text("[%s][%s]" % (c['faction_code'], c['faction2_code']))
     else:
         return format_text("[%s]" % c['faction_code'])
 
@@ -154,13 +156,16 @@ def format_subtext(c):
 
 def color_picker(c):
     colors = {
-        "survivor": 0xcc3038,
-        "rogue": 0x107116,
-        "guardian": 0x2b80c5,
-        "mystic": 0x4331b9,
-        "seeker": 0xec8426,
-        "neutral": 0x606060,
-        "mythos": 0x000000,
+        "survivor": 0xaa2211,
+        "rogue": 0x225522,
+        "guardian": 0x2255cc,
+        "mystic": 0x51479d,
+        "seeker": 0xff7700,
+        "neutral": 0xaaaaaa,
+        "mythos": 0x333333,
     }
-    return colors[c['faction_code']]
+    if 'faction2_code' in c:
+        return 0xffdd55
+    else:
+        return colors[c['faction_code']]
 
