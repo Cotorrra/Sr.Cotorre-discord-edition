@@ -70,7 +70,7 @@ def format_player_card_deck(c, qty=0):
                 "quantity": "x%s" % str(qty) if qty > 1 else "",
                 "subname": format_sub_text_short(c)
                 }
-    text = "%(class)s %(name)s%(level)s %(quantity)s" % formater
+    text = "%(class)s %(name)s%(subname)s %(level)s %(quantity)s" % formater
     return text
 
 
