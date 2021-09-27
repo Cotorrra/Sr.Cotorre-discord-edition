@@ -1,8 +1,20 @@
 import discord
 
+from config import arkhamdb, text_format, lang
+from src.core.translator import locale
 
-def create_embed(c, title, description, footnote=""):
-    url = "https://es.arkhamdb.com/card/%s" % c['code']
+
+def create_embed(c: dict, title: str, description: str, footnote="") -> discord.embeds.Embed:
+    """
+    Creates a Discord embed with a title, description and footnote if any.
+
+    :param c: Card information dict.
+    :param title: Card title
+    :param description: Card description.
+    :param footnote: Card footnote (optional)
+    :return: A Discord embed.
+    """
+    url = f"{arkhamdb}/card/{c['code']}"
     embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
     if footnote:
         embed.set_footer(text=footnote)
@@ -10,114 +22,130 @@ def create_embed(c, title, description, footnote=""):
     return embed
 
 
-def format_text(text):
-    text_format = {"[free]": "<:Libre:789610643262799913>",
-                   "[fast]": "<:Libre:789610643262799913>",
-                   "[elder_sign]": "<:arcano:799004602183843851>",
-                   "[willpower]": "<:voluntad:830574960510500864>",
-                   "[combat]": "<:combate:830574960472227870>",
-                   "[intellect]": "<:intelecto:830574962552209468>",
-                   "[agility]": "<:agilidad:830574960493461615>",
-                   "[action]": "<:Accion:789610653912399891>",
-                   "[reaction]": "<:Reaccion:789610628339073075>",
-                   "[bless]": "<:bendicion:799051903816171550>",
-                   "[curse]": "<:maldicion:799050838928654347>",
-                   "[wild]": "<:Comodin:789619157657583636>",
-                   "[skull]": "<:calavera:799059800276336721>",
-                   "[cultist]": "<:sectario:799004435762249729>",
-                   "[tablet]": "<:tablilla:799004747687526410>",
-                   "[elder_thing]": "<:primigenio:799059800230461441>",
-                   "[auto_fail]": "<:fallo:799004322796797953>",
-                   "[mystic]": "<:Mistico:786679149196476467>",
-                   "[seeker]": "<:Buscador:786679131768225823>",
-                   "[guardian]": "<:Guardian:786679100273852457>",
-                   "[rogue]": "<:Rebelde:786679171257991199>",
-                   "[survivor]": "<:Superviviente:786679182284947517>",
-                   "[neutral]": "<:Neutral:786679389303603221>",
-                   "[mythos]": "<:encuentro:808047457971470388>",
-                   "[health]": "<:Salud:808821841413668904>",
-                   "[sanity]": "<:Cordura:808821830608617493>",
-                   "[per_investigator]": "<:Porinvestigador:789610613650489434>",
-                   "[doom]": "<:perdicion:801160341886468138>",
-                   "[clues]": "<:pista:801161173864808548>",
-                   "</b>": "**",
-                   "<b>": "**",
-                   "<em>": "_",
-                   "</em>": "_",
-                   "<i>": "_",
-                   "</i>": "_",
-                   "<u>": "__",
-                   "</u>": "__",
-                   "[[": "***",
-                   "]]": "***",
-                   "<cite>": "\n— ",
-                   "</cite>": "",
-                   }
+def format_text(text: str) -> str:
+    """
+    Replaces certain text tags in a text to its matching emojis in Discord.
 
+    :param text: The text
+    :return: A new formatted text
+    """
     for key, value in text_format.items():
         text = text.replace(key, value)
+
     return text
 
 
-def format_set(c):
-    text = "%s #%s" % (c['pack_name'], str(c['position']))
+def format_set(c: dict) -> str:
+    """
+    Returns the the numbering of a given card.
+    Ex: Rats are: Core Set #159. Rats #1-3.
+
+    :param c: Card information.
+    :return: String with text info.
+    """
+    text = f"{c['pack_name']} #{str(c['position'])}"
     if "encounter_code" in c:
-        text += ": %s #%s" % (c['encounter_name'], str(c['encounter_position']))
+        text += f": {c['encounter_name']} #{str(c['encounter_position'])}"
         if c['quantity'] > 1:
-            text += "-%s" % str(c['encounter_position'] + c['quantity'] - 1)
+            text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
     text += "."
     return text
 
 
-def format_card_text(c, tag="text"):
-    formating = {"\n": "\n> "}
-    text = format_text(c[tag]) if tag in c else ""
-    for key, value in formating.items():
+def format_card_text(c: dict, tag="text") -> str:
+    """
+    Formats the certain text from a tag in a Card.
+
+    :param c: Card information.
+    :param tag: The tag to get the text.
+    :return: A formatted text.
+    """
+    formatting = {"\n": "\n> "}
+    if tag in c:
+        text = format_text(c[tag])
+    else:
+        return ""
+
+    for key, value in formatting.items():
         text = text.replace(key, value)
     return text
 
 
-def format_illus_pack(c, only_pack=False):
-    formater = {"pack": format_set(c),
-                "artist": "%s \n" % format_illustrator(c) if c['type_code'] != "scenario" else ""
-                }
+def format_illus_pack(c: dict, only_pack=False) -> str:
+    """
+    Formats the illustrator and pack of a card.
+    Ex:
+    Scavenging is:
+        🖌 Derk Venneman
+        Core Set #73.
+
+    :param c:
+    :param only_pack:
+    :return:
+    """
+    pack = format_set(c)
+    artist = format_illustrator(c)
     if only_pack:
-        return "%(pack)s" % formater
+        return f"{pack}"
     else:
-        return "%(artist)s" \
-               "%(pack)s" % formater
+        return f"{artist}\n{pack}"
 
 
-def format_victory(c, override_spoiler=False):
+def format_victory(c: dict) -> str:
+    """
+    Formats the victory points from a card.
+
+    :param c: The card info.
+    :return: A string
+    """
+
     if "victory" in c:
-        text = "**Victoria %s.**" % c['victory']
-        return "> %s \n" % text
+        return f"**{locale('victory')} {c['victory']}.**"
     else:
         return ""
 
 
-def format_vengeance(c, override_spoiler=False):
+def format_vengeance(c: dict) -> str:
+    """
+    Formats the evil vengeance points from a card.
+
+    :param c: The card info.
+    :return: A string.
+    """
     if "vengeance" in c:
-        text = "**Venganza %s.**" % c['vengeance']
-        return "> %s \n" % text
+        return f"**{locale('vengeance')} {c['vengeance']}.**"
     else:
         return ""
 
 
-def format_number(n):
+def format_number(n) -> str:
+    """
+    Formats a number, yes. It need some formatting lol.
+    If is -2 then its X.
+
+    :param n: A number
+    :return: A string
+    """
     if int(n) == -2:
         return "X"
     else:
         return str(n)
 
 
-def format_faction(c):
+def format_faction(c: dict) -> str:
+    """
+    Formats the different classes that could be in a card.
+    Thanks EotE.
+
+    :param c: A card info.
+    :return: A string
+    """
     if 'faction3_code' in c:
-        return format_text("[%s][%s][%s]" % (c['faction_code'], c['faction2_code'], c['faction3_code']))
+        return format_text(f"[{c['faction_code']}][{c['faction2_code']}][{c['faction3_code']}")
     elif 'faction2_code' in c:
-        return format_text("[%s][%s]" % (c['faction_code'], c['faction2_code']))
+        return format_text(f"[{c['faction_code']}][{c['faction2_code']}]")
     else:
-        return format_text("[%s]" % c['faction_code'])
+        return format_text(f"[{c['faction_code']}]")
 
 
 faction_order = {
@@ -131,30 +159,47 @@ faction_order = {
 }
 
 
-def set_thumbnail_image(c, embed, back=False):
+def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> None:
+    """
+    Sets the thumbnail image of a embed to the one from ArkhamDB.
+
+    :param c: Card info
+    :param embed: Discord Embed
+    :param back: If it has to show the card back instead
+    :return: None
+    """
     if "imagesrc" in c:
         if back:
             if "backimagesrc" in c:
-                embed.set_thumbnail(url="https://arkhamdb.com%s" % c["backimagesrc"])
+                embed.set_thumbnail(url=f"{arkhamdb}{c['backimagesrc']}")
             else:
-                embed.set_thumbnail(url="https://arkhamdb.com%s" % c["imagesrc"])
+                embed.set_thumbnail(url=f"{arkhamdb}{c['imagesrc']}")
         else:
-            embed.set_thumbnail(url="https://arkhamdb.com%s" % c["imagesrc"])
+            embed.set_thumbnail(url=f"{arkhamdb}{c['imagesrc']}")
 
 
-def format_illustrator(c):
-    return "🖌 %s" % c['illustrator']
+def format_illustrator(c: dict) -> str:
+    if c['type_code'] != "scenario":
+        return "🖌 %s" % c['illustrator']
+    else:
+        return ""
 
 
-def format_name(c):
-    return "*%s" % c['name'] if c['is_unique'] else "%s" % c['name']
+def format_name(c: dict) -> str:
+    if c['is_unique']:
+        return f"*{c['name']}"
+    else:
+        return c['name']
 
 
-def format_subtext(c):
-    return ": _%s_" % c['subname'] if 'subname' in c else ""
+def format_subtext(c: dict) -> str:
+    if 'subname' in c:
+        return f": _{c['subname']}_"
+    else:
+        return ""
 
 
-def color_picker(c):
+def color_picker(c: dict) -> int:
     colors = {
         "survivor": 0xaa2211,
         "rogue": 0x225522,
@@ -164,8 +209,26 @@ def color_picker(c):
         "neutral": 0xaaaaaa,
         "mythos": 0x333333,
     }
-    if 'faction2_code' in c:
+    if 'faction2_code' in c:  # Multiclass
         return 0xffdd55
     else:
         return colors[c['faction_code']]
+
+
+def format_type(c: dict) -> str:
+    return f"***{c['type_name']}***"
+
+
+def format_traits(c: dict) -> str:
+    if "traits" in c:
+        return f"*%s*" % c['traits']
+    else:
+        return ""
+
+
+def format_flavour(c: dict) -> str:
+    if "flavor" in c:
+        return f"_{format_text(c['flavor'])}_"
+    else:
+        return ""
 

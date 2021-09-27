@@ -33,7 +33,7 @@ def split_files(src: str):
 
 def is_lvl(card: dict, lvl: int):
     """
-    Equipara el nivel de una carta con el numero dado, si no tiene nivel, se equipara con 0.
+    Compares the level of a card with a number, if the card doesnt have a level it always returns false.
     :param card: carta
     :param lvl: nivel
     :return:
@@ -41,7 +41,7 @@ def is_lvl(card: dict, lvl: int):
     if 'xp' in card:
         return card['xp'] == lvl
     else:
-        return 0 == lvl
+        return False
 
 
 def get_qty(deck, card_id):
@@ -58,3 +58,10 @@ def has_trait(card, trait):
 
     except KeyError:
         return False
+
+
+def text_if(template, text):
+    if text:
+        return template % text
+    else:
+        return ""

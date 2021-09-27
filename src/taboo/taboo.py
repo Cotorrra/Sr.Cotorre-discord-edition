@@ -1,5 +1,6 @@
 import json
 
+from config import lang
 from src.core.utils import load_from_repo
 
 current_taboo = "004"
@@ -10,7 +11,7 @@ def load_taboo():
     Carga el archivo de taboo.
     :return:
     """
-    file_src = 'data/taboo/taboos.json'
+    file_src = f'data/taboo/{lang}.json'
 
     info = load_from_repo(file_src)
 

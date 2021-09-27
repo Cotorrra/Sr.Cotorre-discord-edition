@@ -8,10 +8,11 @@ pack_data = requests.get('https://es.arkhamdb.com/api/public/packs/').json()
 
 def card_search(query, cards, keyword_func):
     """
-    Busca una carta en un conjunto de cartas usando keywords (ej (4E))
-    :param query: Nombre de la carta a buscar
-    :param cards: Conjunto de cartas
-    :param keyword_func: Función para utilizar keywords
+    Search a card within a set of cards using keywords (ex (4E))
+
+    :param query: The card query.
+    :param cards: Set of cards
+    :param keyword_func: A keyword function
     :return:
     """
     query, keyword_query, keyword_mode = find_and_extract(query, "(", ")")
@@ -33,7 +34,7 @@ def card_search(query, cards, keyword_func):
 
     cards_were_filtered = len(cards) > len(f_cards)
 
-    r_cards = search(query, f_cards)
+    r_cards = card_filter(query, f_cards)
 
     if len(r_cards) == 0 \
             or (not cards_were_filtered and len(r_cards) == len(f_cards)) \
@@ -43,25 +44,24 @@ def card_search(query, cards, keyword_func):
         return r_cards
 
 
-def search(query: str, cards: list):
+def card_filter(query: str, cards: [dict]):
     """
-    Realiza una búsqueda según un grupo de palabras dentro del nombre (atributo 'name') de cada carta.
-    :param query: Texto para buscar
-    :param cards: Cartas
+    Filters the cards withing the group of cards that were given
+
+    :param query: The query text
+    :param cards: A list of cards
     :return:
     """
     r_cards = sorted(cards, key=lambda card: -hits_in_string(query, card['name']))
-
-    # Sales en los resultados aparte si estas igual de hits con las palabras
     r_cards = [c for c in r_cards if hits_in_string(query, c['name']) > 0]
     return r_cards
 
 
-def find_by_id(code: str, cards: list):
+def find_by_id(code: str, cards: [dict]):
     """
-    Retorna la carta que haga match con el id entregado, de otra forma devuelve False.
-    :param code:
-    :param cards:
+    Returns the card with the given code. If it doesnt exits it returns false.
+    :param code: The card code (i.e 10001)
+    :param cards: The list of cards
     :return:
     """
     r_cards = [c for c in cards if c['code'] == code]
@@ -73,9 +73,10 @@ def find_by_id(code: str, cards: list):
 
 def filter_by_subtext(card: dict, sub: str):
     """
-    Retorna True si la carta contiene el subsombre dado, de otra forma False.
-    :param card:
-    :param sub:
+    Returns whether a card contains the given subname or not.
+
+    :param card: a card
+    :param sub: a subname
     :return:
     """
     if "subname" in card:
@@ -86,8 +87,11 @@ def filter_by_subtext(card: dict, sub: str):
 
 def find_and_extract(string: str, start_s: str, end_s: str):
     """
-    Encuentra y extrae un substring delimitado por start_s y end_s, regresando una triada de valores:
-    (string base, string extraido, si fue extraido algo)
+    Finds and extracts a substring delimited by start_s and end_s, returning two values:
+    - The base string with that substring extracted
+    - The substring that was extracted
+    - Whether something was extracted or not.
+
     :param string:
     :param start_s:
     :param end_s:
@@ -97,6 +101,7 @@ def find_and_extract(string: str, start_s: str, end_s: str):
         enable = string.find(start_s) > 0
     else:
         enable = string.__contains__(start_s) and string.__contains__(end_s)
+
     if enable:
         fst_occ = string.find(start_s) + 1
         snd_occ = string[fst_occ:].find(end_s)
@@ -109,7 +114,8 @@ def find_and_extract(string: str, start_s: str, end_s: str):
 
 def hits_in_string(query: str, find: str, pos_hit=True):
     """
-    Retorna la cantidad de veces únicas en las que un string contiene una palabra en el otro.
+    Returns the "hits" of the query string in the find string.
+
     Va por palabras.
     :param pos_hit:
     :param find:

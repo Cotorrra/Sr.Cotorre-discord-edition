@@ -1,4 +1,6 @@
 import json
+
+from config import lang
 from src.core.utils import load_from_repo
 
 
@@ -7,7 +9,7 @@ def load_errata():
     Carga el archivo de taboo.
     :return:
     """
-    file_src = 'data/errata/errata.json'
+    file_src = f'data/errata/{lang}.json'
     info = load_from_repo(file_src)
 
     info['cards'] = json.dumps(info['cards'])

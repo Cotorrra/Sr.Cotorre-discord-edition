@@ -1,5 +1,6 @@
 from src.core.formating import format_text, format_number, color_picker
 from src.core.search import find_by_id
+from src.core.translator import locale
 
 
 def format_xp(c):
@@ -75,5 +76,13 @@ def format_sub_text_short(c):
                     "Directive" in c['real_name'] or
                     "Discipline" in c['real_name']):
                 return f": _{c['subname']}_"
-
+        if 'Advanced.' in c['real_text']:
+            return f" _(Adv)_"
     return ""
+
+
+def format_costs(c):
+    if "cost" in c:
+        return f"{locale('cost')}: %s \n" % format_number(c['cost'])
+    else:
+        return ""

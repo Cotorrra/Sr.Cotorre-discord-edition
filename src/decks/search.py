@@ -1,20 +1,22 @@
 import requests
 
+from config import arkhamdb
+from src.core.translator import locale
 from src.decks.deck import check_upgrade_rules
 from src.decks.formating import format_upgraded_deck
 
 
 def find_deck(code: str, deck_mode):
     if deck_mode:
-        link = f'https://es.arkhamdb.com/api/public/{deck_mode}/{code}'
+        link = f"{arkhamdb}/api/public/{deck_mode}/{code}"
         req = requests.get(link)
         if not req.text:
             return {}
     else:
-        link = 'https://es.arkhamdb.com/api/public/decklist/%s' % code
+        link = f"{arkhamdb}/api/public/decklist/{code}"
         req = requests.get(link)
         if not req.text:
-            link = 'https://es.arkhamdb.com/api/public/deck/%s' % code
+            link = f"{arkhamdb}/api/public/deck/{code}"
             req = requests.get(link)
             if not req.text:
                 return {}
@@ -37,10 +39,10 @@ def search_for_upgrades(code, cards, deck_mode):
     deck1 = find_deck(code, deck_mode)
     deck2 = find_former_deck(code, deck_mode)
     if not deck1:
-        response = "No encontré el mazo."
+        response = locale('deck_not_found')
         embed = False
     elif not deck2:
-        response = "El Mazo dado no contiene una mejora."
+        response = locale('upgrade_not_found')
         embed = False
     else:
         info = check_upgrade_rules(deck2, deck1, cards)

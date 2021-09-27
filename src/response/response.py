@@ -1,5 +1,7 @@
 import requests
 
+from config import arkhamdb
+from src.core.translator import locale
 from src.faq.formating import format_faq
 from src.backs.search import resolve_back_search
 from src.core.resolve import resolve_search
@@ -14,13 +16,10 @@ from src.rules.search import search_for_rules
 from src.tarot.formating import format_tarot
 from src.tarot.search import search_for_tarot
 
-"""
-    Aquí están todas las respuestas que tiene el bot, aquí es donde se hace la magia del bot, a partir de aquí
-    el bot interactúa con los otros paquetes para hacer su magia.
-"""
-
-ah_all_cards = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=1').json()
-ah_player = requests.get('https://es.arkhamdb.com/api/public/cards?encounter=0').json()
+#   Aquí están todas las respuestas que tiene el bot, aquí es donde se hace la magia del bot, a partir de aquí
+#    el bot interactúa con los otros paquetes para hacer su magia.
+ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
+ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
 
 # Encounter p_cards include: Special player p_cards, Weaknesses, enemies, acts, plans, etc.
 ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
@@ -40,7 +39,7 @@ def look_for_player_card(query: str):
     if embed:
         return "", embed
     else:
-        return "No se encontró la carta.", False
+        return locale('card_not_found'), False
 
 
 def look_for_mythos_card(query: str):
@@ -55,7 +54,7 @@ def look_for_mythos_card(query: str):
     if embed:
         response = ""
     else:
-        response = "No se encontró la carta."
+        response = locale('card_not_found')
 
     return response, embed
 
@@ -73,7 +72,7 @@ def look_for_card_back(query: str):
     if embed:
         response = ""
     else:
-        response = "No se encontró la carta."
+        response = locale('card_not_found')
 
     return response, embed
 
@@ -87,7 +86,7 @@ def look_for_deck(code, deck_type):
     """
     deck = find_deck(code, deck_type)
     if not deck:
-        response = "Mazo no encontrado"
+        response = locale('deck_not_found')
         embed = False
     else:
         deck_info = extract_deck_info(deck, ah_all_cards)
@@ -117,7 +116,7 @@ def look_for_faq(query):
         embed = format_faq(r_cards[0])
         response = ""
     else:
-        response = "No se encontró la carta."
+        response = locale('card_not_found')
         embed = False
     return response, embed
 
@@ -134,7 +133,7 @@ def look_for_rule(query):
         response = ""
     else:
         embed = False
-        response = "No se encontró la regla."
+        response = locale('card_not_found')
     return response, embed
 
 
@@ -151,5 +150,5 @@ def look_for_tarot(query):
         response = ""
     else:
         embed = False
-        response = "No se encontró la carta."
+        response = locale('card_not_found')
     return response, embed

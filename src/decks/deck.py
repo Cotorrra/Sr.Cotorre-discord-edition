@@ -41,10 +41,10 @@ def check_upgrade_rules(deck1, deck2, cards):
 
 
 def extract_deck_info(deck, cards):
-    info = {"assets_o": [], "assets_h": [], "assets_h2": [], "assets_b": [],
-            "assets_acc": [], "assets_ar": [], "assets_ar2": [], "assets_ally": [],
-            "permanents": [], "events": [], "skills": [], "treachery": [],
-            "assets_q": 0, "events_q": 0, "skills_q": 0, "treachery_q": 0, "permanents_q": 0,
+    info = {"assets_others": [], "assets_hand": [], "assets_hand2": [], "assets_body": [],
+            "assets_accessory": [], "assets_arcane": [], "assets_arcane2": [], "assets_ally": [],
+            "assets_permanents": [], "events": [], "skills": [], "treachery": [],
+            "assets_q": 0, "events_q": 0, "skills_q": 0, "treachery_q": 0, "assets_permanents_q": 0,
             "xp": 0, "color": get_color_by_investigator(deck, cards)}
     taboo_version = "00" + str(deck['taboo_id'])
     for c_id, qty in deck['slots'].items():
@@ -53,36 +53,36 @@ def extract_deck_info(deck, cards):
         info["xp"] += calculate_xp(card, qty, taboo_version)
 
         if 'Permanent.' in card['real_text']:
-            info['permanents'].append(text)
-            info['permanents_q'] += qty
+            info['assets_permanents'].append(text)
+            info['assets_permanents_q'] += qty
 
         elif card['type_code'] == "asset":
             info['assets_q'] += qty
             if 'real_slot' in card:
                 if card['real_slot'] == 'Hand':
-                    info['assets_h'].append(text)
+                    info['assets_hand'].append(text)
 
                 elif card['real_slot'] == 'Hand x2':
-                    info['assets_h2'].append(text)
+                    info['assets_hand2'].append(text)
 
                 elif card['real_slot'] == 'Arcane':
-                    info['assets_ar'].append(text)
+                    info['assets_arcane'].append(text)
 
                 elif card['real_slot'] == 'Arcane x2':
-                    info['assets_ar2'].append(text)
+                    info['assets_arcane2'].append(text)
 
                 elif card['real_slot'] == 'Accessory':
-                    info['assets_acc'].append(text)
+                    info['assets_accessory'].append(text)
 
                 elif card['real_slot'] == 'Body':
-                    info['assets_b'].append(text)
+                    info['assets_body'].append(text)
 
                 elif card['real_slot'] == 'Ally':
                     info['assets_ally'].append(text)
                 else:
-                    info['assets_o'].append(text)
+                    info['assets_others'].append(text)
             else:
-                info['assets_o'].append(text)
+                info['assets_others'].append(text)
 
         elif card['type_code'] == "event":
             info['events'].append(text)
