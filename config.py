@@ -1,8 +1,16 @@
+import os
+
+from dotenv import load_dotenv
+
+# The Bot secret TOKEN
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+
 # Base link to arkhamdb. It varies from language to language
-arkhamdb = "https://es.arkhamdb.com"
+arkhamdb = os.getenv('ARKHAMDB')
 
 # You can choose to es/en: Check Sr-Cotorre Data to check what languages are available!
-lang = "es"
+lang = os.getenv('LANG')
 
 # Advanced: If you want to change the emojis from the bot
 # [tag] -> <emoji:code>

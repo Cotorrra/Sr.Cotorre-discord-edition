@@ -1,11 +1,9 @@
-import os
-
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
-from config import lang
+from config import TOKEN
 from src.core.translator import locale
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
@@ -14,7 +12,6 @@ from src.response.response import look_for_mythos_card, look_for_player_card, \
 from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, tarot_slash_options
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='!SrCotorre')
 slash = SlashCommand(bot, sync_commands=True)
 
@@ -97,11 +94,11 @@ async def ahTarot(ctx, name=""):
         await ctx.send(response)
 
 
-@slash.slash(name=f"refresh{lang}",
+@slash.slash(name="refresh",
              description="Refresca las cartas del bot",
              guild_ids=[804912893589585964])
 async def refresh(ctx):
     refresh_cards()
-    await ctx.send(f"Refrescado! ({lang})")
+    await ctx.send("Refrescado!")
 
 bot.run(TOKEN)
