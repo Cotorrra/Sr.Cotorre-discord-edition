@@ -141,7 +141,7 @@ def format_faction(c: dict) -> str:
     :return: A string
     """
     if 'faction3_code' in c:
-        return format_text(f"[{c['faction_code']}][{c['faction2_code']}][{c['faction3_code']}")
+        return format_text(f"[{c['faction_code']}][{c['faction2_code']}][{c['faction3_code']}]")
     elif 'faction2_code' in c:
         return format_text(f"[{c['faction_code']}][{c['faction2_code']}]")
     else:

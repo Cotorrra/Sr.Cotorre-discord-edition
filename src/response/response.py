@@ -16,13 +16,38 @@ from src.rules.search import search_for_rules
 from src.tarot.formating import format_tarot
 from src.tarot.search import search_for_tarot
 
-#   Aquí están todas las respuestas que tiene el bot, aquí es donde se hace la magia del bot, a partir de aquí
-#    el bot interactúa con los otros paquetes para hacer su magia.
-ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
-ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
 
-# Encounter p_cards include: Special player p_cards, Weaknesses, enemies, acts, plans, etc.
-ah_encounter = [c for c in ah_all_cards if "spoiler" in c]
+# This class contains the cards from ArkhamDB
+class CardsDB:
+    def __init__(self):
+        self.ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
+        self.ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
+        self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
+
+    def get_all_cards(self):
+        return self.ah_all_cards
+
+    def get_p_cards(self):
+        return self.ah_player
+
+    def get_e_cards(self):
+        return self.ah_encounter
+
+    def refresh(self):
+        self.ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
+        self.ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
+        self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
+
+
+cards = CardsDB()
+
+
+def refresh_cards():
+    """
+    Refreshes the cards from ArkhamDB
+    :return:
+    """
+    cards.refresh()
 
 
 def look_for_player_card(query: str):
@@ -34,7 +59,7 @@ def look_for_player_card(query: str):
     :param keyword_fun: A function that filters cards given the keywords in (TYPE)
     :return: a Discord.Embed
     """
-    r_cards = card_search(query, ah_player, use_pc_keywords)
+    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
     embed = resolve_search(r_cards)
     if embed:
         return "", embed
@@ -49,7 +74,7 @@ def look_for_mythos_card(query: str):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return: a Discord.Embed
     """
-    r_cards = card_search(query, ah_encounter, use_ec_keywords)
+    r_cards = card_search(query, cards.get_e_cards(), use_ec_keywords)
     embed = resolve_search(r_cards)
     if embed:
         response = ""
@@ -66,7 +91,7 @@ def look_for_card_back(query: str):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return: a Discord.Embed
     """
-    f_cards = [c for c in ah_all_cards if c["double_sided"]]
+    f_cards = [c for c in cards.get_all_cards() if c["double_sided"]]
     r_cards = card_search(query, f_cards, use_ec_keywords)
     embed = resolve_back_search(r_cards)
     if embed:
@@ -89,7 +114,7 @@ def look_for_deck(code, deck_type):
         response = locale('deck_not_found')
         embed = False
     else:
-        deck_info = extract_deck_info(deck, ah_all_cards)
+        deck_info = extract_deck_info(deck, cards.get_all_cards())
         embed = format_deck(deck, deck_info)
         response = ""
     return response, embed
@@ -102,7 +127,7 @@ def look_for_upgrades(code, deck_type):
     :param code: ArkhamDB ID
     :return:
     """
-    return search_for_upgrades(code, ah_player, deck_type)
+    return search_for_upgrades(code, cards.get_p_cards(), deck_type)
 
 
 def look_for_faq(query):
@@ -111,7 +136,7 @@ def look_for_faq(query):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return:
     """
-    r_cards = card_search(query, ah_all_cards, use_ec_keywords)
+    r_cards = card_search(query, cards.get_all_cards(), use_ec_keywords)
     if r_cards:
         embed = format_faq(r_cards[0])
         response = ""

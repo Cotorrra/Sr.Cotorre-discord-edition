@@ -5,11 +5,12 @@ from discord.ext import commands
 from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
+from config import lang
 from src.core.translator import locale
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
 from src.response.response import look_for_mythos_card, look_for_player_card, \
-    look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot
+    look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards
 from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, tarot_slash_options
 
 load_dotenv()
@@ -96,18 +97,11 @@ async def ahTarot(ctx, name=""):
         await ctx.send(response)
 
 
-@slash.slash(name="InvestigatorTest",
-             description="SuperTest",
+@slash.slash(name=f"refresh{lang}",
+             description="Refresca las cartas del bot",
              guild_ids=[804912893589585964])
-async def ahTestPlayer(ctx):
-    """
-    Sr. Cotorre Lab Only.
-    Sends the following cards:
-        - Rex Murphy (front and back)
-        - Lola Hayes (front and back)
-        -
-    :param ctx:
-    :return:
-    """
+async def refresh(ctx):
+    refresh_cards()
+    await ctx.send(f"Refrescado! ({lang})")
 
 bot.run(TOKEN)
