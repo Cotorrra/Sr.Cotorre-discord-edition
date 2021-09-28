@@ -10,7 +10,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 arkhamdb = os.getenv('ARKHAMDB')
 
 # You can choose to es/en: Check Sr-Cotorre Data to check what languages are available!
-lang = os.getenv('LANG')
+lang = os.getenv('BOT_LANGUAGE')
 
 # Advanced: If you want to change the emojis from the bot
 # [tag] -> <emoji:code>
