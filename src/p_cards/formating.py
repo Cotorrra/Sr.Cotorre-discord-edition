@@ -21,7 +21,7 @@ def format_player_card(c):
     costs = format_costs(c)
 
     text = text_if("> %s\n", format_card_text(c))
-    flavour = format_flavour(c)
+    flavour = text_if("%s\n", format_flavour(c))
     health_sanity = text_if("%s\n", format_health_sanity(c))
     taboo_text = format_taboo_text(c['code'])
     errata_text = format_errata_text(c['code'])
@@ -35,7 +35,7 @@ def format_player_card(c):
                     f"{text}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
-                    f"{flavour}\n" \
+                    f"{flavour}" \
                     f"{errata_text}\n" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
