@@ -3,7 +3,9 @@ import re
 import requests
 import unidecode
 
-pack_data = requests.get('https://es.arkhamdb.com/api/public/packs/').json()
+from config import arkhamdb
+
+pack_data = requests.get(f'{arkhamdb}/api/public/packs/').json()
 
 
 def card_search(query, cards, keyword_func):
