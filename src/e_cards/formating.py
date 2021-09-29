@@ -43,7 +43,7 @@ def format_act_card_f(c):
     m_title = name
     m_description = f"{stage}\n" \
                     f"{flavour}" \
-                    f"{text}\n" \
+                    f"{text}" \
                     f"{clues}\n" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
@@ -61,7 +61,7 @@ def format_agenda_card_f(c):
     m_title = name
     m_description = f"{stage}\n" \
                     f"{flavour}" \
-                    f"{text}\n" \
+                    f"{text}" \
                     f"{doom}\n" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)

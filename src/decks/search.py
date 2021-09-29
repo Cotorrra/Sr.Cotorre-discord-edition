@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from config import arkhamdb
@@ -7,20 +9,23 @@ from src.decks.formating import format_upgraded_deck
 
 
 def find_deck(code: str, deck_mode):
-    if deck_mode:
-        link = f"{arkhamdb}/api/public/{deck_mode}/{code}"
-        req = requests.get(link)
-        if not req.text:
-            return {}
-    else:
-        link = f"{arkhamdb}/api/public/decklist/{code}"
-        req = requests.get(link)
-        if not req.text:
-            link = f"{arkhamdb}/api/public/deck/{code}"
+    try:
+        if deck_mode:
+            link = f"{arkhamdb}/api/public/{deck_mode}/{code}"
             req = requests.get(link)
             if not req.text:
                 return {}
-    return req.json()
+        else:
+            link = f"{arkhamdb}/api/public/decklist/{code}"
+            req = requests.get(link)
+            if not req.text:
+                link = f"{arkhamdb}/api/public/deck/{code}"
+                req = requests.get(link)
+                if not req.text:
+                    return {}
+        return req.json()
+    except json.decoder.JSONDecodeError:
+        return {}
 
 
 def find_former_deck(code: str, deck_mode):
