@@ -48,7 +48,6 @@ def format_set(c: dict) -> str:
         text += f": {c['encounter_name']} #{str(c['encounter_position'])}"
         if c['quantity'] > 1:
             text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
-    text += "."
     return text
 
 
@@ -216,12 +215,12 @@ def color_picker(c: dict) -> int:
 
 
 def format_type(c: dict) -> str:
-    return f"***{c['type_name']}***"
+    return f"**{c['type_name']}**"
 
 
 def format_traits(c: dict) -> str:
     if "traits" in c:
-        return f"*%s*" % c['traits']
+        return f"***%s***" % c['traits']
     else:
         return ""
 

@@ -38,24 +38,20 @@ def format_slot(c):
 
 
 def format_inv_skills(c):
-    formater = {
-        "will": "[willpower] %s " % c['skill_willpower'] if "skill_willpower" in c else "",
-        "int": "[intellect] %s " % c['skill_intellect'] if "skill_intellect" in c else "",
-        "com": "[combat] %s " % c['skill_combat'] if "skill_combat" in c else "",
-        "agi": "[agility] %s" % c['skill_agility'] if "skill_agility" in c else "",
-    }
-    return format_text("%(will)s%(int)s%(com)s%(agi)s" % formater)
+    will = f"{c['skill_willpower']} [willpower]" if "skill_willpower" in c else ""
+    intel = f"{c['skill_intellect']} [intellect]" if "skill_intellect" in c else ""
+    com = f"{c['skill_combat']} [combat]" if "skill_combat" in c else ""
+    agi = f"{c['skill_agility']} [agility]" if "skill_agility" in c else ""
+    return format_text(f"{will} {intel} {com} {agi}")
 
 
 def format_skill_icons(c):
-    formater = {
-        "will": "[willpower]" * c['skill_willpower'] if "skill_willpower" in c else "",
-        "int": "[intellect]" * c['skill_intellect'] if "skill_intellect" in c else "",
-        "com": "[combat]" * c['skill_combat'] if "skill_combat" in c else "",
-        "agi": "[agility]" * c['skill_agility'] if "skill_agility" in c else "",
-        "wild": "[wild]" * c['skill_wild'] if "skill_wild" in c else "",
-    }
-    return format_text("%(will)s%(int)s%(com)s%(agi)s%(wild)s" % formater)
+    will = f"{c['skill_willpower']*'[willpower]'}" if "skill_willpower" in c else ""
+    intel = f"{c['skill_intellect']*'[intellect]'}" if "skill_intellect" in c else ""
+    com = f"{c['skill_combat']*'[combat]'}" if "skill_combat" in c else ""
+    agi = f"{c['skill_agility']*'[agility]'}" if "skill_agility" in c else ""
+    wild = f"{c['skill_wild']*'[wild]'}" if "skill_wild" in c else ""
+    return format_text(f"{will}{intel}{com}{agi}{wild}")
 
 
 def format_health_sanity(c):
