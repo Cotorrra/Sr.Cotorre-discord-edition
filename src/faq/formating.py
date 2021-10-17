@@ -16,7 +16,7 @@ def format_faq(c):
     title = f"{faction} {name}{subtext} {level}"
     description = f"{text}\n{faq}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, title, description, m_footnote)
+    return create_embed(title, description, c, m_footnote)
 
 
 def format_faq_text(card_id, back=False):

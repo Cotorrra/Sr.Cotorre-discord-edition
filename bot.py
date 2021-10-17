@@ -30,33 +30,25 @@ async def on_ready():
              options=player_card_slash_options())
 async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
     query = format_query_pc(name, level, faction, extras, sub, pack)
-    response, embed = look_for_player_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_player_card(query)
+    await ctx.send(embed=embed)
 
 
 @slash.slash(name="ahDeck",
              description=locale('ahDeck_description'),
              options=deck_slash_options())
-async def ahMazo_s(ctx, code, type=""):
-    response, embed = look_for_deck(code, type)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+async def ah_mazo_s(ctx, code, type=""):
+    embed = look_for_deck(code, type)
+    await ctx.send(embed=embed)
 
 
 @slash.slash(name="ahUp",
              description=locale('ahUp_description'),
              options=deck_slash_options())
-async def ahMejora_s(ctx, code, type=""):
-    response, embed = look_for_upgrades(code, type)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+async def ah_mejora_s(ctx, code, type=""):
+    await ctx.defer()
+    embed = look_for_upgrades(code, type)
+    await ctx.send(embed=embed)
 
 
 @slash.slash(name="ahe",
@@ -64,11 +56,8 @@ async def ahMejora_s(ctx, code, type=""):
              options=general_card_slash_options())
 async def ahe_s(ctx, name, type="", sub="", pack=""):
     query = format_query_ec(name, type, sub, pack)
-    response, embed = look_for_mythos_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_mythos_card(query)
+    await ctx.send("", embed=embed)
 
 
 @slash.slash(name="ahb",
@@ -76,27 +65,21 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
              options=general_card_slash_options())
 async def ahback_s(ctx, name, type="", sub="", pack=""):
     query = format_query_ec(name, type, sub, pack)
-    response, embed = look_for_card_back(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_card_back(query)
+    await ctx.send("", embed=embed)
 
 
 @slash.slash(name="ahTarot",
              description=locale('ahTarot_description'),
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
-    response, embed = look_for_tarot(name)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_tarot(name)
+    await ctx.send("", embed=embed)
 
 
 @slash.slash(name="refresh",
              description="Refresca las cartas del bot",
-             guild_ids=[804912893589585964])
+             guild_ids=[804912893589585964])  # Special Testing Discord
 async def refresh_data(ctx):
     await ctx.defer()
     if refresh_cards():
