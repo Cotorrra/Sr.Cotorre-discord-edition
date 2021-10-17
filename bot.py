@@ -1,15 +1,17 @@
 import discord
 from discord.ext import commands
-from discord_slash import SlashCommand
+from discord_slash import SlashCommand, ComponentContext
+from discord_slash.utils.manage_components import wait_for_component
 from dotenv import load_dotenv
 
 from config import TOKEN
 from src.core.translator import locale
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
+from src.response.components import action_row, self_destruct
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards
-from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, tarot_slash_options
+from src.response.slash_options import player_card_slash_options, deck_slash_options, general_card_slash_options, tarot_slash_options
 
 load_dotenv()
 bot = commands.Bot(command_prefix='!SrCotorre')
@@ -31,7 +33,8 @@ async def on_ready():
 async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
     query = format_query_pc(name, level, faction, extras, sub, pack)
     embed = look_for_player_card(query)
-    await ctx.send(embed=embed)
+    await ctx.send(embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahDeck",
@@ -39,7 +42,8 @@ async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
              options=deck_slash_options())
 async def ah_mazo_s(ctx, code, type=""):
     embed = look_for_deck(code, type)
-    await ctx.send(embed=embed)
+    await ctx.send(embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahUp",
@@ -48,7 +52,8 @@ async def ah_mazo_s(ctx, code, type=""):
 async def ah_mejora_s(ctx, code, type=""):
     await ctx.defer()
     embed = look_for_upgrades(code, type)
-    await ctx.send(embed=embed)
+    await ctx.send(embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahe",
@@ -57,7 +62,8 @@ async def ah_mejora_s(ctx, code, type=""):
 async def ahe_s(ctx, name, type="", sub="", pack=""):
     query = format_query_ec(name, type, sub, pack)
     embed = look_for_mythos_card(query)
-    await ctx.send("", embed=embed)
+    await ctx.send("", embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahb",
@@ -66,7 +72,8 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
 async def ahback_s(ctx, name, type="", sub="", pack=""):
     query = format_query_ec(name, type, sub, pack)
     embed = look_for_card_back(query)
-    await ctx.send("", embed=embed)
+    await ctx.send("", embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahTarot",
@@ -74,7 +81,8 @@ async def ahback_s(ctx, name, type="", sub="", pack=""):
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
     embed = look_for_tarot(name)
-    await ctx.send("", embed=embed)
+    await ctx.send("", embed=embed, components=[action_row])
+    await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="refresh",
@@ -86,5 +94,9 @@ async def refresh_data(ctx):
         await ctx.send("Refrescado!")
     else:
         await ctx.send("<:confusedwatermelon:739425223358545952>")
+    await self_destruct(bot, ctx, ctx.author_id)
+
+
+
 
 bot.run(TOKEN)
