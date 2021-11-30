@@ -29,6 +29,7 @@ async def on_ready():
              description=locale('ah_description'),
              options=player_card_slash_options())
 async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_pc(name, level, faction, extras, sub, pack)
     response, embed = look_for_player_card(query)
     if embed:
@@ -41,6 +42,7 @@ async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
              description=locale('ahDeck_description'),
              options=deck_slash_options())
 async def ahMazo_s(ctx, code, type=""):
+    await ctx.defer()
     response, embed = look_for_deck(code, type)
     if embed:
         await ctx.send(response, embed=embed)
@@ -52,6 +54,7 @@ async def ahMazo_s(ctx, code, type=""):
              description=locale('ahUp_description'),
              options=deck_slash_options())
 async def ahMejora_s(ctx, code, type=""):
+    await ctx.defer()
     response, embed = look_for_upgrades(code, type)
     if embed:
         await ctx.send(response, embed=embed)
@@ -63,6 +66,7 @@ async def ahMejora_s(ctx, code, type=""):
              description=locale('ahe_description'),
              options=general_card_slash_options())
 async def ahe_s(ctx, name, type="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
     response, embed = look_for_mythos_card(query)
     if embed:
@@ -75,6 +79,7 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
              description=locale('ahb_description'),
              options=general_card_slash_options())
 async def ahback_s(ctx, name, type="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
     response, embed = look_for_card_back(query)
     if embed:
@@ -87,6 +92,7 @@ async def ahback_s(ctx, name, type="", sub="", pack=""):
              description=locale('ahTarot_description'),
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
+    await ctx.defer()
     response, embed = look_for_tarot(name)
     if embed:
         await ctx.send(response, embed=embed)
