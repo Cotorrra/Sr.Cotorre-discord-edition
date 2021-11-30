@@ -34,30 +34,32 @@ def format_deck(deck, info):
 
     investigator = f"{locale('investigator')}: **{deck['investigator_name']}**"
     xp = f"_{locale('xp_needed')}: {str(info['xp'])}_"
-    m_description = f"{investigator}\n{xp}"
+    m_description = f"{investigator}\n{xp}\n\n"
 
     deck_type = "decklist" if deck['user_id'] else "deck"
     url = f"{arkhamdb}/{deck_type}/view/{deck['id']}"
 
-    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
-
-    # Keep it false, it looks ugly with its activated.
-    inline = False
     if info['assets_q'] > 0:
         assets = f"{locale('assets')}: ({str(info['assets_q'])})"
-        embed.add_field(name=assets, value=format_all_assets(info), inline=inline)
+        assets_cards = format_all_assets(info)
+        m_description += f"**{assets}**\n{assets_cards}\n"
 
     if info['events_q'] > 0:
         events = f"{locale('events')}: ({str(info['events_q'])})"
-        embed.add_field(name=events, value=format_list_of_cards(info['events']), inline=inline)
+        events_cards = format_list_of_cards(info['events'])
+        m_description += f"**{events}**{events_cards}\n\n"
 
     if info['skills_q'] > 0:
         skills = f"{locale('skills')}: ({str(info['skills_q'])})"
-        embed.add_field(name=skills, value=format_list_of_cards(info['skills']), inline=inline)
+        skills_cards = format_list_of_cards(info['skills'])
+        m_description += f"**{skills}**{skills_cards}\n\n"
 
     if info['treachery_q'] > 0:
         treachery = f"{locale('treacheries/enemies')}: ({str(info['treachery_q'])})"
-        embed.add_field(name=treachery, value=format_list_of_cards(info['treachery']), inline=inline)
+        treachery_cards = format_list_of_cards(info['treachery'])
+        m_description += f"**{treachery}**{treachery_cards}\n\n"
+
+    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
     return embed
 
