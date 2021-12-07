@@ -1,11 +1,9 @@
-import requests
-import shutil
-
-from config import arkhamdb
-from src.core.translator import locale
+from src.core.cardsDB import cards
+from src.core.translator import lang
+from src.errata.errata import errata_data
 from src.faq.formating import format_faq
 from src.backs.search import resolve_back_search
-from src.core.resolve import resolve_search
+from src.response.resolve import resolve_search
 from src.core.search import card_search
 from src.decks.deck import extract_deck_info
 from src.decks.formating import format_deck
@@ -14,35 +12,10 @@ from src.e_cards.search import use_ec_keywords
 from src.p_cards.search import use_pc_keywords
 from src.rules.formating import format_rule
 from src.rules.search import search_for_rules
+from src.taboo.taboo import taboo_data
 from src.tarot.formating import format_tarot
 from src.tarot.search import search_for_tarot
-
-
-# This class contains the cards from ArkhamDB
-class CardsDB:
-    def __init__(self):
-        self.ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
-        self.ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
-        self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
-
-    def get_all_cards(self):
-        return self.ah_all_cards
-
-    def get_p_cards(self):
-        return self.ah_player
-
-    def get_e_cards(self):
-        return self.ah_encounter
-
-    def refresh(self):
-        self.ah_all_cards = requests.get(f'{arkhamdb}/api/public/cards?encounter=1').json()
-        self.ah_player = requests.get(f'{arkhamdb}/api/public/cards?encounter=0').json()
-        self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
-        shutil.rmtree('/data/', ignore_errors=True)
-        return True
-
-
-cards = CardsDB()
+from src.tarot.tarot import tarot_data
 
 
 def refresh_cards():
@@ -50,7 +23,16 @@ def refresh_cards():
     Refreshes the cards from ArkhamDB
     :return:
     """
-    return cards.refresh()
+    cards.refresh()
+    return True
+
+
+def refresh_api_data():
+    tarot_data.reload_tarot()
+    taboo_data.reload_taboo()
+    errata_data.reload_errata()
+    lang.reload_language()
+    return True
 
 
 def look_for_player_card(query: str):
@@ -58,8 +40,6 @@ def look_for_player_card(query: str):
     Given a query, a list of cards and a keyword function
     returns a embed containing the information of a card.
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
-    :param cards: The cards to search from
-    :param keyword_fun: A function that filters cards given the keywords in (TYPE)
     :return: a Discord.Embed
     """
     r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
@@ -67,7 +47,7 @@ def look_for_player_card(query: str):
     if embed:
         return "", embed
     else:
-        return locale('card_not_found'), False
+        return lang.locale('card_not_found'), False
 
 
 def look_for_mythos_card(query: str):
@@ -82,7 +62,7 @@ def look_for_mythos_card(query: str):
     if embed:
         response = ""
     else:
-        response = locale('card_not_found')
+        response = lang.locale('card_not_found')
 
     return response, embed
 
@@ -100,7 +80,7 @@ def look_for_card_back(query: str):
     if embed:
         response = ""
     else:
-        response = locale('card_not_found')
+        response = lang.locale('card_not_found')
 
     return response, embed
 
@@ -114,7 +94,7 @@ def look_for_deck(code, deck_type):
     """
     deck = find_deck(code, deck_type)
     if not deck:
-        response = locale('deck_not_found')
+        response = lang.locale('deck_not_found')
         embed = False
     else:
         deck_info = extract_deck_info(deck, cards.get_all_cards())
@@ -144,7 +124,7 @@ def look_for_faq(query):
         embed = format_faq(r_cards[0])
         response = ""
     else:
-        response = locale('card_not_found')
+        response = lang.locale('card_not_found')
         embed = False
     return response, embed
 
@@ -161,7 +141,7 @@ def look_for_rule(query):
         response = ""
     else:
         embed = False
-        response = locale('card_not_found')
+        response = lang.locale('card_not_found')
     return response, embed
 
 
@@ -178,5 +158,5 @@ def look_for_tarot(query):
         response = ""
     else:
         embed = False
-        response = locale('card_not_found')
+        response = lang.locale('card_not_found')
     return response, embed

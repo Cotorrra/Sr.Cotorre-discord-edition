@@ -1,19 +1,17 @@
-import json
+import requests
 
-from src.core.utils import load_from_repo
+from config import LANG, DATA_API
 
 
-def load_faq(card_id):
+def load_faq():
     """
     Carga el archivo de taboo.
     :return:
     """
-    code = card_id[:2]
-    file_src = f'data/faq/faq{code}.json'
-    info = load_from_repo(file_src)
-
-    info['cards'] = json.dumps(info['cards'])
-    info['cards'] = json.loads(info['cards'])
+    params = {"language": LANG,
+              "type": "faq"}
+    info = requests.get(f'{DATA_API}',
+                        params=params).json()
 
     return info
 

@@ -3,9 +3,9 @@ import re
 import requests
 import unidecode
 
-from config import arkhamdb
+from config import ARKHAM_DB
 
-pack_data = requests.get(f'{arkhamdb}/api/public/packs/').json()
+pack_data = requests.get(f'{ARKHAM_DB}/api/public/packs/').json()
 
 
 def card_search(query, cards, keyword_func):
@@ -54,8 +54,8 @@ def card_filter(query: str, cards: [dict]):
     :param cards: A list of cards
     :return:
     """
-    r_cards = sorted(cards, key=lambda card: -hits_in_string(query, card['name']))
-    r_cards = [c for c in r_cards if hits_in_string(query, c['name']) > 0]
+    r_cards = sorted(cards, key=lambda card: -hits_in_string(query, card['name'] + " " + card['real_name']))
+    r_cards = [c for c in r_cards if hits_in_string(query, c['name'] + " " + c['real_name']) > 0]
     return r_cards
 
 
@@ -114,12 +114,11 @@ def find_and_extract(string: str, start_s: str, end_s: str):
         return string, "", enable
 
 
-def hits_in_string(query: str, find: str, pos_hit=True):
+def hits_in_string(query: str, find: str):
     """
     Returns the "hits" of the query string in the find string.
 
     Va por palabras.
-    :param pos_hit:
     :param find:
     :param query:
     :return:
@@ -133,10 +132,6 @@ def hits_in_string(query: str, find: str, pos_hit=True):
             w1_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w1))
             w2_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w2))
             if w1_c == w2_c and w1_c not in hit_list:
-                hits += 2 if len(w1_c) > 3 else 1
+                hits += len(w1_c)
                 hit_list.append(w1_c)
-                if set1.index(w1) == set2.index(w2) and pos_hit and len(w1) > 3:
-                    hits += 1
     return hits
-
-

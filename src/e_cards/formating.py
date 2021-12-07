@@ -34,7 +34,7 @@ def format_enemy_card(c):
 
 def format_act_card_f(c):
     name = format_name(c)
-    stage = f"***{locale('act')} {c['stage']}***"
+    stage = f"***{lang.locale('act')} {c['stage']}***"
     flavour = text_if("%s\n\n", format_flavour(c))
     clues = format_clues(c)
     text = text_if("> %s\n", format_card_text(c))
@@ -52,7 +52,7 @@ def format_act_card_f(c):
 
 def format_agenda_card_f(c):
     name = format_name(c)
-    stage = f"***{locale('agenda')} {c['stage']}***"
+    stage = f"***{lang.locale('agenda')} {c['stage']}***"
     flavour = text_if("%s\n\n", format_flavour(c))
     text = text_if("> %s\n", format_card_text(c))
     errata_text = format_errata_text(c['code'])

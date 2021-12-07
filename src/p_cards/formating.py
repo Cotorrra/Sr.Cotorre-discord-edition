@@ -1,5 +1,4 @@
-from src.core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, \
-    format_text, \
+from src.core.formating import format_name, format_subtext, format_faction, format_card_text, \
     faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits
 from src.core.utils import text_if
 from src.errata.formating import format_errata_text
@@ -36,7 +35,7 @@ def format_player_card(c):
                     f"{victory}" \
                     f"{health_sanity}\n" \
                     f"{flavour}" \
-                    f"{errata_text}\n" \
+                    f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
     return create_embed(c, m_title, m_description, m_footnote)

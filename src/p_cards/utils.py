@@ -1,6 +1,6 @@
 from src.core.formating import format_text, format_number, color_picker
 from src.core.search import find_by_id
-from src.core.translator import locale
+from src.core.translator import lang
 
 
 def format_xp(c):
@@ -79,6 +79,6 @@ def format_sub_text_short(c):
 
 def format_costs(c):
     if "cost" in c:
-        return f"{locale('cost')}: %s \n" % format_number(c['cost'])
+        return f"{lang.locale('cost')}: %s \n" % format_number(c['cost'])
     else:
         return ""

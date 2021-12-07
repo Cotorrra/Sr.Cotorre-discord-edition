@@ -4,12 +4,13 @@ from discord_slash import SlashCommand
 from dotenv import load_dotenv
 
 from config import TOKEN
-from src.core.translator import locale
+from src.core.translator import lang
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
 from src.response.response import look_for_mythos_card, look_for_player_card, \
-    look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards
-from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, tarot_slash_options
+    look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, refresh_api_data
+from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
+    tarot_slash_options
 
 load_dotenv()
 bot = commands.Bot(command_prefix='!SrCotorre')
@@ -26,7 +27,7 @@ async def on_ready():
 
 
 @slash.slash(name="ah",
-             description=locale('ah_description'),
+             description=lang.locale('ah_description'),
              options=player_card_slash_options())
 async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
     await ctx.defer()
@@ -39,7 +40,7 @@ async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
 
 
 @slash.slash(name="ahDeck",
-             description=locale('ahDeck_description'),
+             description=lang.locale('ahDeck_description'),
              options=deck_slash_options())
 async def ahMazo_s(ctx, code, type=""):
     await ctx.defer()
@@ -51,7 +52,7 @@ async def ahMazo_s(ctx, code, type=""):
 
 
 @slash.slash(name="ahUp",
-             description=locale('ahUp_description'),
+             description=lang.locale('ahUp_description'),
              options=deck_slash_options())
 async def ahMejora_s(ctx, code, type=""):
     await ctx.defer()
@@ -63,7 +64,7 @@ async def ahMejora_s(ctx, code, type=""):
 
 
 @slash.slash(name="ahe",
-             description=locale('ahe_description'),
+             description=lang.locale('ahe_description'),
              options=general_card_slash_options())
 async def ahe_s(ctx, name, type="", sub="", pack=""):
     await ctx.defer()
@@ -76,7 +77,7 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
 
 
 @slash.slash(name="ahb",
-             description=locale('ahb_description'),
+             description=lang.locale('ahb_description'),
              options=general_card_slash_options())
 async def ahback_s(ctx, name, type="", sub="", pack=""):
     await ctx.defer()
@@ -89,7 +90,7 @@ async def ahback_s(ctx, name, type="", sub="", pack=""):
 
 
 @slash.slash(name="ahTarot",
-             description=locale('ahTarot_description'),
+             description=lang.locale('ahTarot_description'),
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
     await ctx.defer()
@@ -109,5 +110,17 @@ async def refresh_data(ctx):
         await ctx.send("Refrescado!")
     else:
         await ctx.send("<:confusedwatermelon:739425223358545952>")
+
+
+@slash.slash(name="refreshAPI",
+             description="Refresca los datos de la API del bot",
+             guild_ids=[804912893589585964])
+async def refresh_data(ctx):
+    await ctx.defer()
+    if refresh_api_data():
+        await ctx.send("Refrescado!")
+    else:
+        await ctx.send("<:confusedwatermelon:739425223358545952>")
+
 
 bot.run(TOKEN)
