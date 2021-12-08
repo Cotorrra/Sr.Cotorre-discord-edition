@@ -142,3 +142,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 .idea
+
+.replit
+keep_alive.py
+run.sh
