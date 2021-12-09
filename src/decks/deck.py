@@ -48,7 +48,8 @@ def extract_deck_info(deck, cards):
             "assets_permanents": [], "events": [], "skills": [], "treachery": [],
             "assets_q": 0, "events_q": 0, "skills_q": 0, "treachery_q": 0, "assets_permanents_q": 0,
             "xp": 0, "color": get_color_by_investigator(deck, cards),
-            "taboo_id": "00" + str(deck['taboo_id'])}
+            "taboo_id": "00" + str(deck['taboo_id']) if deck['taboo_id'] else "000"
+            }
     for c_id, qty in deck['slots'].items():
         card = find_by_id(c_id, cards)
         text = (card, qty)

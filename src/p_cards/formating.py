@@ -11,7 +11,7 @@ from src.taboo.taboo import taboo_data
 
 def format_player_card(c):
     name = format_name(c)
-    level = format_xp(c)
+    level = format_xp(c, "null")
     subtext = format_subtext(c)
     faction = format_faction(c)
     type = format_type(c)
