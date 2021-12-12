@@ -1,16 +1,17 @@
-from src.core.formating import format_name, format_subtext, format_faction, format_number, format_card_text, \
-    format_text, \
-    faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits
+from src.core.formating import format_name, format_subtext, format_faction, format_card_text, \
+    faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits, \
+    format_text
 from src.core.utils import text_if
 from src.errata.formating import format_errata_text
 from src.p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
     format_sub_text_short, format_costs
 from src.taboo.formating import format_taboo_text
+from src.taboo.taboo import taboo_data
 
 
 def format_player_card(c):
     name = format_name(c)
-    level = format_xp(c)
+    level = format_xp(c, "null")
     subtext = format_subtext(c)
     faction = format_faction(c)
     type = format_type(c)
@@ -36,7 +37,7 @@ def format_player_card(c):
                     f"{victory}" \
                     f"{health_sanity}\n" \
                     f"{flavour}" \
-                    f"{errata_text}\n" \
+                    f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
@@ -66,14 +67,14 @@ def format_inv_card_f(c):
     return create_embed(m_title, m_description, c, m_footnote)
 
 
-def format_player_card_deck(c, qty=0):
+def format_player_card_deck(c, qty=0, taboo_info=""):
     name = c['name']
-    level = format_xp(c)
+    level = format_xp(c, taboo_info)
     faction = faction_order[c['faction_code']] + format_faction(c)
     quantity = f"x{str(qty)}" if qty > 1 else ""
     subname = format_sub_text_short(c)
-
-    text = f"{faction} {name}{subname} {level} {quantity}"
+    taboo = format_text(" [taboo]") if taboo_data.is_in_taboo(c['code'], taboo_info) else ""
+    text = f"{faction} {name}{subname} {level}{taboo} {quantity}"
     return text
 
 

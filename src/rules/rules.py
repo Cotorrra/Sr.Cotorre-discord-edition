@@ -1,6 +1,6 @@
-import json
+import requests
 
-from src.core.utils import load_from_repo
+from config import LANG, DATA_API
 
 
 def load_rules():
@@ -8,13 +8,9 @@ def load_rules():
     Carga el archivo de taboo.
     :return:
     """
-    file_src = 'data/rules/rules.json'
-
-    info = load_from_repo(file_src)
-
-    info['rules'] = json.dumps(info['rules'])
-    info['rules'] = json.loads(info['rules'])
+    params = {"language": LANG,
+              "type": "rules"}
+    info = requests.get(f'{DATA_API}',
+                        params=params).json()
 
     return info
-
-

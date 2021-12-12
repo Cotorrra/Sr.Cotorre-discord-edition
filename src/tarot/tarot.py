@@ -1,19 +1,27 @@
-import json
+import requests
 
-from config import lang
-from src.core.utils import load_from_repo
+from config import LANG, DATA_API
 
 
-def load_tarot():
-    """
-    Carga el archivo de taboo.
-    :return:
-    """
-    file_src = f'data/tarot/{lang}.json'
+class Tarot:
+    def __init__(self):
+        params = {"language": LANG,
+                  "type": "tarot"}
+        self.tarot_info = requests.get(f'{DATA_API}',
+                                       params=params).json()
 
-    info = load_from_repo(file_src)
+    def reload_tarot(self):
+        """
+        Carga el archivo de taboo.
+        :return:
+        """
+        params = {"language": LANG,
+                  "type": "tarot"}
+        self.tarot_info = requests.get(f'{DATA_API}',
+                                       params=params).json()
 
-    info['tarot'] = json.dumps(info['tarot'])
-    info['tarot'] = json.loads(info['tarot'])
+    def get_tarot_data(self):
+        return self.tarot_info
 
-    return info
+
+tarot_data = Tarot()

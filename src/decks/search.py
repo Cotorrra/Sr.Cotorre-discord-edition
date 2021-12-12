@@ -2,21 +2,24 @@ import json
 
 import requests
 
-from config import arkhamdb
+from config import ARKHAM_DB
+from src.core.translator import lang
+from src.decks.deck import check_upgrade_rules
+from src.decks.formating import format_upgraded_deck
 
 
 def find_deck(code: str, deck_mode):
     try:
         if deck_mode:
-            link = f"{arkhamdb}/api/public/{deck_mode}/{code}"
+            link = f"{ARKHAM_DB}/api/public/{deck_mode}/{code}"
             req = requests.get(link)
             if not req.text:
                 return {}
         else:
-            link = f"{arkhamdb}/api/public/decklist/{code}"
+            link = f"{ARKHAM_DB}/api/public/decklist/{code}"
             req = requests.get(link)
             if not req.text:
-                link = f"{arkhamdb}/api/public/deck/{code}"
+                link = f"{ARKHAM_DB}/api/public/deck/{code}"
                 req = requests.get(link)
                 if not req.text:
                     return {}

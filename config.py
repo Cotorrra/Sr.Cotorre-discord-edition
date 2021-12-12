@@ -7,15 +7,18 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Base link to arkhamdb. It varies from language to language
-arkhamdb = os.getenv('ARKHAMDB')
+ARKHAM_DB = os.getenv('ARKHAMDB')
 
-# You can choose to es/en: Check Sr-Cotorre Data to check what languages are available!
-lang = os.getenv('BOT_LANGUAGE')
+# You can choose to es/en: Check Sr-Cotorre Data to check all languages that are available!
+LANG = os.getenv('BOT_LANGUAGE')
+
+# You can change where the data comes from
+DATA_API = os.getenv('DATA_API')
 
 # Advanced: If you want to change the emojis from the bot
 # [tag] -> <emoji:code>
 # you can get this code with /:emoji: in Discord.
-text_format = {"[free]": "<:Libre:789610643262799913>",
+TEXT_FORMAT = {"[free]": "<:Libre:789610643262799913>",
                "[fast]": "<:Libre:789610643262799913>",
                "[elder_sign]": "<:arcano:799004602183843851>",
                "[willpower]": "<:voluntad:830574960510500864>",
@@ -44,6 +47,8 @@ text_format = {"[free]": "<:Libre:789610643262799913>",
                "[per_investigator]": "<:Porinvestigador:789610613650489434>",
                "[doom]": "<:perdicion:801160341886468138>",
                "[clues]": "<:pista:801161173864808548>",
+               "[taboo]": "<:tabu:918111904004726854>",
+               "<br/>": "\n",
                "</b>": "**",
                "<b>": "**",
                "<em>": "_",

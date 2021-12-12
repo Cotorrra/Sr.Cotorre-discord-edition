@@ -1,16 +1,26 @@
 from src.core.formating import format_text, format_number, color_picker
 from src.core.search import find_by_id
-from src.core.translator import locale
+from src.core.translator import lang
+from src.taboo.taboo import taboo_data
 
 
-def format_xp(c):
+def format_xp(c, taboo_info=""):
+    chain = ""
+    if taboo_info != "null":
+        if taboo_data.is_in_taboo(c['code'], taboo_info):
+            taboo_info = taboo_data.get_tabooed_card(c['code'], taboo_info)
+            if 'xp' in taboo_info:
+                sign = "+" if taboo_info['xp'] > 0 else ""
+                chain += f" {sign}{taboo_info['xp']}"
+            if 'exceptional' in taboo_info:
+                chain += " +E" * taboo_info['exceptional']
     if "xp" in c:
         if c['xp'] == 0:
-            text = ""
+            text = f"{chain}"
         elif c['exceptional']:
-            text = " (%sE)" % c['xp']
+            text = f" ({c['xp']}E){chain}"
         else:
-            text = " (%s)" % c['xp']
+            text = f" ({c['xp']}){chain}"
     else:
         text = ""
     return text
@@ -79,6 +89,6 @@ def format_sub_text_short(c):
 
 def format_costs(c):
     if "cost" in c:
-        return f"{locale('cost')}: %s \n" % format_number(c['cost'])
+        return f"{lang.locale('cost')}: %s \n" % format_number(c['cost'])
     else:
         return ""

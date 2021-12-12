@@ -5,7 +5,7 @@ from discord_slash.utils.manage_components import wait_for_component
 from dotenv import load_dotenv
 
 from config import TOKEN
-from src.core.translator import locale
+from src.core.translator import lang
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
 from src.response.components import action_row, self_destruct
@@ -28,9 +28,10 @@ async def on_ready():
 
 
 @slash.slash(name="ah",
-             description=locale('ah_description'),
+             description=lang.locale('ah_description'),
              options=player_card_slash_options())
 async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_pc(name, level, faction, extras, sub, pack)
     embed = look_for_player_card(query)
     await ctx.send(embed=embed, components=[action_row])
@@ -38,16 +39,17 @@ async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
 
 
 @slash.slash(name="ahDeck",
-             description=locale('ahDeck_description'),
+             description=lang.locale('ahDeck_description'),
              options=deck_slash_options())
 async def ah_mazo_s(ctx, code, type=""):
+    await ctx.defer()
     embed = look_for_deck(code, type)
     await ctx.send(embed=embed, components=[action_row])
     await self_destruct(bot, ctx, ctx.author_id)
 
 
 @slash.slash(name="ahUp",
-             description=locale('ahUp_description'),
+             description=lang.locale('ahUp_description'),
              options=deck_slash_options())
 async def ah_mejora_s(ctx, code, type=""):
     await ctx.defer()
@@ -57,9 +59,10 @@ async def ah_mejora_s(ctx, code, type=""):
 
 
 @slash.slash(name="ahe",
-             description=locale('ahe_description'),
+             description=lang.locale('ahe_description'),
              options=general_card_slash_options())
 async def ahe_s(ctx, name, type="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
     embed = look_for_mythos_card(query)
     await ctx.send("", embed=embed, components=[action_row])
@@ -67,9 +70,10 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
 
 
 @slash.slash(name="ahb",
-             description=locale('ahb_description'),
+             description=lang.locale('ahb_description'),
              options=general_card_slash_options())
 async def ahback_s(ctx, name, type="", sub="", pack=""):
+    await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
     embed = look_for_card_back(query)
     await ctx.send("", embed=embed, components=[action_row])
@@ -77,9 +81,10 @@ async def ahback_s(ctx, name, type="", sub="", pack=""):
 
 
 @slash.slash(name="ahTarot",
-             description=locale('ahTarot_description'),
+             description=lang.locale('ahTarot_description'),
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
+    await ctx.defer()
     embed = look_for_tarot(name)
     await ctx.send("", embed=embed, components=[action_row])
     await self_destruct(bot, ctx, ctx.author_id)
@@ -97,6 +102,18 @@ async def refresh_data(ctx):
     await self_destruct(bot, ctx, ctx.author_id)
 
 
+
+
+
+@slash.slash(name="refreshAPI",
+             description="Refresca los datos de la API del bot",
+             guild_ids=[804912893589585964])
+async def refresh_data(ctx):
+    await ctx.defer()
+    if refresh_api_data():
+        await ctx.send("Refrescado!")
+    else:
+        await ctx.send("<:confusedwatermelon:739425223358545952>")
 
 
 bot.run(TOKEN)

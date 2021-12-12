@@ -1,12 +1,13 @@
 from src.core.search import find_by_id
 from src.p_cards.utils import get_color_by_investigator
-from src.taboo.taboo import calculate_xp
+from src.taboo.taboo import taboo_data
 
 
 def diff_decks(a_deck1, a_deck2):
     """
-    Regresa una tupla con las diferencias entre dos mazos: La primera contiene las id de cartas que salieron y el otro
-    contiene el id con las cartas que entraron.
+    Returns a tuple with the differences of the decks given:
+    - The first element contains the cards that are in the 2nd deck but not in the 1st.
+    - The second element contains the cards that are in the 1st deck but not in the 2nd.
     :param a_deck1:
     :param a_deck2:
     :return:
@@ -31,7 +32,8 @@ def deck_to_array(deck, cards):
 
 def check_upgrade_rules(deck1, deck2, cards):
     info = {"buys_in": [], "buys_out": [],
-            "xp_diff": 0, "color": get_color_by_investigator(deck1, cards)}
+            "xp_diff": 0, "color": get_color_by_investigator(deck1, cards),
+            "taboo_id": "00" + str(deck1['taboo_id'])}
     a_deck1 = deck_to_array(deck1, cards)
     a_deck2 = deck_to_array(deck2, cards)
     info["buys_out"], info["buys_in"] = diff_decks(a_deck1, a_deck2)
@@ -45,12 +47,13 @@ def extract_deck_info(deck, cards):
             "assets_accessory": [], "assets_arcane": [], "assets_arcane2": [], "assets_ally": [],
             "assets_permanents": [], "events": [], "skills": [], "treachery": [],
             "assets_q": 0, "events_q": 0, "skills_q": 0, "treachery_q": 0, "assets_permanents_q": 0,
-            "xp": 0, "color": get_color_by_investigator(deck, cards)}
-    taboo_version = "00" + str(deck['taboo_id'])
+            "xp": 0, "color": get_color_by_investigator(deck, cards),
+            "taboo_id": "00" + str(deck['taboo_id']) if deck['taboo_id'] else "000"
+            }
     for c_id, qty in deck['slots'].items():
         card = find_by_id(c_id, cards)
         text = (card, qty)
-        info["xp"] += calculate_xp(card, qty, taboo_version)
+        info["xp"] += taboo_data.calculate_xp(card, qty, info['taboo_id'])
 
         if 'Permanent.' in card['real_text']:
             info['assets_permanents'].append(text)

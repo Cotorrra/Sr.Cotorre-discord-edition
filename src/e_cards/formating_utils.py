@@ -22,7 +22,7 @@ def format_clues(c):
 
 
 def format_location_data(c):
-    shroud = f"{locale('shroud')}: {str(c['shroud'])}"
+    shroud = f"{lang.locale('shroud')}: {str(c['shroud'])}"
     clues = format_clues(c)
     return f"{shroud} / {clues}"
 
@@ -38,7 +38,7 @@ def format_attack(c, verbose=True):
     if not damage and not horror:
         return ""
     elif verbose:
-        return f"{locale('attack')}: {damage}{horror}\n"
+        return f"{lang.locale('attack')}: {damage}{horror}\n"
     else:
         return f"{damage}{horror}\n"
 

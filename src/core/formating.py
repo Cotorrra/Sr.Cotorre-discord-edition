@@ -1,7 +1,7 @@
 import discord
 
-from config import arkhamdb, text_format, lang
-from src.core.translator import locale
+from config import ARKHAM_DB, TEXT_FORMAT
+from src.core.translator import lang
 
 
 def create_embed(title: str, description="", c=None, footnote="") -> discord.embeds.Embed:
@@ -14,10 +14,8 @@ def create_embed(title: str, description="", c=None, footnote="") -> discord.emb
     :param footnote: Card footnote (optional)
     :return: A Discord embed.
     """
-    if c is None:
-        c = {}
     if c:
-        url = f"{arkhamdb}/card/{c['code']}"
+        url = f"{ARKHAM_DB}/card/{c['code']}"
         embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
     else:
         embed = discord.Embed(title=title, description=description, color=0xaaaaaa)
@@ -34,7 +32,7 @@ def format_text(text: str) -> str:
     :param text: The text
     :return: A new formatted text
     """
-    for key, value in text_format.items():
+    for key, value in TEXT_FORMAT.items():
         text = text.replace(key, value)
 
     return text
@@ -42,7 +40,7 @@ def format_text(text: str) -> str:
 
 def format_set(c: dict) -> str:
     """
-    Returns the the numbering of a given card.
+    Returns the encounter set and pack of a given card.
     Ex: Rats are: Core Set #159. Rats #1-3.
 
     :param c: Card information.
@@ -58,7 +56,7 @@ def format_set(c: dict) -> str:
 
 def format_card_text(c: dict, tag="text") -> str:
     """
-    Formats the certain text from a tag in a Card.
+    Formats tagged text from a tag in a Card.
 
     :param c: Card information.
     :param tag: The tag to get the text.
@@ -88,11 +86,11 @@ def format_illus_pack(c: dict, only_pack=False) -> str:
     :return:
     """
     pack = format_set(c)
-    artist = format_illustrator(c)
+    illustrator = format_illustrator(c)
     if only_pack:
         return f"{pack}"
     else:
-        return f"{artist}\n{pack}"
+        return f"{illustrator}\n{pack}"
 
 
 def format_victory(c: dict) -> str:
@@ -104,28 +102,28 @@ def format_victory(c: dict) -> str:
     """
 
     if "victory" in c:
-        return f"**{locale('victory')} {c['victory']}.**"
+        return f"**{lang.locale('victory')} {c['victory']}.**"
     else:
         return ""
 
 
 def format_vengeance(c: dict) -> str:
     """
-    Formats the evil vengeance points from a card.
+    Formats the evil vengeance (Yig) points from a card.
 
     :param c: The card info.
     :return: A string.
     """
     if "vengeance" in c:
-        return f"**{locale('vengeance')} {c['vengeance']}.**"
+        return f"**{lang.locale('vengeance')} {c['vengeance']}.**"
     else:
         return ""
 
 
 def format_number(n) -> str:
     """
-    Formats a number, yes. It need some formatting lol.
-    If is -2 then its X.
+    Formats a number, yes. Some numbers need some formatting.
+    The only rule for now is that if the number is -2 then the number it's X.
 
     :param n: A number
     :return: A string
@@ -165,7 +163,7 @@ faction_order = {
 
 def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> None:
     """
-    Sets the thumbnail image of a embed to the one from ArkhamDB.
+    Sets the thumbnail image of an embed, using the card image from ArkhamDB.
 
     :param c: Card info
     :param embed: Discord Embed
@@ -175,28 +173,43 @@ def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> Non
     if "imagesrc" in c:
         if back:
             if "backimagesrc" in c:
-                embed.set_thumbnail(url=f"{arkhamdb}{c['backimagesrc']}")
+                embed.set_thumbnail(url=f"{ARKHAM_DB}{c['backimagesrc']}")
             else:
-                embed.set_thumbnail(url=f"{arkhamdb}{c['imagesrc']}")
+                embed.set_thumbnail(url=f"{ARKHAM_DB}{c['imagesrc']}")
         else:
-            embed.set_thumbnail(url=f"{arkhamdb}{c['imagesrc']}")
+            embed.set_thumbnail(url=f"{ARKHAM_DB}{c['imagesrc']}")
 
 
 def format_illustrator(c: dict) -> str:
-    if c['type_code'] != "scenario":
+    """
+    Gives the format of the illustrator name of a card.
+    :param c: Card info
+    :return: String
+    """
+    if 'illustrator' in c:
         return "🖌 %s" % c['illustrator']
     else:
         return ""
 
 
 def format_name(c: dict) -> str:
+    """
+    Formats the card's name. Adds the ✱ if the card is unique.
+    :param c:
+    :return:
+    """
     if c['is_unique']:
-        return f"*{c['name']}"
+        return f"⚹{c['name']}"
     else:
         return c['name']
 
 
 def format_subtext(c: dict) -> str:
+    """
+    Formats the subtext of a card, if any.
+    :param c:
+    :return:
+    """
     if 'subname' in c:
         return f": _{c['subname']}_"
     else:
@@ -204,6 +217,11 @@ def format_subtext(c: dict) -> str:
 
 
 def color_picker(c: dict) -> int:
+    """
+    Returns a color according to the card's class.
+    :param c:
+    :return:
+    """
     colors = {
         "survivor": 0xaa2211,
         "rogue": 0x225522,
@@ -220,19 +238,33 @@ def color_picker(c: dict) -> int:
 
 
 def format_type(c: dict) -> str:
+    """
+    Formats the card's type.
+    :param c:
+    :return:
+    """
     return f"**{c['type_name']}**"
 
 
 def format_traits(c: dict) -> str:
+    """
+    Format the card's traits if any.
+    :param c:
+    :return:
+    """
     if "traits" in c:
-        return f"***%s***" % c['traits']
+        return f"***{c['traits']}***"
     else:
         return ""
 
 
 def format_flavour(c: dict) -> str:
+    """
+    Formats the card's flavor text, if any.
+    :param c:
+    :return:
+    """
     if "flavor" in c:
         return f"_{format_text(c['flavor'])}_"
     else:
         return ""
-
