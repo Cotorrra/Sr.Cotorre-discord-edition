@@ -3,10 +3,6 @@ import json
 import requests
 
 from config import ARKHAM_DB
-from src.core.translator import lang
-from src.decks.deck import check_upgrade_rules
-from src.decks.formating import format_upgraded_deck
-
 
 def find_deck(code: str, deck_mode):
     try:

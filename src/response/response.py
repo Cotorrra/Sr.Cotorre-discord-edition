@@ -1,4 +1,5 @@
 from src.core.cardsDB import cards
+from src.core.formating import create_embed
 from src.core.translator import lang
 from src.errata.errata import errata_data
 from src.faq.formating import format_faq
@@ -47,7 +48,7 @@ def look_for_player_card(query: str):
     if embed:
         return embed
     else:
-        return create_embed(locale('card_not_found'), "", {})
+        return create_embed(lang.locale('card_not_found'), "", {})
 
 
 def look_for_mythos_card(query: str):
@@ -60,7 +61,7 @@ def look_for_mythos_card(query: str):
     r_cards = card_search(query, cards.get_e_cards(), use_ec_keywords)
     embed = resolve_search(r_cards)
     if not embed:
-        embed = create_embed(locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'), "", {})
 
     return embed
 
@@ -76,7 +77,7 @@ def look_for_card_back(query: str):
     r_cards = card_search(query, f_cards, use_ec_keywords)
     embed = resolve_back_search(r_cards)
     if not embed:
-        embed = create_embed(locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'), "", {})
 
     return embed
 
@@ -90,7 +91,7 @@ def look_for_deck(code, deck_type):
     """
     deck = find_deck(code, deck_type)
     if not deck:
-        embed = create_embed(locale('deck_not_found'), "", {})
+        embed = create_embed(lang.locale('deck_not_found'), "", {})
     else:
         deck_info = extract_deck_info(deck, cards.get_all_cards())
         embed = format_deck(deck, deck_info)
@@ -107,9 +108,9 @@ def look_for_upgrades(code, deck_mode):
     deck1 = find_deck(code, deck_mode)
     deck2 = find_former_deck(code, deck_mode)
     if not deck1:
-        embed = create_embed(locale('deck_not_found'))
+        embed = create_embed(lang.locale('deck_not_found'))
     elif not deck2:
-        embed = create_embed(locale('upgrade_not_found'))
+        embed = create_embed(lang.locale('upgrade_not_found'))
     else:
         info = check_upgrade_rules(deck2, deck1, cards.get_p_cards())
         embed = format_upgraded_deck(deck1, info)
@@ -127,7 +128,7 @@ def look_for_faq(query):
     if r_cards:
         embed = format_faq(r_cards[0])
     else:
-        embed = create_embed(locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'), "", {})
     return embed
 
 
@@ -141,7 +142,7 @@ def look_for_rule(query):
     if search:
         embed = format_rule(search)
     else:
-        embed = create_embed(locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'), "", {})
     return embed
 
 
@@ -156,7 +157,7 @@ def look_for_tarot(query):
     if search:
         embed = format_tarot(search)
     else:
-        embed = create_embed(locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'), "", {})
 
     return embed
 
