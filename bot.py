@@ -89,7 +89,6 @@ async def ahTarot(ctx, name=""):
     await cards_buttons_row(bot, ctx, embed)
 
 
-
 @slash.slash(name="refresh",
              description="Refresca las cartas del bot",
              guild_ids=[804912893589585964, 923302104532156449])  # Special Testing Discord
