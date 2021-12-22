@@ -24,6 +24,7 @@ def card_search(query, cards, keyword_func):
 
     if sub_text_mode:
         f_cards = [c for c in f_cards if filter_by_subtext(c, sub_query)]
+        f_cards = sorted(f_cards, key= lambda card: -hits_in_string(card['subname'], sub_query))
 
     if keyword_mode:
         f_cards = keyword_func(f_cards, keyword_query)

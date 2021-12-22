@@ -9,8 +9,8 @@ def split_files(src: str):
 def is_lvl(card: dict, lvl: int):
     """
     Compares the level of a card with a number, if the card doesnt have a level it always returns false.
-    :param card: carta
-    :param lvl: nivel
+    :param card: card
+    :param lvl: lvl
     :return:
     """
     if 'xp' in card:
