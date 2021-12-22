@@ -13,11 +13,9 @@ async def cards_buttons_row(bot, ctx, embed):
     msg = await ctx.send(embed=embed, components=[action_row])
     while True:
         try:
-            button_ctx: ComponentContext = await wait_for_component(bot, components=[action_row], timeout=10)
+            button_ctx: ComponentContext = await wait_for_component(bot, components=[action_row], timeout=30)
             if button_ctx.author == ctx.author:
                 await button_ctx.origin_message.delete()
         except asyncio.TimeoutError:
-            for i in range(len(buttons)):
-                action_row["components"][i]["disabled"] = True
-            await msg.edit(components=[action_row])
+            await msg.edit(components=None)
             break

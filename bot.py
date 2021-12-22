@@ -25,8 +25,8 @@ slash = SlashCommand(bot, sync_commands=True)
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo! :parrot:')
-    await bot.change_presence(activity=discord.Game('What does this button do?'))
-    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=""))
+    # await bot.change_presence(activity=discord.Game(''))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Buttons"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
 
@@ -89,9 +89,10 @@ async def ahTarot(ctx, name=""):
     await cards_buttons_row(bot, ctx, embed)
 
 
+
 @slash.slash(name="refresh",
              description="Refresca las cartas del bot",
-             guild_ids=[804912893589585964])  # Special Testing Discord
+             guild_ids=[804912893589585964, 923302104532156449])  # Special Testing Discord
 async def refresh_data(ctx):
     await ctx.defer()
     if refresh_cards():
@@ -102,7 +103,7 @@ async def refresh_data(ctx):
 
 @slash.slash(name="refreshAPI",
              description="Refresca los datos de la API del bot",
-             guild_ids=[804912893589585964])
+             guild_ids=[804912893589585964, 923302104532156449])
 async def refresh_data(ctx):
     await ctx.defer()
     if refresh_api_data():
