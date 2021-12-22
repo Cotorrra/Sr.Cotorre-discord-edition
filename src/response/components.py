@@ -1,20 +1,23 @@
+import asyncio
+
 from discord_slash import ComponentContext
 from discord_slash.utils.manage_components import create_button, create_actionrow, wait_for_component
 from discord_slash.model import ButtonStyle
 
 from src.core.translator import lang
 
-buttons = [
-            create_button(
-                style=ButtonStyle.red,
-                label=lang.locale('self_delete')
-            ),
-          ]
 
-
-async def self_destruct(bot, ctx, user_id):
-    button_ctx: ComponentContext = await wait_for_component(bot, components=action_row)
-    if user_id == button_ctx.author_id:
-        await ctx.message.delete()
-    else:
-        await ctx.send("<:confusedwatermelon:739425223358545952>")
+async def cards_buttons_row(bot, ctx, embed):
+    buttons = [create_button(style=ButtonStyle.red, label=lang.locale('self_delete'))]
+    action_row = create_actionrow(*buttons)
+    msg = await ctx.send(embed=embed, components=[action_row])
+    while True:
+        try:
+            button_ctx: ComponentContext = await wait_for_component(bot, components=[action_row], timeout=10)
+            if button_ctx.author == ctx.author:
+                await button_ctx.origin_message.delete()
+        except asyncio.TimeoutError:
+            for i in range(len(buttons)):
+                action_row["components"][i]["disabled"] = True
+            await msg.edit(components=[action_row])
+            break
