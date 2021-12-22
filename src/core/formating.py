@@ -4,9 +4,9 @@ from config import ARKHAM_DB, TEXT_FORMAT
 from src.core.translator import lang
 
 
-def create_embed(c: dict, title: str, description: str, footnote="") -> discord.embeds.Embed:
+def create_embed(title: str, description="", c=None, footnote="") -> discord.embeds.Embed:
     """
-    Creates a Discord embed with a title, description and footnote if any.
+    Creates a Discord embed with a title, description and footnote of a card.
 
     :param c: Card information dict.
     :param title: Card title
@@ -14,8 +14,11 @@ def create_embed(c: dict, title: str, description: str, footnote="") -> discord.
     :param footnote: Card footnote (optional)
     :return: A Discord embed.
     """
-    url = f"{ARKHAM_DB}/card/{c['code']}"
-    embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
+    if c:
+        url = f"{ARKHAM_DB}/card/{c['code']}"
+        embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
+    else:
+        embed = discord.Embed(title=title, description=description, color=0xaaaaaa)
     if footnote:
         embed.set_footer(text=footnote)
     set_thumbnail_image(c, embed)

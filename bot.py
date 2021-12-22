@@ -1,15 +1,20 @@
+import asyncio
+
 import discord
 from discord.ext import commands
-from discord_slash import SlashCommand
+from discord_slash import SlashCommand, ComponentContext, ButtonStyle, SlashContext
+from discord_slash.utils.manage_components import wait_for_component, create_actionrow, create_button
 from dotenv import load_dotenv
 
 from config import TOKEN
 from src.core.translator import lang
 from src.e_cards.search import format_query_ec
 from src.p_cards.search import format_query_pc
+# from src.response.components import self_destruct, buttons
+from src.response.components import cards_buttons_row
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, refresh_api_data
-from src.response.utils import player_card_slash_options, deck_slash_options, general_card_slash_options, \
+from src.response.slash_options import player_card_slash_options, deck_slash_options, general_card_slash_options, \
     tarot_slash_options
 
 load_dotenv()
@@ -20,8 +25,8 @@ slash = SlashCommand(bot, sync_commands=True)
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} está listo! :parrot:')
-    await bot.change_presence(activity=discord.Game('Duolingo'))
-    # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=""))
+    # await bot.change_presence(activity=discord.Game(''))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Buttons"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="for e/info"))
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="ArkhamDB"))
 
@@ -29,38 +34,30 @@ async def on_ready():
 @slash.slash(name="ah",
              description=lang.locale('ah_description'),
              options=player_card_slash_options())
-async def ah_s(ctx, name, level="", faction="", extras="", sub="", pack=""):
+async def ah_s(ctx: SlashContext, name, level="", faction="", extras="", sub="", pack=""):
     await ctx.defer()
     query = format_query_pc(name, level, faction, extras, sub, pack)
-    response, embed = look_for_player_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_player_card(query)
+
+    await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="ahDeck",
              description=lang.locale('ahDeck_description'),
              options=deck_slash_options())
-async def ahMazo_s(ctx, code, type=""):
+async def ah_mazo_s(ctx, code, type=""):
     await ctx.defer()
-    response, embed = look_for_deck(code, type)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_deck(code, type)
+    await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="ahUp",
              description=lang.locale('ahUp_description'),
              options=deck_slash_options())
-async def ahMejora_s(ctx, code, type=""):
+async def ah_mejora_s(ctx, code, type=""):
     await ctx.defer()
-    response, embed = look_for_upgrades(code, type)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_upgrades(code, type)
+    await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="ahe",
@@ -69,11 +66,8 @@ async def ahMejora_s(ctx, code, type=""):
 async def ahe_s(ctx, name, type="", sub="", pack=""):
     await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
-    response, embed = look_for_mythos_card(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_mythos_card(query)
+    await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="ahb",
@@ -82,11 +76,8 @@ async def ahe_s(ctx, name, type="", sub="", pack=""):
 async def ahback_s(ctx, name, type="", sub="", pack=""):
     await ctx.defer()
     query = format_query_ec(name, type, sub, pack)
-    response, embed = look_for_card_back(query)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_card_back(query)
+    await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="ahTarot",
@@ -94,16 +85,14 @@ async def ahback_s(ctx, name, type="", sub="", pack=""):
              options=tarot_slash_options())
 async def ahTarot(ctx, name=""):
     await ctx.defer()
-    response, embed = look_for_tarot(name)
-    if embed:
-        await ctx.send(response, embed=embed)
-    else:
-        await ctx.send(response)
+    embed = look_for_tarot(name)
+    await cards_buttons_row(bot, ctx, embed)
+
 
 
 @slash.slash(name="refresh",
              description="Refresca las cartas del bot",
-             guild_ids=[804912893589585964])
+             guild_ids=[804912893589585964, 923302104532156449])  # Special Testing Discord
 async def refresh_data(ctx):
     await ctx.defer()
     if refresh_cards():
@@ -114,7 +103,7 @@ async def refresh_data(ctx):
 
 @slash.slash(name="refreshAPI",
              description="Refresca los datos de la API del bot",
-             guild_ids=[804912893589585964])
+             guild_ids=[804912893589585964, 923302104532156449])
 async def refresh_data(ctx):
     await ctx.defer()
     if refresh_api_data():

@@ -29,7 +29,7 @@ def format_enemy_card(c):
                     f"{flavour}" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_act_card_f(c):
@@ -47,7 +47,7 @@ def format_act_card_f(c):
                     f"{clues}\n" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_agenda_card_f(c):
@@ -65,7 +65,7 @@ def format_agenda_card_f(c):
                     f"{doom}\n" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_location_card_f(c):
@@ -90,7 +90,7 @@ def format_location_card_f(c):
                     f"{flavour}" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_scenario_card(c):
@@ -101,7 +101,7 @@ def format_scenario_card(c):
     m_title = name
     m_description = f"{text}\n\n{b_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_treachery_card(c):
@@ -123,7 +123,7 @@ def format_treachery_card(c):
                     f"{flavour}" \
                     f"{errata_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_general_card(c):
@@ -135,5 +135,5 @@ def format_general_card(c):
     m_title = f"{name}{subname}"
     m_description = f"{flavour}{text}"
     m_footnote = format_illus_pack(c)
-    embed = create_embed(c, m_title, m_description, m_footnote)
+    embed = create_embed(m_title, m_description, c, m_footnote)
     return embed

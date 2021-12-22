@@ -17,7 +17,7 @@ def format_inv_card_b(c: dict) -> discord.embeds.Embed:
     m_title = f"{faction} {name} {subname}"
     m_description = f"{deck_req}\n\n{flavour}\n\n{errata_text}"
     m_footnote = format_illus_pack(c)
-    embed = create_embed(c, m_title, m_description, m_footnote)
+    embed = create_embed(m_title, m_description, c, m_footnote)
     return embed
 
 
@@ -29,7 +29,7 @@ def format_location_card_b(c: dict) -> discord.embeds.Embed:
     m_title = name
     m_description = f"{back}\n\n{flavour}"
     m_footnote = format_illus_pack(c)
-    embed = create_embed(c, m_title, m_description, m_footnote)
+    embed = create_embed(m_title, m_description, c, m_footnote)
     return embed
 
 
@@ -43,5 +43,5 @@ def format_general_card_b(c: dict) -> discord.embeds.Embed:
     m_title = f"{name} {subname}"
     m_description = f"{flavour}\n\n{back}"
     m_footnote = pack
-    embed = create_embed(c, m_title, m_description, m_footnote)
+    embed = create_embed(m_title, m_description, c, m_footnote)
     return embed

@@ -40,7 +40,7 @@ def format_player_card(c):
                     f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_inv_card_f(c):
@@ -64,7 +64,7 @@ def format_inv_card_f(c):
                     f"{errata_text}\n" \
                     f"{taboo_text}\n"
     m_footnote = format_illus_pack(c)
-    return create_embed(c, m_title, m_description, m_footnote)
+    return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_player_card_deck(c, qty=0, taboo_info=""):

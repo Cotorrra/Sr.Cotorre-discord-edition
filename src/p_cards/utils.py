@@ -28,14 +28,14 @@ def format_xp(c, taboo_info=""):
 
 def format_slot(c):
     formater = {
-        "Accessory.": "<:Accesorio:813546875856355359>",
-        "Ally.": "<:Aliado:813546887989821472>",
-        "Arcane.": "<:huecoarcano:813551281791959040>",
-        "Arcane x2.": "<:Dosarcanos:813552984432050186>",
-        "Body.": "<:Cuerpo:813546864074162226>",
-        "Hand.": "<:Mano:813546904428347402>",
-        "Hand x2.": "<:Dosmanos:813546852083302460>",
-        "Tarot.": "<:Tarot:813551294156767232>"
+        "Accessory.": "<:accessory:923314322606788639>",
+        "Ally.": "<:ally:923314296727941132>",
+        "Arcane.": "<:arcane:923314241904214077>",
+        "Arcane x2.": "<:2arcane:923314267300696104>",
+        "Body.": "<:body:923314103970316308>",
+        "Hand.": "<:hand:923314022428844072>",
+        "Hand x2.": "<:2hand:923314070227124225> ",
+        "Tarot.": "<:tarot:923313991839805520>"
     }
     text = ""
     if "real_slot" in c:
