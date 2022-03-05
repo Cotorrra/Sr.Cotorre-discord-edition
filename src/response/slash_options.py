@@ -89,3 +89,21 @@ def tarot_slash_options():
                           description=lang.locale('name_description'),
                           option_type=3,
                           required=False)]
+
+
+def timing_slash_options():
+    """
+    Returns the slash command options for Game's Framework.
+    :return:
+    """
+    return [create_option(name="type",
+                          description=lang.locale('timing_type_desc'),
+                          option_type=3,
+                          required=True,
+                          choices=[
+                              create_choice(name=lang.locale('mythos_phase'), value="M"),
+                              create_choice(name=lang.locale('investigation_phase'), value="I"),
+                              create_choice(name=lang.locale('enemy_phase'), value="E"),
+                              create_choice(name=lang.locale('upkeep_phase'), value="U"),
+                              create_choice(name=lang.locale('skill_test'), value="S"),
+                          ])]

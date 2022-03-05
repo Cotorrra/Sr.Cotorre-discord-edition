@@ -162,3 +162,5 @@ def look_for_tarot(query):
     return embed
 
 
+def look_for_framework():
+    pass

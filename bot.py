@@ -15,7 +15,7 @@ from src.response.components import cards_buttons_row
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, refresh_api_data
 from src.response.slash_options import player_card_slash_options, deck_slash_options, general_card_slash_options, \
-    tarot_slash_options
+    tarot_slash_options, timing_slash_options
 
 load_dotenv()
 bot = commands.Bot(command_prefix='!SrCotorre')
@@ -88,6 +88,17 @@ async def ahTarot(ctx, name=""):
     embed = look_for_tarot(name)
     await cards_buttons_row(bot, ctx, embed)
 
+
+"""
+# SOONtm
+@slash.slash(name="ahTiming",
+             description=lang.locale('ahTiming_description'),
+             options=timing_slash_options())
+async def ahTiming(ctx):
+    await ctx.defer()
+    embed = look_for_framework()
+    await cards_buttons_row(bot, ctx, embed)
+"""
 
 
 @slash.slash(name="refresh",
