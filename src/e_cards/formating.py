@@ -1,8 +1,7 @@
 from src.core.formating import *
 from src.core.utils import text_if
 from src.e_cards.formating_utils import format_enemy_stats, format_attack, format_clues, format_location_data
-from src.errata.formating import format_errata_text
-
+from src.api_interaction.errata import errata
 
 def format_enemy_card(c):
     name = format_name(c)
@@ -16,7 +15,7 @@ def format_enemy_card(c):
     attack = text_if("%s\n", format_attack(c))
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
-    errata_text = format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
 
     m_title = f"{faction} {name}{subtext}"
     m_description = f"{c_type}\n" \
@@ -38,7 +37,7 @@ def format_act_card_f(c):
     flavour = text_if("%s\n\n", format_flavour(c))
     clues = format_clues(c)
     text = text_if("> %s\n", format_card_text(c))
-    errata_text = format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
 
     m_title = name
     m_description = f"{stage}\n" \
@@ -55,7 +54,7 @@ def format_agenda_card_f(c):
     stage = f"***{lang.locale('agenda')} {c['stage']}***"
     flavour = text_if("%s\n\n", format_flavour(c))
     text = text_if("> %s\n", format_card_text(c))
-    errata_text = format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
     doom = format_text("[doom] % s" % (c['doom'] if "doom" in c else " - "))
 
     m_title = name
@@ -78,7 +77,7 @@ def format_location_card_f(c):
     location_data = format_location_data(c)
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
-    errata_text = format_errata_text(c['code'], back=True)
+    errata_text = errata.format_errata_text(c['code'], back=True)
 
     m_title = f"{name}{subtext}"
     m_description = f"{c_type}\n" \
@@ -111,7 +110,7 @@ def format_treachery_card(c):
     traits = format_traits(c)
     text = f"> {format_card_text(c)} \n"
     flavour = text_if("%s\n\n", format_flavour(c))
-    errata_text = format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
     m_title = f"{faction} {name}"

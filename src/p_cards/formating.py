@@ -2,16 +2,15 @@ from src.core.formating import format_name, format_subtext, format_faction, form
     faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits, \
     format_text
 from src.core.utils import text_if
-from src.errata.formating import format_errata_text
-from src.p_cards.utils import format_xp, format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
+from src.api_interaction.errata import errata
+from src.p_cards.utils import format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
     format_sub_text_short, format_costs
-from src.taboo.formating import format_taboo_text
-from src.taboo.taboo import taboo_data
+from src.api_interaction.taboo import taboo
 
 
 def format_player_card(c):
     name = format_name(c)
-    level = format_xp(c, "null")
+    level = taboo.format_xp(c)
     subtext = format_subtext(c)
     faction = format_faction(c)
     type = format_type(c)
@@ -24,8 +23,8 @@ def format_player_card(c):
     text = text_if("> %s\n", format_card_text(c))
     flavour = text_if("%s\n", format_flavour(c))
     health_sanity = text_if("%s\n", format_health_sanity(c))
-    taboo_text = format_taboo_text(c['code'])
-    errata_text = format_errata_text(c['code'])
+    taboo_text = taboo.format_taboo_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
     victory = text_if("> %s\n", format_victory(c))
 
     m_title = f"{faction} {name}{subtext}{level}"
@@ -36,7 +35,7 @@ def format_player_card(c):
                     f"{text}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
-                    f"{flavour}" \
+                    f"{flavour}\n" \
                     f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
@@ -51,8 +50,8 @@ def format_inv_card_f(c):
     health_sanity = text_if("%s\n", format_health_sanity(c))
     ability = text_if("> %s", format_card_text(c))
     traits = format_traits(c)
-    taboo_text = format_taboo_text(c['code'])
-    errata_text = format_errata_text(c['code'])
+    taboo_text = taboo.format_taboo_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
     flavour = format_flavour(c)
 
     m_title = f"{faction} {name}{subname}"
@@ -69,12 +68,13 @@ def format_inv_card_f(c):
 
 def format_player_card_deck(c, qty=0, taboo_info=""):
     name = c['name']
-    level = format_xp(c, taboo_info)
+    level = taboo.format_xp(c, taboo_info)
     faction = faction_order[c['faction_code']] + format_faction(c)
     quantity = f"x{str(qty)}" if qty > 1 else ""
     subname = format_sub_text_short(c)
-    taboo = format_text(" [taboo]") if taboo_data.is_in_taboo(c['code'], taboo_info) else ""
-    text = f"{faction} {name}{subname} {level}{taboo} {quantity}"
+    slot = format_slot(c)
+    taboo_text = format_text(" [taboo]") if taboo.is_in_taboo(c['code'], taboo_info) else ""
+    text = f"{faction} {slot} {name}{subname} {level}{taboo_text} {quantity}"
     return text
 
 

@@ -1,8 +1,8 @@
+from src.api_interaction.timings import timings
 from src.core.cardsDB import cards
 from src.core.formating import create_embed
 from src.core.translator import lang
-from src.errata.errata import errata_data
-from src.faq.formating import format_faq
+from src.api_interaction.errata import errata
 from src.backs.search import resolve_back_search
 from src.response.resolve import resolve_search
 from src.core.search import card_search
@@ -11,12 +11,8 @@ from src.decks.formating import format_deck, format_upgraded_deck
 from src.decks.search import find_deck, find_former_deck
 from src.e_cards.search import use_ec_keywords
 from src.p_cards.search import use_pc_keywords
-from src.rules.formating import format_rule
-from src.rules.search import search_for_rules
-from src.taboo.taboo import taboo_data
-from src.tarot.formating import format_tarot
-from src.tarot.search import search_for_tarot
-from src.tarot.tarot import tarot_data
+from src.api_interaction.taboo import taboo
+from src.api_interaction.tarot import tarot, format_tarot
 
 
 def refresh_cards():
@@ -29,9 +25,9 @@ def refresh_cards():
 
 
 def refresh_api_data():
-    tarot_data.reload_tarot()
-    taboo_data.reload_taboo()
-    errata_data.reload_errata()
+    tarot.reload_tarot()
+    taboo.reload_taboo()
+    errata.reload_errata()
     lang.reload_language()
     return True
 
@@ -112,7 +108,7 @@ def look_for_upgrades(code, deck_mode):
     elif not deck2:
         embed = create_embed(lang.locale('upgrade_not_found'))
     else:
-        info = check_upgrade_rules(deck2, deck1, cards.get_p_cards())
+        info = check_upgrade_rules(deck2, deck1, cards.get_all_cards())
         embed = format_upgraded_deck(deck1, info)
 
     return embed
@@ -124,12 +120,12 @@ def look_for_faq(query):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return:
     """
-    r_cards = card_search(query, cards.get_all_cards(), use_ec_keywords)
-    if r_cards:
-        embed = format_faq(r_cards[0])
-    else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
-    return embed
+    # r_cards = card_search(query, cards.get_all_cards(), use_ec_keywords)
+    # if r_cards:
+    #    embed = format_faq(r_cards[0])
+    # else:
+    #   embed = create_embed(lang.locale('card_not_found'), "", {})
+    # return embed
 
 
 def look_for_rule(query):
@@ -138,12 +134,12 @@ def look_for_rule(query):
     :param query:  A query string.
     :return:
     """
-    search = search_for_rules(query)
-    if search:
-        embed = format_rule(search)
-    else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
-    return embed
+    # search = search_for_rules(query)
+    # if search:
+    #    embed = format_rule(search)
+    # else:
+    #    embed = create_embed(lang.locale('card_not_found'), "", {})
+    # return embed
 
 
 def look_for_tarot(query):
@@ -153,11 +149,11 @@ def look_for_tarot(query):
     :param query:  A query string.
     :return:
     """
-    search = search_for_tarot(query)
+    search = tarot.search_for_tarot(query)
     if search:
         embed = format_tarot(search)
     else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
+        embed = create_embed(lang.locale('card_not_found'))
 
     return embed
 

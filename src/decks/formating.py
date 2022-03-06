@@ -19,9 +19,7 @@ def format_assets(arr: [(dict, int)], key: str, taboo_info: str) -> str:
 
 
 def format_all_assets(info: dict, taboo_info: str):
-    types = ["assets_hand", "assets_hand2", "assets_body",
-             "assets_accessory", "assets_arcane", "assets_arcane2", "assets_ally",
-             "assets_others", "assets_permanents"]
+    types = ["assets", "assets_permanents"]
     text = ""
     for key in types:
         if info[key]:

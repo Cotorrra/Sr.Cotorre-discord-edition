@@ -1,6 +1,8 @@
 import requests
 
 from config import LANG, DATA_API
+from src.core.formating import format_card_text
+from src.core.translator import lang
 
 
 class Errata:
@@ -43,5 +45,17 @@ class Errata:
                 return card
         return {}
 
+    def format_errata_text(self, card_id, back=False):
+        text = ""
+        if self.has_errata(card_id):
+            card = self.get_errata_card(card_id)
+            if back and ('text_back' in card):
+                text += f"> **{lang.locale('errata_title')}**:\n> %s \n\n" % format_card_text(card, 'text_back')
+            elif 'text' in card:
+                text += f"> **{lang.locale('errata_title')}**:\n> %s \n\n" % format_card_text(card, 'text')
+            return text
+        else:
+            return ""
 
-errata_data = Errata()
+
+errata = Errata()

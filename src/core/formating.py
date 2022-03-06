@@ -170,14 +170,15 @@ def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> Non
     :param back: If it has to show the card back instead
     :return: None
     """
-    if "imagesrc" in c:
-        if back:
-            if "backimagesrc" in c:
-                embed.set_thumbnail(url=f"{ARKHAM_DB}{c['backimagesrc']}")
+    if c:
+        if "imagesrc" in c:
+            if back:
+                if "backimagesrc" in c:
+                    embed.set_thumbnail(url=f"{ARKHAM_DB}{c['backimagesrc']}")
+                else:
+                    embed.set_thumbnail(url=f"{ARKHAM_DB}{c['imagesrc']}")
             else:
                 embed.set_thumbnail(url=f"{ARKHAM_DB}{c['imagesrc']}")
-        else:
-            embed.set_thumbnail(url=f"{ARKHAM_DB}{c['imagesrc']}")
 
 
 def format_illustrator(c: dict) -> str:
