@@ -162,5 +162,6 @@ def look_for_tarot(query):
     return embed
 
 
-def look_for_framework():
-    pass
+def look_for_framework(query):
+    embed = timings.find_formated_timing(query)
+    return embed

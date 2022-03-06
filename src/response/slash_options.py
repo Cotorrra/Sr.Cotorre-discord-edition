@@ -96,8 +96,8 @@ def timing_slash_options():
     Returns the slash command options for Game's Framework.
     :return:
     """
-    return [create_option(name="type",
-                          description=lang.locale('timing_type_desc'),
+    return [create_option(name="timing",
+                          description=lang.locale('timings_type_desc'),
                           option_type=3,
                           required=True,
                           choices=[
