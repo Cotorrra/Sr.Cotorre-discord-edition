@@ -29,7 +29,7 @@ def get_qty(deck, card_id):
 def has_trait(card, trait):
     try:
         traits = card['real_traits'].lower().split()
-        return "%s." % trait in traits
+        return f"{trait}." in traits
 
     except KeyError:
         return False

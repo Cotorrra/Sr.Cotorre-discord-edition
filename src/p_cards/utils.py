@@ -2,23 +2,24 @@ from src.core.formating import format_text, format_number, color_picker
 from src.core.search import find_by_id
 from src.core.translator import lang
 
+
 def format_slot(c):
     formater = {
-        "Accessory.": "<:accessory:923314322606788639>",
-        "Ally.": "<:ally:923314296727941132>",
-        "Arcane.": "<:arcane:923314241904214077>",
-        "Arcane x2.": "<:2arcane:923314267300696104>",
-        "Body.": "<:body:923314103970316308>",
-        "Hand.": "<:hand:923314022428844072>",
-        "Hand x2.": "<:2hand:923314070227124225> ",
-        "Tarot.": "<:tarot:923313991839805520>"
+        "Accessory": "<:accessory:923314322606788639>",
+        "Ally": "<:ally:923314296727941132>",
+        "Arcane": "<:arcane:923314241904214077>",
+        "Arcane x2": "<:2arcane:923314267300696104>",
+        "Body": "<:body:923314103970316308>",
+        "Hand": "<:hand:923314022428844072>",
+        "Hand x2": "<:2hand:923314070227124225> ",
+        "Tarot": "<:tarot:923313991839805520>"
     }
     text = ""
     if "real_slot" in c:
-        for key, value in formater.items():
-            traits = c["real_slot"] + "."
-            if key in traits:
-                text += value
+        if c["real_slot"]:
+            slots = c["real_slot"].split(". ")
+            for slot in slots:
+                text += formater[slot]
 
     return text
 
@@ -32,11 +33,11 @@ def format_inv_skills(c):
 
 
 def format_skill_icons(c):
-    will = f"{c['skill_willpower']*'[willpower]'}" if "skill_willpower" in c else ""
-    intel = f"{c['skill_intellect']*'[intellect]'}" if "skill_intellect" in c else ""
-    com = f"{c['skill_combat']*'[combat]'}" if "skill_combat" in c else ""
-    agi = f"{c['skill_agility']*'[agility]'}" if "skill_agility" in c else ""
-    wild = f"{c['skill_wild']*'[wild]'}" if "skill_wild" in c else ""
+    will = f"{c['skill_willpower'] * '[willpower]'}" if "skill_willpower" in c else ""
+    intel = f"{c['skill_intellect'] * '[intellect]'}" if "skill_intellect" in c else ""
+    com = f"{c['skill_combat'] * '[combat]'}" if "skill_combat" in c else ""
+    agi = f"{c['skill_agility'] * '[agility]'}" if "skill_agility" in c else ""
+    wild = f"{c['skill_wild'] * '[wild]'}" if "skill_wild" in c else ""
     return format_text(f"{will}{intel}{com}{agi}{wild}")
 
 

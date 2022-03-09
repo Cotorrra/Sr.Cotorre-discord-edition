@@ -8,7 +8,7 @@ def player_card_slash_options():
     Returns the slash command options for player cards.
     :return:
     """
-    return [create_option(name="name", description=lang.locale('name_description'), option_type=3, required=True),
+    return [create_option(name="name", description=lang.locale('name_description'), option_type=3, required=False),
             create_option(name="level", description=lang.locale('level_description'), option_type=4, required=False),
             create_option(name="faction", description=lang.locale('faction_description'), option_type=3, required=False,
                           choices=[

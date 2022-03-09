@@ -161,6 +161,25 @@ faction_order = {
 }
 
 
+def slot_order(c):
+    order = {
+        "Hand": "1",
+        "Hand x2": "2",
+        "Arcane": "3",
+        "Arcane x2": "4",
+        "Accessory": "5",
+        "Body": "6",
+        "Ally": "7",
+        "Tarot": "8",
+    }
+    if "real_slot" in c:
+        if c["real_slot"]:
+            slots = c["real_slot"].split(". ")
+            if slots[0]:
+                return order[slots[0]]
+    return "9"
+
+
 def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> None:
     """
     Sets the thumbnail image of an embed, using the card image from ArkhamDB.

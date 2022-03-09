@@ -1,6 +1,6 @@
 from src.core.formating import format_name, format_subtext, format_faction, format_card_text, \
     faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits, \
-    format_text
+    format_text, slot_order
 from src.core.utils import text_if
 from src.api_interaction.errata import errata
 from src.p_cards.utils import format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
@@ -69,12 +69,13 @@ def format_inv_card_f(c):
 def format_player_card_deck(c, qty=0, taboo_info=""):
     name = c['name']
     level = taboo.format_xp(c, taboo_info)
-    faction = faction_order[c['faction_code']] + format_faction(c)
+    faction = format_faction(c)
     quantity = f"x{str(qty)}" if qty > 1 else ""
     subname = format_sub_text_short(c)
     slot = format_slot(c)
+    priority_order = slot_order(c) + faction_order[c['faction_code']]
     taboo_text = format_text(" [taboo]") if taboo.is_in_taboo(c['code'], taboo_info) else ""
-    text = f"{faction} {slot} {name}{subname} {level}{taboo_text} {quantity}"
+    text = f"{priority_order}{faction} {slot} {name}{subname} {level}{taboo_text} {quantity}"
     return text
 
 

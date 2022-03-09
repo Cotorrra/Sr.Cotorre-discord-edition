@@ -27,7 +27,7 @@ def use_pc_keywords(cards: list, key_list: str):
         if char == "n":
             filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'neutral']
         if char == "u":
-            filtered_cards = [c for c in filtered_cards if c['unique']]
+            filtered_cards = [c for c in filtered_cards if (c['is_unique'] if 'is_unique' in c else False)]
         if char == "p":
             filtered_cards = [c for c in filtered_cards if c['permanent']]
         if char == "c":

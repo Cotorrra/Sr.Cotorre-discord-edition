@@ -1,4 +1,5 @@
 import discord
+import werkzeug.datastructures
 
 from config import ARKHAM_DB
 from src.core.translator import lang
@@ -14,7 +15,7 @@ def format_assets(arr: [(dict, int)], key: str, taboo_info: str) -> str:
             aux.append(format_player_card_deck(c, q, taboo_info))
         aux = sorted(aux)
         for c in aux:
-            text += "\n%s" % c[1:]
+            text += "\n%s" % c[2:]
     return text
 
 
@@ -45,17 +46,17 @@ def format_deck(deck, info):
     if info['events_q'] > 0:
         events = f"{lang.locale('events')}: ({str(info['events_q'])})"
         events_cards = format_list_of_cards(info['events'], info['taboo_id'])
-        m_description += f"**{events}**{events_cards}\n\n"
+        m_description += f"**{events}**\n{events_cards}\n"
 
     if info['skills_q'] > 0:
         skills = f"{lang.locale('skills')}: ({str(info['skills_q'])})"
         skills_cards = format_list_of_cards(info['skills'], info['taboo_id'])
-        m_description += f"**{skills}**{skills_cards}\n\n"
+        m_description += f"**{skills}**\n{skills_cards}\n"
 
     if info['treachery_q'] > 0:
         treachery = f"{lang.locale('treacheries/enemies')}: ({str(info['treachery_q'])})"
         treachery_cards = format_list_of_cards(info['treachery'], info['taboo_id'])
-        m_description += f"**{treachery}**{treachery_cards}\n\n"
+        m_description += f"**{treachery}**\n{treachery_cards}\n"
 
     embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
@@ -99,18 +100,19 @@ def format_list_of_cards_upgr(arr, taboo_info):
     array = sorted(array)
     text = ""
     for c in array:
-        text += f"\n{c[1:]}"
+        text += f"\n{c[2:]}\n"
 
     return text
 
 
-def format_list_of_cards(arr, taboo_info):
+def format_list_of_cards(arr, taboo_info="", sort=True):
     text = ""
     aux = []
     for (c, q) in arr:
         aux.append(format_player_card_deck(c, q, taboo_info))
-    aux = sorted(aux)
+    if sort:
+        aux = sorted(aux)
     for c in aux:
-        text += f"\n{c[1:]}"
+        text += f"{c[2:]}\n"
 
     return text
