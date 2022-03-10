@@ -97,7 +97,7 @@ async def ahTarot(ctx: SlashContext, name=""):
              options=timing_slash_options())
 async def ahTiming(ctx: SlashContext, timing):
     await ctx.defer()
-    embed = look_for_framework(timing)
+    embed, hidden = look_for_framework(timing)
     await ctx.send(embed=embed)
     # await cards_buttons_row(bot, ctx, embed)
 
