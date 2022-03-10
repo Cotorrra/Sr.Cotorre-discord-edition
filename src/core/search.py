@@ -12,6 +12,7 @@ def card_search(query, cards, keyword_func):
     """
     Search a card within a set of cards using keywords (ex (4E))
 
+    :param filter_name: Filter or not the cards if it name matches the query
     :param query: The card query.
     :param cards: Set of cards
     :param keyword_func: A keyword function
@@ -24,7 +25,7 @@ def card_search(query, cards, keyword_func):
 
     if sub_text_mode:
         f_cards = [c for c in f_cards if filter_by_subtext(c, sub_query)]
-        f_cards = sorted(f_cards, key= lambda card: -hits_in_string(card['subname'], sub_query))
+        f_cards = sorted(f_cards, key=lambda card: -hits_in_string(card['subname'], sub_query))
 
     if keyword_mode:
         f_cards = keyword_func(f_cards, keyword_query)
@@ -39,9 +40,9 @@ def card_search(query, cards, keyword_func):
 
     r_cards = card_filter(query, f_cards)
 
-    if len(r_cards) == 0 \
-            or (not cards_were_filtered and len(r_cards) == len(f_cards)) \
-            or (cards_were_filtered and len(r_cards) == len(cards)):
+    if (len(r_cards) == 0 and query) \
+            or (not cards_were_filtered and len(r_cards) == len(f_cards) and query) \
+            or (cards_were_filtered and len(r_cards) == len(cards) and query):
         return []
     else:
         return r_cards
@@ -51,12 +52,15 @@ def card_filter(query: str, cards: [dict]):
     """
     Filters the cards withing the group of cards that were given
 
+    :param filter_name: Filter or not the cards if it name matches the query
     :param query: The query text
     :param cards: A list of cards
     :return:
     """
-    r_cards = sorted(cards, key=lambda card: -hits_in_string(query, card['name'] + " " + card['real_name']))
-    r_cards = [c for c in r_cards if hits_in_string(query, c['name'] + " " + c['real_name']) > 0]
+    r_cards = cards.copy()
+    if query:
+        r_cards = sorted(r_cards, key=lambda card: -hits_in_string(query, card['name'] + " " + card['real_name']))
+        r_cards = [c for c in r_cards if hits_in_string(query, c['name'] + " " + c['real_name']) > 0]
     return r_cards
 
 

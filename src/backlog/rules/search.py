@@ -1,5 +1,5 @@
 from src.core.search import hits_in_string
-from src.rules.rules import load_rules
+from src.backlog.rules.rules import load_rules
 
 
 def search_for_rules(query: str):

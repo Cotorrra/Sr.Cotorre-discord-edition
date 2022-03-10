@@ -1,6 +1,8 @@
 import requests
 
 from config import LANG, DATA_API
+from src.core.formating import format_text
+from src.core.translator import lang
 
 
 class Taboo:
@@ -78,7 +80,7 @@ class Taboo:
             if 'xp' in taboo_info:
                 chain = taboo_info['xp']
             if 'exceptional' in taboo_info:
-                taboo_exceptional = taboo_info['exceptional'] == 1
+                taboo_exceptional = taboo_info['exceptional']
 
         if "xp" in c:
             if c['myriad'] or 'Myriad.' in c['real_text']:
@@ -91,5 +93,42 @@ class Taboo:
         else:
             return chain * qty
 
+    def format_xp(self, c, taboo_info=""):
+        chain = ""
+        if taboo_info:
+            if self.is_in_taboo(c['code'], taboo_info):
+                taboo_info = self.get_tabooed_card(c['code'], taboo_info)
+                if 'xp' in taboo_info:
+                    sign = "+" if taboo_info['xp'] > 0 else ""
+                    chain += f" {sign}{taboo_info['xp']}"
+                if 'exceptional' in taboo_info:
+                    chain += " +E" * taboo_info['exceptional']
+        if "xp" in c:
+            if c['xp'] == 0:
+                text = f"{chain}"
+            elif c['exceptional']:
+                text = f" ({c['xp']}E){chain}"
+            else:
+                text = f" ({c['xp']}){chain}"
+        else:
+            text = ""
+        return text
 
-taboo_data = Taboo(current_taboo="004")
+    def format_taboo_text(self, card_id):
+        text = f"> **{lang.locale('taboo_title')}:** \n"
+        if self.is_in_taboo(card_id):
+            card = self.get_tabooed_card(card_id)
+            if 'xp' in card:
+                if card['xp'] >= 0:
+                    text += f"> {lang.locale('taboo_chained')}: +{card['xp']} {lang.locale('xp')} \n"
+                else:
+                    text += f"> {lang.locale('taboo_unchained')}: {card['xp']} {lang.locale('xp')} \n"
+            if 'text' in card:
+                text += "> %s \n" % format_text(card['text'])
+            text += "\n"
+            return text
+        else:
+            return ""
+
+
+taboo = Taboo(current_taboo="004")

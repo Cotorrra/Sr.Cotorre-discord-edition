@@ -1,15 +1,15 @@
+from src.api_interaction.taboo import taboo
 from src.core.formating import format_name, format_subtext, format_faction, format_illus_pack, create_embed, \
     format_card_text, format_text
 from src.core.translator import lang
-from src.faq.faq import load_faq, has_faq, get_faq
-from src.p_cards.utils import format_xp
+from src.backlog.faq.faq import load_faq, has_faq, get_faq
 
 
 def format_faq(c):
     name = format_name(c)
     subtext = format_subtext(c)
     faction = format_faction(c)
-    level = format_xp(c)
+    level = taboo.format_xp(c)
     text = f"> {format_card_text(c)}"
     faq = format_faq_text(c['code'], back=False)
 

@@ -3,7 +3,7 @@ import discord.embeds
 from src.core.formating import format_faction, format_name, format_subtext, format_card_text, format_set, \
     format_illus_pack, create_embed
 from src.core.utils import text_if
-from src.errata.formating import format_errata_text
+from src.api_interaction.errata import errata
 
 
 def format_inv_card_b(c: dict) -> discord.embeds.Embed:
@@ -12,7 +12,7 @@ def format_inv_card_b(c: dict) -> discord.embeds.Embed:
     subname = format_subtext(c)
     deck_req = text_if("> %s", format_card_text(c, 'back_text'))
     flavour = f"_{format_card_text(c, 'back_flavor')}_"
-    errata_text = format_errata_text(c['code'], back=True)
+    errata_text = errata.format_errata_text(c['code'], back=True)
 
     m_title = f"{faction} {name} {subname}"
     m_description = f"{deck_req}\n\n{flavour}\n\n{errata_text}"

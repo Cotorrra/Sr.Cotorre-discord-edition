@@ -1,22 +1,20 @@
+import random
+
+from src.api_interaction.timings import timings
 from src.core.cardsDB import cards
 from src.core.formating import create_embed
 from src.core.translator import lang
-from src.errata.errata import errata_data
-from src.faq.formating import format_faq
+from src.api_interaction.errata import errata
 from src.backs.search import resolve_back_search
 from src.response.resolve import resolve_search
 from src.core.search import card_search
 from src.decks.deck import extract_deck_info, check_upgrade_rules
-from src.decks.formating import format_deck, format_upgraded_deck
+from src.decks.formating import format_deck, format_upgraded_deck, format_list_of_cards
 from src.decks.search import find_deck, find_former_deck
 from src.e_cards.search import use_ec_keywords
 from src.p_cards.search import use_pc_keywords
-from src.rules.formating import format_rule
-from src.rules.search import search_for_rules
-from src.taboo.taboo import taboo_data
-from src.tarot.formating import format_tarot
-from src.tarot.search import search_for_tarot
-from src.tarot.tarot import tarot_data
+from src.api_interaction.taboo import taboo
+from src.api_interaction.tarot import tarot, format_tarot
 
 
 def refresh_cards():
@@ -29,9 +27,9 @@ def refresh_cards():
 
 
 def refresh_api_data():
-    tarot_data.reload_tarot()
-    taboo_data.reload_taboo()
-    errata_data.reload_errata()
+    tarot.reload_tarot()
+    taboo.reload_taboo()
+    errata.reload_errata()
     lang.reload_language()
     return True
 
@@ -46,9 +44,9 @@ def look_for_player_card(query: str):
     r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
     embed = resolve_search(r_cards)
     if embed:
-        return embed
+        return embed, True
     else:
-        return create_embed(lang.locale('card_not_found'), "", {})
+        return create_embed(lang.locale('card_not_found'), "", {}), False
 
 
 def look_for_mythos_card(query: str):
@@ -60,10 +58,10 @@ def look_for_mythos_card(query: str):
     """
     r_cards = card_search(query, cards.get_e_cards(), use_ec_keywords)
     embed = resolve_search(r_cards)
-    if not embed:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
+    if embed:
+        return embed, True
 
-    return embed
+    return create_embed(lang.locale('card_not_found'), "", {}), False
 
 
 def look_for_card_back(query: str):
@@ -76,10 +74,10 @@ def look_for_card_back(query: str):
     f_cards = [c for c in cards.get_all_cards() if c["double_sided"]]
     r_cards = card_search(query, f_cards, use_ec_keywords)
     embed = resolve_back_search(r_cards)
-    if not embed:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
+    if embed:
+        return embed, True
 
-    return embed
+    return create_embed(lang.locale('card_not_found'), "", {}), False
 
 
 def look_for_deck(code, deck_type):
@@ -90,12 +88,12 @@ def look_for_deck(code, deck_type):
     :return:
     """
     deck = find_deck(code, deck_type)
-    if not deck:
-        embed = create_embed(lang.locale('deck_not_found'), "", {})
-    else:
+    if deck:
         deck_info = extract_deck_info(deck, cards.get_all_cards())
         embed = format_deck(deck, deck_info)
-    return embed
+        return embed, True
+
+    return create_embed(lang.locale('deck_not_found'), "", {}), False
 
 
 def look_for_upgrades(code, deck_mode):
@@ -108,14 +106,12 @@ def look_for_upgrades(code, deck_mode):
     deck1 = find_deck(code, deck_mode)
     deck2 = find_former_deck(code, deck_mode)
     if not deck1:
-        embed = create_embed(lang.locale('deck_not_found'))
+        return create_embed(lang.locale('deck_not_found')), False
     elif not deck2:
-        embed = create_embed(lang.locale('upgrade_not_found'))
-    else:
-        info = check_upgrade_rules(deck2, deck1, cards.get_p_cards())
-        embed = format_upgraded_deck(deck1, info)
+        return create_embed(lang.locale('upgrade_not_found')), False
 
-    return embed
+    info = check_upgrade_rules(deck2, deck1, cards.get_all_cards())
+    return format_upgraded_deck(deck1, info), True
 
 
 def look_for_faq(query):
@@ -124,12 +120,12 @@ def look_for_faq(query):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return:
     """
-    r_cards = card_search(query, cards.get_all_cards(), use_ec_keywords)
-    if r_cards:
-        embed = format_faq(r_cards[0])
-    else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
-    return embed
+    # r_cards = card_search(query, cards.get_all_cards(), use_ec_keywords)
+    # if r_cards:
+    #    embed = format_faq(r_cards[0])
+    # else:
+    #   embed = create_embed(lang.locale('card_not_found'), "", {})
+    # return embed
 
 
 def look_for_rule(query):
@@ -138,12 +134,12 @@ def look_for_rule(query):
     :param query:  A query string.
     :return:
     """
-    search = search_for_rules(query)
-    if search:
-        embed = format_rule(search)
-    else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
-    return embed
+    # search = search_for_rules(query)
+    # if search:
+    #    embed = format_rule(search)
+    # else:
+    #    embed = create_embed(lang.locale('card_not_found'), "", {})
+    # return embed
 
 
 def look_for_tarot(query):
@@ -153,12 +149,35 @@ def look_for_tarot(query):
     :param query:  A query string.
     :return:
     """
-    search = search_for_tarot(query)
+    search = tarot.search_for_tarot(query)
     if search:
-        embed = format_tarot(search)
+        return format_tarot(search), True
+
+    return create_embed(lang.locale('card_not_found')), False
+
+
+def look_for_list_of_cards(query):
+    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
+    result = [(c, 1) for c in r_cards[:10]]
+    text = ">>> " + format_list_of_cards(result, sort=False)
+    title = f"{lang.locale('ahList_title')} {len(result)}"
+    embed = create_embed(title, text)
+    if r_cards:
+        return embed, True
     else:
-        embed = create_embed(lang.locale('card_not_found'), "", {})
-
-    return embed
+        create_embed(lang.locale('card_not_found')), False
 
 
+def look_for_random_player_card(query):
+    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
+    card = random.choice(r_cards)
+    embed = resolve_search([card])
+    if embed:
+        return embed, True
+    else:
+        create_embed(lang.locale('card_not_found')), False
+
+
+def look_for_framework(query):
+    embed = timings.find_formated_timing(query)
+    return embed, True

@@ -4,6 +4,7 @@ import requests
 
 from config import ARKHAM_DB
 
+
 def find_deck(code: str, deck_mode):
     try:
         if deck_mode:
@@ -34,5 +35,3 @@ def find_former_deck(code: str, deck_mode):
         else:
             return False
     return False
-
-
