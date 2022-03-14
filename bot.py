@@ -24,7 +24,8 @@ sentry_sdk.init(
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     # We recommend adjusting this value in production.
-    traces_sample_rate=1.0
+    traces_sample_rate=1.0,
+    release="cotorre@1.0.0",
 )
 
 @bot.event
@@ -154,5 +155,5 @@ async def refresh_data(ctx: SlashContext):
     else:
         await ctx.send("<:confusedwatermelon:739425223358545952>")
 
-division_by_zero = 1 / 0
+
 bot.run(TOKEN)
