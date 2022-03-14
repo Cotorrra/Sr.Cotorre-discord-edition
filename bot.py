@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 from dotenv import load_dotenv
+import sentry_sdk
 
 from config import TOKEN
 from src.core.translator import lang
@@ -18,6 +19,13 @@ load_dotenv()
 bot = commands.Bot(command_prefix='!SrCotorre')
 slash = SlashCommand(bot, sync_commands=True)
 
+sentry_sdk.init(
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
 
 @bot.event
 async def on_ready():
@@ -146,5 +154,5 @@ async def refresh_data(ctx: SlashContext):
     else:
         await ctx.send("<:confusedwatermelon:739425223358545952>")
 
-
+division_by_zero = 1 / 0
 bot.run(TOKEN)
