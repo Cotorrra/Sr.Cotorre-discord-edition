@@ -1,10 +1,10 @@
-import discord
+from interactions import Embed
 
 from config import ARKHAM_DB, TEXT_FORMAT
 from src.core.translator import lang
 
 
-def create_embed(title: str, description="", c=None, footnote="") -> discord.embeds.Embed:
+def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     """
     Creates a Discord embed with a title, description and footnote of a card.
 
@@ -16,11 +16,11 @@ def create_embed(title: str, description="", c=None, footnote="") -> discord.emb
     """
     if c:
         url = f"{ARKHAM_DB}/card/{c['code']}"
-        embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
+        embed = Embed(title=title, description=description, color=color_picker(c), url=url)
     else:
-        embed = discord.Embed(title=title, description=description, color=0xaaaaaa)
+        embed = Embed(title=title, description=description, color=0xaaaaaa)
     if footnote:
-        embed.set_footer(text=footnote)
+        embed.footer = footnote
     set_thumbnail_image(c, embed)
     return embed
 
@@ -180,7 +180,7 @@ def slot_order(c):
     return "9"
 
 
-def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> None:
+def set_thumbnail_image(c: dict, embed: Embed, back=False) -> None:
     """
     Sets the thumbnail image of an embed, using the card image from ArkhamDB.
 
