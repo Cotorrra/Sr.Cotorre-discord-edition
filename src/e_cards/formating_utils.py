@@ -1,4 +1,5 @@
-from src.core.formating import *
+from src.core.formating import format_number, format_text
+from src.core.translator import lang
 
 
 def format_enemy_stats(c):
@@ -43,8 +44,8 @@ def format_attack(c, verbose=True):
         return f"{damage}{horror}\n"
 
 
-def extract_token_info(t):
-    lines = t.split("\n")
+def extract_token_info(tokens):
+    lines = tokens.split("\n")
     symbols = ["", "", "", ""]  # Skull / Cultist / Tablet / Elder
     for line in lines:
         if "[skull]" in line:

@@ -1,11 +1,14 @@
+"""
+    Encounter Card Search/Filter
+"""
 from src.core.utils import is_lvl
 
 
 def use_ec_keywords(cards: list, key_list: str):
     """
-    Filtra cartas de encuentro según los caracteres del string dado
-    :param cards: Lista de cartas
-    :param key_list: Argumentos dados
+    Filter encounter cards according to the key_list
+    :param cards: Encounter card list
+    :param key_list: Filter parameters
     :return:
     """
     filtered_cards = cards.copy()
@@ -32,8 +35,3 @@ def use_ec_keywords(cards: list, key_list: str):
     return filtered_cards
 
 
-def format_query_ec(nombre, tipo, subtitulo, pack):
-    sub = f" ~{subtitulo}~" if subtitulo else ""
-    extra = f" ({tipo})" if tipo else ""
-    pack = f" [{pack}]" if pack else ""
-    return nombre + sub + extra + pack

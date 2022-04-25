@@ -12,34 +12,35 @@ def card_search(query, cards, keyword_func):
     """
     Search a card within a set of cards using keywords (ex (4E))
 
-    :param filter_name: Filter or not the cards if it name matches the query
     :param query: The card query.
     :param cards: Set of cards
     :param keyword_func: A keyword function
     :return:
     """
-    query, keyword_query, keyword_mode = find_and_extract(query, "(", ")")
-    query, sub_query, sub_text_mode = find_and_extract(query, "~", "~")
-    query, pack_query, pack_mode = find_and_extract(query, "[", "]")
+
     f_cards = cards.copy()
 
-    if sub_text_mode:
-        f_cards = [c for c in f_cards if filter_by_subtext(c, sub_query)]
-        f_cards = sorted(f_cards, key=lambda card: -hits_in_string(card['subname'], sub_query))
+    if query['subtitle']:
+        f_cards = [c for c in f_cards if filter_by_subtext(c, query['subtitle'])]
+        f_cards = sorted(f_cards,
+                         key=lambda card: -hits_in_string(card['subname'], query['subtitle']))
 
-    if keyword_mode:
-        f_cards = keyword_func(f_cards, keyword_query)
+    if query['extras']:
+        f_cards = keyword_func(f_cards, query['extras'])
 
-    if pack_mode:
-        pack_search = sorted([pd['name'] for pd in pack_data], key=lambda pd: -hits_in_string(pack_query, pd))
+    if query['pack']:
+        pack_search = sorted([pd['name'] for pd in pack_data],
+                             key=lambda pd: -hits_in_string(query['pack'], pd))
         if len(pack_search) > 0:
-            pack_tag = [pd["code"] for pd in pack_data if pd["name"].lower() == pack_search[0].lower()][0]
-            f_cards = [c for c in f_cards if c["pack_code"] == pack_tag]
+            pack_tag = [pd["code"] for pd in pack_data
+                        if pd["name"].lower() == pack_search[0].lower()]
+            f_cards = [c for c in f_cards if c["pack_code"] == pack_tag[0]]
 
     cards_were_filtered = len(cards) > len(f_cards)
 
     r_cards = card_filter(query, f_cards)
-
+    if r_cards:
+        print(r_cards[0])
     if (len(r_cards) == 0 and query) \
             or (not cards_were_filtered and len(r_cards) == len(f_cards) and query) \
             or (cards_were_filtered and len(r_cards) == len(cards) and query):
@@ -48,7 +49,7 @@ def card_search(query, cards, keyword_func):
         return r_cards
 
 
-def card_filter(query: str, cards: [dict]):
+def card_filter(query: dict, cards: [dict]):
     """
     Filters the cards withing the group of cards that were given
 
@@ -58,9 +59,12 @@ def card_filter(query: str, cards: [dict]):
     :return:
     """
     r_cards = cards.copy()
-    if query:
-        r_cards = sorted(r_cards, key=lambda card: -hits_in_string(query, card['name'] + " " + card['real_name']))
-        r_cards = [c for c in r_cards if hits_in_string(query, c['name'] + " " + c['real_name']) > 0]
+    if query['name']:
+        r_cards = sorted(r_cards,
+                         key=lambda card: -hits_in_string(query['name'],
+                                                          card['name'] + " " + card['real_name']))
+        r_cards = [c for c in r_cards if
+                   hits_in_string(query['name'], c['name'] + " " + c['real_name']) > 0]
     return r_cards
 
 

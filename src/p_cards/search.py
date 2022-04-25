@@ -37,10 +37,3 @@ def use_pc_keywords(cards: list, key_list: str):
 
     return filtered_cards
 
-
-def format_query_pc(nombre, nivel, clase, extras, subtitulo, pack):
-    subtitle = f" ~{subtitulo}~" if subtitulo else ""
-    lvl_txt = str(nivel) if nivel != "" else ""
-    extra = f" ({lvl_txt + clase + extras})" if nivel or clase or extras else ""
-    package = f" [{pack}]" if pack else ""
-    return nombre + subtitle + extra + package

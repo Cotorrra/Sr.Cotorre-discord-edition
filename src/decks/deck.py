@@ -25,7 +25,7 @@ def diff_decks(a_deck1, a_deck2):
 def deck_to_array(deck, cards):
     arr_deck = []
     for c_id, qty in deck['slots'].items():
-        for i in range(qty):
+        for _ in range(qty):
             arr_deck.append(find_by_id(c_id, cards))
     return arr_deck
 
