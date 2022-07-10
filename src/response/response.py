@@ -22,10 +22,7 @@ from src.api_interaction.tarot import tarot, format_tarot
 
 
 def refresh_cards():
-    """
-    Refreshes the cards from ArkhamDB
-    :return:
-    """
+    """Refreshes the cards from ArkhamDB"""
     cards.refresh()
     return True
 
@@ -47,10 +44,11 @@ def look_for_player_card(query: dict):
     """
     r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
     embed = resolve_search(r_cards)
-    if embed:
-        return embed
 
-    return create_embed(lang.locale('card_not_found'), "", {})
+    if embed:
+        return embed, False
+
+    return create_embed(lang.locale('card_not_found'), "", {}), True
 
 
 def look_for_mythos_card(query: dict):
@@ -63,9 +61,9 @@ def look_for_mythos_card(query: dict):
     r_cards = card_search(query, cards.get_e_cards(), use_ec_keywords)
     embed = resolve_search(r_cards)
     if embed:
-        return embed
+        return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {})
+    return create_embed(lang.locale('card_not_found'), "", {}), True
 
 
 def look_for_card_back(query: dict):
@@ -79,9 +77,9 @@ def look_for_card_back(query: dict):
     r_cards = card_search(query, f_cards, use_ec_keywords)
     embed = resolve_back_search(r_cards)
     if embed:
-        return embed
+        return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {})
+    return create_embed(lang.locale('card_not_found'), "", {}), True
 
 
 def look_for_deck(code, deck_type):
@@ -95,27 +93,28 @@ def look_for_deck(code, deck_type):
     if deck:
         deck_info = extract_deck_info(deck, cards.get_all_cards())
         embed = format_deck(deck, deck_info)
-        return embed
+        return embed, False
 
-    return create_embed(lang.locale('deck_not_found'), "", {})
+    return create_embed(lang.locale('deck_not_found'), "", {}), True
 
 
 def look_for_upgrades(code, deck_mode):
     """
-    Given a ArkhamDB deckcode, returns a Discord.Embed that contains the upgrade information of that deck if any.
-    :param deck_mode:
+    Given a ArkhamDB deckcode, returns a Discord.Embed that
+    contains the upgrade information of that deck if any.
     :param code: ArkhamDB ID
+    :param deck_mode: if it is a decklist or a privatedeck
     :return:
     """
     deck1 = find_deck(code, deck_mode)
     deck2 = find_former_deck(code, deck_mode)
     if not deck1:
-        return create_embed(lang.locale('deck_not_found')), False
+        return create_embed(lang.locale('deck_not_found')), True
     elif not deck2:
-        return create_embed(lang.locale('upgrade_not_found')), False
+        return create_embed(lang.locale('upgrade_not_found')), True
 
     info = check_upgrade_rules(deck2, deck1, cards.get_all_cards())
-    return format_upgraded_deck(deck1, info)
+    return format_upgraded_deck(deck1, info), False
 
 
 def look_for_faq(query):
@@ -168,9 +167,9 @@ def look_for_list_of_cards(query):
     title = f"{lang.locale('ahList_title')} {len(result)}"
     embed = create_embed(title, text)
     if r_cards:
-        return embed
+        return embed, False
     else:
-        create_embed(lang.locale('card_not_found'))
+        create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_random_player_card(query):
@@ -178,11 +177,11 @@ def look_for_random_player_card(query):
     card = random.choice(r_cards)
     embed = resolve_search([card])
     if embed:
-        return embed
+        return embed, False
     else:
-        create_embed(lang.locale('card_not_found'))
+        create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_framework(query):
     embed = timings.find_formated_timing(query)
-    return embed
+    return embed, False

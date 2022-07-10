@@ -26,7 +26,7 @@ def card_search(query, cards, keyword_func):
                          key=lambda card: -hits_in_string(card['subname'], query['subtitle']))
 
     if query['extras']:
-        f_cards = keyword_func(f_cards, query['extras'])
+        f_cards = keyword_func(f_cards, query)
 
     if query['pack']:
         pack_search = sorted([pd['name'] for pd in pack_data],
@@ -39,8 +39,6 @@ def card_search(query, cards, keyword_func):
     cards_were_filtered = len(cards) > len(f_cards)
 
     r_cards = card_filter(query, f_cards)
-    if r_cards:
-        print(r_cards[0])
     if (len(r_cards) == 0 and query) \
             or (not cards_were_filtered and len(r_cards) == len(f_cards) and query) \
             or (cards_were_filtered and len(r_cards) == len(cards) and query):
@@ -138,8 +136,8 @@ def hits_in_string(query: str, find: str):
     hit_list = []
     for w1 in set1:
         for w2 in set2:
-            w1_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w1))
-            w2_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w2))
+            w1_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w1))
+            w2_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w2))
             if w1_c == w2_c and w1_c not in hit_list:
                 hits += len(w1_c)
                 hit_list.append(w1_c)
