@@ -1,0 +1,55 @@
+{
+  "framework": {
+    "M": {"Fase de Mitos": [
+      "<i>(se omite durante la primera ronda de la partida)</i>",
+      "1.1 Comienza la ronda. Comienza la fase de Mitos.",
+      "1.2 Coloca 1 ficha de Perdición en el plan en curso.",
+      "1.3 Comprueba el umbral de perdición.",
+      "1.4 Cada investigador roba 1 carta de Encuentro.",
+      "[free] Oportunidad de los jugadores",
+      "1.5 Termina la fase de Mitos.",
+      "<i>Pasa a la fase de Investigación.</i>"
+    ]},
+    "I": {"Fase de Investigación": [
+      "2.1 Comienza la fase de Investigación.",
+      "[free] Oportunidad de los jugadores",
+      "2.2 Comienza el turno del siguiente investigador.",
+      "[free] Oportunidad de los jugadores",
+      "2.2.1 El investigador activo puede realizar una acción si es posible.\n- Si se ha realizado una acción, vuelve a la oportunidad de los jugadores anterior. \n- Si no se ha realizado una acción, pasa al 2.2.2.",
+      "2.2.2 Termina el turno del investigador. \n- Si hay algún investigador que aún no haya jugado su turno en esta fase, vuelve al 2.2.\n- Si todos los investigadores han jugado un turno en esta fase, pasa al 2.3.",
+      "2.3 Termina la fase de Investigación.",
+      "<i>Pasa a la fase de Enemigos.</i>"
+    ]},
+    "E": {"Fase de Enemigos": [
+      "3.1 Comienza la fase de Enemigos.",
+      "3.2 Los Enemigos Cazador se mueven.",
+      "[free] Oportunidad de los jugadores",
+      "3.3 El siguiente investigador resuelve los ataques de los Enemigos enfrentados.\n- Si hay algún investigador que aún no haya resuelto los ataques de los Enemigos en esta fase, vuelve a la oportunidad de los jugadores anterior.\n- Después de que el último investigador haya resuelto los ataques de los Enemigos enfrentados, pasa a la siguiente oportunidad de los jugadores.",
+      "[free] Oportunidad de los jugadores",
+      "3.4 Termina la fase de Enemigos.",
+      "<i>Pasa a la fase de Mantenimiento.</i>"
+    ]},
+    "U": {"Fase de Mantenimiento": [
+      "4.1 Comienza la fase de Mantenimiento.",
+      "[free] Oportunidad de los jugadores",
+      "4.2 Reinicia las acciones.",
+      "4.3 Prepara todas las cartas agotadas.",
+      "4.4 Cada investigador roba 1 carta y obtiene 1 recurso.",
+      "4.5 Cada investigador comprueba el tamaño de su mano.",
+      "4.6 Termina la fase de Mantenimiento. Termina la ronda.",
+      "<i>Pasa a la fase de Mitos de la siguiente ronda de juego.</i>"
+    ]},
+    "S": {"Orden de resolución de las pruebas de habilidad": [
+      "PH.1 Determina la habilidad de la prueba.\n- Comienza una prueba de habilidad de ese tipo.",
+      "[free] Oportunidad de los jugadores",
+      "PH.2 Asigna cartas de la mano a la prueba de habilidad.",
+      "[free] Oportunidad de los jugadores",
+      "PH.3 Revela la ficha de Caos.",
+      "PH.4 Resuelve los efectos del símbolo de caos.",
+      "PH.5 Determina el valor de habilidad modificado del investigador.",
+      "PH.6 Determina el éxito o fracaso de la prueba de habilidad.",
+      "PH.7 Aplica los resultados de la prueba de habilidad.",
+      "PH.8 Termina la prueba de habilidad."
+    ]}
+  }
+}

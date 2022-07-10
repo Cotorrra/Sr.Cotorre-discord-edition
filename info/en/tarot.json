@@ -1,0 +1,180 @@
+{
+  "tarot": [
+    {
+      "name": "The Fool • 0",
+      "up": "Each investigator not defeated during this game earns +2 experience during its resolution.",
+      "down": "Each investigator defeated during this game earns -2 experience during its resolution.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "1"
+    },
+    {
+      "name": "The Magician • I",
+      "up": "Each investigator begins the game with 3 additional resources.",
+      "down": "Each investigator begins the game with 3 fewer resources, and cannot gain resources during their first turn.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "2"
+    },
+    {
+      "name": "The High Priestess • II",
+      "up": "During the first [intellect] test each investigator performs each round, they get +1 [intellect].",
+      "down": "During the first [intellect] test each investigator performs each round, they get -1 [intellect].",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "3"
+    },
+    {
+      "name": "The Empress • III",
+      "up": "During the first [agility] test each investigator performs each round, they get +1 [agility].",
+      "down": "During the first [agility] test each investigator performs each round, they get -1 [agility].",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "4"
+    },
+    {
+      "name": "The Emperor • IV",
+      "up": "During the first [combat] test each investigator performs each round, they get +1 [combat].",
+      "down": "During the first [combat] test each investigator performs each round, they get -1 [combat].",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "5"
+    },
+    {
+      "name": "The Hierophant • V",
+      "up": "During the first [willpower] test each investigator performs each round, they get +1 [willpower].",
+      "down": "During the first [willpower] test each investigator performs each round, they get -1 [willpower].",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "6"
+    },
+    {
+      "name": "The Lovers • VI",
+      "up": "When the game begins, each investigator searches their deck for an Ally asset, adds it to their hand, and shuffles their deck.",
+      "down": "When the game begins, each investigator searches their deck for an Ally asset, removes it from the game, and shuffles their deck.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "7"
+    },
+    {
+      "name": "The Chariot • VII",
+      "up": "Each investigator beings the game with 2 additional cards in their opening hand.",
+      "down": "Each investigator beings the game with 2 fewer cards in their opening hand, and cannot draw cards during their first turn.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "8"
+    },
+    {
+      "name": "Strength • VIII",
+      "up": "When the game begins, each investigator may play an asset from their hand at -2 cost.",
+      "down": "During the first round of the game, each investigator cannot play assets.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "9"
+    },
+    {
+      "name": "The Hermit • IX",
+      "up": "Increase each investigator maximum hand size by 3.",
+      "down": "Decrease each investigator maximum hand size by 3.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "10"
+    },
+    {
+      "name": "Wheel of Fortune • X",
+      "up": "Once each act, when any investigator reveals an [auto_fail] token, the investigator may cancel it and treat it as a 0 token instead.",
+      "down": "Once each agenda, the first time any investigator reveals an [elder_sign] token, cancel it and treat it as a -5 token instead.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "11"
+    },
+    {
+      "name": "Justice • XI",
+      "up": "Cancel the first doom that would be place on the final agenda of the game.",
+      "down": "The final agenda of the game enters play with 1 doom on it.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "12"
+    },
+    {
+      "name": "The Hanged Man • XII",
+      "up": "During setup each investigator may take up 2 additional mulligans.",
+      "down": "Each investigator cannot mulligan or replace weaknesses in their opening hand (resolve their revelation abilities when the game begins).",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "13"
+    },
+    {
+      "name": "Death • XIII",
+      "up": "Each investigator gets +1 health.",
+      "down": "Each investigator gets -1 health.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "14"
+    },
+    {
+      "name": "Temperance • XIV",
+      "up": "Each investigator gets +1 sanity.",
+      "down": "Each investigator gets -1 sanity.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "15"
+    },
+    {
+      "name": "The Devil • XV",
+      "up": "Each investigator has 1 additional slot of a type chosen by that investigator when the game begins.",
+      "down": "Each investigator has 3 fewer slots, each of a different type, chosen by that investigator when the game begins.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "16"
+    },
+    {
+      "name": "The Tower • XVI",
+      "up": "Each investigator chooses 1 basic weakness in their deck and removes it from the game (return them after the game ends).",
+      "down": "Add 1 random basic weakness to each investigator deck. Remove them after the game ends.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "17"
+    },
+    {
+      "name": "The Star • XVII",
+      "up": "After an investigator reveals an [elder_sign] token during a skill test, they may heal 1 damage or 1 horror.",
+      "down": "After an investigator reveals an [auto_fail] token during a skill test, they must either take 1 damage or 1 horror.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "18"
+    },
+    {
+      "name": "The Moon • XVIII",
+      "up": "The first time each investigator's deck would run out of cards, they may shuffle the bottom 10 cards of their discard pile back to their deck.",
+      "down": "When the game begins, each investigator discards the top 5 cards of their deck. Shuffle each discarded weakness into its owner's deck.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "19"
+    },
+    {
+      "name": "The Sun • XIX",
+      "up": "During each investigator's first turn, they may take 2 additional actions.",
+      "down": "During each investigator's first turn, they have 2 fewer actions to take.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "20"
+    },
+    {
+      "name": "Judgment • XX",
+      "up": "When the game begins, replace a [skull] token in the chaos bag with a 0 token. Swap them back after the game ends.",
+      "down": "When the game begins, replace the highest non-negative token in the chaos bag with a [skull] token. Swap them back after the game ends.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "21"
+    },
+    {
+      "name": "The World • XXI",
+      "up": "Each investigator not defeated during this game may remove 1 trauma of their choice during its resolution.",
+      "down": "Each investigator defeated during this game suffers 1 trauma of their choice during its resolution.",
+      "illustrator": "Lenka Šimečková",
+      "set": "Return to the Circle Undone. Tarot Cards",
+      "number": "22"
+    }
+  ]
+}
