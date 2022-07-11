@@ -75,7 +75,7 @@ def format_player_card_deck(c, qty=0, taboo_info=""):
     slot = format_slot(c)
     priority_order = slot_order(c) + faction_order[c['faction_code']]
     taboo_text = format_text(" [taboo]") if taboo.is_in_taboo(c['code'], taboo_info) else ""
-    text = f"{priority_order}{faction} {slot} {name}{subname} {level}{taboo_text} {quantity}"
+    text = f"{priority_order}{faction}{slot} {name}{subname} {level}{taboo_text} {quantity}"
     return text
 
 

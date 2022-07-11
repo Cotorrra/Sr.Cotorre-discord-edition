@@ -66,7 +66,7 @@ def format_upgraded_deck(deck1, info):
     m_title = deck1['name']
 
     investigator = f"{lang.locale('investigator')}: **{deck1['investigator_name']}**"
-    xp = f"_{lang.locale('xp_needed')}: {str(info['xp_diff'])}_"
+    xp = f"_{lang.locale('xp_upgrade')}: {str(info['xp_spent'])}/{str(info['xp_diff'])}_"
     m_description = f"{investigator}\n{xp}"
 
     url = f"{ARKHAM_DB}/deck/view/{deck1['id']}"
@@ -99,8 +99,7 @@ def format_list_of_cards_upgr(arr, taboo_info):
     array = sorted(array)
     text = ""
     for c in array:
-        text += f"\n{c[2:]}\n"
-
+        text += f"{c[2:]}\n"
     return text
 
 

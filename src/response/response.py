@@ -155,9 +155,9 @@ def look_for_tarot(query):
     """
     search = tarot.search_for_tarot(query)
     if search:
-        return format_tarot(search)
+        return format_tarot(search), False
 
-    return create_embed(lang.locale('card_not_found'))
+    return create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_list_of_cards(query):
@@ -173,7 +173,7 @@ def look_for_list_of_cards(query):
 
 
 def look_for_random_player_card(query):
-    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
+    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords, allow_empty=True)
     card = random.choice(r_cards)
     embed = resolve_search([card])
     if embed:

@@ -33,10 +33,10 @@ async def on_ready():
              options=player_card_slash_options())
 async def player_card(ctx: SlashContext,
                       name="", level="", faction="",
-                      extras="", subtitle="", pack=""):
+                      extras="", subtitle="", cycle=""):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, pack)
+    query = dict_of(name, level, faction, extras, subtitle, cycle)
     embed, hidden = look_for_player_card(query)
     await ctx.send(embed=embed, hidden=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -45,10 +45,10 @@ async def player_card(ctx: SlashContext,
 @slash.slash(name="ahDeck",
              description=lang.locale('ahDeck_description'),
              options=deck_slash_options())
-async def deck(ctx: SlashContext, code, type_=""):
+async def deck(ctx: SlashContext, code, type=""):
     """Handles the /ahDeck command, it returns a deck from ArkhamDB."""
     await ctx.defer()
-    embed, hidden = look_for_deck(code, type_)
+    embed, hidden = look_for_deck(code, type)
     await ctx.send(embed=embed)
     # await cards_buttons_row(bot, ctx, embed)
 
@@ -56,10 +56,10 @@ async def deck(ctx: SlashContext, code, type_=""):
 @slash.slash(name="ahUp",
              description=lang.locale('ahUp_description'),
              options=deck_slash_options())
-async def upgrade(ctx: SlashContext, code, type_=""):
+async def upgrade(ctx: SlashContext, code, type=""):
     """Handles the /ahUp command, it returns the upgrades of a deck."""
     await ctx.defer()
-    embed, hidden = look_for_upgrades(code, type_)
+    embed, hidden = look_for_upgrades(code, type)
     await ctx.send(embed=embed)
     # await cards_buttons_row(bot, ctx, embed)
 
@@ -68,10 +68,10 @@ async def upgrade(ctx: SlashContext, code, type_=""):
              description=lang.locale('ahe_description'),
              options=general_card_slash_options())
 async def encounter(ctx: SlashContext,
-                    name, type_="", subtitle="", pack=""):
+                    name="", type="", subtitle="", cycle=""):
     """Handle the /ahe command, it returns encounter cards."""
     # await ctx.defer()
-    query = dict_of(name, type_, subtitle, pack)
+    query = dict_of(name, type, subtitle, cycle)
     embed, hidden = look_for_mythos_card(query)
     await ctx.send(embed=embed, hidden=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -80,10 +80,10 @@ async def encounter(ctx: SlashContext,
 @slash.slash(name="ahb",
              description=lang.locale('ahb_description'),
              options=general_card_slash_options())
-async def back(ctx: SlashContext, name, type_="", subtitle="", pack=""):
+async def back(ctx: SlashContext, name="", type="", subtitle="", cycle=""):
     """Handles the /ahb command, it returns card backs."""
     # await ctx.defer()
-    query = dict_of(name, type_, subtitle, pack)
+    query = dict_of(name, type, subtitle, cycle)
     embed, hidden = look_for_card_back(query)
     await ctx.send(embed=embed, hidden=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -116,10 +116,10 @@ async def game_timing(ctx: SlashContext, timing):
              options=player_card_slash_options())
 async def list_cards(ctx: SlashContext,
                      name="", level="", faction="",
-                     extras="", subtitle="", pack=""):
+                     extras="", subtitle="", cycle=""):
     """Handles the /ahList command, it lists playercards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, pack)
+    query = dict_of(name, level, faction, extras, subtitle, cycle)
     embed, hidden = look_for_list_of_cards(query)
     await ctx.send(embed=embed, hidden=hidden)
 
@@ -129,15 +129,15 @@ async def list_cards(ctx: SlashContext,
              options=player_card_slash_options())
 async def random(ctx: SlashContext,
                  name="", level="", faction="",
-                 extras="", subtitle="", pack=""):
+                 extras="", subtitle="", cycle=""):
     """Handles the /ahRandom command, it returns a random card."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, pack)
+    query = dict_of(name, level, faction, extras, subtitle, cycle)
     embed, hidden = look_for_random_player_card(query)
     await ctx.send(embed=embed, hidden=hidden)
 
 
-# async def ah_who(ctx: SlashContext, name="", level="", faction="", extras="", subtitle="", pack=""):
+# async def ah_who(ctx: SlashContext, name="", level="", faction="", extras="", subtitle="", cycle=""):
 #    ...
 
 

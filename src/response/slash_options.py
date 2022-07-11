@@ -1,5 +1,6 @@
 from discord_slash.utils.manage_commands import create_option, create_choice
 
+from src.api_interaction.cycle import cycle
 from src.core.translator import lang
 
 
@@ -36,18 +37,19 @@ def player_card_slash_options():
                           choices=[
                               create_choice(name=lang.locale('permanent'), value="P"),
                               create_choice(name=lang.locale('exceptional'), value="E"),
-                              create_choice(name=lang.locale('advanced/parallel'), value="A"),
                               create_choice(name=lang.locale('unique'), value="U"),
                               create_choice(name=lang.locale('signature'), value="C"),
                           ]),
 
-            create_option(name="sub",
+            create_option(name="subtitle",
                           description=lang.locale('sub_description'),
                           option_type=3,
                           required=False),
 
-            create_option(name="pack",
+            create_option(name="cycle",
                           description=lang.locale('pack_description'),
+                          choices=[create_choice(name=cy['name'], value=cy['sufix'])
+                                   for cy in cycle.get_cycle_data()],
                           option_type=3,
                           required=False)
             ]
@@ -90,18 +92,19 @@ def general_card_slash_options():
                               create_choice(name=lang.locale('enemy'), value="E"),
                               create_choice(name=lang.locale('location'), value="L"),
                               create_choice(name=lang.locale('player_cards'), value="J"),
-                              create_choice(name=lang.locale('mythos'), value="M"),
                           ]),
 
-            create_option(name="sub",
+            create_option(name="subtitle",
                           description=lang.locale('sub_description'),
                           option_type=3,
                           required=False),
 
-            create_option(name="pack",
+            create_option(name="cycle",
                           description=lang.locale('pack_description'),
+                          choices=[create_choice(name=cy['name'], value=cy['sufix'])
+                                   for cy in cycle.get_cycle_data()],
                           option_type=3,
-                          required=False),
+                          required=False)
             ]
 
 

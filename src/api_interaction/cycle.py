@@ -21,7 +21,7 @@ class Cycle:
                                   params=params).json()
 
     def get_cycle_data(self):
-        return self.cycle
+        return self.cycle['cycles']
 
 
 cycle = Cycle()

@@ -44,7 +44,7 @@ class Taboo:
         for info in self.taboo_data:
             if info['code'] == current_taboo:
                 return info
-        return {}
+        return {'cards': []}
 
     def is_in_taboo(self, card_id, taboo_ver=""):
         """

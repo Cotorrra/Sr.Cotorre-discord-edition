@@ -1,14 +1,8 @@
 import re
-
-import requests
 import unidecode
 
-from config import ARKHAM_DB
 
-pack_data = requests.get(f'{ARKHAM_DB}/api/public/packs/').json()
-
-
-def card_search(query, cards, keyword_func):
+def card_search(query, cards, keyword_func, allow_empty=False):
     """
     Search a card within a set of cards using keywords (ex (4E))
 
@@ -25,23 +19,17 @@ def card_search(query, cards, keyword_func):
         f_cards = sorted(f_cards,
                          key=lambda card: -hits_in_string(card['subname'], query['subtitle']))
 
-    if query['extras']:
-        f_cards = keyword_func(f_cards, query)
+    f_cards = keyword_func(f_cards, query)
 
-    if query['pack']:
-        pack_search = sorted([pd['name'] for pd in pack_data],
-                             key=lambda pd: -hits_in_string(query['pack'], pd))
-        if len(pack_search) > 0:
-            pack_tag = [pd["code"] for pd in pack_data
-                        if pd["name"].lower() == pack_search[0].lower()]
-            f_cards = [c for c in f_cards if c["pack_code"] == pack_tag[0]]
+    if query['cycle']:
+        f_cards = [c for c in f_cards if c["code"][0:2] == query['cycle']]
 
     cards_were_filtered = len(cards) > len(f_cards)
 
     r_cards = card_filter(query, f_cards)
-    if (len(r_cards) == 0 and query) \
-            or (not cards_were_filtered and len(r_cards) == len(f_cards) and query) \
-            or (cards_were_filtered and len(r_cards) == len(cards) and query):
+    if not allow_empty and ((len(r_cards) == 0 and query)
+                            or (not cards_were_filtered and len(r_cards) == len(f_cards) and query)
+                            or (cards_were_filtered and len(r_cards) == len(cards) and query)):
         return []
     else:
         return r_cards
