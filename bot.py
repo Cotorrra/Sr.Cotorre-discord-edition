@@ -9,7 +9,8 @@ from config import TOKEN
 from src.core.translator import lang
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, \
-    refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card
+    refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card, \
+    look_for_preview_player_card
 from src.response.slash_options import player_card_slash_options, deck_slash_options, \
     general_card_slash_options, tarot_slash_options, timing_slash_options
 
@@ -139,6 +140,19 @@ async def random(ctx: SlashContext,
 
 # async def ah_who(ctx: SlashContext, name="", level="", faction="", extras="", subtitle="", cycle=""):
 #    ...
+
+@slash.slash(name="ahPreview",
+             description=lang.locale('ahPreview_description'),
+             options=player_card_slash_options())
+async def player_card(ctx: SlashContext,
+                      name="", level="", faction="",
+                      extras="", subtitle="", cycle=""):
+    """Handles the /ah slash command, this command returns' player cards."""
+    # await ctx.defer()
+    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    embed, hidden = look_for_preview_player_card(query)
+    await ctx.send(embed=embed, hidden=hidden)
+    # await cards_buttons_row(bot, ctx, embed)
 
 
 @slash.slash(name="refresh",

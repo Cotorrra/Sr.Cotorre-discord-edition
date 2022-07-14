@@ -47,10 +47,9 @@ def card_filter(query: dict, cards: [dict]):
     r_cards = cards.copy()
     if query['name']:
         r_cards = sorted(r_cards,
-                         key=lambda card: -hits_in_string(query['name'],
-                                                          card['name'] + " " + card['real_name']))
+                         key=lambda card: -hits_in_string(query['name'], card['name']))
         r_cards = [c for c in r_cards if
-                   hits_in_string(query['name'], c['name'] + " " + c['real_name']) > 0]
+                   hits_in_string(query['name'], c['name']) > 0]
     return r_cards
 
 
