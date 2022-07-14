@@ -1,0 +1,258 @@
+{"cards": [
+  {
+    "code": "01006",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01008",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01010",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01012",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01014",
+    "text": "This cards has no level (instead of being level 0). This card’s <b>Forced</b> ability should read: \"<b>Forced</b> – After you play an event or discard an event from play:...\""
+  },
+  {
+    "code": "02001",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([seeker], [rogue], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02002",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes  ([guardian], [rogue], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "98001",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02003",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02004",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [rogue] y/o [survivor]).\""
+  },
+  {
+    "code": "02005",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes([guardian], [seeker], [rogue] y/o [mystic]).\""
+  },
+  {
+    "code": "02007",
+    "text": "This card’s <b>Forced</b> ability should read: “When the game ends, if attached enemy is in play: Zoey Samaras suffers 1 mental trauma.\""
+  },
+  {
+    "code": "02011",
+    "text": "This card’s Forced ability should read: \"When the game ends, if Searching for Izzie is in play: Jenny Barnes suffers 1 mental trauma.\""
+  },
+  {
+    "code": "02020",
+    "text": "This card’s first ability should read: \"Your maximum hand size is increased by 2.\""
+  },
+  {
+    "code": "02040",
+    "text": "This card’s [reaction] ability should read: \"After you draw a non-weakness card, discard that card...\""
+  },
+  {
+    "code": "02078",
+    "text": "This enemy’s traits should be <b><i>\"Humanoid. Criminal. Elite.\"</i></b>"
+  },
+  {
+    "code": "02079",
+    "text": "The <b><i>\"Human\"</i></b> trait on each of these cards should read <b><i>\"Humanoid\"</i></b> instead."
+  },
+  {
+    "code": "02097",
+    "text": "The <b><i>\"Human\"</i></b> trait on each of these cards should read <b><i>\"Humanoid\"</i></b>  instead."
+  },
+  {
+    "code": "02098",
+    "text": "The <b><i>\"Human\"</i></b> trait on each of these cards should read <b><i>\"Humanoid\"</i></b> > instead."
+  },
+  {
+    "code": "02205",
+    "text": "This card’s first ability should read: \"<b>Forced</b> – After you fail a skill test while investigating the Burned Ruins: Flip 1 clue token on the Burned Ruins to its doom side.\""
+  },
+  {
+    "code": "02230",
+    "text": "This card’s [reaction] ability should read: \"When you reveal a non-[auto_fail] chaos token, spend 2 resources: Ignore that chaos token and reveal another one to resolve. If that token has a [auto_fail] symbol, remove Lucky Dice from the game (cannot be ignored/canceled).\""
+  },
+  {
+    "code": "02277",
+    "text_back": "The two instructions on this card should be reversed, as follows:  \"Remove all clues from each location in play. The arcane presence masking the path further up the hill has faded. Reveal Ascending Path.\""
+  },
+  {
+    "code": "02302",
+    "text": "This card’s [reaction] ability should read: \"When you draw an encounter card from the encounter deck...\""
+  },
+  {
+    "code": "02305",
+    "text": "Each of this card’s [free] symbols should be [reaction] symbols, instead."
+  },
+  {
+    "code": "03041",
+    "text": "This card’s second ability should read: \"Your maximum hand size is reduced by 5.\""
+  },
+  {
+    "code": "03102",
+    "text": "This card’s <b>Revelation</b> ability should read: \"Discard [[Item]] assets from your play area and/or from your hand...\""
+  },
+  {
+    "code": "03121",
+    "text": "The first ability on each of these agendas should read: \"Skip the 'Place 1 doom on the current agenda' step of the Mythos phase.\""
+  },
+  {
+    "code": "03122",
+    "text": "The first ability on each of these agendas should read: \"Skip the 'Place 1 doom on the current agenda' step of the Mythos phase.\""
+  },
+  {
+    "code": "03123",
+    "text": "The first ability on each of these agendas should read: \"Skip the 'Place 1 doom on the current agenda' step of the Mythos phase.\""
+  },
+  {
+    "code": "03130",
+    "text": "This location’s ability should read: \"While investigating this location, your [intellect] cannot be increased.\""
+  },
+  {
+    "code": "03132",
+    "text": "This location’s ability should read: \"While investigating this location, your [intellect] cannot be increased.\""
+  },
+  {
+    "code": "03178",
+    "text": "Each of these locations should not have the \"[[Arkham Asylum]]\" trait."
+  },
+  {
+    "code": "03179",
+    "text": "Each of these locations should not have the \"[[Arkham Asylum]]\" trait."
+  },
+  {
+    "code": "03180",
+    "text": "Each of these locations should not have the \"[[Arkham Asylum]]\" trait."
+  },
+  {
+    "code": "03181",
+    "text": "Each of these locations should not have the \"[[Arkham Asylum]]\" trait."
+  },
+  {
+    "code": "03232",
+    "text": "This card’s [free] ability should read: \"...Any investigator at this location may trigger this ability.\""
+  },
+  {
+    "code": "03252",
+    "text": "This location’s ability should read: \"...If you succeed, look at the revealed side of any Catacombs location in play.\""
+  },
+  {
+    "code": "03258",
+    "text": "This enemy’s ability should read: \"...If you succeed, look at the revealed side of any Catacombs location in play.\""
+  },
+  {
+    "code": "03311",
+    "text": "The second part of this card’s ability should read: \"Undo that action (return the game state to exactly the way it was before that action was performed, except for the playing of Time Warp and its costs).\""
+  },
+  {
+    "code": "03338",
+    "text": "This card’s <b>Revelation</b> ability should read: \"Discard cards from your play area and/or from your hand...\""
+  },
+  {
+    "code": "04004",
+    "text": "This card’s [reaction] ability should read: \"When an investigator reveals an [auto_fail] chaos token...\""
+  },
+  {
+    "code": "04035",
+    "text": "This card’s [free] ability should read: \"Discard the top card of your deck. (Limit once per phase.)\""
+  },
+  {
+    "code": "04270",
+    "text": "This card’s [action] ability should read: \"If The Skeleton Key is in your play area, attach it to your location...\""
+  },
+  {
+    "code": "05033",
+    "text": "This card’s play requirement should read: \"Play when you would resolve an effect on a [mystic] card that triggers \"when,\", \"if,\" or \"after\" a  [skull], [cultist], [tablet], [elder_thing] or [auto_fail] symbol is revealed.\""
+  },
+  {
+    "code": "05163",
+    "text": "This card’s ability should read: \"Locations cannot be flipped to their non-[[Spectral]] side.\""
+  },
+  {
+    "code": "05164",
+    "text": "This card’s ability should read: \"Locations cannot be flipped to their non-[[Spectral]] side.\""
+  },
+  {
+    "code": "05178",
+    "text_back": "This card’s first ability should read: \"Keep this card in your threat area (this side faceup). If you are eliminated, flip it over.\""
+  },
+  {
+    "code": "05236",
+    "text": "This card’s <b>Forced</b> ability should read: \"When Guiding Spirit is defeated by horror: Exile it.\""
+  },
+  {
+    "code": "05282",
+    "text": "This card’s trait should be [[Trick]] instead of [[Tactic]]"
+  },
+  {
+    "code": "05329",
+    "text_back": "This card’s second line of game text should read: \"Shuffle each empty space into its owner’s deck and each location in play other than Hideous Palace into the Cosmos.\""
+  },
+  {
+    "code": "05330",
+    "text_back": "This card’s second line of game text should read: \"Shuffle each empty space into its owner’s deck and each location in play other than Court of the Great Old Ones into the Cosmos.\""
+  },
+  {
+    "code": "06018",
+    "text": "The additional cost on each of these cards should read: \"As an additional cost to play this card...\""
+  },
+  {
+    "code": "06024",
+    "text": "The additional cost on each of these cards should read: \"As an additional cost to play this card...\""
+  },
+  {
+    "code": "06195",
+    "text": "This card’s ability should read: \"[action] Spend 1 ammo: Fight...\""
+  },
+  {
+    "code": "06253",
+    "text": "This card’s Forced ability should read: \"After an enemy with 1 or more clues on it is defeated: Take control of each of those clues.\""
+  },
+  {
+    "code": "07002",
+    "text": "This card’s [reaction] symbol should be \"<b>Forced</b> –\" instead."
+  },
+  {
+    "code": "07223",
+    "text": "This card’s [fast] ability should read \"...(Limit once per test.)\""
+  },
+  {
+    "code": "07315",
+    "text": "This card’s <b>Objective</b> ability should read: \"...you may choose to advance” instead of “...advance.\""
+  },
+  {
+    "code": "50004",
+    "text": "This card’s constant ability should read: \"Each time a non-[[Elite]] enemy would spawn at attached location, spawn it at a connecting location instead, if able.\""
+  },
+  {
+    "code": "60102",
+    "text": "This card’s [fast] symbol should be a [reaction] symbol, instead."
+  },
+  {
+    "code": "60227",
+    "text": "This card’s ability should read: \"...If you succeed, instead of discovering a clue at your location, discover 2 total clues from among your location and connecting locations.\""
+  },
+  {
+    "code": "84029",
+    "text": "This card’s first ability should read: \"<b>Forced</b>– When Otherworldly Meddler would take damage from an attack: Remove 1 doom from Otherworldly Meddler. Then, reduce the damage dealt by 1.\""
+  },
+  {
+    "code": "98007",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to other 5 Mystic cards ([mystic]) level 0.\""
+  },
+  {
+    "code": "98018",
+    "text_back": "This card’s constant ability should read: \"You cannot play assets or put assets into play.\""
+  }
+]}
