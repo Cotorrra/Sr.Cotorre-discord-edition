@@ -1,7 +1,7 @@
 from src.core.utils import is_lvl
 
 
-def use_pc_keywords(cards: list, key_list: str):
+def use_pc_keywords(cards: list, query: dict):
     """
     Filtra cartas de jugador según los caracteres del string dado
     :param cards: Lista de cartas
@@ -9,11 +9,26 @@ def use_pc_keywords(cards: list, key_list: str):
     :return:
     """
     filtered_cards = cards.copy()
-    for char in key_list.lower():
-        if char.isdigit():
-            filtered_cards = [c for c in filtered_cards if is_lvl(c, int(char))]
+
+    if query['extras']:
+        char = query['extras'].lower()
+        if char == "u":
+            filtered_cards = [c for c in filtered_cards if
+                              (c['is_unique'] if 'is_unique' in c else False)]
+        if char == "p":
+            filtered_cards = [c for c in filtered_cards if c['permanent']]
+        if char == "c":
+            filtered_cards = [c for c in filtered_cards if "deck only." in c['real_text']]
         if char == "e":
             filtered_cards = [c for c in filtered_cards if c['exceptional']]
+
+    if query['level']:
+        char = query['level']
+        if 0 <= char <= 5:
+            filtered_cards = [c for c in filtered_cards if is_lvl(c, int(char))]
+
+    if query['faction']:
+        char = query['faction'].lower()
         if char == "b":
             filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'seeker']
         if char == "g":
@@ -26,21 +41,7 @@ def use_pc_keywords(cards: list, key_list: str):
             filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'mystic']
         if char == "n":
             filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'neutral']
-        if char == "u":
-            filtered_cards = [c for c in filtered_cards if (c['is_unique'] if 'is_unique' in c else False)]
-        if char == "p":
-            filtered_cards = [c for c in filtered_cards if c['permanent']]
-        if char == "c":
-            filtered_cards = [c for c in filtered_cards if "deck only." in c['real_text']]
-        if char == "a":
-            filtered_cards = [c for c in filtered_cards if c['code'][:2] == "90"]
+        if char == "mult":
+            filtered_cards = [c for c in filtered_cards if 'faction2_code' in c]
 
     return filtered_cards
-
-
-def format_query_pc(nombre, nivel, clase, extras, subtitulo, pack):
-    subtitle = f" ~{subtitulo}~" if subtitulo else ""
-    lvl_txt = str(nivel) if nivel != "" else ""
-    extra = f" ({lvl_txt + clase + extras})" if nivel or clase or extras else ""
-    package = f" [{pack}]" if pack else ""
-    return nombre + subtitle + extra + package

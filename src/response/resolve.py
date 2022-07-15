@@ -33,5 +33,5 @@ def resolve_search(r_cards) -> discord.Embed:
         else:
             return format_general_card(r_cards[0])
     else:
-        return False
+        return discord.Embed()
 

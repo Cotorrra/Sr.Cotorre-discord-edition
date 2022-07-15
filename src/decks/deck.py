@@ -25,19 +25,22 @@ def diff_decks(a_deck1, a_deck2):
 def deck_to_array(deck, cards):
     arr_deck = []
     for c_id, qty in deck['slots'].items():
-        for i in range(qty):
+        for _ in range(qty):
             arr_deck.append(find_by_id(c_id, cards))
     return arr_deck
 
 
 def check_upgrade_rules(deck1, deck2, cards):
     info = {"buys_in": [], "buys_out": [],
-            "xp_diff": 0, "color": get_color_by_investigator(deck1, cards),
-            "taboo_id": "00" + str(deck1['taboo_id'])}
+            "xp_diff": 0, "xp_spent": 0,
+            "color": get_color_by_investigator(deck1, cards),
+            "taboo_id": "00" + str(deck1['taboo_id']) if deck1['taboo_id'] else "000"
+            }
     a_deck1 = deck_to_array(deck1, cards)
     a_deck2 = deck_to_array(deck2, cards)
     info["buys_out"], info["buys_in"] = diff_decks(a_deck1, a_deck2)
     info["xp_diff"] = deck2['xp'] if "xp" in deck2 else 0
+    info["xp_spent"] = deck2['xp_spent'] if 'xp_spent' in deck2 else 0
 
     return info
 

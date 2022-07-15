@@ -1,10 +1,10 @@
 from src.core.formating import format_name, format_subtext, format_faction, format_card_text, \
-    faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, format_traits, \
-    format_text, slot_order
+    faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, \
+    format_traits, format_text, slot_order, format_costumization
 from src.core.utils import text_if
 from src.api_interaction.errata import errata
-from src.p_cards.utils import format_slot, format_skill_icons, format_health_sanity, format_inv_skills, \
-    format_sub_text_short, format_costs
+from src.p_cards.utils import format_slot, format_skill_icons, format_health_sanity, \
+    format_inv_skills, format_sub_text_short, format_costs
 from src.api_interaction.taboo import taboo
 
 
@@ -15,6 +15,7 @@ def format_player_card(c):
     faction = format_faction(c)
     type = format_type(c)
     slot = format_slot(c)
+    costumization = format_costumization(c)
 
     traits = text_if("%s\n", format_traits(c))
     icons = text_if("%s\n", format_skill_icons(c))
@@ -33,6 +34,7 @@ def format_player_card(c):
                     f"{costs}" \
                     f"{icons}\n" \
                     f"{text}" \
+                    f"{costumization}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
                     f"{flavour}\n" \
@@ -75,7 +77,7 @@ def format_player_card_deck(c, qty=0, taboo_info=""):
     slot = format_slot(c)
     priority_order = slot_order(c) + faction_order[c['faction_code']]
     taboo_text = format_text(" [taboo]") if taboo.is_in_taboo(c['code'], taboo_info) else ""
-    text = f"{priority_order}{faction} {slot} {name}{subname} {level}{taboo_text} {quantity}"
+    text = f"{priority_order}{faction}{slot} {name}{subname} {level}{taboo_text} {quantity}"
     return text
 
 

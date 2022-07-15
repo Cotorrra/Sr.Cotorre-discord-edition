@@ -41,18 +41,19 @@ class Tarot:
             return {}
 
 
-def format_tarot(tarot):
-    title = f"**{tarot['name']}**"
-    up_text = format_text(tarot['up'])
-    down_text = format_text(tarot['down'])
-    description = f"**{lang.locale('tarot_title')}**" \
-                      f"\n\n***{lang.locale('tarot_up_name')}***" \
-                      f"\n> _{up_text}_" \
-                      f"\n\n***{lang.locale('tarot_down_name')}***" \
-                      f"\n> _{down_text}_" \
-                      f"\n"
-    footnote = f"🖌{tarot['illustrator']}" \
-                   f"\n{tarot['set']} #{tarot['number']}."
+def format_tarot(tarot_card):
+    title = f"**{tarot_card['name']}**"
+    up_text = format_text(tarot_card['up'])
+    down_text = format_text(tarot_card['down'])
+    orientation = random.choice([lang.locale('tarot_up_name'), lang.locale('tarot_down_name')])
+    description = f"**{lang.locale('tarot_title')}** _({orientation})_" \
+                  f"\n\n***{lang.locale('tarot_up_name')}***" \
+                  f"\n> _{up_text}_" \
+                  f"\n\n***{lang.locale('tarot_down_name')}***" \
+                  f"\n> _{down_text}_" \
+
+    footnote = f"🖌{tarot_card['illustrator']}" \
+               f"\n{tarot_card['set']} #{tarot_card['number']}."
     embed = create_embed(title=title, description=description, footnote=footnote)
 
     return embed

@@ -1,54 +1,41 @@
 import re
-
-import requests
 import unidecode
 
-from config import ARKHAM_DB
 
-pack_data = requests.get(f'{ARKHAM_DB}/api/public/packs/').json()
-
-
-def card_search(query, cards, keyword_func):
+def card_search(query, cards, keyword_func, allow_empty=False):
     """
     Search a card within a set of cards using keywords (ex (4E))
 
-    :param filter_name: Filter or not the cards if it name matches the query
     :param query: The card query.
     :param cards: Set of cards
     :param keyword_func: A keyword function
     :return:
     """
-    query, keyword_query, keyword_mode = find_and_extract(query, "(", ")")
-    query, sub_query, sub_text_mode = find_and_extract(query, "~", "~")
-    query, pack_query, pack_mode = find_and_extract(query, "[", "]")
+
     f_cards = cards.copy()
 
-    if sub_text_mode:
-        f_cards = [c for c in f_cards if filter_by_subtext(c, sub_query)]
-        f_cards = sorted(f_cards, key=lambda card: -hits_in_string(card['subname'], sub_query))
+    if query['subtitle']:
+        f_cards = [c for c in f_cards if filter_by_subtext(c, query['subtitle'])]
+        f_cards = sorted(f_cards,
+                         key=lambda card: -hits_in_string(card['subname'], query['subtitle']))
 
-    if keyword_mode:
-        f_cards = keyword_func(f_cards, keyword_query)
+    f_cards = keyword_func(f_cards, query)
 
-    if pack_mode:
-        pack_search = sorted([pd['name'] for pd in pack_data], key=lambda pd: -hits_in_string(pack_query, pd))
-        if len(pack_search) > 0:
-            pack_tag = [pd["code"] for pd in pack_data if pd["name"].lower() == pack_search[0].lower()][0]
-            f_cards = [c for c in f_cards if c["pack_code"] == pack_tag]
+    if query['cycle']:
+        f_cards = [c for c in f_cards if c["code"][0:2] == query['cycle']]
 
     cards_were_filtered = len(cards) > len(f_cards)
 
     r_cards = card_filter(query, f_cards)
-
-    if (len(r_cards) == 0 and query) \
-            or (not cards_were_filtered and len(r_cards) == len(f_cards) and query) \
-            or (cards_were_filtered and len(r_cards) == len(cards) and query):
+    if not allow_empty and ((len(r_cards) == 0 and query)
+                            or (not cards_were_filtered and len(r_cards) == len(f_cards) and query)
+                            or (cards_were_filtered and len(r_cards) == len(cards) and query)):
         return []
     else:
         return r_cards
 
 
-def card_filter(query: str, cards: [dict]):
+def card_filter(query: dict, cards: [dict]):
     """
     Filters the cards withing the group of cards that were given
 
@@ -58,9 +45,11 @@ def card_filter(query: str, cards: [dict]):
     :return:
     """
     r_cards = cards.copy()
-    if query:
-        r_cards = sorted(r_cards, key=lambda card: -hits_in_string(query, card['name'] + " " + card['real_name']))
-        r_cards = [c for c in r_cards if hits_in_string(query, c['name'] + " " + c['real_name']) > 0]
+    if query['name']:
+        r_cards = sorted(r_cards,
+                         key=lambda card: -hits_in_string(query['name'], card['name']))
+        r_cards = [c for c in r_cards if
+                   hits_in_string(query['name'], c['name']) > 0]
     return r_cards
 
 
@@ -134,8 +123,8 @@ def hits_in_string(query: str, find: str):
     hit_list = []
     for w1 in set1:
         for w2 in set2:
-            w1_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w1))
-            w2_c = re.sub(r'[^a-z0-9]', '', unidecode.unidecode(w2))
+            w1_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w1))
+            w2_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w2))
             if w1_c == w2_c and w1_c not in hit_list:
                 hits += len(w1_c)
                 hit_list.append(w1_c)
