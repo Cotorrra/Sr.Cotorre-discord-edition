@@ -1,4 +1,4 @@
-from discord_slash.utils.manage_commands import create_option, create_choice
+from interactions import Option, OptionType, Choice
 
 from src.api_interaction.cycle import cycle
 from src.core.translator import lang
@@ -6,105 +6,105 @@ from src.core.translator import lang
 
 def player_card_slash_options():
     """Returns the slash command options for player cards."""
-    return [create_option(name="name",
-                          description=lang.locale('name_description'),
-                          option_type=3,
-                          required=False),
+    return [Option(name="name",
+                   description=lang.locale('name_description'),
+                   type=OptionType.STRING,
+                   required=False),
 
-            create_option(name="level",
-                          description=lang.locale('level_description'),
-                          option_type=4,
-                          required=False),
+            Option(name="level",
+                   description=lang.locale('level_description'),
+                   type=OptionType.NUMBER,
+                   required=False),
 
-            create_option(name="faction",
-                          description=lang.locale('faction_description'),
-                          option_type=3,
-                          required=False,
-                          choices=[
-                              create_choice(name=lang.locale('guardian'), value="G"),
-                              create_choice(name=lang.locale('seeker'), value="B"),
-                              create_choice(name=lang.locale('rogue'), value="R"),
-                              create_choice(name=lang.locale('mystic'), value="M"),
-                              create_choice(name=lang.locale('survivor'), value="S"),
-                              create_choice(name=lang.locale('multiclass'), value="Mult"),
-                              create_choice(name=lang.locale('neutral'), value="N"),
-                          ]),
+            Option(name="faction",
+                   description=lang.locale('faction_description'),
+                   type=OptionType.STRING,
+                   required=False,
+                   choices=[
+                       Choice(name=lang.locale('guardian'), value="G"),
+                       Choice(name=lang.locale('seeker'), value="B"),
+                       Choice(name=lang.locale('rogue'), value="R"),
+                       Choice(name=lang.locale('mystic'), value="M"),
+                       Choice(name=lang.locale('survivor'), value="S"),
+                       Choice(name=lang.locale('multiclass'), value="Mult"),
+                       Choice(name=lang.locale('neutral'), value="N"),
+                   ]),
 
-            create_option(name="extras",
-                          description=lang.locale('extras_description'),
-                          option_type=3,
-                          required=False,
-                          choices=[
-                              create_choice(name=lang.locale('permanent'), value="P"),
-                              create_choice(name=lang.locale('exceptional'), value="E"),
-                              create_choice(name=lang.locale('unique'), value="U"),
-                              create_choice(name=lang.locale('signature'), value="C"),
-                          ]),
+            Option(name="extras",
+                   description=lang.locale('extras_description'),
+                   type=OptionType.STRING,
+                   required=False,
+                   choices=[
+                       Choice(name=lang.locale('permanent'), value="P"),
+                       Choice(name=lang.locale('exceptional'), value="E"),
+                       Choice(name=lang.locale('unique'), value="U"),
+                       Choice(name=lang.locale('signature'), value="C"),
+                   ]),
 
-            create_option(name="subtitle",
-                          description=lang.locale('sub_description'),
-                          option_type=3,
-                          required=False),
+            Option(name="subtitle",
+                   description=lang.locale('sub_description'),
+                   type=OptionType.STRING,
+                   required=False),
 
-            create_option(name="cycle",
-                          description=lang.locale('pack_description'),
-                          choices=[create_choice(name=cy['name'], value=cy['sufix'])
-                                   for cy in cycle.get_cycle_data()],
-                          option_type=3,
-                          required=False)
+            Option(name="cycle",
+                   description=lang.locale('pack_description'),
+                   choices=[Choice(name=cy['name'], value=cy['sufix'])
+                            for cy in cycle.get_cycle_data()],
+                   type=OptionType.STRING,
+                   required=False)
             ]
 
 
 def deck_slash_options():
     """Returns the slash command options for decks"""
-    return [create_option(name="code",
-                          description=lang.locale('deck_code_desc'),
-                          option_type=4,
-                          required=True),
+    return [Option(name="code",
+                   description=lang.locale('deck_code_desc'),
+                   type=OptionType.NUMBER,
+                   required=True),
 
-            create_option(name="type",
-                          description=lang.locale('deck_type_desc'),
-                          option_type=3,
-                          required=False,
-                          choices=[
-                              create_choice(name=lang.locale('public_deck'), value="decklist"),
-                              create_choice(name=lang.locale('private_deck'), value="deck"),
-                          ]),
+            Option(name="type",
+                   description=lang.locale('deck_type_desc'),
+                   type=OptionType.STRING,
+                   required=False,
+                   choices=[
+                       Choice(name=lang.locale('public_deck'), value="decklist"),
+                       Choice(name=lang.locale('private_deck'), value="deck"),
+                   ]),
             ]
 
 
 def general_card_slash_options():
     """Returns the slash command options for general cards."""
-    return [create_option(name="name",
-                          description=lang.locale('name_description'),
-                          option_type=3,
-                          required=False),
+    return [Option(name="name",
+                   description=lang.locale('name_description'),
+                   type=OptionType.STRING,
+                   required=False),
 
-            create_option(name="type",
-                          description=lang.locale('card_type_desc'),
-                          option_type=3,
-                          required=False,
-                          choices=[
-                              create_choice(name=lang.locale('scenario'), value="S"),
-                              create_choice(name=lang.locale('act'), value="A"),
-                              create_choice(name=lang.locale('agenda'), value="P"),
-                              create_choice(name=lang.locale('treachery'), value="T"),
-                              create_choice(name=lang.locale('enemy'), value="E"),
-                              create_choice(name=lang.locale('location'), value="L"),
-                              create_choice(name=lang.locale('player_cards'), value="J"),
-                          ]),
+            Option(name="type",
+                   description=lang.locale('card_type_desc'),
+                   type=OptionType.STRING,
+                   required=False,
+                   choices=[
+                       Choice(name=lang.locale('scenario'), value="S"),
+                       Choice(name=lang.locale('act'), value="A"),
+                       Choice(name=lang.locale('agenda'), value="P"),
+                       Choice(name=lang.locale('treachery'), value="T"),
+                       Choice(name=lang.locale('enemy'), value="E"),
+                       Choice(name=lang.locale('location'), value="L"),
+                       Choice(name=lang.locale('player_cards'), value="J"),
+                   ]),
 
-            create_option(name="subtitle",
-                          description=lang.locale('sub_description'),
-                          option_type=3,
-                          required=False),
+            Option(name="subtitle",
+                   description=lang.locale('sub_description'),
+                   type=OptionType.STRING,
+                   required=False),
 
-            create_option(name="cycle",
-                          description=lang.locale('pack_description'),
-                          choices=[create_choice(name=cy['name'], value=cy['sufix'])
-                                   for cy in cycle.get_cycle_data()],
-                          option_type=3,
-                          required=False)
+            Option(name="cycle",
+                   description=lang.locale('pack_description'),
+                   choices=[Choice(name=cy['name'], value=cy['sufix'])
+                            for cy in cycle.get_cycle_data()],
+                   type=OptionType.STRING,
+                   required=False)
             ]
 
 
@@ -112,29 +112,29 @@ def general_card_slash_options():
 def rules_slash_options():
     return [Option(name="rule",
                           description="Nombre de la regla/concepto.",
-                          option_type=OptionType.STRING,
+                          type=OptionType.STRING,
                           required=True)]
 """
 
 
 def tarot_slash_options():
     """Returns the slash command options for Tarot cards."""
-    return [create_option(name="name",
-                          description=lang.locale('name_description'),
-                          option_type=3,
-                          required=False)]
+    return [Option(name="name",
+                   description=lang.locale('name_description'),
+                   type=OptionType.STRING,
+                   required=False)]
 
 
 def timing_slash_options():
     """Returns the slash command options for Game's Framework."""
-    return [create_option(name="timing",
-                          description=lang.locale('timings_type_desc'),
-                          option_type=3,
-                          required=True,
-                          choices=[
-                              create_choice(name=lang.locale('mythos_phase'), value="M"),
-                              create_choice(name=lang.locale('investigation_phase'), value="I"),
-                              create_choice(name=lang.locale('enemy_phase'), value="E"),
-                              create_choice(name=lang.locale('upkeep_phase'), value="U"),
-                              create_choice(name=lang.locale('skill_test'), value="S"),
-                          ])]
+    return [Option(name="timing",
+                   description=lang.locale('timings_type_desc'),
+                   type=OptionType.STRING,
+                   required=True,
+                   choices=[
+                       Choice(name=lang.locale('mythos_phase'), value="M"),
+                       Choice(name=lang.locale('investigation_phase'), value="I"),
+                       Choice(name=lang.locale('enemy_phase'), value="E"),
+                       Choice(name=lang.locale('upkeep_phase'), value="U"),
+                       Choice(name=lang.locale('skill_test'), value="S"),
+                   ])]

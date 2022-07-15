@@ -4,6 +4,7 @@ from src.core.utils import is_lvl
 def use_pc_keywords(cards: list, query: dict):
     """
     Filtra cartas de jugador según los caracteres del string dado
+    :param query:
     :param cards: Lista de cartas
     :param key_list: Argumentos dados
     :return:

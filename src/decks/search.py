@@ -1,5 +1,5 @@
 import json
-
+import logging
 import requests
 
 from config import ARKHAM_DB
@@ -20,8 +20,10 @@ def find_deck(code: str, deck_mode):
                 req = requests.get(link)
                 if not req.text:
                     return {}
+        logging.info(f"Gotten Request: {req.json()}")
         return req.json()
     except json.decoder.JSONDecodeError:
+        logging.error("JSONDecodeError")
         return {}
 
 

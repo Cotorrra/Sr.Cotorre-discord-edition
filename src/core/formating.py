@@ -20,7 +20,7 @@ def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     else:
         embed = Embed(title=title, description=description, color=0xaaaaaa)
     if footnote:
-        embed.footer = footnote
+        embed.set_footer(footnote)
     set_thumbnail_image(c, embed)
     return embed
 
