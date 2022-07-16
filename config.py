@@ -1,6 +1,9 @@
+import logging
 import os
 
 from dotenv import load_dotenv
+
+log_format = '[%(asctime)s] %(levelname)-8s %(name)-12s %(message)s'
 
 # The Bot secret TOKEN
 load_dotenv()
@@ -8,12 +11,15 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Base link to arkhamdb. It varies from language to language
 ARKHAM_DB = os.getenv('ARKHAMDB')
+logging.info(f"ArkhamDB url: {ARKHAM_DB}")
 
 # You can choose to es/en: Check Sr-Cotorre Data to check all languages that are available!
 LANG = os.getenv('BOT_LANGUAGE')
+logging.info(f"Language: {LANG}")
 
 # You can change where the data comes from
 DATA_API = os.getenv('DATA_API')
+logging.info(f"Cotorre Data: {DATA_API}")
 
 # Advanced: If you want to change the emojis from the bot
 # [tag] -> <emoji:code>
@@ -63,3 +69,4 @@ TEXT_FORMAT = {"[free]": "<:zappyboi:923306654748012644>",
                "<cite>": "\n— ",
                "</cite>": "",
                }
+

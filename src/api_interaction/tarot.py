@@ -48,9 +48,9 @@ def format_tarot(tarot_card):
     orientation = random.choice([lang.locale('tarot_up_name'), lang.locale('tarot_down_name')])
     description = f"**{lang.locale('tarot_title')}** _({orientation})_" \
                   f"\n\n***{lang.locale('tarot_up_name')}***" \
-                  f"\n> _{up_text}_" \
+                  f"\n> {up_text}" \
                   f"\n\n***{lang.locale('tarot_down_name')}***" \
-                  f"\n> _{down_text}_" \
+                  f"\n> {down_text}" \
 
     footnote = f"🖌{tarot_card['illustrator']}" \
                f"\n{tarot_card['set']} #{tarot_card['number']}."

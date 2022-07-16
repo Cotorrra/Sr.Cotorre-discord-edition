@@ -1,10 +1,10 @@
-import discord
+from interactions import Embed
 
 from config import ARKHAM_DB, TEXT_FORMAT
 from src.core.translator import lang
 
 
-def create_embed(title: str, description="", c=None, footnote="") -> discord.embeds.Embed:
+def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     """
     Creates a Discord embed with a title, description and footnote of a card.
 
@@ -16,11 +16,11 @@ def create_embed(title: str, description="", c=None, footnote="") -> discord.emb
     """
     if c:
         url = f"{ARKHAM_DB}/card/{c['code']}"
-        embed = discord.Embed(title=title, description=description, color=color_picker(c), url=url)
+        embed = Embed(title=title, description=description, color=color_picker(c), url=url)
     else:
-        embed = discord.Embed(title=title, description=description, color=0xaaaaaa)
+        embed = Embed(title=title, description=description, color=0xaaaaaa)
     if footnote:
-        embed.set_footer(text=footnote)
+        embed.set_footer(footnote)
     set_thumbnail_image(c, embed)
     return embed
 
@@ -46,12 +46,14 @@ def format_set(c: dict) -> str:
     :param c: Card information.
     :return: String with text info.
     """
-    text = f"{c['pack_name']} #{str(c['position'])}"
-    if "encounter_code" in c:
-        text += f": {c['encounter_name']} #{str(c['encounter_position'])}"
-        if c['quantity'] > 1:
-            text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
-    return text
+    if 'pack_name' in c and 'position' in c:
+        text = f"{c['pack_name']} #{str(c['position'])}"
+        if "encounter_code" in c:
+            text += f": {c['encounter_name']} #{str(c['encounter_position'])}"
+            if c['quantity'] > 1:
+                text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
+        return text
+    return lang.locale("preview_set")
 
 
 def format_card_text(c: dict, tag="text") -> str:
@@ -172,15 +174,15 @@ def slot_order(c):
         "Ally": "7",
         "Tarot": "8",
     }
-    if "real_slot" in c:
-        if c["real_slot"]:
-            slots = c["real_slot"].split(". ")
+    if "slot" in c:
+        if c["slot"]:
+            slots = c["slot"].split(". ")
             if slots[0]:
                 return order[slots[0]]
     return "9"
 
 
-def set_thumbnail_image(c: dict, embed: discord.embeds.Embed, back=False) -> None:
+def set_thumbnail_image(c: dict, embed: Embed, back=False) -> None:
     """
     Sets the thumbnail image of an embed, using the card image from ArkhamDB.
 
@@ -218,10 +220,10 @@ def format_name(c: dict) -> str:
     :param c:
     :return:
     """
-    if c['is_unique']:
-        return f"⚹{c['name']}"
-    else:
-        return c['name']
+    if 'is_unique' in c:
+        if c['is_unique']:
+            return f"⚹{c['name']}"
+    return c['name']
 
 
 def format_subtext(c: dict) -> str:
@@ -263,7 +265,9 @@ def format_type(c: dict) -> str:
     :param c:
     :return:
     """
-    return f"**{c['type_name']}**"
+    if 'type_name' in c:
+        return f"**{c['type_name']}**"
+    return f"**{c['type_code'].capitalize()}**"
 
 
 def format_traits(c: dict) -> str:
@@ -274,8 +278,7 @@ def format_traits(c: dict) -> str:
     """
     if "traits" in c:
         return f"***{c['traits']}***"
-    else:
-        return ""
+    return ""
 
 
 def format_flavour(c: dict) -> str:
@@ -286,5 +289,18 @@ def format_flavour(c: dict) -> str:
     """
     if "flavor" in c:
         return f"_{format_text(c['flavor'])}_"
-    else:
-        return ""
+
+    return ""
+
+
+def format_costumization(c: dict) -> str:
+    """
+    Format the costumization upgrades, if any.
+    :param c:
+    :return:
+    """
+
+    if "customization_text" in c:
+        return f"\n> {format_card_text(c, 'customization_text')}"
+
+    return ""

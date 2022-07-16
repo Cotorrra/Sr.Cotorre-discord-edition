@@ -4,6 +4,7 @@
 """
 import random
 
+from src.api_interaction.preview import preview
 from src.api_interaction.timings import timings
 from src.core.cardsDB import cards
 from src.core.formating import create_embed
@@ -185,3 +186,19 @@ def look_for_random_player_card(query):
 def look_for_framework(query):
     embed = timings.find_formated_timing(query)
     return embed, False
+
+
+def look_for_preview_player_card(query: dict):
+    """
+    Given a query, a list of cards and a keyword function
+    returns a embed containing the information of a card.
+    :param query: A query string, it can contain an (TYPE) or a ~Subtext~
+    :return: a Discord.Embed
+    """
+    r_cards = card_search(query, preview.get_preview_data(), use_pc_keywords)
+    embed = resolve_search(r_cards)
+
+    if embed:
+        return embed, False
+
+    return create_embed(lang.locale('card_not_found'), "", {}), True

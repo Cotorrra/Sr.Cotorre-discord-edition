@@ -1,4 +1,4 @@
-import discord
+from interactions import Embed
 
 from config import ARKHAM_DB
 from src.core.translator import lang
@@ -56,8 +56,7 @@ def format_deck(deck, info):
         treachery = f"{lang.locale('treacheries/enemies')}: ({str(info['treachery_q'])})"
         treachery_cards = format_list_of_cards(info['treachery'], info['taboo_id'])
         m_description += f"**{treachery}**\n{treachery_cards}\n"
-
-    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
+    embed = Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
     return embed
 
@@ -70,7 +69,7 @@ def format_upgraded_deck(deck1, info):
     m_description = f"{investigator}\n{xp}"
 
     url = f"{ARKHAM_DB}/deck/view/{deck1['id']}"
-    embed = discord.Embed(title=m_title, description=m_description, color=info['color'], url=url)
+    embed = Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
     if len(info['buys_in']) > 0:
         embed.add_field(name=f"{lang.locale('added_cards')}:",

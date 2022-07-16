@@ -95,6 +95,7 @@ class Taboo:
 
     def format_xp(self, c, taboo_info=""):
         chain = ""
+        text = ""
         if taboo_info:
             if self.is_in_taboo(c['code'], taboo_info):
                 taboo_info = self.get_tabooed_card(c['code'], taboo_info)
@@ -106,8 +107,9 @@ class Taboo:
         if "xp" in c:
             if c['xp'] == 0:
                 text = f"{chain}"
-            elif c['exceptional']:
-                text = f" ({c['xp']}E){chain}"
+            elif 'exceptional' in c:
+                if c['exceptional']:
+                    text = f" ({c['xp']}E){chain}"
             else:
                 text = f" ({c['xp']}){chain}"
         else:

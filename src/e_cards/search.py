@@ -2,6 +2,7 @@
     Encounter Card Search/Filter
 """
 
+
 def use_ec_keywords(cards: list, query: dict):
     """
     Filter encounter cards according to the key_list
