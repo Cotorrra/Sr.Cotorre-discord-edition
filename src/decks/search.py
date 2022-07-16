@@ -7,6 +7,7 @@ from config import ARKHAM_DB
 
 def find_deck(code: str, deck_mode):
     try:
+        code = int(code)
         if deck_mode:
             link = f"{ARKHAM_DB}/api/public/{deck_mode}/{code}"
             req = requests.get(link)

@@ -56,7 +56,6 @@ def format_deck(deck, info):
         treachery = f"{lang.locale('treacheries/enemies')}: ({str(info['treachery_q'])})"
         treachery_cards = format_list_of_cards(info['treachery'], info['taboo_id'])
         m_description += f"**{treachery}**\n{treachery_cards}\n"
-    print(f"{m_title}\n{m_description}")
     embed = Embed(title=m_title, description=m_description, color=info['color'], url=url)
 
     return embed

@@ -53,7 +53,7 @@ def format_set(c: dict) -> str:
             if c['quantity'] > 1:
                 text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
         return text
-    return ""  # lang.locale("preview_set")
+    return lang.locale("preview_set")
 
 
 def format_card_text(c: dict, tag="text") -> str:

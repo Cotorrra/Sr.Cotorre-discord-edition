@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from sorcery import dict_of
 import logging
 
-from config import TOKEN
+from config import TOKEN, log_format
 from src.core.translator import lang
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, \
@@ -16,6 +16,14 @@ from src.response.slash_options import player_card_slash_options, deck_slash_opt
 # pylint: disable=R0913
 
 load_dotenv()
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format=log_format,
+    filename='debug.log',
+)
+
+
 bot = interactions.Client(token=TOKEN)
 
 
@@ -29,9 +37,9 @@ async def on_ready():
 
 @bot.command(name="ah",
              description=lang.locale('ah_description'),
-             options=player_card_slash_options())
+             options=player_card_slash_options(name_req=True))
 async def player_card(ctx: interactions.CommandContext,
-                      name="", level="", faction="",
+                      name, level="", faction="",
                       extras="", subtitle="", cycle=""):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
@@ -147,11 +155,11 @@ async def random(ctx: interactions.CommandContext,
 
 @bot.command(name="ahpreview",
              description=lang.locale('ahPreview_description'),
-             options=player_card_slash_options())
+             options=player_card_slash_options(name_req=True))
 async def player_card(ctx: interactions.CommandContext,
                       name="", level="", faction="",
                       extras="", subtitle="", cycle=""):
-    """Handles the /ah slash command, this command returns player cards."""
+    """Handles the /ah slash command, this command return's player cards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
     logging.debug(f"/ahpreview sent with: {query}")

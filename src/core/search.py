@@ -6,6 +6,7 @@ def card_search(query, cards, keyword_func, allow_empty=False):
     """
     Search a card within a set of cards using keywords (ex (4E))
 
+    :param allow_empty:
     :param query: The card query.
     :param cards: Set of cards
     :param keyword_func: A keyword function

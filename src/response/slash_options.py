@@ -4,12 +4,12 @@ from src.api_interaction.cycle import cycle
 from src.core.translator import lang
 
 
-def player_card_slash_options():
+def player_card_slash_options(name_req=False):
     """Returns the slash command options for player cards."""
     return [Option(name="name",
                    description=lang.locale('name_description'),
                    type=OptionType.STRING,
-                   required=False),
+                   required=name_req),
 
             Option(name="level",
                    description=lang.locale('level_description'),
