@@ -16,8 +16,8 @@ def format_slot(c):
     }
     text = ""
     if "slot" in c:
-        if c["slot"]:
-            slots = c["slot"].split(". ")
+        if c["real_slot"]:
+            slots = c["real_slot"].split(". ")
             for slot in slots:
                 text += formater[slot]
 

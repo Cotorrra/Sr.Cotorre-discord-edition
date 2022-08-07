@@ -17,11 +17,11 @@ def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     if c:
         url = f"{ARKHAM_DB}/card/{c['code']}"
         embed = Embed(title=title, description=description, color=color_picker(c), url=url)
+        set_thumbnail_image(c, embed)
     else:
         embed = Embed(title=title, description=description, color=0xaaaaaa)
     if footnote:
         embed.set_footer(footnote)
-    set_thumbnail_image(c, embed)
     return embed
 
 
@@ -174,9 +174,9 @@ def slot_order(c):
         "Ally": "7",
         "Tarot": "8",
     }
-    if "slot" in c:
-        if c["slot"]:
-            slots = c["slot"].split(". ")
+    if "real_slot" in c:
+        if c["real_slot"]:
+            slots = c["real_slot"].split(". ")
             if slots[0]:
                 return order[slots[0]]
     return "9"
@@ -288,7 +288,7 @@ def format_flavour(c: dict) -> str:
     :return:
     """
     if "flavor" in c:
-        return f"_{format_text(c['flavor'])}_"
+        return f"_{format_text(c['flavor'])}_\n"
 
     return ""
 

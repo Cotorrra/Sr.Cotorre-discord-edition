@@ -121,12 +121,10 @@ def hits_in_string(query: str, find: str):
     hits = 0
     set1 = query.lower().replace("-", " ").split()
     set2 = find.lower().replace("-", " ").split()
-    hit_list = []
     for w1 in set1:
         for w2 in set2:
             w1_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w1))
             w2_c = re.sub(r'[^a-z\d]', '', unidecode.unidecode(w2))
-            if w1_c == w2_c and w1_c not in hit_list:
+            if w1_c == w2_c and w1_c:
                 hits += len(w1_c)
-                hit_list.append(w1_c)
     return hits

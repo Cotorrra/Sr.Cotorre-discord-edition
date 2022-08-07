@@ -107,9 +107,10 @@ class Taboo:
         if "xp" in c:
             if c['xp'] == 0:
                 text = f"{chain}"
-            elif 'exceptional' in c:
-                if c['exceptional']:
-                    text = f" ({c['xp']}E){chain}"
+            elif 'exceptional' in c and c['exceptional']:
+                text = f" ({c['xp']}E){chain}"
+            elif 'customization_text' in c:
+                text = f"(C){chain}"
             else:
                 text = f" ({c['xp']}){chain}"
         else:

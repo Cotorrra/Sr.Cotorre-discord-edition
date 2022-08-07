@@ -36,7 +36,7 @@ def format_player_card(c):
                     f"{text}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
-                    f"{flavour}\n" \
+                    f"{flavour}" \
                     f"{costumization}" \
                     f"{errata_text}" \
                     f"{taboo_text}"
@@ -61,7 +61,7 @@ def format_inv_card_f(c):
                     f"{traits}\n\n" \
                     f"{ability}\n" \
                     f"{health_sanity}\n" \
-                    f"{flavour}\n" \
+                    f"{flavour}" \
                     f"{errata_text}\n" \
                     f"{taboo_text}\n"
     m_footnote = format_illus_pack(c)

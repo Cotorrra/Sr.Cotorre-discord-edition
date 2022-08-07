@@ -32,6 +32,5 @@ def resolve_search(r_cards) -> Embed:
             return format_player_card(r_cards[0])
         else:
             return format_general_card(r_cards[0])
-    else:
-        return Embed()
+
 

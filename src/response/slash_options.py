@@ -78,7 +78,7 @@ def general_card_slash_options():
     return [Option(name="name",
                    description=lang.locale('name_description'),
                    type=OptionType.STRING,
-                   required=False),
+                   required=True),
 
             Option(name="type",
                    description=lang.locale('card_type_desc'),

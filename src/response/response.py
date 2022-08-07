@@ -49,7 +49,7 @@ def look_for_player_card(query: dict):
     if embed:
         return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {}), True
+    return create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_mythos_card(query: dict):
@@ -64,7 +64,7 @@ def look_for_mythos_card(query: dict):
     if embed:
         return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {}), True
+    return create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_card_back(query: dict):
@@ -80,7 +80,7 @@ def look_for_card_back(query: dict):
     if embed:
         return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {}), True
+    return create_embed(lang.locale('card_not_found')), True
 
 
 def look_for_deck(code, deck_type):
@@ -96,7 +96,7 @@ def look_for_deck(code, deck_type):
         embed = format_deck(deck, deck_info)
         return embed, False
 
-    return create_embed(lang.locale('deck_not_found'), "", {}), True
+    return create_embed(lang.locale('deck_not_found')), True
 
 
 def look_for_upgrades(code, deck_mode):
@@ -201,4 +201,4 @@ def look_for_preview_player_card(query: dict):
     if embed:
         return embed, False
 
-    return create_embed(lang.locale('card_not_found'), "", {}), True
+    return create_embed(lang.locale('card_not_found')), True
