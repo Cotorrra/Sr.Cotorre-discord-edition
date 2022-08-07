@@ -170,7 +170,7 @@ async def player_card(ctx: interactions.CommandContext,
 
 @bot.command(name="refresh",
              description="Refresca las cartas del bot desde ArkhamDB",
-             scope=[804912893589585964, 923302104532156449])  # Special Testing Discord
+             scope=[923302104532156449])  # Special Testing Discord
 async def refresh_data(ctx: interactions.CommandContext):
     """Reloads data from ArkhamDB"""
     await ctx.defer()
@@ -182,7 +182,7 @@ async def refresh_data(ctx: interactions.CommandContext):
 
 @bot.command(name="refresh_api",
              description="Refresca los datos de la API del bot",
-             scope=[804912893589585964, 923302104532156449])
+             scope=[923302104532156449])
 async def refresh_data_api(ctx: interactions.CommandContext):
     """Reloads data from the Sr. Cotorre API"""
     await ctx.defer()
