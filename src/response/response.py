@@ -4,6 +4,7 @@
 """
 import random
 
+from src.api_interaction.cycle import cycle
 from src.api_interaction.preview import preview
 from src.api_interaction.timings import timings
 from src.core.cardsDB import cards
@@ -29,10 +30,13 @@ def refresh_cards():
 
 
 def refresh_api_data():
-    tarot.reload_tarot()
-    taboo.reload_taboo()
+    cycle.reload_cycles()
     errata.reload_errata()
     lang.reload_language()
+    preview.reload_preview()
+    taboo.reload_taboo()
+    tarot.reload_tarot()
+    timings.reload_timings()
     return True
 
 
