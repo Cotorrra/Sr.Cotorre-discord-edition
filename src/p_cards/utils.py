@@ -15,9 +15,14 @@ def format_slot(c):
         "Tarot": "<:tarot:923313991839805520>"
     }
     text = ""
-    if "slot" in c:
+    if "real_slot" in c:
         if c["real_slot"]:
             slots = c["real_slot"].split(". ")
+            for slot in slots:
+                text += formater[slot]
+    elif "slot" in c:
+        if c["slot"]:
+            slots = c["slot"].split(". ")
             for slot in slots:
                 text += formater[slot]
 
