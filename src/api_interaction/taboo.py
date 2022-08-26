@@ -118,7 +118,7 @@ class Taboo:
         return text
 
     def format_taboo_text(self, card_id):
-        text = f"> **{lang.locale('taboo_title')}:** \n"
+        text = f"> **{lang.locale('taboo_title')}:** _({self.get_taboo_version()})_\n"
         if self.is_in_taboo(card_id):
             card = self.get_tabooed_card(card_id)
             if 'xp' in card:
@@ -132,6 +132,9 @@ class Taboo:
             return text
         else:
             return ""
+
+    def get_taboo_version(self):
+        return self.get_taboo()['name']
 
 
 taboo = Taboo(current_taboo="005")
