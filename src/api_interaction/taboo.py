@@ -134,4 +134,4 @@ class Taboo:
             return ""
 
 
-taboo = Taboo(current_taboo="004")
+taboo = Taboo(current_taboo="005")
