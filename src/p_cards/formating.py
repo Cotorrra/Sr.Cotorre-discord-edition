@@ -34,10 +34,10 @@ def format_player_card(c):
                     f"{costs}" \
                     f"{icons}\n" \
                     f"{text}" \
+                    f"{costumization}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
                     f"{flavour}" \
-                    f"{costumization}" \
                     f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)

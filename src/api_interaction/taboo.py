@@ -105,12 +105,13 @@ class Taboo:
                 if 'exceptional' in taboo_info:
                     chain += " +E" * taboo_info['exceptional']
         if "xp" in c:
-            if c['xp'] == 0:
+            if 'customization_text' in c:
+                text = f" (C){chain}"
+            elif c['xp'] == 0:
                 text = f"{chain}"
             elif 'exceptional' in c and c['exceptional']:
                 text = f" ({c['xp']}E){chain}"
-            elif 'customization_text' in c:
-                text = f"(C){chain}"
+
             else:
                 text = f" ({c['xp']}){chain}"
         else:

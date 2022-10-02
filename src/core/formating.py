@@ -301,6 +301,6 @@ def format_costumization(c: dict) -> str:
     """
 
     if "customization_text" in c:
-        return f"\n> {format_card_text(c, 'customization_text')}"
+        return f"> {format_card_text(c, 'customization_text')}\n"
 
     return ""
