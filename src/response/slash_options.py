@@ -2,6 +2,8 @@ from interactions import Option, OptionType, Choice
 
 from src.api_interaction.cycle import cycle
 from src.api_interaction.preview import preview
+from src.api_interaction.taboo import taboo
+from src.core.formating import format_name, format_faction
 from src.core.translator import lang
 
 
@@ -153,7 +155,7 @@ def preview_card_slash_options():
                 description=lang.locale('name_description'),
                 type=OptionType.STRING,
                 required=False,
-                choices=[Choice(name=c['name'], value=c['code']) for c in preview_slice]))
+                choices=[Choice(name=f"{format_name(c)}{taboo.format_xp(c)}",
+                                value=c['code']) for c in preview_slice]))
         counter += 1
-
     return options
