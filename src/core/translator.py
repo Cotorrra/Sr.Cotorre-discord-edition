@@ -20,7 +20,10 @@ class Locale:
         return info
 
     def locale(self, tag):
-        return self.current_lang['lang'][tag]
+        if tag in self.current_lang['lang']:
+            return self.current_lang['lang'][tag]
+        else:
+            return f"{tag} ({lang})"
 
 
 lang = Locale()

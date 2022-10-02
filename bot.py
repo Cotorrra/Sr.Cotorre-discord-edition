@@ -9,7 +9,7 @@ from src.core.translator import lang
 from src.response.response import look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, \
     refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card, \
-    look_for_preview_player_card
+    look_for_preview_player_card, look_for_whom
 from src.response.slash_options import player_card_slash_options, deck_slash_options, \
     general_card_slash_options, tarot_slash_options, timing_slash_options, \
     preview_card_slash_options
@@ -149,8 +149,20 @@ async def random(ctx: interactions.CommandContext,
     await ctx.send(embeds=embed, ephemeral=hidden)
 
 
-# async def ah_who(ctx: interactions.CommandContext, name="", level="", faction="", extras="", subtitle="", cycle=""):
-#    ...
+@bot.command(name="ahwho",
+             description=lang.locale('ahWho_description'),
+             options=player_card_slash_options(name_req=True))
+async def ah_who(ctx: interactions.CommandContext,
+                      name, level="", faction="",
+                      extras="", subtitle="", cycle=""):
+    """Handles the /ah slash command, this command returns' player cards."""
+    # await ctx.defer()
+    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    logging.debug(f"/ahWho sent with: {query}")
+    embed, hidden = look_for_whom(query)
+    await ctx.send(embeds=embed, ephemeral=hidden)
+    # await cards_buttons_row(bot, ctx, embed)
+
 
 
 @bot.command(name="ahpreview",

@@ -21,6 +21,7 @@ from src.e_cards.search import use_ec_keywords
 from src.p_cards.search import use_pc_keywords
 from src.api_interaction.taboo import taboo
 from src.api_interaction.tarot import tarot, format_tarot
+from src.who.who import resolve_search_who
 
 
 def refresh_cards():
@@ -194,7 +195,7 @@ def look_for_framework(query):
 
 def look_for_preview_player_card(query: dict):
     """
-    Given a query, a list of cards and a keyword function
+    Given a query,
     returns a embed containing the information of a card.
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return: a Discord.Embed
@@ -206,3 +207,18 @@ def look_for_preview_player_card(query: dict):
         return embed, False
 
     return create_embed(lang.locale('card_not_found')), True
+
+
+def look_for_whom(query: dict):
+    """
+    Given a query, returns an embed containing all the investigators who can take a card
+    :param query:
+    :return:
+    """
+    r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
+    embed = resolve_search_who(r_cards)
+
+    if embed:
+        return embed, False
+
+    return create_embed(lang.locale('ahWho_card_not_found')), True
