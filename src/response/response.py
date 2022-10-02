@@ -199,7 +199,7 @@ def look_for_preview_player_card(query: dict):
     :param query: A query string, it can contain an (TYPE) or a ~Subtext~
     :return: a Discord.Embed
     """
-    r_cards = card_search(query, preview.get_preview_data(), use_pc_keywords)
+    r_cards = [c for c in preview.get_preview_data() if c['code'] == query['card']]
     embed = resolve_search(r_cards)
 
     if embed:

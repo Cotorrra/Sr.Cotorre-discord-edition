@@ -11,7 +11,8 @@ from src.response.response import look_for_mythos_card, look_for_player_card, \
     refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card, \
     look_for_preview_player_card
 from src.response.slash_options import player_card_slash_options, deck_slash_options, \
-    general_card_slash_options, tarot_slash_options, timing_slash_options
+    general_card_slash_options, tarot_slash_options, timing_slash_options, \
+    preview_card_slash_options
 
 # pylint: disable=R0913
 
@@ -22,7 +23,6 @@ logging.basicConfig(
     format=log_format,
     filename='debug.log',
 )
-
 
 bot = interactions.Client(token=TOKEN)
 
@@ -155,13 +155,12 @@ async def random(ctx: interactions.CommandContext,
 
 @bot.command(name="ahpreview",
              description=lang.locale('ahPreview_description'),
-             options=player_card_slash_options(name_req=True))
-async def player_card(ctx: interactions.CommandContext,
-                      name="", level="", faction="",
-                      extras="", subtitle="", cycle=""):
+             options=preview_card_slash_options())
+async def preview_card(ctx: interactions.CommandContext,
+                        card=""):
     """Handles the /ah slash command, this command return's player cards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    query = dict_of(card)
     logging.debug(f"/ahpreview sent with: {query}")
     embed, hidden = look_for_preview_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)

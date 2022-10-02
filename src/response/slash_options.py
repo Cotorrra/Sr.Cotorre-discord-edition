@@ -1,6 +1,7 @@
 from interactions import Option, OptionType, Choice
 
 from src.api_interaction.cycle import cycle
+from src.api_interaction.preview import preview
 from src.core.translator import lang
 
 
@@ -138,3 +139,14 @@ def timing_slash_options():
                        Choice(name=lang.locale('upkeep_phase'), value="U"),
                        Choice(name=lang.locale('skill_test'), value="S"),
                    ])]
+
+
+def preview_card_slash_options():
+    """Returns the slash command options for previewed cards"""
+    return [Option(
+            name="card",
+            description=lang.locale('name_description'),
+            type=OptionType.STRING,
+            required=True,
+            choices=[Choice(name=c['name'], value=c['code']) for c in preview.get_preview_data()]),
+        ]
