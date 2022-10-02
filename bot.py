@@ -153,8 +153,8 @@ async def random(ctx: interactions.CommandContext,
              description=lang.locale('ahWho_description'),
              options=player_card_slash_options(name_req=True))
 async def ah_who(ctx: interactions.CommandContext,
-                      name, level="", faction="",
-                      extras="", subtitle="", cycle=""):
+                 name, level="", faction="",
+                 extras="", subtitle="", cycle=""):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
@@ -164,15 +164,14 @@ async def ah_who(ctx: interactions.CommandContext,
     # await cards_buttons_row(bot, ctx, embed)
 
 
-
 @bot.command(name="ahpreview",
              description=lang.locale('ahPreview_description'),
              options=preview_card_slash_options())
 async def preview_card(ctx: interactions.CommandContext,
-                        card=""):
+                       card0="", card1="", card2=""):
     """Handles the /ah slash command, this command return's player cards."""
     # await ctx.defer()
-    query = dict_of(card)
+    query = dict_of(card0, card1, card2)
     logging.debug(f"/ahpreview sent with: {query}")
     embed, hidden = look_for_preview_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)

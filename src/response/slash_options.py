@@ -143,10 +143,17 @@ def timing_slash_options():
 
 def preview_card_slash_options():
     """Returns the slash command options for previewed cards"""
-    return [Option(
-            name="card",
-            description=lang.locale('name_description'),
-            type=OptionType.STRING,
-            required=True,
-            choices=[Choice(name=c['name'], value=c['code']) for c in preview.get_preview_data()]),
-        ]
+    options = []
+    preview_data = preview.get_preview_data()
+    counter = 0
+    while preview_data:
+        preview_slice, preview_data = preview_data[:25], preview_data[25:]
+        options.append(Option(
+                name="card" + str(counter),
+                description=lang.locale('name_description'),
+                type=OptionType.STRING,
+                required=False,
+                choices=[Choice(name=c['name'], value=c['code']) for c in preview_slice]))
+        counter += 1
+
+    return options

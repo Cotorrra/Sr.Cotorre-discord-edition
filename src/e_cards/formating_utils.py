@@ -3,8 +3,9 @@ from src.core.translator import lang
 
 
 def format_enemy_stats(c):
+    per_inv = c["health_per_investigator"] if 'health_per_investigator' in c else False
     health = "[health] %s%s" % (format_number(c['health']) if "health" in c else "-",
-                                "[per_investigator]" if c["health_per_investigator"] else "")
+                                "[per_investigator]" if per_inv else "")
     combat = "[combat] %s" % (format_number(c['enemy_fight']) if "enemy_fight" in c else "-")
     agility = "[agility] %s" % (format_number(c['enemy_evade']) if "enemy_evade" in c else "-")
 
