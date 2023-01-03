@@ -57,7 +57,7 @@ def extract_deck_info(deck, cards):
         text = (card, qty)
         info["xp"] += taboo.calculate_xp(card, qty, info['taboo_id'])
 
-        if 'Permanent.' in card['real_text']:
+        if 'real_text' in card and 'Permanent.' in card['real_text']:
             info['assets_permanents'].append(text)
             info['assets_permanents_q'] += qty
 
