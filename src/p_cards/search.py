@@ -23,10 +23,10 @@ def use_pc_keywords(cards: list, query: dict):
         if char == "e":
             filtered_cards = [c for c in filtered_cards if c['exceptional']]
 
-    if query['level']:
-        char = query['level']
+    if query['level'] != '':
+        char = int(query['level'])
         if 0 <= char <= 5:
-            filtered_cards = [c for c in filtered_cards if is_lvl(c, int(char))]
+            filtered_cards = [c for c in filtered_cards if is_lvl(c, char)]
 
     if query['faction']:
         char = query['faction'].lower()
