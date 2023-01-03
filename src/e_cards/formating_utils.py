@@ -24,9 +24,10 @@ def format_clues(c):
 
 
 def format_location_data(c):
-    shroud = f"{lang.locale('shroud')}: {str(c['shroud'])}"
+    shroud_value = str(c['shroud']) if 'shroud' in c else '-'
+    shroud = f"{lang.locale('shroud')}: {shroud_value}"
     clues = format_clues(c)
-    return f"{shroud} / {clues}"
+    return f"{shroud} | {clues}"
 
 
 def format_attack(c, verbose=True):
