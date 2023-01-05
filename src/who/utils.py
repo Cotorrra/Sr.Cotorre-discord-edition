@@ -54,7 +54,7 @@ def check_level(card, levels):
 
 
 def check_traits(card, traits):
-    c_traits = card['traits'][:-1].lower()
+    c_traits = card['real_traits'][:-1].lower()
     for t in traits:
         if t in c_traits:
             return True
@@ -75,7 +75,7 @@ def check_tag(card, tag):
 
 def check_uses(card, uses):
     for use in uses:
-        if use in card['text'] and 'Uses' in card['text']:
+        if use in card['real_text'] and 'Uses' in card['real_text']:
             return True
     return False
 
