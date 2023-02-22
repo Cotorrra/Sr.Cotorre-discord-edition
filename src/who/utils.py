@@ -46,7 +46,13 @@ def match_investigator_deck_options(inv, card):
 
 
 def check_faction(card, f_list):
-    return card['faction_code'] in f_list
+    faction1 = card['faction_code']
+    faction2 = card['faction2_code'] if 'faction2_code' in card else ''
+    faction3 = card['faction3_code'] if 'faction3_code' in card else ''
+    for faction in [faction1, faction2, faction3]:
+        if faction in f_list:
+            return True
+    return False
 
 
 def check_level(card, levels):
