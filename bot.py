@@ -6,11 +6,11 @@ import logging
 
 from config import TOKEN, log_format
 from src.core.translator import lang
-from src.response.response import look_for_mythos_card, look_for_player_card, \
+from src.response.response import look_for_customizable_card, look_for_mythos_card, look_for_player_card, \
     look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, \
     refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card, \
     look_for_preview_player_card, look_for_whom
-from src.response.slash_options import player_card_slash_options, deck_slash_options, \
+from src.response.slash_options import customizable_card_slash_options, player_card_slash_options, deck_slash_options, \
     general_card_slash_options, tarot_slash_options, timing_slash_options, \
     preview_card_slash_options
 
@@ -19,7 +19,7 @@ from src.response.slash_options import player_card_slash_options, deck_slash_opt
 load_dotenv()
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format=log_format,
     filename='debug.log',
 )
@@ -44,7 +44,7 @@ async def player_card(ctx: interactions.CommandContext,
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
-    logging.debug(f"/ah sent with: {query}")
+    logging.info(f"/ah sent with: {query}")
     embed, hidden = look_for_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -56,7 +56,7 @@ async def player_card(ctx: interactions.CommandContext,
 async def deck(ctx: interactions.CommandContext, code, type=""):
     """Handles the /ahDeck command, it returns a deck from ArkhamDB."""
     await ctx.defer()
-    logging.debug(f"/ahdeck sent with: code={code}, type={type}")
+    logging.info(f"/ahdeck sent with: code={code}, type={type}")
     embed, hidden = look_for_deck(code, type)
     await ctx.send(embeds=embed)
 
@@ -67,7 +67,7 @@ async def deck(ctx: interactions.CommandContext, code, type=""):
 async def upgrade(ctx: interactions.CommandContext, code, type=""):
     """Handles the /ahUp command, it returns the upgrades of a deck."""
     await ctx.defer()
-    logging.debug(f"/ahup sent with: code={code}, type={type}")
+    logging.info(f"/ahup sent with: code={code}, type={type}")
     embed, hidden = look_for_upgrades(code, type)
     await ctx.send(embeds=embed)
 
@@ -80,7 +80,7 @@ async def encounter(ctx: interactions.CommandContext,
     """Handle the /ahe command, it returns encounter cards."""
     # await ctx.defer()
     query = dict_of(name, type, subtitle, cycle)
-    logging.debug(f"/ahe sent with: {query}")
+    logging.info(f"/ahe sent with: {query}")
     embed, hidden = look_for_mythos_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -93,7 +93,7 @@ async def back(ctx: interactions.CommandContext, name="", type="", subtitle="", 
     """Handles the /ahb command, it returns card backs."""
     # await ctx.defer()
     query = dict_of(name, type, subtitle, cycle)
-    logging.debug(f"/ahb sent with: {query}")
+    logging.info("/ahb sent with: %s", query)
     embed, hidden = look_for_card_back(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -105,7 +105,7 @@ async def back(ctx: interactions.CommandContext, name="", type="", subtitle="", 
 async def tarot(ctx: interactions.CommandContext, name=""):
     """Handles the /ahTarot command, it returns tarot cards."""
     # await ctx.defer()
-    logging.debug(f"/ahtarot sent with: name={name}")
+    logging.info(f"/ahtarot sent with: name={name}")
     embed, hidden = look_for_tarot(name)
     await ctx.send(embeds=embed, ephemeral=hidden)
 
@@ -116,7 +116,7 @@ async def tarot(ctx: interactions.CommandContext, name=""):
 async def game_timing(ctx: interactions.CommandContext, timing):
     """Handles the /ahTiming command, it returns game timings."""
     # await ctx.defer()
-    logging.debug(f"/ahtiming sent with: timing={timing}")
+    logging.info(f"/ahtiming sent with: timing={timing}")
     embed, hidden = look_for_framework(timing)
     await ctx.send(embeds=embed)
 
@@ -130,7 +130,7 @@ async def list_cards(ctx: interactions.CommandContext,
     """Handles the /ahList command, it lists playercards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
-    logging.debug(f"/ahlist sent with: {query}")
+    logging.info(f"/ahlist sent with: {query}")
     embed, hidden = look_for_list_of_cards(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
 
@@ -144,7 +144,7 @@ async def random(ctx: interactions.CommandContext,
     """Handles the /ahRandom command, it returns a random card."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
-    logging.debug(f"/ahrandom sent with: {query}")
+    logging.info(f"/ahrandom sent with: {query}")
     embed, hidden = look_for_random_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
 
@@ -158,7 +158,7 @@ async def ah_who(ctx: interactions.CommandContext,
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle)
-    logging.debug(f"/ahWho sent with: {query}")
+    logging.info(f"/ahWho sent with: {query}")
     embed, hidden = look_for_whom(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
@@ -172,10 +172,22 @@ async def preview_card(ctx: interactions.CommandContext,
     """Handles the /ah slash command, this command return's player cards."""
     # await ctx.defer()
     query = dict_of(card0, card1, card2)
-    logging.debug(f"/ahpreview sent with: {query}")
+    logging.info(f"/ahpreview sent with: {query}")
     embed, hidden = look_for_preview_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
+
+
+@bot.command(name="ahcustomizable",
+             description=lang.locale("ahCustomizable_description"),
+             options=customizable_card_slash_options())
+async def costumizable_card(ctx: interactions.CommandContext,
+                            name=""):
+    """Handles the /ahahCustomizable command. Returns the upgrade sheet of a card."""
+    query = dict_of(name)
+    logging.info(f"/ahCustomizable sent with: {query}")
+    embed, hidden = look_for_customizable_card(query)
+    await ctx.send(embeds=embed, ephemeral=hidden)
 
 
 @bot.command(name="refresh",

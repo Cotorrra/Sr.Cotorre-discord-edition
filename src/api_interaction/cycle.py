@@ -22,6 +22,11 @@ class Cycle:
 
     def get_cycle_data(self):
         return self.cycle['cycles']
+    
+    def get_cycle_name(self, code):
+        for cycle in self.cycle['cycles']:
+            if cycle['sufix'] == code[0:2]:
+                return cycle['name']
 
 
 cycle = Cycle()

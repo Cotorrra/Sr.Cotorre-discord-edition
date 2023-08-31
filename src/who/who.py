@@ -38,7 +38,7 @@ def format_who(card, array, positive=True):
         return create_embed(title=title, description=description, c=card)
 
     if card['xp'] == 0 and card['faction_code'] != 'neutral':
-        description += f"{format_text(lang.locale('ahWho_versatile_text'))}\n" \
+        description += f"{format_text(lang.locale('ahWho_versatile_text'))}\n"
 
     if not positive:
         description += f"{lang.locale('ahWho_neg_text')}"

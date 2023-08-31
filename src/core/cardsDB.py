@@ -28,6 +28,7 @@ class CardsDB:
         for inv in parallel_inv:
             inv['name'] = f"{inv['name']} ({lang.locale('parallel')})"
         self.ah_investigators += parallel_inv
+        self.ah_customizable = [c for c in self.ah_player if 'customization_text' in c]
 
     def get_all_cards(self):
         return self.ah_all_cards
@@ -43,9 +44,12 @@ class CardsDB:
         self.ah_player = requests.get(f'{ARKHAM_DB}/api/public/cards?encounter=0').json()
         self.ah_encounter = [c for c in self.ah_all_cards if "spoiler" in c]
         self.ah_player = [c for c in self.ah_player if "duplicate_of_code" not in c]
+        self.ah_customizable = [c for c in self.ah_player if 'customization_text' in c]
 
     def get_investigators(self):
         return self.ah_investigators
 
+    def get_customizable_cards(self):
+        return self.ah_customizable
 
 cards = CardsDB()

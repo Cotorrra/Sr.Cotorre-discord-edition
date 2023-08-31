@@ -138,4 +138,4 @@ class Taboo:
         return self.get_taboo()['name']
 
 
-taboo = Taboo(current_taboo="005")
+taboo = Taboo(current_taboo="006")

@@ -2,7 +2,7 @@ from interactions import Embed
 
 from src.e_cards.formating import format_enemy_card, format_treachery_card, format_act_card_f, format_agenda_card_f, \
     format_location_card_f, format_scenario_card, format_general_card
-from src.p_cards.formating import format_inv_card_f, format_player_card
+from src.p_cards.formating import format_inv_card_f, format_player_card, format_customizable_upgrades
 
 
 def resolve_search(r_cards) -> Embed:
@@ -34,3 +34,6 @@ def resolve_search(r_cards) -> Embed:
             return format_general_card(r_cards[0])
 
 
+def resolve_customizable(r_cards) -> Embed:
+    if r_cards:
+        return format_customizable_upgrades(r_cards[0])

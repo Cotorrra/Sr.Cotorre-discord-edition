@@ -5,7 +5,7 @@ from src.api_interaction.preview import preview
 from src.api_interaction.taboo import taboo
 from src.core.formating import format_name, format_faction
 from src.core.translator import lang
-
+from src.core.cardsDB import cards
 
 def player_card_slash_options(name_req=False):
     """Returns the slash command options for player cards."""
@@ -159,3 +159,15 @@ def preview_card_slash_options():
                                 value=c['code']) for c in preview_slice]))
         counter += 1
     return options
+
+
+def customizable_card_slash_options():
+    """Return the slash command options for costumizable upgrade cards"""
+    customizable_cards = cards.get_customizable_cards()
+    return [Option(
+                name='name',
+                description=lang.locale('name_description'),
+                type=OptionType.STRING,
+                required=True,
+                choices=[Choice(name=f"{format_name(c)}",
+                                value=c['code']) for c in customizable_cards])]

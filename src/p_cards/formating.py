@@ -1,11 +1,12 @@
-from src.core.formating import format_name, format_subtext, format_faction, format_card_text, \
+from src.core.formating import format_customizable_note, format_name, format_subtext, format_faction, format_card_text, \
     faction_order, format_victory, format_illus_pack, create_embed, format_flavour, format_type, \
-    format_traits, format_text, slot_order, format_costumization
+    format_traits, format_text, slot_order, format_customizable
 from src.core.utils import text_if
 from src.api_interaction.errata import errata
 from src.p_cards.utils import format_slot, format_skill_icons, format_health_sanity, \
     format_inv_skills, format_sub_text_short, format_costs
 from src.api_interaction.taboo import taboo
+from src.core.translator import lang
 
 
 def format_player_card(c):
@@ -15,7 +16,7 @@ def format_player_card(c):
     faction = format_faction(c)
     type = format_type(c)
     slot = format_slot(c)
-    costumization = format_costumization(c)
+    customizable = format_customizable_note(c)
 
     traits = text_if("%s\n", format_traits(c))
     icons = text_if("%s\n", format_skill_icons(c))
@@ -34,7 +35,7 @@ def format_player_card(c):
                     f"{costs}" \
                     f"{icons}\n" \
                     f"{text}" \
-                    f"{costumization}" \
+                    f"{customizable}" \
                     f"{victory}" \
                     f"{health_sanity}\n" \
                     f"{flavour}" \
@@ -80,4 +81,20 @@ def format_player_card_deck(c, qty=0, taboo_info=""):
     text = f"{priority_order}{faction}{slot} {name}{subname} {level}{taboo_text} {quantity}"
     return text
 
+def format_customizable_upgrades(c):
+    name = format_name(c)
+    level = taboo.format_xp(c)
+    subtext = format_subtext(c)
+    faction = format_faction(c)
 
+    customizable = format_customizable(c)
+    taboo_text = taboo.format_taboo_text(c['code'])
+    errata_text = errata.format_errata_text(c['code'])
+
+    m_title = f"{faction} {name}{subtext}{level}"
+    m_description = f"{lang.locale('customization_title')}\n\n" \
+                    f"{customizable}" \
+                    f"{errata_text}" \
+                    f"{taboo_text}"
+    m_footnote = format_illus_pack(c)
+    return create_embed(m_title, m_description, c, m_footnote)

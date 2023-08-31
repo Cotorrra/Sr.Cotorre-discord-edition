@@ -12,7 +12,7 @@ from src.core.formating import create_embed
 from src.core.translator import lang
 from src.api_interaction.errata import errata
 from src.backs.search import resolve_back_search
-from src.response.resolve import resolve_search
+from src.response.resolve import resolve_customizable, resolve_search
 from src.core.search import card_search
 from src.decks.deck import extract_deck_info, check_upgrade_rules
 from src.decks.formating import format_deck, format_upgraded_deck, format_list_of_cards
@@ -223,3 +223,20 @@ def look_for_whom(query: dict):
         return embed, False
 
     return create_embed(lang.locale('ahWho_card_not_found')), True
+
+
+def look_for_customizable_card(query: dict):
+    """
+    Given a query, returns an embed a the upgrade sheet of a customizable card
+    :param query:
+    :return:
+    """
+
+    r_cards = [c for c in cards.get_customizable_cards() if c['code'] == query['name']]
+    embed = resolve_customizable(r_cards)
+
+    if embed:
+        return embed, False
+    
+    return create_embed(lang.locale('card_not_found')), True
+    
