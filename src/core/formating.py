@@ -310,7 +310,7 @@ def format_customizable(c: dict) -> str:
     """
 
     if "customization_text" in c:
-        return f"> {format_card_text(c, 'customization_text')}\n"
+        return f"{format_text(c, 'customization_text')}\n"
 
     return ""
 

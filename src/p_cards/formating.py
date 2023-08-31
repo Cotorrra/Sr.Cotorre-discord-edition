@@ -93,7 +93,7 @@ def format_customizable_upgrades(c):
 
     m_title = f"{faction} {name}{subtext}{level}"
     m_description = f"{lang.locale('customization_title')}\n\n" \
-                    f"{customizable}" \
+                    f"{customizable}\n" \
                     f"{errata_text}" \
                     f"{taboo_text}"
     m_footnote = format_illus_pack(c)
