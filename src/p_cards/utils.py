@@ -60,7 +60,7 @@ def get_color_by_investigator(deck, cards):
 def format_sub_text_short(c):
     if 'real_text' in c:
         if "subname" in c:
-            if ("Campaign Log" in c['real_text'] or
+            if ("Researched." in c['real_text'] or
                     "Directive" in c['real_name'] or
                     "Discipline" in c['real_name']):
                 return f": _{c['subname']}_"
