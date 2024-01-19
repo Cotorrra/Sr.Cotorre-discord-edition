@@ -2,6 +2,7 @@ import requests
 
 from config import ARKHAM_DB
 from src.core.translator import lang
+from src.core.utils import get_code
 
 
 class CardsDB:
@@ -19,12 +20,13 @@ class CardsDB:
         self.ah_investigators = [c for c in self.ah_player if
                                  c['type_code'] == 'investigator' and
                                  'duplicate_of_code' not in c and  # NO Duplicates
-                                 (1000 < int(c['code']) < 70000 or
+                                 'deck_requirements' in c and  # No Bonded/Hank
+                                 (1000 < get_code(c) < 70000 or # No Parallels/Books
                                   c['code'] == '98019')]  # Hello Gloria
         parallel_inv = [c for c in self.ah_player if
                         c['type_code'] == 'investigator' and
                         'duplicate_of_code' not in c and  # NO Duplicates
-                        (90000 < int(c['code']) < 98000)]
+                        (90000 < get_code(c) < 98000)]
         for inv in parallel_inv:
             inv['name'] = f"{inv['name']} ({lang.locale('parallel')})"
         self.ah_investigators += parallel_inv

@@ -40,3 +40,12 @@ def text_if(template, text):
         return template % text
     else:
         return ""
+
+def get_code(card):
+    card_id = card['code']
+    while card_id:
+        try:
+            return int(card_id)
+        except ValueError:
+            card_id = card_id[:-1]
+    return 0

@@ -30,7 +30,7 @@ bot = interactions.Client(token=TOKEN)
 @bot.event
 async def on_ready():
     """Prints on console that the bot it's ready! It also sets the bot's status."""
-    print(f'El bot está listo! :parrot:')
+    print('El bot está listo! :parrot:')
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,
     #                                                    name="TSK Previews"))
 
