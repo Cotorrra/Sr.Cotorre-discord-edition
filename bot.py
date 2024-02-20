@@ -40,10 +40,10 @@ async def on_ready():
              options=player_card_slash_options(name_req=True))
 async def player_card(ctx: interactions.CommandContext,
                       name, level="", faction="",
-                      extras="", subtitle="", cycle=""):
+                      extras="", subtitle="", cycle="", traits=""):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
     logging.info(f"/ah sent with: {query}")
     embed, hidden = look_for_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
@@ -76,10 +76,10 @@ async def upgrade(ctx: interactions.CommandContext, code, type=""):
              description=lang.locale('ahe_description'),
              options=general_card_slash_options())
 async def encounter(ctx: interactions.CommandContext,
-                    name="", type="", subtitle="", cycle=""):
+                    name="", type="", subtitle="", cycle="", traits=""):
     """Handle the /ahe command, it returns encounter cards."""
     # await ctx.defer()
-    query = dict_of(name, type, subtitle, cycle)
+    query = dict_of(name, type, subtitle, cycle, traits)
     logging.info(f"/ahe sent with: {query}")
     embed, hidden = look_for_mythos_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
@@ -89,10 +89,10 @@ async def encounter(ctx: interactions.CommandContext,
 @bot.command(name="ahb",
              description=lang.locale('ahb_description'),
              options=general_card_slash_options())
-async def back(ctx: interactions.CommandContext, name="", type="", subtitle="", cycle=""):
+async def back(ctx: interactions.CommandContext, name="", type="", subtitle="", cycle="", traits=""):
     """Handles the /ahb command, it returns card backs."""
     # await ctx.defer()
-    query = dict_of(name, type, subtitle, cycle)
+    query = dict_of(name, type, subtitle, cycle, traits)
     logging.info("/ahb sent with: %s", query)
     embed, hidden = look_for_card_back(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
@@ -126,10 +126,10 @@ async def game_timing(ctx: interactions.CommandContext, timing):
              options=player_card_slash_options())
 async def list_cards(ctx: interactions.CommandContext,
                      name="", level="", faction="",
-                     extras="", subtitle="", cycle=""):
+                     extras="", subtitle="", cycle="", traits=""):
     """Handles the /ahList command, it lists playercards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
     logging.info(f"/ahlist sent with: {query}")
     embed, hidden = look_for_list_of_cards(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
@@ -140,10 +140,10 @@ async def list_cards(ctx: interactions.CommandContext,
              options=player_card_slash_options())
 async def random(ctx: interactions.CommandContext,
                  name="", level="", faction="",
-                 extras="", subtitle="", cycle=""):
+                 extras="", subtitle="", cycle="", traits=""):
     """Handles the /ahRandom command, it returns a random card."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
     logging.info(f"/ahrandom sent with: {query}")
     embed, hidden = look_for_random_player_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
@@ -154,10 +154,10 @@ async def random(ctx: interactions.CommandContext,
              options=player_card_slash_options(name_req=True))
 async def ah_who(ctx: interactions.CommandContext,
                  name, level="", faction="",
-                 extras="", subtitle="", cycle=""):
+                 extras="", subtitle="", cycle="", traits=""):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
-    query = dict_of(name, level, faction, extras, subtitle, cycle)
+    query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
     logging.info(f"/ahWho sent with: {query}")
     embed, hidden = look_for_whom(query)
     await ctx.send(embeds=embed, ephemeral=hidden)

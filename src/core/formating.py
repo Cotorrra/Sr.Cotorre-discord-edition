@@ -3,7 +3,7 @@ from interactions import Embed
 from config import ARKHAM_DB, TEXT_FORMAT
 from src.api_interaction.cycle import cycle
 from src.core.translator import lang
-
+from src.core.utils import get_code
 
 def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     """
@@ -50,7 +50,7 @@ def format_set(c: dict) -> str:
     :return: String with text info.
     """
     pack_name = ""
-    if 2000 < int(c["code"]) < 8000:
+    if 2000 < get_code(c) < 8000:
         pack_name = cycle.get_cycle_name(c["code"])
     else:
         pack_name = c['pack_name']

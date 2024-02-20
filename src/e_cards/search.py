@@ -11,22 +11,32 @@ def use_ec_keywords(cards: list, query: dict):
     :return:
     """
     # TODO: Rework this info reading all the info from key_list
-    filtered_c = cards.copy()
+    filtered_cards = cards.copy()
+    
     if query['type']:
         char = query['type'].lower()
         if char == "e":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "enemy"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "enemy"]
         if char == "a":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "act"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "act"]
         if char == "p":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "agenda"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "agenda"]
         if char == "t":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "treachery"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "treachery"]
         if char == "s":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "scenario"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "scenario"]
         if char == "l":
-            filtered_c = [c for c in filtered_c if c['type_code'] == "location"]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] == "location"]
         if char == "j":
-            filtered_c = [c for c in filtered_c if c['type_code'] in ['asset', 'event', 'skill']]
+            filtered_cards = [c for c in filtered_cards if c['type_code'] in ['asset', 'event', 'skill']]
 
-    return filtered_c
+    if query['traits']:
+        traits = query['traits'].split(",")
+        traits = [t.strip() for t in traits]
+        filtered_cards = [c for c in filtered_cards if 'traits' in c]
+        
+        for trait in traits:
+            # This is a workaround to avoid the last dot in the traits
+            filtered_cards = [c for c in filtered_cards if trait in c['traits'][:-1].split(". ")]
+
+    return filtered_cards

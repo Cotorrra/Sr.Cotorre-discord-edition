@@ -54,6 +54,10 @@ def player_card_slash_options(name_req=False):
                    choices=[Choice(name=cy['name'], value=cy['sufix'])
                             for cy in cycle.get_cycle_data()],
                    type=OptionType.STRING,
+                   required=False),
+            Option(name="traits",
+                   description=lang.locale('traits_description'),
+                   type=OptionType.STRING,
                    required=False)
             ]
 
@@ -106,6 +110,10 @@ def general_card_slash_options():
                    description=lang.locale('pack_description'),
                    choices=[Choice(name=cy['name'], value=cy['sufix'])
                             for cy in cycle.get_cycle_data()],
+                   type=OptionType.STRING,
+                   required=False),
+            Option(name="traits",
+                   description=lang.locale('traits_description'),
                    type=OptionType.STRING,
                    required=False)
             ]

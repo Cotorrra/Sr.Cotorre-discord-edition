@@ -45,4 +45,13 @@ def use_pc_keywords(cards: list, query: dict):
         if char == "mult":
             filtered_cards = [c for c in filtered_cards if 'faction2_code' in c]
 
+    if query['traits']:
+        traits = query['traits'].split(",")
+        traits = [t.strip() for t in traits]
+        filtered_cards = [c for c in filtered_cards if 'traits' in c]
+        
+        for trait in traits:
+            # This is a workaround to avoid the last dot in the traits
+            filtered_cards = [c for c in filtered_cards if trait in c['traits'][:-1].split(". ")]
+
     return filtered_cards
