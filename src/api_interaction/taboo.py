@@ -6,12 +6,11 @@ from src.core.translator import lang
 
 
 class Taboo:
-    def __init__(self, current_taboo):
+    def __init__(self):
         params = {"language": LANG,
                   "type": "taboo"}
         self.taboo_data = requests.get(f'{DATA_API}',
                                        params=params).json()
-        self.current_taboo = current_taboo
 
     def reload_taboo(self):
         """
@@ -40,10 +39,12 @@ class Taboo:
         return self.get_taboo(taboo_ver)['date_start']
 
     def get_taboo(self, taboo_ver=""):
-        current_taboo = taboo_ver if taboo_ver else self.current_taboo
         for info in self.taboo_data:
-            if info['code'] == current_taboo:
+            if info['active'] and not taboo_ver:
                 return info
+            if info['code'] == taboo_ver and taboo_ver:
+                return info
+            
         return {'cards': []}
 
     def is_in_taboo(self, card_id, taboo_ver=""):
@@ -72,7 +73,16 @@ class Taboo:
                 return card
         return {}
 
-    def calculate_xp(self, c, qty, taboo_ver=""):
+    def calculate_xp(self, c, qty, taboo_ver="", deck_meta={}):
+        upgrades_codes = []
+        upgrades_xp = 0
+        if c['code'] in deck_meta:
+            card_meta = deck_meta[c['code']]
+            for upgrade_id, upgrade_info in card_meta.items():
+                if int(upgrade_info['xp']) > 0:
+                    upgrades_codes.append(upgrade_id)
+                    upgrades_xp += int(upgrade_info['xp'])
+
         chain = 0
         taboo_exceptional = False
         if self.is_in_taboo(c['code']):
@@ -81,21 +91,28 @@ class Taboo:
                 chain = taboo_info['xp']
             if 'exceptional' in taboo_info:
                 taboo_exceptional = taboo_info['exceptional']
+            if "xp_customizable" in taboo_info:
+                for taboo_upgrade_id, taboo_upgrade_info in taboo_info["xp_customizable"].items():
+                    if taboo_upgrade_id in upgrades_codes:
+                        if 'xp' in taboo_upgrade_info:
+                            upgrades_xp += int(taboo_upgrade_info['xp'])
 
         if "xp" in c:
             if c['myriad'] or 'Myriad.' in c['real_text']:
-                return c['xp'] + chain
+                return c['xp'] + chain + upgrades_xp 
             elif c['exceptional'] or taboo_exceptional:
                 # Aunque debería haber 1 en el mazo...
-                return (c['xp'] * 2 + chain) * qty
+                return (c['xp'] * 2 + chain) + upgrades_xp 
             else:
-                return (c['xp'] + chain) * qty
+                return (c['xp'] + chain) * qty + upgrades_xp 
         else:
-            return chain * qty
+            return chain * qty + upgrades_xp 
 
-    def format_xp(self, c, taboo_info=""):
+    def format_xp(self, c, taboo_info="", deck_meta={}):
         chain = ""
         text = ""
+        customizable_text = ""
+        xp_customizable_info = {}
         if taboo_info:
             if self.is_in_taboo(c['code'], taboo_info):
                 taboo_info = self.get_tabooed_card(c['code'], taboo_info)
@@ -104,9 +121,56 @@ class Taboo:
                     chain += f" {sign}{taboo_info['xp']}"
                 if 'exceptional' in taboo_info:
                     chain += " +E" * taboo_info['exceptional']
+                if 'xp_customizable' in taboo_info:
+                    for taboo_upgrade_id, taboo_upgrade_info in taboo_info["xp_customizable"].items():
+                        xp_customizable_info[taboo_upgrade_id] = taboo_upgrade_info['xp']
+                    # Old implementation
+                    # for taboo_upgrade in taboo_info["xp_customizable"].split(","):
+                    #    upgrade_loc, upgrade_chain = taboo_upgrade.split("|")
+                    #    xp_customizable_info[upgrade_loc] = upgrade_chain
+        
+        # Thanks TSK
+        upgrades_xp = 0
+        upgrade_chain = 0
+        if c['code'] in deck_meta:
+            card_meta = deck_meta[c['code']]
+            additional_info= []
+            # card_upgrades = card_meta.split(",")
+            info_text = ""
+            for upgrade_id, upgrade_info in card_meta.items():
+                    # upgrade_info = upgrade.split("|")
+                    
+                if int(upgrade_info['xp']) > 0:
+                    upgrades_xp += int(upgrade_info['xp'])
+                    if len(upgrade_info) > 1:
+                        if c['code'] != '09080':
+                            # Summoned Servitor has extra info, but is used for the slot choice
+                            additional_info += upgrade_info['info'].split("^")
+                    if upgrade_id in xp_customizable_info:
+                        upgrade_chain += int(xp_customizable_info[upgrade_id])
+
+                elif c['code'] in ['09042', '09060', '09079', '09101'] and upgrade_id == '0':
+                    #  Friends of low places, Ravens Quill, Living Ink and Grizzled have initial info
+                    additional_info += upgrade_info['info'].split("^")
+
+            for text in additional_info:
+                if c['code'] == '09079': # Living Ink has attributes
+                        info_text += f"[{text}], "
+                else:
+                    info_text += f"<i>{text}</i>, "
+            
+            customizable_text = f"[{upgrades_xp}"
+            if upgrade_chain:
+                customizable_text += f"+{upgrade_chain}" if upgrade_chain > 0 else f"{upgrade_chain}"
+            customizable_text += "pts"
+            customizable_text += f", {format_text(info_text)[:-2]}]" if info_text else "]"
+        
         if "xp" in c:
             if 'customization_text' in c:
-                text = f" (C){chain}"
+                if upgrades_xp > 0:
+                    text = f" ({(upgrades_xp + 1)//2}){chain} {customizable_text}"
+                else:
+                    text = f"{chain} {customizable_text}"
             elif c['xp'] == 0:
                 text = f"{chain}"
             elif 'exceptional' in c and c['exceptional']:
@@ -116,6 +180,7 @@ class Taboo:
                 text = f" ({c['xp']}){chain}"
         else:
             text = ""
+
         return text
 
     def format_taboo_text(self, card_id):
@@ -138,4 +203,4 @@ class Taboo:
         return self.get_taboo()['name']
 
 
-taboo = Taboo(current_taboo="007")
+taboo = Taboo()

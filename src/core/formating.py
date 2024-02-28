@@ -301,27 +301,3 @@ def format_flavour(c: dict) -> str:
 
     return ""
 
-
-def format_customizable(c: dict) -> str:
-    """
-    Format the costumization upgrades, if any.
-    :param c:
-    :return:
-    """
-
-    if "customization_text" in c:
-        return f"{format_text(c['customization_text'])}\n"
-
-    return ""
-
-def format_customizable_note(c: dict) -> str:
-    """
-    Format the costumization upgrades, if any.
-    :param c:
-    :return:
-    """
-
-    if "customization_text" in c:
-        return f"_{lang.locale('customization_note')}_\n"
-
-    return ""
