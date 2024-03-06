@@ -1,5 +1,7 @@
 ﻿.idea/
 *.env
+*.env1
+startup
 __pycache__
 data/
 
