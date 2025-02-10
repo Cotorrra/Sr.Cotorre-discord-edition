@@ -1,31 +1,37 @@
-from src.core.formating import format_number, format_text
-from src.core.translator import lang
+from src.core.formatting import format_number, format_text
+from src.core.translator import locale as _
 
 
 def format_enemy_stats(c):
-    per_inv = c["health_per_investigator"] if 'health_per_investigator' in c else False
-    health = "[health] %s%s" % (format_number(c['health']) if "health" in c else "-",
-                                "[per_investigator]" if per_inv else "")
-    combat = "[combat] %s" % (format_number(c['enemy_fight']) if "enemy_fight" in c else "-")
-    agility = "[agility] %s" % (format_number(c['enemy_evade']) if "enemy_evade" in c else "-")
+    per_inv = c["health_per_investigator"] if "health_per_investigator" in c else False
+    health = "[health] %s%s" % (
+        format_number(c["health"]) if "health" in c else "-",
+        "[per_investigator]" if per_inv else "",
+    )
+    combat = "[combat] %s" % (
+        format_number(c["enemy_fight"]) if "enemy_fight" in c else "-"
+    )
+    agility = "[agility] %s" % (
+        format_number(c["enemy_evade"]) if "enemy_evade" in c else "-"
+    )
 
     return format_text(f"{combat} / {health} / {agility}")
 
 
 def format_clues(c):
     if "clues" in c:
-        clues = str(c['clues'])
-        if 'clues_fixed' in c or c['clues'] == 0:
+        clues = str(c["clues"])
+        if "clues_fixed" in c or c["clues"] == 0:
             return format_text(f"[clues] {clues}")
         else:
             return format_text(f"[clues] {clues} [per_investigator]")
     else:
-        return format_text(f"[clues] -")
+        return format_text("[clues] -")
 
 
 def format_location_data(c):
-    shroud_value = str(c['shroud']) if 'shroud' in c else '-'
-    shroud = f"{lang.locale('shroud')}: {shroud_value}"
+    shroud_value = str(c["shroud"]) if "shroud" in c else "-"
+    shroud = f"{_('shroud')}: {shroud_value}"
     clues = format_clues(c)
     return f"{shroud} | {clues}"
 
@@ -33,15 +39,15 @@ def format_location_data(c):
 def format_attack(c, verbose=True):
     damage = ""
     if "enemy_damage" in c:
-        damage = format_text("[health]" * c['enemy_damage'])
+        damage = format_text("[health]" * c["enemy_damage"])
     horror = ""
     if "enemy_horror" in c:
-        horror = format_text("[sanity]" * c['enemy_horror'])
+        horror = format_text("[sanity]" * c["enemy_horror"])
 
     if not damage and not horror:
         return ""
     elif verbose:
-        return f"{lang.locale('attack')}: {damage}{horror}\n"
+        return f"{_('attack')}: {damage}{horror}\n"
     else:
         return f"{damage}{horror}\n"
 

@@ -18,7 +18,6 @@ Create an .env file with the following contents:
 - DISCORD_TOKEN : Your Discord Application Token
 - ARKHAMDB: The link to arkhamDB where Sr. Cotorre should get the cards from. (i.e. https://es.arkhamdb.com or https://arkhamdb.com)
 - BOT_LANGUAGE: The language of the Discord Interactions (it should be one that has a file in Sr. Cotorre Data repo)
-- DATA_API: The Api where the Sr. Cotorre Data its being served.
 
 ### Run!
 

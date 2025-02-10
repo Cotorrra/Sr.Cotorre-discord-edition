@@ -1,27 +1,16 @@
-import requests
+import json
 
-from config import LANG, DATA_API
-from src.core.formating import format_card_text
-from src.core.translator import lang
+from config import LANG
+from src.core.formatting import format_card_text
+from src.core.translator import locale as _
 
 
 class Errata:
+    """Class that handles the errata data from the data/errata.json file."""
 
     def __init__(self):
-        params = {"language": LANG,
-                  "type": "errata"}
-        self.errata_data = requests.get(f'{DATA_API}',
-                                        params=params).json()
-
-    def reload_errata(self):
-        """
-        Gets the errata information from the DATA_API link
-        :return: the errata info
-        """
-        params = {"language": LANG,
-                  "type": "errata"}
-        self.errata_data = requests.get(f'{DATA_API}',
-                                        params=params).json()
+        with open(f"data/{LANG}/errata.json", encoding="UTF-8") as f:
+            self.errata_data = json.load(f)
 
     def has_errata(self, card_id):
         """
@@ -29,8 +18,8 @@ class Errata:
         :param card_id: card id
         :return:
         """
-        for card in self.errata_data['cards']:
-            if card['code'] == card_id:
+        for card in self.errata_data["cards"]:
+            if card["code"] == card_id:
                 return True
         return False
 
@@ -40,22 +29,27 @@ class Errata:
         :param card_id: the card's ArkhamDB ID
         :return: The errata information
         """
-        for card in self.errata_data['cards']:
-            if card['code'] == card_id:
+        for card in self.errata_data["cards"]:
+            if card["code"] == card_id:
                 return card
         return {}
 
     def format_errata_text(self, card_id, back=False):
+        """Formats the errata text into a markdown string."""
         text = ""
         if self.has_errata(card_id):
             card = self.get_errata_card(card_id)
-            if back and ('text_back' in card):
-                text += f"> **{lang.locale('errata_title')}**:\n> %s \n\n" % format_card_text(card, 'text_back')
-            elif 'text' in card:
-                text += f"> **{lang.locale('errata_title')}**:\n> %s \n\n" % format_card_text(card, 'text')
+            if back and ("text_back" in card):
+                text += f"> **{_('errata_title')}**:\n> %s \n\n" % format_card_text(
+                    card, "text_back"
+                )
+            elif "text" in card:
+                text += f"> **{_('errata_title')}**:\n> %s \n\n" % format_card_text(
+                    card, "text"
+                )
             return text
-        else:
-            return ""
+
+        return ""
 
 
 errata = Errata()

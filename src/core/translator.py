@@ -1,29 +1,22 @@
-import requests
+import json
 
-from config import LANG, DATA_API
+from config import LANG
 
 
 class Locale:
+    """Class that handles the locale data."""
+
     def __init__(self):
         self.lang = LANG
-        self.current_lang = self.reload_language()
-
-    def reload_language(self):
-        """
-        Load the language file from the DATA_API
-        :return:
-        """
-        params = {"language": self.lang,
-                  "type": "lang"}
-        info = requests.get(f'{DATA_API}', params=params).json()
-
-        return info
+        with open(f"data/{self.lang}/lang.json", encoding="UTF-8") as f:
+            self.current_lang = json.load(f)
 
     def locale(self, tag):
-        if tag in self.current_lang['lang']:
-            return self.current_lang['lang'][tag]
-        else:
-            return f"{tag} ({lang})"
+        """Translates a tag into the current language."""
+        if tag in self.current_lang["lang"]:
+            return self.current_lang["lang"][tag]
+        return f"{tag} ({lang})"
 
 
 lang = Locale()
+locale = lang.locale

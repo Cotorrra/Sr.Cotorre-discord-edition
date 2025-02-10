@@ -3,7 +3,6 @@
 *.env1
 startup
 __pycache__
-data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

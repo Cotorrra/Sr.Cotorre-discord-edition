@@ -2,8 +2,9 @@ from interactions import Embed
 
 from config import ARKHAM_DB, TEXT_FORMAT
 from src.api_interaction.cycle import cycle
-from src.core.translator import lang
+from src.core.translator import locale as _
 from src.core.utils import get_code
+
 
 def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     """
@@ -17,10 +18,12 @@ def create_embed(title: str, description="", c=None, footnote="") -> Embed:
     """
     if c:
         url = f"{ARKHAM_DB}/card/{c['code']}"
-        embed = Embed(title=title, description=description, color=color_picker(c), url=url)
+        embed = Embed(
+            title=title, description=description, color=color_picker(c), url=url
+        )
         set_thumbnail_image(c, embed)
     else:
-        embed = Embed(title=title, description=description, color=0xaaaaaa)
+        embed = Embed(title=title, description=description, color=0xAAAAAA)
     if footnote:
         embed.set_footer(footnote)
     return embed
@@ -44,7 +47,7 @@ def format_set(c: dict) -> str:
     Returns the encounter set and pack of a given card.
     Ex: Rats are: Core Set #159. Rats #1-3.
     If the product comes from a Blister of a Cycle:
-    ex: 
+    ex:
 
     :param c: Card information.
     :return: String with text info.
@@ -53,16 +56,16 @@ def format_set(c: dict) -> str:
     if 2000 < get_code(c) < 8000:
         pack_name = cycle.get_cycle_name(c["code"])
     else:
-        pack_name = c['pack_name']
+        pack_name = c["pack_name"]
 
-    if 'pack_name' in c and 'position' in c:
+    if "pack_name" in c and "position" in c:
         text = f"{pack_name} #{str(c['position'])}"
         if "encounter_code" in c:
             text += f": {c['encounter_name']} #{str(c['encounter_position'])}"
-            if c['quantity'] > 1:
+            if c["quantity"] > 1:
                 text += f"-{str(c['encounter_position'] + c['quantity'] - 1)}"
         return text
-    return lang.locale("preview_set")
+    return _("preview_set")
 
 
 def format_card_text(c: dict, tag="text") -> str:
@@ -113,7 +116,7 @@ def format_victory(c: dict) -> str:
     """
 
     if "victory" in c:
-        return f"**{lang.locale('victory')} {c['victory']}.**"
+        return f"**{_('victory')} {c['victory']}.**"
     else:
         return ""
 
@@ -126,7 +129,7 @@ def format_vengeance(c: dict) -> str:
     :return: A string.
     """
     if "vengeance" in c:
-        return f"**{lang.locale('vengeance')} {c['vengeance']}.**"
+        return f"**{_('vengeance')} {c['vengeance']}.**"
     else:
         return ""
 
@@ -153,9 +156,11 @@ def format_faction(c: dict) -> str:
     :param c: A card info.
     :return: A string
     """
-    if 'faction3_code' in c:
-        return format_text(f"[{c['faction_code']}][{c['faction2_code']}][{c['faction3_code']}]")
-    elif 'faction2_code' in c:
+    if "faction3_code" in c:
+        return format_text(
+            f"[{c['faction_code']}][{c['faction2_code']}][{c['faction3_code']}]"
+        )
+    elif "faction2_code" in c:
         return format_text(f"[{c['faction_code']}][{c['faction2_code']}]")
     else:
         return format_text(f"[{c['faction_code']}]")
@@ -173,6 +178,7 @@ faction_order = {
 
 
 def slot_order(c):
+    """Returns the slot order of a card."""
     order = {
         "Hand": "1",
         "Hand x2": "2",
@@ -217,8 +223,8 @@ def format_illustrator(c: dict) -> str:
     :param c: Card info
     :return: String
     """
-    if 'illustrator' in c:
-        return "🖌 %s" % c['illustrator']
+    if "illustrator" in c:
+        return f"🖌 {c['illustrator']}"
     else:
         return ""
 
@@ -229,10 +235,10 @@ def format_name(c: dict) -> str:
     :param c:
     :return:
     """
-    if 'is_unique' in c:
-        if c['is_unique']:
+    if "is_unique" in c:
+        if c["is_unique"]:
             return f"⚹{c['name']}"
-    return c['name']
+    return c["name"]
 
 
 def format_subtext(c: dict) -> str:
@@ -241,7 +247,7 @@ def format_subtext(c: dict) -> str:
     :param c:
     :return:
     """
-    if 'subname' in c:
+    if "subname" in c:
         return f": _{c['subname']}_"
     else:
         return ""
@@ -254,18 +260,18 @@ def color_picker(c: dict) -> int:
     :return:
     """
     colors = {
-        "survivor": 0xaa2211,
+        "survivor": 0xAA2211,
         "rogue": 0x225522,
-        "guardian": 0x2255cc,
-        "mystic": 0x51479d,
-        "seeker": 0xff7700,
-        "neutral": 0xaaaaaa,
+        "guardian": 0x2255CC,
+        "mystic": 0x51479D,
+        "seeker": 0xFF7700,
+        "neutral": 0xAAAAAA,
         "mythos": 0x333333,
     }
-    if 'faction2_code' in c:  # Multiclass
-        return 0xffdd55
-    else:
-        return colors[c['faction_code']]
+    if "faction2_code" in c:  # Multiclass
+        return 0xFFDD55
+
+    return colors[c["faction_code"]]
 
 
 def format_type(c: dict) -> str:
@@ -274,7 +280,7 @@ def format_type(c: dict) -> str:
     :param c:
     :return:
     """
-    if 'type_name' in c:
+    if "type_name" in c:
         return f"**{c['type_name']}**"
     return f"**{c['type_code'].capitalize()}**"
 
@@ -314,6 +320,7 @@ def format_customizable(c: dict) -> str:
 
     return ""
 
+
 def format_customizable_note(c: dict) -> str:
     """
     Format the costumization upgrades, if any.
@@ -322,6 +329,6 @@ def format_customizable_note(c: dict) -> str:
     """
 
     if "customization_text" in c:
-        return f"_{lang.locale('customization_note')}_\n"
+        return f"_{_('customization_note')}_\n"
 
     return ""

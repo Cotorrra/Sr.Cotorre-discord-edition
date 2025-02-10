@@ -1,48 +1,79 @@
-"""Main bot file"""
-import interactions
-from dotenv import load_dotenv
-from sorcery import dict_of
 import logging
+import sys
+
+from dotenv import load_dotenv
+from interactions import (
+    Client,
+    Intents,
+    SlashContext,
+    check,
+    is_owner,
+    listen,
+    slash_command,
+)
+from sorcery import dict_of
 
 from config import TOKEN, log_format
-from src.core.translator import lang
-from src.response.response import look_for_customizable_card, look_for_mythos_card, look_for_player_card, \
-    look_for_deck, look_for_card_back, look_for_upgrades, look_for_tarot, refresh_cards, \
-    refresh_api_data, look_for_framework, look_for_list_of_cards, look_for_random_player_card, \
-    look_for_preview_player_card, look_for_whom
-from src.response.slash_options import customizable_card_slash_options, player_card_slash_options, deck_slash_options, \
-    general_card_slash_options, tarot_slash_options, timing_slash_options, \
-    preview_card_slash_options
-
-# pylint: disable=R0913
+from src.core.translator import locale as _
+from src.response.response import (
+    look_for_card_back,
+    look_for_customizable_card,
+    look_for_deck,
+    look_for_framework,
+    look_for_list_of_cards,
+    look_for_mythos_card,
+    look_for_player_card,
+    look_for_random_player_card,
+    look_for_tarot,
+    look_for_upgrades,
+    look_for_whom,
+    refresh_cards,
+)
+from src.response.slash_options import (
+    customizable_card_slash_options,
+    deck_slash_options,
+    general_card_slash_options,
+    player_card_slash_options,
+    tarot_slash_options,
+    timing_slash_options,
+)
 
 load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
     format=log_format,
-    filename='debug.log',
 )
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-bot = interactions.Client(token=TOKEN)
+bot = Client(token=TOKEN, intents=Intents.DEFAULT)
 
 
-@bot.event
+@listen()
 async def on_ready():
     """Prints on console that the bot it's ready! It also sets the bot's status."""
-    print('El bot está listo! :parrot:')
+    print("El bot está listo! :parrot:")
+    print(f"{bot.owner} es el dueño del bot.")
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,
     #                                                    name="TSK Previews"))
 
 
-@bot.command(name="ah",
-             description=lang.locale('ah_description'),
-             options=player_card_slash_options(name_req=True))
-async def player_card(ctx: interactions.CommandContext,
-                      name, level="", faction="",
-                      extras="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ah",
+    description=_("ah_description"),
+    options=player_card_slash_options(name_req=True),  # type: ignore
+)
+async def player_card(
+    ctx: SlashContext,
+    name,
+    level="",
+    faction="",
+    extras="",
+    subtitle="",
+    cycle="",
+    traits="",
+):
     """Handles the /ah slash command, this command returns' player cards."""
-    # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
     logging.info(f"/ah sent with: {query}")
     embed, hidden = look_for_player_card(query)
@@ -50,59 +81,72 @@ async def player_card(ctx: interactions.CommandContext,
     # await cards_buttons_row(bot, ctx, embed)
 
 
-@bot.command(name="ahdeck",
-             description=lang.locale('ahDeck_description'),
-             options=deck_slash_options())
-async def deck(ctx: interactions.CommandContext, code, type=""):
+@slash_command(
+    name="ahdeck",
+    description=_("ahDeck_description"),
+    options=deck_slash_options(),  # type: ignore
+)
+async def deck(ctx: SlashContext, code, deck_type=""):
     """Handles the /ahDeck command, it returns a deck from ArkhamDB."""
     await ctx.defer()
-    logging.info(f"/ahdeck sent with: code={code}, type={type}")
-    embed, hidden = look_for_deck(code, type)
+    logging.info(f"/ahdeck sent with: code={code}, type={deck_type}")
+    embed, _ = look_for_deck(code, deck_type)
     await ctx.send(embeds=embed)
 
 
-@bot.command(name="ahup",
-             description=lang.locale('ahUp_description'),
-             options=deck_slash_options())
-async def upgrade(ctx: interactions.CommandContext, code, type=""):
+@slash_command(
+    name="ahup",
+    description=_("ahUp_description"),
+    options=deck_slash_options(),  # type: ignore
+)
+async def upgrade(ctx: SlashContext, code, deck_type=""):
     """Handles the /ahUp command, it returns the upgrades of a deck."""
     await ctx.defer()
-    logging.info(f"/ahup sent with: code={code}, type={type}")
-    embed, hidden = look_for_upgrades(code, type)
+    logging.info(f"/ahup sent with: code={code}, type={deck_type}")
+    embed, _ = look_for_upgrades(code, deck_type)
     await ctx.send(embeds=embed)
 
 
-@bot.command(name="ahe",
-             description=lang.locale('ahe_description'),
-             options=general_card_slash_options())
-async def encounter(ctx: interactions.CommandContext,
-                    name="", type="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ahe",
+    description=_("ahe_description"),
+    options=general_card_slash_options(),  # type: ignore
+)
+async def encounter(
+    ctx: SlashContext,
+    **kwargs,
+):
     """Handle the /ahe command, it returns encounter cards."""
     # await ctx.defer()
-    query = dict_of(name, type, subtitle, cycle, traits)
-    logging.info(f"/ahe sent with: {query}")
-    embed, hidden = look_for_mythos_card(query)
+    logging.info(f"/ahe sent with: {kwargs}")
+    embed, hidden = look_for_mythos_card(kwargs)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
 
 
-@bot.command(name="ahb",
-             description=lang.locale('ahb_description'),
-             options=general_card_slash_options())
-async def back(ctx: interactions.CommandContext, name="", type="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ahb",
+    description=_("ahb_description"),
+    options=general_card_slash_options(),  # type: ignore
+)
+async def back(
+    ctx: SlashContext, name="", card_type="", subtitle="", cycle="", traits=""
+):
     """Handles the /ahb command, it returns card backs."""
     # await ctx.defer()
-    query = dict_of(name, type, subtitle, cycle, traits)
-    logging.info("/ahb sent with: %s", query)
+    query = dict_of(name, card_type, subtitle, cycle, traits)
+    logging.info(f"/ahb sent with: {query}")
     embed, hidden = look_for_card_back(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
     # await cards_buttons_row(bot, ctx, embed)
 
 
-@bot.command(name="ahtarot",
-             description=lang.locale('ahTarot_description'),
-             options=tarot_slash_options())
-async def tarot(ctx: interactions.CommandContext, name=""):
+@slash_command(
+    name="ahtarot",
+    description=_("ahTarot_description"),
+    options=tarot_slash_options(),  # type: ignore
+)
+async def tarot(ctx: SlashContext, name=""):
     """Handles the /ahTarot command, it returns tarot cards."""
     # await ctx.defer()
     logging.info(f"/ahtarot sent with: name={name}")
@@ -110,23 +154,34 @@ async def tarot(ctx: interactions.CommandContext, name=""):
     await ctx.send(embeds=embed, ephemeral=hidden)
 
 
-@bot.command(name="ahtiming",
-             description=lang.locale('ahTiming_description'),
-             options=timing_slash_options())
-async def game_timing(ctx: interactions.CommandContext, timing):
+@slash_command(
+    name="ahtiming",
+    description=_("ahTiming_description"),
+    options=timing_slash_options(),  # type: ignore
+)
+async def game_timing(ctx: SlashContext, timing):
     """Handles the /ahTiming command, it returns game timings."""
     # await ctx.defer()
     logging.info(f"/ahtiming sent with: timing={timing}")
-    embed, hidden = look_for_framework(timing)
+    embed, _ = look_for_framework(timing)
     await ctx.send(embeds=embed)
 
 
-@bot.command(name="ahlist",
-             description=lang.locale('ahList_description'),
-             options=player_card_slash_options())
-async def list_cards(ctx: interactions.CommandContext,
-                     name="", level="", faction="",
-                     extras="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ahlist",
+    description=_("ahList_description"),
+    options=player_card_slash_options(),  # type: ignore
+)
+async def list_cards(
+    ctx: SlashContext,
+    name="",
+    level="",
+    faction="",
+    extras="",
+    subtitle="",
+    cycle="",
+    traits="",
+):
     """Handles the /ahList command, it lists playercards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
@@ -135,12 +190,21 @@ async def list_cards(ctx: interactions.CommandContext,
     await ctx.send(embeds=embed, ephemeral=hidden)
 
 
-@bot.command(name="ahrandom",
-             description=lang.locale('ahRandom_description'),
-             options=player_card_slash_options())
-async def random(ctx: interactions.CommandContext,
-                 name="", level="", faction="",
-                 extras="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ahrandom",
+    description=_("ahRandom_description"),
+    options=player_card_slash_options(),  # type: ignore
+)
+async def random(
+    ctx: SlashContext,
+    name="",
+    level="",
+    faction="",
+    extras="",
+    subtitle="",
+    cycle="",
+    traits="",
+):
     """Handles the /ahRandom command, it returns a random card."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
@@ -149,12 +213,21 @@ async def random(ctx: interactions.CommandContext,
     await ctx.send(embeds=embed, ephemeral=hidden)
 
 
-@bot.command(name="ahwho",
-             description=lang.locale('ahWho_description'),
-             options=player_card_slash_options(name_req=True))
-async def ah_who(ctx: interactions.CommandContext,
-                 name, level="", faction="",
-                 extras="", subtitle="", cycle="", traits=""):
+@slash_command(
+    name="ahwho",
+    description=_("ahWho_description"),
+    options=player_card_slash_options(name_req=True),  # type: ignore
+)
+async def ah_who(
+    ctx: SlashContext,
+    name,
+    level="",
+    faction="",
+    extras="",
+    subtitle="",
+    cycle="",
+    traits="",
+):
     """Handles the /ah slash command, this command returns' player cards."""
     # await ctx.defer()
     query = dict_of(name, level, faction, extras, subtitle, cycle, traits)
@@ -164,51 +237,29 @@ async def ah_who(ctx: interactions.CommandContext,
     # await cards_buttons_row(bot, ctx, embed)
 
 
-@bot.command(name="ahpreview",
-             description=lang.locale('ahPreview_description'),
-             options=preview_card_slash_options())
-async def preview_card(ctx: interactions.CommandContext,
-                       card0="", card1="", card2=""):
-    """Handles the /ah slash command, this command return's player cards."""
-    # await ctx.defer()
-    query = dict_of(card0, card1, card2)
-    logging.info(f"/ahpreview sent with: {query}")
-    embed, hidden = look_for_preview_player_card(query)
-    await ctx.send(embeds=embed, ephemeral=hidden)
-    # await cards_buttons_row(bot, ctx, embed)
-
-
-@bot.command(name="ahcustomizable",
-             description=lang.locale("ahCustomizable_description"),
-             options=customizable_card_slash_options())
-async def costumizable_card(ctx: interactions.CommandContext,
-                            name=""):
+@slash_command(
+    name="ahcustomizable",
+    description=_("ahCustomizable_description"),
+    options=customizable_card_slash_options(),  # type: ignore
+)
+async def costumizable_card(ctx: SlashContext, name=""):
     """Handles the /ahahCustomizable command. Returns the upgrade sheet of a card."""
-    query = dict_of(name)
+    query = {"name": name}
     logging.info(f"/ahCustomizable sent with: {query}")
     embed, hidden = look_for_customizable_card(query)
     await ctx.send(embeds=embed, ephemeral=hidden)
 
 
-@bot.command(name="refresh",
-             description="Refresca las cartas del bot desde ArkhamDB",
-             scope=[923302104532156449])  # Special Testing Discord
-async def refresh_data(ctx: interactions.CommandContext):
+@slash_command(
+    name="refresh",
+    description="Refresca las cartas del bot desde ArkhamDB",
+    scopes=[923302104532156449],  # Special Testing Discord
+)
+@check(is_owner())
+async def refresh_data(ctx: SlashContext):
     """Reloads data from ArkhamDB"""
     await ctx.defer()
     if refresh_cards():
-        await ctx.send("Refrescado!")
-    else:
-        await ctx.send("<:confusedwatermelon:739425223358545952>")
-
-
-@bot.command(name="refresh_api",
-             description="Refresca los datos de la API del bot",
-             scope=[923302104532156449])
-async def refresh_data_api(ctx: interactions.CommandContext):
-    """Reloads data from the Sr. Cotorre API"""
-    await ctx.defer()
-    if refresh_api_data():
         await ctx.send("Refrescado!")
     else:
         await ctx.send("<:confusedwatermelon:739425223358545952>")

@@ -1,154 +1,180 @@
-from interactions import Option, OptionType, Choice
+from interactions import OptionType, SlashCommandChoice, SlashCommandOption
 
 from src.api_interaction.cycle import cycle
 from src.api_interaction.preview import preview
 from src.api_interaction.taboo import taboo
-from src.core.formating import format_name, format_faction
-from src.core.translator import lang
-from src.core.cardsDB import cards
+from src.core.cards_db import cards
+from src.core.formatting import format_name
+from src.core.translator import locale as _
+
 
 def player_card_slash_options(name_req=False):
     """Returns the slash command options for player cards."""
-    return [Option(name="name",
-                   description=lang.locale('name_description'),
-                   type=OptionType.STRING,
-                   required=name_req),
-
-            Option(name="level",
-                   description=lang.locale('level_description'),
-                   type=OptionType.NUMBER,
-                   required=False),
-
-            Option(name="faction",
-                   description=lang.locale('faction_description'),
-                   type=OptionType.STRING,
-                   required=False,
-                   choices=[
-                       Choice(name=lang.locale('guardian'), value="G"),
-                       Choice(name=lang.locale('seeker'), value="B"),
-                       Choice(name=lang.locale('rogue'), value="R"),
-                       Choice(name=lang.locale('mystic'), value="M"),
-                       Choice(name=lang.locale('survivor'), value="S"),
-                       Choice(name=lang.locale('multiclass'), value="Mult"),
-                       Choice(name=lang.locale('neutral'), value="N"),
-                   ]),
-
-            Option(name="extras",
-                   description=lang.locale('extras_description'),
-                   type=OptionType.STRING,
-                   required=False,
-                   choices=[
-                       Choice(name=lang.locale('permanent'), value="P"),
-                       Choice(name=lang.locale('exceptional'), value="E"),
-                       Choice(name=lang.locale('unique'), value="U"),
-                       Choice(name=lang.locale('signature'), value="C"),
-                   ]),
-
-            Option(name="subtitle",
-                   description=lang.locale('sub_description'),
-                   type=OptionType.STRING,
-                   required=False),
-
-            Option(name="cycle",
-                   description=lang.locale('pack_description'),
-                   choices=[Choice(name=cy['name'], value=cy['sufix'])
-                            for cy in cycle.get_cycle_data()],
-                   type=OptionType.STRING,
-                   required=False),
-            Option(name="traits",
-                   description=lang.locale('traits_description'),
-                   type=OptionType.STRING,
-                   required=False)
-            ]
+    return [
+        SlashCommandOption(
+            name="name",
+            description=_("name_description"),
+            type=OptionType.STRING,
+            required=name_req,
+        ),
+        SlashCommandOption(
+            name="level",
+            description=_("level_description"),
+            type=OptionType.NUMBER,
+            required=False,
+        ),
+        SlashCommandOption(
+            name="faction",
+            description=_("faction_description"),
+            type=OptionType.STRING,
+            required=False,
+            choices=[
+                SlashCommandChoice(name=_("guardian"), value="G"),
+                SlashCommandChoice(name=_("seeker"), value="B"),
+                SlashCommandChoice(name=_("rogue"), value="R"),
+                SlashCommandChoice(name=_("mystic"), value="M"),
+                SlashCommandChoice(name=_("survivor"), value="S"),
+                SlashCommandChoice(name=_("multiclass"), value="Mult"),
+                SlashCommandChoice(name=_("neutral"), value="N"),
+            ],
+        ),
+        SlashCommandOption(
+            name="extras",
+            description=_("extras_description"),
+            type=OptionType.STRING,
+            required=False,
+            choices=[
+                SlashCommandChoice(name=_("permanent"), value="P"),
+                SlashCommandChoice(name=_("exceptional"), value="E"),
+                SlashCommandChoice(name=_("unique"), value="U"),
+                SlashCommandChoice(name=_("signature"), value="C"),
+            ],
+        ),
+        SlashCommandOption(
+            name="subtitle",
+            description=_("sub_description"),
+            type=OptionType.STRING,
+            required=False,
+        ),
+        SlashCommandOption(
+            name="cycle",
+            description=_("pack_description"),
+            choices=[
+                SlashCommandChoice(name=cy["name"], value=cy["sufix"])
+                for cy in cycle.get_cycle_data()
+            ],
+            type=OptionType.STRING,
+            required=False,
+        ),
+        SlashCommandOption(
+            name="traits",
+            description=_("traits_description"),
+            type=OptionType.STRING,
+            required=False,
+        ),
+    ]
 
 
 def deck_slash_options():
     """Returns the slash command options for decks"""
-    return [Option(name="code",
-                   description=lang.locale('deck_code_desc'),
-                   type=OptionType.NUMBER,
-                   required=True),
-
-            Option(name="type",
-                   description=lang.locale('deck_type_desc'),
-                   type=OptionType.STRING,
-                   required=False,
-                   choices=[
-                       Choice(name=lang.locale('public_deck'), value="decklist"),
-                       Choice(name=lang.locale('private_deck'), value="deck"),
-                   ]),
-            ]
+    return [
+        SlashCommandOption(
+            name="code",
+            description=_("deck_code_desc"),
+            type=OptionType.NUMBER,
+            required=True,
+        ),
+        SlashCommandOption(
+            name="deck_type",
+            description=_("deck_type_desc"),
+            type=OptionType.STRING,
+            required=False,
+            choices=[
+                SlashCommandChoice(name=_("public_deck"), value="decklist"),
+                SlashCommandChoice(name=_("private_deck"), value="deck"),
+            ],
+        ),
+    ]
 
 
 def general_card_slash_options():
     """Returns the slash command options for general cards."""
-    return [Option(name="name",
-                   description=lang.locale('name_description'),
-                   type=OptionType.STRING,
-                   required=True),
-
-            Option(name="type",
-                   description=lang.locale('card_type_desc'),
-                   type=OptionType.STRING,
-                   required=False,
-                   choices=[
-                       Choice(name=lang.locale('scenario'), value="S"),
-                       Choice(name=lang.locale('act'), value="A"),
-                       Choice(name=lang.locale('agenda'), value="P"),
-                       Choice(name=lang.locale('treachery'), value="T"),
-                       Choice(name=lang.locale('enemy'), value="E"),
-                       Choice(name=lang.locale('location'), value="L"),
-                       Choice(name=lang.locale('player_cards'), value="J"),
-                   ]),
-
-            Option(name="subtitle",
-                   description=lang.locale('sub_description'),
-                   type=OptionType.STRING,
-                   required=False),
-
-            Option(name="cycle",
-                   description=lang.locale('pack_description'),
-                   choices=[Choice(name=cy['name'], value=cy['sufix'])
-                            for cy in cycle.get_cycle_data()],
-                   type=OptionType.STRING,
-                   required=False),
-            Option(name="traits",
-                   description=lang.locale('traits_description'),
-                   type=OptionType.STRING,
-                   required=False)
-            ]
-
-
-"""
-def rules_slash_options():
-    return [Option(name="rule",
-                          description="Nombre de la regla/concepto.",
-                          type=OptionType.STRING,
-                          required=True)]
-"""
+    return [
+        SlashCommandOption(
+            name="name",
+            description=_("name_description"),
+            type=OptionType.STRING,
+            required=True,
+        ),
+        SlashCommandOption(
+            name="card_type",
+            description=_("card_type_desc"),
+            type=OptionType.STRING,
+            required=False,
+            choices=[
+                SlashCommandChoice(name=_("scenario"), value="S"),
+                SlashCommandChoice(name=_("act"), value="A"),
+                SlashCommandChoice(name=_("agenda"), value="P"),
+                SlashCommandChoice(name=_("treachery"), value="T"),
+                SlashCommandChoice(name=_("enemy"), value="E"),
+                SlashCommandChoice(name=_("location"), value="L"),
+                SlashCommandChoice(name=_("player_cards"), value="J"),
+            ],
+        ),
+        SlashCommandOption(
+            name="subtitle",
+            description=_("sub_description"),
+            type=OptionType.STRING,
+            required=False,
+        ),
+        SlashCommandOption(
+            name="cycle",
+            description=_("pack_description"),
+            choices=[
+                SlashCommandChoice(name=cy["name"], value=cy["sufix"])
+                for cy in cycle.get_cycle_data()
+            ],
+            type=OptionType.STRING,
+            required=False,
+        ),
+        SlashCommandOption(
+            name="traits",
+            description=_("traits_description"),
+            type=OptionType.STRING,
+            required=False,
+        ),
+    ]
 
 
 def tarot_slash_options():
     """Returns the slash command options for Tarot cards."""
-    return [Option(name="name",
-                   description=lang.locale('name_description'),
-                   type=OptionType.STRING,
-                   required=False)]
+    return [
+        SlashCommandOption(
+            name="name",
+            description=_("name_description"),
+            type=OptionType.STRING,
+            required=False,
+        )
+    ]
 
 
 def timing_slash_options():
     """Returns the slash command options for Game's Framework."""
-    return [Option(name="timing",
-                   description=lang.locale('timings_type_desc'),
-                   type=OptionType.STRING,
-                   required=True,
-                   choices=[
-                       Choice(name=lang.locale('mythos_phase'), value="M"),
-                       Choice(name=lang.locale('investigation_phase'), value="I"),
-                       Choice(name=lang.locale('enemy_phase'), value="E"),
-                       Choice(name=lang.locale('upkeep_phase'), value="U"),
-                       Choice(name=lang.locale('skill_test'), value="S"),
-                   ])]
+    return [
+        SlashCommandOption(
+            name="timing",
+            description=_("timings_type_desc"),
+            type=OptionType.STRING,
+            required=True,
+            choices=[
+                SlashCommandChoice(name=_("mythos_phase"), value="M"),
+                SlashCommandChoice(name=_("investigation_phase"), value="I"),
+                SlashCommandChoice(name=_("enemy_phase"), value="E"),
+                SlashCommandChoice(name=_("upkeep_phase"), value="U"),
+                SlashCommandChoice(name=_("skill_test"), value="S"),
+            ],
+        )
+    ]
 
 
 def preview_card_slash_options():
@@ -158,13 +184,20 @@ def preview_card_slash_options():
     counter = 0
     while preview_data:
         preview_slice, preview_data = preview_data[:25], preview_data[25:]
-        options.append(Option(
+        options.append(
+            SlashCommandOption(
                 name="card" + str(counter),
-                description=lang.locale('name_description'),
+                description=_("name_description"),
                 type=OptionType.STRING,
                 required=False,
-                choices=[Choice(name=f"{format_name(c)}{taboo.format_xp(c)}",
-                                value=c['code']) for c in preview_slice]))
+                choices=[
+                    SlashCommandChoice(
+                        name=f"{format_name(c)}{taboo.format_xp(c)}", value=c["code"]
+                    )
+                    for c in preview_slice
+                ],
+            )
+        )
         counter += 1
     return options
 
@@ -172,10 +205,15 @@ def preview_card_slash_options():
 def customizable_card_slash_options():
     """Return the slash command options for costumizable upgrade cards"""
     customizable_cards = cards.get_customizable_cards()
-    return [Option(
-                name='name',
-                description=lang.locale('name_description'),
-                type=OptionType.STRING,
-                required=True,
-                choices=[Choice(name=f"{format_name(c)}",
-                                value=c['code']) for c in customizable_cards])]
+    return [
+        SlashCommandOption(
+            name="name",
+            description=_("name_description"),
+            type=OptionType.STRING,
+            required=True,
+            choices=[
+                SlashCommandChoice(name=f"{format_name(c)}", value=c["code"])
+                for c in customizable_cards
+            ],
+        )
+    ]

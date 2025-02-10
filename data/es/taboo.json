@@ -1,0 +1,1535 @@
+[
+  {
+    "id": 8,
+    "code": "008",
+    "name": "del FAQ 2.3",
+    "active": 1,
+    "date_start": "2024-10-23",
+    "date_update": "2024-10-23",
+    "cards": [
+      {
+        "code": "01073",
+        "xp": 2
+      },
+      {
+        "code": "01573",
+        "xp": 2
+      },
+      {
+        "code": "06332",
+        "xp": 2
+      },
+      {
+        "code": "02108",
+        "xp": 1
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "07197",
+        "xp": -2
+      },
+      {
+        "code": "07308",
+        "xp": -2
+      },
+      {
+        "code": "60327",
+        "xp": -1
+      },
+      {
+        "code": "08099",
+        "xp": 2
+      },
+      {
+        "code": "09022",
+        "xp_customizable": {
+          "3": {
+            "xp": 1
+          }
+        },
+        "text": "La mejora <b>Inscripción de la caza</b> cuesta +1 de experiencia."
+      },
+      {
+        "code": "09077",
+        "xp": 2
+      },
+      {
+        "code": "09108",
+        "xp": "2"
+      },
+      {
+        "code": "09117",
+        "xp": 1
+      },
+      {
+        "code": "01059",
+        "xp": 1
+      },
+      {
+        "code": "01060",
+        "xp": 1
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que investigues con éxito, agota Dr. Milan Christopher...\""
+      },
+      {
+        "code": "01050",
+        "text": "Esta carta ahora dice: \"Deja de estar enfrentado a cada Enemigo enfrentado a ti y muévete a un Lugar conectado que no tenga Enemigos.\""
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \"Límite una vez por ronda.\""
+      },
+      {
+        "code": "02029",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60405",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02153",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60414",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60423",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02269",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60416",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "05113",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \"Límite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\""
+      },
+      {
+        "code": "02226",
+        "text": "La capacidad [action] de esta carta obtiene: \"Este ataque puede tomar como objetivo a un Enemigo que no sea Élite y esté hasta 1 Lugar de distancia de su alcance original, ignorando las palabras clave Indiferente y Represalia.\""
+      },
+      {
+        "code": "02229",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "02263",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"+1 punto de daño\" en vez de \"+2 puntos de daño\"."
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \"Máximo de una vez por ronda.\""
+      },
+      {
+        "code": "03006",
+        "text": "La capacidad obligado de esta carta se ha movido a su parte reversa y debería decir \"<b>Preparación Adicional:</b> Después de que robes tu mano inicial: Elige un papel ([survivor], [guardian], [seeker], [rogue], [mystic] o neutral).\" La parte frontal de esta carta adicionalmente obtiene: \"[action]: Cambia tu papel. Esta acción no provoca ataques de oportunidad.\""
+      },
+      {
+        "code": "03019",
+        "text": "La capacidad de revelación ahora dice: \"Descarta 1 carta de tu mano o de tu zona de juego de tu papel actual. A continuación...\""
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \"Pon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\""
+      },
+      {
+        "code": "03112",
+        "text": "La capacidad [free] de esta carta ahora dice: \"... Obtén 1 recurso por cada ficha de Perdición que haya sobre David Renfield, hasta un máximo de 3 recursos.\""
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "04032",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "60417",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "04105",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea Debilidad y que esté en tu Lugar...\""
+      },
+      {
+        "code": "04110",
+        "text": "Esta carta ahora dice \"un símbolo que no sea [auto_fail].\" en lugar de \"una ficha de Caos [skull], [cultist], [tablet] o [elder_thing]\""
+      },
+      {
+        "code": "04233",
+        "text": "La capacidad de esta carta ahora dice \"Obtén 1 recurso por cada acción que hayas gastado en este turno...\""
+      },
+      {
+        "code": "04309",
+        "text": "Al final de su capacidad, esta carta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05020",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea <b><i>Élite</i></b> que esté en tu Lugar...\""
+      },
+      {
+        "code": "05153",
+        "text": "La capacidad [free] ahora es una capacidad [action]."
+      },
+      {
+        "code": "05230",
+        "text": "Esta carta pierde el texto: \"El Apoyo vinculado no se puede usar para atacar Enemigos enfrentados a ti.\""
+      },
+      {
+        "code": "05324",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "01192",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "06002",
+        "text": "La parte reserva de esta investigadora ahora dice: \"Tamaño de Mazo: 50\" y \"Requisitos de creación de mazos (no cuentan para el tamaño de mazo): 3 copias de Prueba de ocultismo...\""
+      },
+      {
+        "code": "06022",
+        "text": "La capacidad continua de esta carta ahora dice: \"Si esta carta no tiene cargas, retírala de la partida.\""
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.</b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que tenga un modificador que no sea negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "06199",
+        "text": "La capacidad de esta carta obtiene: \"Retira de la partida todas las copias asignadas de Tres ases.\""
+      },
+      {
+        "code": "60318",
+        "text": "En lugar de \"Devuelve todas las Debilidades descartadas por este efecto a tu mazo...\" la capacidad de esta carta ahora dice: \"Después de que esta prueba de habilidad termine, roba cada debilidad descartada por este efecto.\""
+      },
+      {
+        "code": "07003",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que descubras 1 o más pistas en un Lugar con un Enemigo: Descubre 1 pista adicional en ese Lugar o bien evita automáticamente a ese Enemigo si no es <b><i>Élite</i></b>. Límite de una vez por ronda.\""
+      },
+      {
+        "code": "07122",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Cuando resuelvas una ficha [bless] durante una prueba de habilidad...\""
+      },
+      {
+        "code": "07268",
+        "exceptional": 0,
+        "text": "Esta carta pierde la palabra clave excepcional y obtiene: \"Límite 1 por mazo.\""
+      },
+      {
+        "code": "07269",
+        "text": "La capacidad de esta carta obtiene: \"Retira Paz vigilante de la partida.\""
+      },
+      {
+        "code": "07301",
+        "text": "La capacidad de esta carta obtiene: \"Retira Consagrar de la partida.\""
+      },
+      {
+        "code": "08019",
+        "text": "La capacidad <b>Obligado</b> ahora dice: \"<b>Obligado</b> - Cuando comience tu primer turno de la partida: Juega hasta 5 Apoyos [[Objeto]] de tu mano, de uno en uno..."
+      },
+      {
+        "code": "08032",
+        "text": "La capacidad de esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08045",
+        "text": "La capacidad constante ahora dice: \"...recibes +1 [intellect] y +1 [agility] e ignoras el primer ataque de oportunidad que recibas cada turno.\""
+      },
+      {
+        "code": "08055",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "07076",
+        "text": "La capacidad esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08098",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08100",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08113",
+        "text": "La primera línea de esta carta obtiene: \"Sólo modo de campaña.\""
+      },
+      {
+        "code": "08187",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"... o bien puedes agotar el Martillo ciclópeo para infligir +2 de daño y mover al Enemigo hasta dos Lugares alejándose de ti si tienes éxito por 3 o más.\""
+      },
+      {
+        "code": "09045",
+        "text": "La segunda capacidad de esta carta obtiene: \"Máximo 3 evidencias gastadas por ronda.\""
+      },
+      {
+        "code": "09081",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Si el enemigo vinculado está en tu lugar: <b>Negociar.</b> Realiza una prueba de [willpower](3). Si tienes éxito, dale una orden (límite de una vez por ronda y por orden). -\n> - \"Vete\". Este enemigo se mueve una vez en una dirección de tu elección.\".\n> La carta de mejora de esta carta pierde la capacidad <i>\"Apiádate\"</i> y obtiene \"□ <b>Acorbádate.</b> Añade la orden \"- '<i>Acorbárdate.</i>' Este enemigo se agota.\""
+      },
+      {
+        "code": "09041",
+        "text": "La capacidad [free] de esta carta obtiene: Límite dos veces por ronda.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      }
+    ]
+  }, 
+  {
+    "id": 7,
+    "code": "007",
+    "name": "del FAQ 2.2",
+    "active": 0,
+    "date_start": "2024-02-24",
+    "date_update": "2024-02-24",
+    "cards": [
+      {
+        "code": "01073",
+        "xp": 2
+      },
+      {
+        "code": "01573",
+        "xp": 2
+      },
+      {
+        "code": "06332",
+        "xp": 2
+      },
+      {
+        "code": "02108",
+        "xp": 1
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "07197",
+        "xp": -2
+      },
+      {
+        "code": "07308",
+        "xp": -2
+      },
+      {
+        "code": "60327",
+        "xp": -1
+      },
+      {
+        "code": "08099",
+        "xp": 2
+      },
+      {
+        "code": "09022",
+        "xp_customizable": {
+          "3": {
+            "xp": 1
+          }
+        },
+        "text": "La mejora <b>Inscripción de la caza</b> cuesta +1 de experiencia."
+      },
+      {
+        "code": "09108",
+        "xp": "2"
+      },
+      {
+        "code": "09117",
+        "xp": 1
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que investigues con éxito, agota Dr. Milan Christoher...\""
+      },
+      {
+        "code": "01050",
+        "text": "Esta carta ahora dice: \"Deja de estar enfrentado a cada Enemigo enfrentado a ti y muévete a un Lugar conectado que no tenga Enemigos.\""
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \"Límite una vez por ronda.\""
+      },
+      {
+        "code": "02029",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60405",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02153",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60414",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60423",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02269",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60416",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "05113",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \"Límite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\""
+      },
+      {
+        "code": "02226",
+        "text": "La capacidad [action] de esta carta obtiene: \"Este ataque puede tomar como objetivo a un Enemigo que no sea Élite y esté hasta 1 Lugar de distancia de su alcance original, ignorando las palabras clave Indiferente y Represalia.\""
+      },
+      {
+        "code": "02229",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "02263",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"+1 punto de daño\" en vez de \"+2 puntos de daño\"."
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \"Máximo de una vez por ronda.\""
+      },
+      {
+        "code": "03006",
+        "text": "La capacidad obligado de esta carta se ha movido a su parte reversa y debería decir \"<b>Preparación Adicional:</b> Después de que robes tu mano inicial: Elige un papel ([survivor], [guardian], [seeker], [rogue], [mystic] o neutral).\" La parte frontal de esta carta adicionalmente obtiene: \"[action]: Cambia tu papel. Esta acción no provoca ataques de oportunidad.\""
+      },
+      {
+        "code": "03019",
+        "text": "La capacidad de revelación ahora dice: \"Descarta 1 carta de tu mano o de tu zona de juego de tu papel actual. A continuación...\""
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \"Pon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\""
+      },
+      {
+        "code": "03112",
+        "text": "La capacidad [free] de esta carta ahora dice: \"... Obtén 1 recurso por cada ficha de Perdición que haya sobre David Renfield, hasta un máximo de 3 recursos.\""
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "04032",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "60417",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "04105",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea Debilidad y que esté en tu Lugar...\""
+      },
+      {
+        "code": "04110",
+        "text": "Esta carta ahora dice \"un símbolo que no sea [auto_fail].\" en lugar de \"una ficha de Caos [skull], [cultist], [tablet] o [elder_thing]\""
+      },
+      {
+        "code": "04233",
+        "text": "La capacidad de esta carta ahora dice \"Obtén 1 recurso por cada acción que hayas gastado en este turno...\""
+      },
+      {
+        "code": "04309",
+        "text": "Al final de su capacidad, esta carta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05020",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea <b><i>Élite</i></b> que esté en tu Lugar...\""
+      },
+      {
+        "code": "05153",
+        "text": "La capacidad [free] ahora es una capacidad [action]."
+      },
+      {
+        "code": "05230",
+        "text": "Esta carta pierde el texto: \"El Apoyo vinculado no se puede usar para atacar Enemigos enfrentados a ti.\""
+      },
+      {
+        "code": "05324",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "01192",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "06002",
+        "text": "La parte reserva de esta investigadora ahora dice: \"Tamaño de Mazo: 50\" y \"Requisitos de creación de mazos (no cuentan para el tamaño de mazo): 3 copias de Prueba de ocultismo...\""
+      },
+      {
+        "code": "06022",
+        "text": "La capacidad continua de esta carta ahora dice: \"Si esta carta no tiene cargas, retírala de la partida.\""
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.</b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que tenga un modificador que no sea negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "06199",
+        "text": "La capacidad de esta carta obtiene: \"Retira de la partida todas las copias asignadas de Tres ases.\""
+      },
+      {
+        "code": "60318",
+        "text": "En lugar de \"Devuelve todas las Debilidades descartadas por este efecto a tu mazo...\" la capacidad de esta carta ahora dice: \"Después de que esta prueba de habilidad termine, roba cada debilidad descartada por este efecto.\""
+      },
+      {
+        "code": "07003",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que descubras 1 o más pistas en un Lugar con un Enemigo: Descubre 1 pista adicional en ese Lugar o bien evita automáticamente a ese Enemigo si no es <b><i>Élite</i></b>. Límite de una vez por ronda.\""
+      },
+      {
+        "code": "07122",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Cuando resuelvas una ficha [bless] durante una prueba de habilidad...\""
+      },
+      {
+        "code": "07268",
+        "exceptional": 0,
+        "text": "Esta carta pierde la palabra clave excepcional y obtiene: \"Límite 1 por mazo.\""
+      },
+      {
+        "code": "07269",
+        "text": "La capacidad de esta carta obtiene: \"Retira Paz vigilante de la partida.\""
+      },
+      {
+        "code": "07301",
+        "text": "La capacidad de esta carta obtiene: \"Retira Consagrar de la partida.\""
+      },
+      {
+        "code": "08019",
+        "text": "La capacidad <b>Obligado</b> ahora dice: \"<b>Obligado</b> - Cuando comience tu primer turno de la partida: Juega hasta 5 Apoyos [[Objeto]] de tu mano, de uno en uno..."
+      },
+      {
+        "code": "08032",
+        "text": "La capacidad de esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08045",
+        "text": "La capacidad constante ahora dice: \"...recibes +1 [intellect] y +1 [agility] e ignoras el primer ataque de oportunidad que recibas cada turno.\""
+      },
+      {
+        "code": "08055",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "07076",
+        "text": "La capacidad esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08098",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08100",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08187",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"... o bien puedes agotar el Martillo ciclópeo para infligir +2 de daño y mover al Enemigo hasta dos Lugares alejándose de ti si tienes éxito por 3 o más.\""
+      },
+      {
+        "code": "09045",
+        "text": "La segunda capacidad de esta carta obtiene: \"Máximo 3 evidencias gastadas por ronda.\""
+      },
+      {
+        "code": "09081",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Si el enemigo vinculado está en tu lugar: <b>Negociar.</b> Realiza una prueba de [willpower](3). Si tienes éxito, dale una orden (límite de una vez por ronda y por orden). -\n> - \"Vete\". Este enemigo se mueve una vez en una dirección de tu elección.\".\n> La carta de mejora de esta carta pierde la capacidad <i>\"Apiádate\"</i> y obtiene \"□ <b>Acorbádate.</b> Añade la orden \"- '<i>Acorbárdate.</i>' Este enemigo se agota.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "code": "006",
+    "name": "del FAQ 2.1",
+    "active": 1,
+    "date_start": "2023-08-30",
+    "date_update": "2023-08-30",
+    "cards": [
+      {
+        "code": "02108",
+        "xp": 1
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "07197",
+        "xp": -2
+      },
+      {
+        "code": "07308",
+        "xp": -2
+      },
+      {
+        "code": "60327",
+        "xp": -1
+      },
+      {
+        "code": "08099",
+        "xp": 2
+      },
+      {
+        "code": "09022",
+        "text": "La mejora - <b>Inscripción de la caza</b> cuesta +1 de experiencia."
+      },
+      {
+        "code": "09108",
+        "xp": "2"
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que investigues con éxito, agota Dr. Milan Christoher...\""
+      },
+      {
+        "code": "01050",
+        "text": "Esta carta ahora dice: \"Deja de estar enfrentado a cada Enemigo enfrentado a ti y muévete a un Lugar conectado que no tenga Enemigos.\""
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \"Límite una vez por ronda.\""
+      },
+      {
+        "code": "02029",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60405",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02153",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02269",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60416",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "05113",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \"Límite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\""
+      },
+      {
+        "code": "02226",
+        "text": "La capacidad [action] de esta carta obtiene: \"Este ataque puede tomar como objetivo a un Enemigo que no sea Élite y esté hasta 1 Lugar de distancia de su alcance original, ignorando las palabras clave Indiferente y Represalia.\""
+      },
+      {
+        "code": "02229",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "02263",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"+1 punto de daño\" en vez de \"+2 puntos de daño\"."
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \"Máximo de una vez por ronda.\""
+      },
+      {
+        "code": "03006",
+        "text": "La capacidad obligado de esta carta se ha movido a su parte reversa y debería decir \"<b>Preparación Adicional:</b> Después de que robes tu mano inicial: Elige un papel ([survivor], [guardian], [seeker], [rogue], [mystic] o neutral).\" La parte frontal de esta carta adicionalmente obtiene: \"[action]: Cambia tu papel. Esta acción no provoca ataques de oportunidad.\""
+      },
+      {
+        "code": "03019",
+        "text": "La capacidad de revelación ahora dice: \"Descarta 1 carta de tu mano o de tu zona de juego de tu papel actual. A continuación...\""
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \"Pon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\""
+      },
+      {
+        "code": "03112",
+        "text": "La capacidad [free] de esta carta ahora dice: \"... Obtén 1 recurso por cada ficha de Perdición que haya sobre David Renfield, hasta un máximo de 3 recursos.\""
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "04032",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "60417",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign]]\" en lugar de \"un símbolo [skull], [cultist], [tablet], [elder_thing] o [auto_fail]\""
+      },
+      {
+        "code": "04105",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea Debilidad y que esté en tu Lugar...\""
+      },
+      {
+        "code": "04110",
+        "text": "Esta carta ahora dice \"un símbolo que no sea [auto_fail].\" en lugar de \"una ficha de Caos [skull], [cultist], [tablet] o [elder_thing]\""
+      },
+      {
+        "code": "04309",
+        "text": "Al final de su capacidad, esta carta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05020",
+        "text": "La capacidad de esta carta ahora dice: \"<b>Negociar.</b> Elige un Enemigo que no sea <b><i>Élite</i></b> que esté en tu Lugar...\""
+      },
+      {
+        "code": "05153",
+        "text": "La capacidad [free] ahora es una capacidad [action]."
+      },
+      {
+        "code": "05230",
+        "text": "Esta carta pierde el texto: \"El Apoyo vinculado no se puede usar para atacar Enemigos enfrentados a ti.\""
+      },
+      {
+        "code": "05324",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "01192",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "06002",
+        "text": "La parte reserva de esta investigadora ahora dice: \"Tamaño de Mazo: 50\" y \"Requisitos de creación de mazos (no cuentan para el tamaño de mazo): 3 copias de Prueba de ocultismo...\""
+      },
+      {
+        "code": "06022",
+        "text": "La capacidad continua de esta carta ahora dice: \"Si esta carta no tiene cargas, retírala de la partida.\""
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.</b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que tenga un modificador que no sea negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "06199",
+        "text": "La capacidad de esta carta obtiene: \"Retira de la partida todas las copias asignadas de Tres ases.\""
+      },
+      {
+        "code": "60318",
+        "text": "En lugar de \"Devuelve todas las Debilidades descartadas por este efecto a tu mazo...\" la capacidad de esta carta ahora dice: \"Después de que esta prueba de habilidad termine, roba cada debilidad descartada por este efecto.\""
+      },
+      {
+        "code": "07003",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que descubras 1 o más pistas en un Lugar con un Enemigo: Descubre 1 pista adicional en ese Lugar o bien evita automáticamente a ese Enemigo si no es <b><i>Élite</i></b>. Límite de una vez por ronda.\""
+      },
+      {
+        "code": "07122",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Cuando resuelvas una ficha [bless] durante una prueba de habilidad...\""
+      },
+      {
+        "code": "07268",
+        "exceptional": 0,
+        "text": "Esta carta pierde la palabra clave excepcional y obtiene: \"Límite 1 por mazo.\""
+      },
+      {
+        "code": "07269",
+        "text": "La capacidad de esta carta obtiene: \"Retira Paz vigilante de la partida.\""
+      },
+      {
+        "code": "07301",
+        "text": "La capacidad de esta carta obtiene: \"Retira Consagrar de la partida.\""
+      },
+      {
+        "code": "08019",
+        "text": "La capacidad <b>Obligado</b> ahora dice: \"<b>Obligado</b> - Cuando comience tu primer turno de la partida: Juega hasta 5 Apoyos [[Objeto]] de tu mano, de uno en uno..."
+      },
+      {
+        "code": "08032",
+        "text": "La capacidad de esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08045",
+        "text": "La capacidad constante ahora dice: \"...recibes +1 [intellect] y +1 [agility] e ignoras el primer ataque de oportunidad que recibas cada turno.\""
+      },
+      {
+        "code": "08055",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "07076",
+        "text": "La capacidad esta carta obtiene: \"Máximo dos veces por partida.\""
+      },
+      {
+        "code": "08098",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08100",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguientes acciones\""
+      },
+      {
+        "code": "08187",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"... o bien puedes agotar el Martillo ciclópeo para infligir +2 de daño y mover al Enemigo hasta dos Lugares alejándose de ti si tienes éxito por 3 o más.\""
+      },
+      {
+        "code": "09045",
+        "text": "La segunda capacidad de esta carta obtiene: \"Máximo 3 evidencias gastadas por ronda.\""
+      },
+      {
+        "code": "09081",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Si el enemigo vinculado está en tu lugar: <b>Negociar.</b> Realiza una prueba de [willpower](3). Si tienes éxito, dale una orden (límite de una vez por ronda y por orden). -\n> - \"Vete\". Este enemigo se mueve una vez en una dirección de tu elección.\".\n> La carta de mejora de esta carta pierde la capacidad <i>\"Apiádate\"</i> y obtiene \"□ <b>Acorbádate.</b> Añade la orden \"- '<i>Acorbárdate.</i>' Este enemigo se agota.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "code": "005",
+    "name": "del FAQ 2.0",
+    "active": 0,
+    "date_start": "2022-08-28",
+    "date_update": "2022-08-28",
+    "cards": [
+      {
+        "code": "02108",
+        "xp": 2
+      },
+      {
+        "code": "02152",
+        "xp": 1
+      },
+      {
+        "code": "02187",
+        "xp": 3
+      },
+      {
+        "code": "02189",
+        "xp": 3
+      },
+      {
+        "code": "02193",
+        "xp": 1
+      },
+      {
+        "code": "03112",
+        "xp": 3
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "07197",
+        "xp": -2
+      },
+      {
+        "code": "07308",
+        "xp": -2
+      },
+      {
+        "code": "08032",
+        "xp": 2
+      },
+      {
+        "code": "08099",
+        "xp": 2
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que investigues con éxito, agota Dr. Milan Christoher...\""
+      },
+      {
+        "code": "01050",
+        "text": "Esta carta ahora dice: \"Deja de estar enfrentado a cada Enemigo enfrentado a ti y muévete a un Lugar conectado que no tenga Enemigos.\""
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \"Límite una vez por ronda.\""
+      },
+      {
+        "code": "02029",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60405",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02269",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "60416",
+        "text": "Esta carta ahora dice: \"un Símbolo\", en vez de la lista de los símbolos indicados."
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \"Límite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\""
+      },
+      {
+        "code": "02226",
+        "text": "La capacidad [action] de esta carta obtiene: \"Este ataque puede tomar como objetivo a un Enemigo que no sea Élite y esté hasta 1 Lugar de distancia de su alcance original, ignorando las palabras clave Indiferente y Represalia.\""
+      },
+      {
+        "code": "02229",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "02263",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"+1 punto de daño\" en vez de \"+2 puntos de daño\"."
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \"Máximo de una vez por ronda.\""
+      },
+      {
+        "code": "03006",
+        "text": "La capacidad obligado de esta carta se ha movido a su parte reversa y debería decir \"<b>Preparación Adicional:</b> Después de que robes tu mano inicial: Elige un papel ([survivor], [guardian], [seeker], [rogue], [mystic] o neutral).\" La parte frontal de esta carta adicionalmente obtiene: \"[action]: Cambia tu papel. Esta acción no provoca ataques de oportunidad.\""
+      },
+      {
+        "code": "03019",
+        "text": "La capacidad de revelación ahora dice: \"Descarta 1 carta de tu mano o de tu zona de juego de tu papel actual. A continuación...\""
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \"Pon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\""
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "03032",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [arcano]\""
+      },
+      {
+        "code": "60417",
+        "text": "Esta carta ahora dice: \"un símbolo que no sea [elder_sign].\""
+      },
+      {
+        "code": "04110",
+        "text": "Esta carta ahora dice \"un símbolo que no sea [auto_fail].\""
+      },
+      {
+        "code": "04309",
+        "text": "Al final de su capacidad, esta carta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05153",
+        "text": "La capacidad [free] ahora es una capacidad [action]."
+      },
+      {
+        "code": "05230",
+        "text": "Esta carta pierde el texto: \"El Apoyo vinculado no se puede usar para atacar Enemigos enfrentados a ti.\""
+      },
+      {
+        "code": "05324",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "01192",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "06002",
+        "text": "La parte reserva de esta investigadora ahora dice: \"Tamaño de Mazo: 50\" y \"Requisitos de creación de mazos (no cuentan para el tamaño de mazo): 3 copias de Prueba de ocultismo...\""
+      },
+      {
+        "code": "06022",
+        "text": "La capacidad continua de esta carta ahora dice: \"Si esta carta no tiene cargas, retírala de la partida.\""
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.</b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que tenga un modificador que no sea negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "06199",
+        "text": "La capacidad de esta carta obtiene: \"Retira de la partida todas las copias asignadas de Tres ases.\""
+      },
+      {
+        "code": "07268",
+        "exceptional": 0,
+        "text": "Esta carta pierde la palabra clave excepcional y obtiene: \"Límite 1 por mazo.\""
+      },
+      {
+        "code": "07269",
+        "text": "La capacidad de esta carta obtiene: \"Retira Paz vigilante de la partida.\""
+      },
+      {
+        "code": "07301",
+        "text": "La capacidad de esta carta obtiene: \"Retira Consagrar de la partida.\""
+      },
+      {
+        "code": "08045",
+        "text": "La capacidad constante ahora dice: \"...recibes +1 [intellect] y +1 [agility] e ignoras el primer ataque de oportunidad que recibas cada turno.\""
+      },
+      {
+        "code": "08055",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "08098",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguentes acciones\""
+      },
+      {
+        "code": "08100",
+        "text": "Esta carta dice: \"siguientes acciones básicas\" en vez de \"siguentes acciones\""
+      },
+      {
+        "code": "08093",
+        "text": "La capacidad de combatir de esta carta ahora dice: \"... o bien puedes agotar el Martillo ciclópeo para infligir +2 de daño y mover al Enemigo hasta dos Lugares alejándose de ti si tienes éxito por 3 o más.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "code": "004",
+    "name": "Taboo List",
+    "active": 1,
+    "date_start": "2020-06-28",
+    "date_update": "2021-06-28",
+    "cards": [
+      {
+        "code": "01020",
+        "xp": 1
+      },
+      {
+        "code": "02108",
+        "xp": 2
+      },
+      {
+        "code": "02152",
+        "xp": 1
+      },
+      {
+        "code": "02187",
+        "xp": 3
+      },
+      {
+        "code": "02189",
+        "xp": 3
+      },
+      {
+        "code": "02193",
+        "xp": 1
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05153",
+        "xp": 4
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "01050",
+        "text": "Esta carta ahora dice: \"Deja de estar enfrentado a cada Enemigo enfrentado a ti y muévete a un Lugar conectado que no tenga Enemigos.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \"Después de que investigues con éxito, agota Dr. Milan Christoher...\""
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \"Límite una vez por ronda.\""
+      },
+      {
+        "code": "02226",
+        "text": "La capacidad [action] de esta carta obtiene: \"Este ataque puede tomar como objetivo a un Enemigo que no sea Élite y esté hasta 1 Lugar de distancia de su alcance original, ignorando las palabras clave Indiferente y Represalia.\""
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \"Límite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\""
+      },
+      {
+        "code": "02229",
+        "text": "Esta carta obtiene: \"Máximo una vez por ronda.\""
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \"Máximo de una vez por ronda.\""
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \"Pon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\""
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "04309",
+        "text": "Al final de su capacidad, esta carta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05230",
+        "text": "Esta carta pierde el texto: \"El Apoyo vinculado no se puede usar para atacar Enemigos enfrentados a ti.\""
+      },
+      {
+        "code": "01192",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "05324",
+        "text": "La capacidad de esta carta obtiene: \"Retira Eucatásfrofe de la partida.\""
+      },
+      {
+        "code": "06022",
+        "text": "La capacidad continua de esta carta ahora dice: \"Si esta carta no tiene cargas, retírala de la partida.\""
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.</b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que tenga un modificador que no sea negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "06199",
+        "text": "La capacidad de esta carta obtiene: \"Retira de la partida todas las copias asignadas de Tres ases.\""
+      },
+      {
+        "code": "07269",
+        "text": "La capacidad de esta carta obtiene: \"Retira Paz vigilante de la partida.\""
+      },
+      {
+        "code": "07301",
+        "text": "La capacidad de esta carta obtiene: \"Retira Consagrar de la partida.\""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "code": "003",
+    "name": "Taboo List",
+    "active": 1,
+    "date_start": "2020-10-15",
+    "date_update": "2021-01-17",
+    "cards": [
+      {
+        "code": "01020",
+        "xp": 1
+      },
+      {
+        "code": "01050",
+        "xp": 2
+      },
+      {
+        "code": "02108",
+        "xp": 2
+      },
+      {
+        "code": "02152",
+        "xp": 1
+      },
+      {
+        "code": "02187",
+        "xp": 3
+      },
+      {
+        "code": "02189",
+        "xp": 3
+      },
+      {
+        "code": "02193",
+        "xp": 1
+      },
+      {
+        "code": "02226",
+        "xp": -1
+      },
+      {
+        "code": "04305",
+        "xp": 1
+      },
+      {
+        "code": "05153",
+        "xp": 4
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "05231",
+        "xp": 2
+      },
+      {
+        "code": "06021",
+        "xp": 3
+      },
+      {
+        "code": "60233",
+        "xp": 3
+      },
+      {
+        "code": "01033",
+        "text": "La capacidad [reaction] de esta carta ahora dice: \u00abDespu\u00e9s de que investigues con \u00e9xito, agota Dr. Milan Christoher...\u00bb"
+      },
+      {
+        "code": "02002",
+        "text": "La capacidad [reaction] de esta carta obtiene: \u00abL\u00edmite una vez por ronda.\u00bb"
+      },
+      {
+        "code": "02111",
+        "text": "Esta carta obtiene: \u00abL\u00edmite de grupo 2 copias de Ahondar Demasiado en la zona de victoria.\u00bb"
+      },
+      {
+        "code": "02229",
+        "text": "Al final de esta prueba de habilidiad esta carta obtiene: (Máximo una vez por ronda)."
+      },
+      {
+        "code": "02266",
+        "text": "Esta carta obtiene: \u00abM\u00e1ximo de una vez por ronda.\u00bb"
+      },
+      {
+        "code": "03029",
+        "text": "La capacidad de esta carta ahora dice: \u00abPon en juego un Apoyo [[Objeto]] de nivel 0-3 desde tu mano.\u00bb"
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "Esta carta obtiene la palabra clave Excepcional."
+      },
+      {
+        "code": "04309",
+        "text": "Al final de esta prueba de habilidad esta obtiene: \"Retira No va más de la partida.\""
+      },
+      {
+        "code": "05116",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05188",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "05189",
+        "text": "La capacidad [action] ahora es una capacidad [free]."
+      },
+      {
+        "code": "06195",
+        "text": "La capacidad [action] de esta carta ahora dice: \"[action] Gasta 1 munición: <b>Combatir.<\/b> Recibes +2 [combat] para este ataque. Si es revelada una ficha de caos que no contenga un modificador negativo durante este ataque, este ataque inflige +2 de daño.\""
+      },
+      {
+        "code": "02026",
+        "deck_limit": 0,
+        "text": "Prohibida."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "code": "002",
+    "name": "Taboo List",
+    "active": 1,
+    "date_start": "2019-09-27",
+    "date_update": "2019-09-30",
+    "cards": [
+      {
+        "code": "01020",
+        "xp": 2
+      },
+      {
+        "code": "01050",
+        "xp": 2
+      },
+      {
+        "code": "02026",
+        "xp": 3
+      },
+      {
+        "code": "02152",
+        "xp": 1
+      },
+      {
+        "code": "02187",
+        "xp": 5
+      },
+      {
+        "code": "02189",
+        "xp": 5
+      },
+      {
+        "code": "02193",
+        "xp": 2
+      },
+      {
+        "code": "02226",
+        "xp": -1
+      },
+      {
+        "code": "05159",
+        "xp": 3
+      },
+      {
+        "code": "01033",
+        "text": "This card\u0027s [reaction] ability now reads: \u00abAfter you successfully investigate, exhaust Dr. Milan Christopher...\u00bb"
+      },
+      {
+        "code": "02002",
+        "text": "This card\u0027s [reaction] ability gains: \u00ab(Limit once per round.)\u00bb"
+      },
+      {
+        "code": "02111",
+        "text": "This card gains: \u00abGroup limit 2 copies of Delve Too Deep in the victory display.\u00bb"
+      },
+      {
+        "code": "02229",
+        "text": "This card gains: \u00abMax 1 committed per skill test.\u00bb"
+      },
+      {
+        "code": "02266",
+        "text": "This card gains: \u00abMax once per round.\u00bb"
+      },
+      {
+        "code": "03029",
+        "text": "This card\u0027s ability now reads: \u00abPut an [[Item]] asset that takes up fewer than 2 hand slots into play from your hand.\u00bb"
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "This card gains the Exceptional keyword."
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "code": "001",
+    "name": "Taboo List",
+    "active": 1,
+    "date_start": "2019-04-20",
+    "date_update": "2019-05-09",
+    "cards": [
+      {
+        "code": "01020",
+        "xp": 2
+      },
+      {
+        "code": "01050",
+        "xp": 2
+      },
+      {
+        "code": "02152",
+        "xp": 1
+      },
+      {
+        "code": "02187",
+        "xp": 5
+      },
+      {
+        "code": "02189",
+        "xp": 5
+      },
+      {
+        "code": "02193",
+        "xp": 2
+      },
+      {
+        "code": "01033",
+        "text": "This card\u0027s [reaction] ability now reads: \u00abAfter you successfully investigate, exhaust Dr. Milan Christopher...\u00bb"
+      },
+      {
+        "code": "02002",
+        "text": "This card\u0027s [reaction] ability gains: \u00ab(Limit once per round.)\u00bb"
+      },
+      {
+        "code": "02111",
+        "text": "This card gains: \u00abGroup limit 2 copies of Delve Too Deep in the victory display.\u00bb"
+      },
+      {
+        "code": "02229",
+        "text": "This card gains: \u00abMax 1 committed per skill test.\u00bb"
+      },
+      {
+        "code": "02266",
+        "text": "This card gains: \u00abMax once per round.\u00bb"
+      },
+      {
+        "code": "03029",
+        "text": "This card\u0027s ability now reads: \u00abPut an [[Item]] asset that takes up fewer than 2 hand slots into play from your hand.\u00bb"
+      },
+      {
+        "code": "03315",
+        "exceptional": 1,
+        "text": "This card gains the Exceptional keyword."
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "code": "000",
+    "name": "No Taboo",
+    "active": 1,
+    "date_start": "2016-10-21",
+    "date_update": "2016-10-21",
+    "cards": []
+  }
+]

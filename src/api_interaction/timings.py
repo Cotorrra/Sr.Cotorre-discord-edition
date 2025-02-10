@@ -1,31 +1,23 @@
-import requests
+import json
 
-from config import DATA_API, LANG
-from src.core.formating import format_text, create_embed
+from config import LANG
+from src.core.formatting import format_text, create_embed
 
 
 class Timings:
-    def __init__(self):
-        params = {"language": LANG,
-                  "type": "timings"}
-        self.timings = requests.get(f'{DATA_API}',
-                                    params=params).json()
+    """Class that handles the timing data from the data/timings.json file."""
 
-    def reload_timings(self):
-        """
-        Carga el archivo de taboo.
-        :return:
-        """
-        params = {"language": LANG,
-                  "type": "timings"}
-        self.timings = requests.get(f'{DATA_API}',
-                                    params=params).json()
+    def __init__(self):
+        with open(f"data/{LANG}/timings.json", encoding="UTF-8") as f:
+            self.timings = json.load(f)
 
     def get_timings_data(self):
+        """Returns the timings data from the JSON file."""
         return self.timings
 
-    def find_formated_timing(self, query):
-        timing = self.timings['framework'][query]
+    def find_formatted_timing(self, query):
+        """Formats the timing information into an embed."""
+        timing = self.timings["framework"][query]
         name, text = next(iter(timing.items()))
         title = f"**{name}**"
         description = ">>> "

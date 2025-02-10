@@ -1,27 +1,21 @@
-import requests
-
-from config import DATA_API, LANG
+import json
+from config import LANG
 
 
 class Preview:
-    def __init__(self):
-        params = {"language": LANG,
-                  "type": "preview"}
-        self.preview = requests.get(f'{DATA_API}',
-                                    params=params).json()
+    """Class that handles the preview data from the data/preview.json file."""
 
-    def reload_preview(self):
-        """
-        Carga el archivo de taboo.
-        :return:
-        """
-        params = {"language": LANG,
-                  "type": "preview"}
-        self.preview = requests.get(f'{DATA_API}',
-                                    params=params).json()
+    def __init__(self):
+        with open(f"data/{LANG}/preview.json", encoding="UTF-8") as f:
+            self.preview = json.load(f)
 
     def get_preview_data(self):
-        return self.preview['cards']
+        """Returns the preview data from the JSON file.
+
+        Returns:
+            dict: The preview data.
+        """
+        return self.preview["cards"]
 
 
 preview = Preview()

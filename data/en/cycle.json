@@ -1,0 +1,58 @@
+{"cycles": [
+  {
+    "sufix": "01",
+    "name": "Core Set"
+  },
+    {
+    "sufix": "02",
+    "name": "The Dunwich Legacy"
+  },
+    {
+    "sufix": "03",
+    "name": "The Path to Carcosa"
+  },
+    {
+    "sufix": "04",
+    "name": "The Forgotten Age"
+  },
+    {
+    "sufix": "05",
+    "name": "The Circle Undone"
+  },
+    {
+    "sufix": "06",
+    "name": "The Dream-Eaters"
+  },
+    {
+    "sufix": "07",
+    "name": "The Innsmouth Conspiracy"
+  },
+    {
+    "sufix": "08",
+    "name": "Edge of the Earth"
+  },
+  {
+    "sufix": "09",
+    "name": "The Scarlet Keys"
+  },
+  {
+    "sufix": "10",
+    "name": "The Feast of Hemlock Vale"
+  },
+    {
+    "sufix": "50",
+    "name": "Return to..."
+  },
+    {
+    "sufix": "60",
+    "name": "Investigator Starter Decks"
+  },
+    {
+    "sufix": "90",
+    "name": "Parallel Investigators"
+  },
+  {
+    "sufix": "98",
+    "name": "Books"
+  }
+]}
