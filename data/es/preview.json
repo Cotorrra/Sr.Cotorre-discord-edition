@@ -1,0 +1,45 @@
+{
+  "cards": [
+    {
+      "code": "00001",
+      "deck_limit": 2,
+      "faction_code": "guardian",
+      "faction2_code": "mystic",
+      "illustrator": "Dualbrush",
+      "name": "Dragon Pole (beta)",
+      "pack_name": "Create-a-card Stream 2022",
+      "position": 2,
+      "quantity": 1,
+      "skill_willpower": 1,
+      "skill_combat": 1,
+      "text": "You have 2 additional arcane slot.\n[action]: <b>Fight.</b> You get +1 [combat] for this attack for each of your arcane slots that is filled. If at least 2 of your arcane slots are filled, this attack deals +1 damage. If you succeed, you may place the top card of your deck facedown in your play area, as an Audra (It takes up an arcane slot. If it leaves play, add it to your hand.)\n<b>Card designed by the Pride of Arkham</b>",
+      "xp": 3,
+      "traits": "Item. Weapon. Melee.",
+      "type_code": "asset",
+      "cost": 4,
+      "real_slot": "Hand x2"
+    },
+    {
+      "code": "00002",
+      "deck_limit": 2,
+      "faction_code": "guardian",
+      "illustrator": "Andreia Ugrai",
+      "name": "Alice Luxley (beta)",
+      "subname": "Fearless Flatfoot",
+      "pack_name": "Create-a-card Stream 2022",
+      "position": 1,
+      "quantity": 1,
+      "skill_combat": 1,
+      "skill_intellect": 1,
+      "text": "You get +1 [intellect].\n[reaction] After horror is placed in Alice Luxley: Your location gets -2 shroud until the end of the active investigator's turn.\n[reaction] After you discover a clue, exhaust Alice Luxley: Deal 1 damage to an enemy at your location.\n<b>Card designed by the Pride of Arkham</b>",
+      "xp": 2,
+      "health": 2,
+      "health_per_investigator": false,
+      "sanity": 4,
+      "cost": 3,
+      "traits": "Ally. Detective. Police.",
+      "type_code": "asset",
+      "real_slot": "Ally"
+    }
+  ]
+}

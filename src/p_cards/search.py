@@ -11,47 +11,64 @@ def use_pc_keywords(cards: list, query: dict):
     """
     filtered_cards = cards.copy()
 
-    if query['extras']:
-        char = query['extras'].lower()
+    if "extras" in query and query["extras"]:
+        char = query["extras"].lower()
         if char == "u":
-            filtered_cards = [c for c in filtered_cards if
-                              (c['is_unique'] if 'is_unique' in c else False)]
+            filtered_cards = [
+                c
+                for c in filtered_cards
+                if (c["is_unique"] if "is_unique" in c else False)
+            ]
         if char == "p":
-            filtered_cards = [c for c in filtered_cards if c['permanent']]
+            filtered_cards = [c for c in filtered_cards if c["permanent"]]
         if char == "c":
-            filtered_cards = [c for c in filtered_cards if "deck only." in c['real_text']]
+            filtered_cards = [
+                c for c in filtered_cards if "deck only." in c["real_text"]
+            ]
         if char == "e":
-            filtered_cards = [c for c in filtered_cards if c['exceptional']]
+            filtered_cards = [c for c in filtered_cards if c["exceptional"]]
 
-    if query['level'] != '':
-        char = int(query['level'])
+    if "level" in query and query["level"]:
+        char = int(query["level"])
         if 0 <= char <= 5:
             filtered_cards = [c for c in filtered_cards if is_lvl(c, char)]
 
-    if query['faction']:
-        char = query['faction'].lower()
+    if "faction" in query and query["faction"]:
+        char = query["faction"].lower()
         if char == "b":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'seeker']
+            filtered_cards = [
+                c for c in filtered_cards if c["faction_code"] == "seeker"
+            ]
         if char == "g":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'guardian']
+            filtered_cards = [
+                c for c in filtered_cards if c["faction_code"] == "guardian"
+            ]
         if char == "r":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'rogue']
+            filtered_cards = [c for c in filtered_cards if c["faction_code"] == "rogue"]
         if char == "s":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'survivor']
+            filtered_cards = [
+                c for c in filtered_cards if c["faction_code"] == "survivor"
+            ]
         if char == "m":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'mystic']
+            filtered_cards = [
+                c for c in filtered_cards if c["faction_code"] == "mystic"
+            ]
         if char == "n":
-            filtered_cards = [c for c in filtered_cards if c['faction_code'] == 'neutral']
+            filtered_cards = [
+                c for c in filtered_cards if c["faction_code"] == "neutral"
+            ]
         if char == "mult":
-            filtered_cards = [c for c in filtered_cards if 'faction2_code' in c]
+            filtered_cards = [c for c in filtered_cards if "faction2_code" in c]
 
-    if query['traits']:
-        traits = query['traits'].split(",")
+    if "traits" in query and query["traits"]:
+        traits = query["traits"].split(",")
         traits = [t.strip() for t in traits]
-        filtered_cards = [c for c in filtered_cards if 'traits' in c]
-        
+        filtered_cards = [c for c in filtered_cards if "traits" in c]
+
         for trait in traits:
             # This is a workaround to avoid the last dot in the traits
-            filtered_cards = [c for c in filtered_cards if trait in c['traits'][:-1].split(". ")]
+            filtered_cards = [
+                c for c in filtered_cards if trait in c["traits"][:-1].split(". ")
+            ]
 
     return filtered_cards

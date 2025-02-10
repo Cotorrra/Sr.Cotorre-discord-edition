@@ -1,0 +1,45 @@
+{
+  "cards": [
+    {
+      "code": "999999",
+      "deck_limit": 2,
+      "faction_code": "guardian",
+      "faction2_code": "mystic",
+      "illustrator": "Dualbrush",
+      "name": "Dragon Pole (beta)",
+      "pack_name": "Create-a-card Stream 2022",
+      "position": 2,
+      "quantity": 1,
+      "skill_willpower": 1,
+      "skill_combat": 1,
+      "text": "You have 2 additional arcane slot.\n[action]: <b>Fight.</b> You get +1 [combat] for this attack for each of your arcane slots that is filled. If at least 2 of your arcane slots are filled, this attack deals +1 damage. If you succeed, you may place the top card of your deck facedown in your play area, as an Audra (It takes up an arcane slot. If it leaves play, add it to your hand.)\n<b>Card designed by the Pride of Arkham</b>",
+      "xp": 3,
+      "traits": "Item. Weapon. Melee.",
+      "type_code": "asset",
+      "cost": 4,
+      "real_slot": "Hand x2"
+    },
+    {
+      "code": "MemesHaventBeenInventedYet",
+      "deck_limit": 1,
+      "faction_code": "neutral",
+      "illustrator": "???",
+      "name": "Al",
+      "subname": "the Alligator in a Vest",
+      "pack_name": "Secrets of the Black Cat",
+      "flavor": "'We have fun here at Fantasy Flight.'",
+      "position": 1,
+      "quantity": 1,
+      "skill_willpower": 2,
+      "skill_intellect": 3,
+      "skill_combat": 4,
+      "skill_agility": 3,
+      "text": "<b>Focus</b>: <i>Parlay</i>. You can speak with your kind. Choose a green enemy in your location. Until the end of the round, you gain its keywords and abilities.\n🔎: +1 (+3 instead if you are an alligator).",
+      "health": 8,
+      "sanity": 6,
+      "traits": "Faculty.",
+      "type_code": "investigator",
+      "url": "https://www.bewaretheblackcat.com/post/behind-the-curtain-investigators-part-i"
+    }
+  ]
+}

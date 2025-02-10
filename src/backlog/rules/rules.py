@@ -1,16 +1,18 @@
-import requests
+import json
 
-from config import LANG, DATA_API
+from config import LANG
 
 
-def load_rules():
-    """
-    Carga el archivo de taboo.
-    :return:
-    """
-    params = {"language": LANG,
-              "type": "rules"}
-    info = requests.get(f'{DATA_API}',
-                        params=params).json()
+class Rules:
+    """Class that handles the rules data from the data/rules.json file."""
 
-    return info
+    def __init__(self):
+        with open(f"data/{LANG}/rules.json", encoding="UTF-8") as f:
+            self.rules_info = json.load(f)
+
+    def get_rules(self):
+        """Returns the rules data from the JSON file."""
+        return self.rules_info["rules"]
+
+
+rules_info = Rules()

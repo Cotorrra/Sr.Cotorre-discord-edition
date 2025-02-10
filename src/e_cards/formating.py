@@ -1,8 +1,28 @@
 from src.api_interaction.taboo import taboo
-from src.core.formating import *
+from src.core.formatting import (
+    format_text,
+    format_name,
+    format_subtext,
+    format_faction,
+    format_type,
+    format_traits,
+    format_card_text,
+    format_flavour,
+    format_illus_pack,
+    create_embed,
+    format_victory,
+    format_vengeance,
+)
 from src.core.utils import text_if
-from src.e_cards.formating_utils import format_enemy_stats, format_attack, format_clues, format_location_data
+from src.e_cards.formatting_utils import (
+    format_enemy_stats,
+    format_attack,
+    format_clues,
+    format_location_data,
+)
 from src.api_interaction.errata import errata
+from src.core.translator import locale as _
+
 
 def format_enemy_card(c):
     name = format_name(c)
@@ -16,56 +36,50 @@ def format_enemy_card(c):
     attack = text_if("%s\n", format_attack(c))
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
-    errata_text = errata.format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c["code"])
 
-    taboo_text = taboo.format_taboo_text(c['code'])
+    taboo_text = taboo.format_taboo_text(c["code"])
     m_title = f"{faction} {name}{subtext}"
-    m_description = f"{c_type}\n" \
-                    f"{stats}\n" \
-                    f"{traits}\n" \
-                    f"{text}" \
-                    f"{victory}" \
-                    f"{vengeance}" \
-                    f"{attack}" \
-                    f"{flavour}" \
-                    f"{errata_text}" \
-                    f"{taboo_text}"
+    m_description = (
+        f"{c_type}\n"
+        f"{stats}\n"
+        f"{traits}\n"
+        f"{text}"
+        f"{victory}"
+        f"{vengeance}"
+        f"{attack}"
+        f"{flavour}"
+        f"{errata_text}"
+        f"{taboo_text}"
+    )
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_act_card_f(c):
     name = format_name(c)
-    stage = f"***{lang.locale('act')} {c['stage']}***"
+    stage = f"***{_('act')} {c['stage']}***"
     flavour = text_if("%s\n\n", format_flavour(c))
     clues = format_clues(c)
     text = text_if("> %s\n", format_card_text(c))
-    errata_text = errata.format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c["code"])
 
     m_title = name
-    m_description = f"{stage}\n" \
-                    f"{flavour}" \
-                    f"{text}" \
-                    f"{clues}\n" \
-                    f"{errata_text}"
+    m_description = f"{stage}\n{flavour}{text}{clues}\n{errata_text}"
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
 
 
 def format_agenda_card_f(c):
     name = format_name(c)
-    stage = f"***{lang.locale('agenda')} {c['stage']}***"
+    stage = f"***{_('agenda')} {c['stage']}***"
     flavour = text_if("%s\n\n", format_flavour(c))
     text = text_if("> %s\n", format_card_text(c))
-    errata_text = errata.format_errata_text(c['code'])
-    doom = format_text("[doom] % s" % (c['doom'] if "doom" in c else " - "))
+    errata_text = errata.format_errata_text(c["code"])
+    doom = format_text("[doom] % s" % (c["doom"] if "doom" in c else " - "))
 
     m_title = name
-    m_description = f"{stage}\n" \
-                    f"{flavour}" \
-                    f"{text}" \
-                    f"{doom}\n" \
-                    f"{errata_text}"
+    m_description = f"{stage}\n{flavour}{text}{doom}\n{errata_text}"
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
 
@@ -80,17 +94,19 @@ def format_location_card_f(c):
     location_data = format_location_data(c)
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
-    errata_text = errata.format_errata_text(c['code'], back=True)
+    errata_text = errata.format_errata_text(c["code"], back=True)
 
     m_title = f"{name}{subtext}"
-    m_description = f"{c_type}\n" \
-                    f"{traits}\n" \
-                    f"{location_data}\n" \
-                    f"{text}\n" \
-                    f"{victory}" \
-                    f"{vengeance}\n" \
-                    f"{flavour}" \
-                    f"{errata_text}"
+    m_description = (
+        f"{c_type}\n"
+        f"{traits}\n"
+        f"{location_data}\n"
+        f"{text}\n"
+        f"{victory}"
+        f"{vengeance}\n"
+        f"{flavour}"
+        f"{errata_text}"
+    )
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
 
@@ -113,19 +129,21 @@ def format_treachery_card(c):
     traits = format_traits(c)
     text = f"> {format_card_text(c)} \n"
     flavour = text_if("%s\n\n", format_flavour(c))
-    errata_text = errata.format_errata_text(c['code'])
+    errata_text = errata.format_errata_text(c["code"])
     victory = text_if("%s\n", format_victory(c))
     vengeance = text_if("%s\n", format_vengeance(c))
     m_title = f"{faction} {name}"
-    taboo_text = taboo.format_taboo_text(c['code'])
-    m_description = f"{c_type}\n" \
-                    f"{traits}\n\n" \
-                    f"{text}\n" \
-                    f"{victory}" \
-                    f"{vengeance}" \
-                    f"{flavour}" \
-                    f"{errata_text}" \
-                    f"{taboo_text}"
+    taboo_text = taboo.format_taboo_text(c["code"])
+    m_description = (
+        f"{c_type}\n"
+        f"{traits}\n\n"
+        f"{text}\n"
+        f"{victory}"
+        f"{vengeance}"
+        f"{flavour}"
+        f"{errata_text}"
+        f"{taboo_text}"
+    )
     m_footnote = format_illus_pack(c)
     return create_embed(m_title, m_description, c, m_footnote)
 

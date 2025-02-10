@@ -1,0 +1,46 @@
+{"cards": [
+  {
+    "code": "01006",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01008",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01010",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01012",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "01014",
+    "text": "This cards has no level (instead of being level 0)"
+  },
+  {
+    "code": "02001",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([seeker], [rogue], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02002",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes  ([guardian], [rogue], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "98001",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02003",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [mystic] and/or [survivor]).\""
+  },
+  {
+    "code": "02004",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes ([guardian], [seeker], [rogue] y/o [survivor]).\""
+  },
+  {
+    "code": "02005",
+    "text_back": "This card’s <b>Deckbuilding Options</b> should read: \"...up to five other level 0 cards from any other classes([guardian], [seeker], [rogue] y/o [mystic]).\""
+  }
+]}

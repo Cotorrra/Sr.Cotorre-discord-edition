@@ -1,32 +1,31 @@
-import requests
+import json
 
-from config import DATA_API, LANG
+from config import LANG
 
 
 class Cycle:
-    def __init__(self):
-        params = {"language": LANG,
-                  "type": "cycle"}
-        self.cycle = requests.get(f'{DATA_API}',
-                                  params=params).json()
+    """
+    Class that handles the cycle data.
+    """
 
-    def reload_cycles(self):
-        """
-        Carga el archivo de taboo.
-        :return:
-        """
-        params = {"language": LANG,
-                  "type": "cycle"}
-        self.cycle = requests.get(f'{DATA_API}',
-                                  params=params).json()
+    def __init__(self):
+        with open(f"data/{LANG}/cycle.json", encoding="UTF-8") as f:
+            self.cycle = json.load(f)
 
     def get_cycle_data(self):
-        return self.cycle['cycles']
-    
+        """Returns the cycle data from the JSON file.
+
+        Returns:
+            dict: The cycle data.
+        """
+        return self.cycle["cycles"]
+
     def get_cycle_name(self, code):
-        for cycle in self.cycle['cycles']:
-            if cycle['sufix'] == code[0:2]:
-                return cycle['name']
+        """Returns the cycle name from the cycle code."""
+        for c in self.cycle["cycles"]:
+            if c["sufix"] == code[0:2]:
+                return c["name"]
+        return ""
 
 
 cycle = Cycle()

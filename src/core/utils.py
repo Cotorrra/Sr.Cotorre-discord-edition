@@ -13,14 +13,14 @@ def is_lvl(card: dict, lvl: int):
     :param lvl: lvl
     :return:
     """
-    if 'xp' in card:
-        return card['xp'] == lvl
+    if "xp" in card:
+        return card["xp"] == lvl
     else:
         return False
 
 
 def get_qty(deck, card_id):
-    for c_id, qty in deck['slots'].items():
+    for c_id, qty in deck["slots"].items():
         if c_id == card_id:
             return qty
     return 0
@@ -28,7 +28,7 @@ def get_qty(deck, card_id):
 
 def has_trait(card, trait):
     try:
-        traits = card['real_traits'].lower().split()
+        traits = card["real_traits"].lower().split()
         return f"{trait}." in traits
 
     except KeyError:
@@ -41,8 +41,9 @@ def text_if(template, text):
     else:
         return ""
 
+
 def get_code(card):
-    card_id = card['code']
+    card_id = card["code"]
     while card_id:
         try:
             return int(card_id)
