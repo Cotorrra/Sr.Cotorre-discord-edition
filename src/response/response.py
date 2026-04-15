@@ -198,9 +198,6 @@ def look_for_whom(query: dict):
     :return:
     """
     r_cards = card_search(query, cards.get_p_cards(), use_pc_keywords)
-    if not r_cards:
-        return create_embed(_("card_not_found")), True
-
     embed = resolve_search_who(r_cards)
     return embed, False
 

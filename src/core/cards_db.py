@@ -31,7 +31,7 @@ class CardsDB:
             and "duplicate_of_code" not in c  # NO Duplicates
             and "deck_requirements" in c  # No Bonded/Hank
             and (
-                1000 < get_code(c) < 70000  # No Parallels/Books
+                1000 < get_code(c) < 89999  # No Parallels/Books
             )
         ]
         parallel_inv = [
@@ -43,6 +43,7 @@ class CardsDB:
         ]
         for inv in parallel_inv:
             inv["name"] = f"{inv['name']} ({_('parallel')})"
+        self.ah_base_investigators = self.ah_investigators.copy()
         self.ah_investigators += parallel_inv
         self.ah_customizable = [c for c in self.ah_player if "customization_text" in c]
 
@@ -77,6 +78,10 @@ class CardsDB:
     def get_customizable_cards(self):
         """Returns all the customizable cards from the game"""
         return self.ah_customizable
+
+    def get_base_investigators(self):
+        """Returns all the base investigators (from a official, non-pnp product) from the game"""
+        return self.ah_base_investigators
 
 
 cards = CardsDB()

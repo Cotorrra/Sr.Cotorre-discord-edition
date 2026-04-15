@@ -1,19 +1,32 @@
 def transform_secondary_class(choice):
-    new_choice = {}
-    if choice["name"] == "Trait Choice":
-        new_choice = {"trait": ["blessed", "cursed"], "level": {"min": 0, "max": 5}}
-        # Hacer algo más dinámico xd
-        # for c in choice['option_select']:
-        # ...
-    elif choice["name"] == "Class Choice":
-        new_choice = {"faction": choice["faction_select"], "level": choice["level"]}
+    """Transforms a choice into a multiple choice list.
 
+    Arguments:
+        choice -- The choice to be transformed.
+
+    Returns:
+        A list with the transformed choice.
+    """
+    new_choice = {}
+    # Marion/Wendy||/???
+    if choice["name"] == "Trait Choice":
+        new_choice = []  # {"trait": ["blessed", "cursed"], "level": {"min": 0, "max": 5}}
+        for option in choice["option_select"]:
+            new_choice.append(option)
+
+    # Charlie
+    elif choice["name"] == "Class Choice":
+        new_choice = [{"faction": choice["faction_select"], "level": choice["level"]}]
+
+    # Carson/Mandy/Tony/Gloria/???
     elif choice["name"] == "Secondary Class":
-        new_choice = {
-            "faction": choice["faction_select"],
-            "level": choice["level"],
-            "type": choice["type"],
-        }
+        new_choice = [
+            {
+                "faction": choice["faction_select"],
+                "level": choice["level"],
+                "type": choice["type"],
+            }
+        ]
 
     return new_choice
 
@@ -26,23 +39,31 @@ def match_investigator_deck_options(inv, card):
         "type": check_type,
         "tag": check_tag,
         "uses": check_uses,
-        "text": lambda x, y: True,
+        "text": check_text,
         "not": lambda x, y: True,
         "limit": lambda x, y: True,
         "error": lambda x, y: True,
         "atleast": lambda x, y: True,
+        "id": lambda x, y: True,
+        "name": lambda x, y: True,
+        "permanent": lambda x, y: True,
+        "base_level": lambda x, y: True,
     }
     for deck_option in inv["deck_options"]:
         check = True
         if "name" in deck_option:
             deck_option = transform_secondary_class(deck_option)
+        else:
+            deck_option = [deck_option]
         if deck_option:
-            for key, value in deck_option.items():
-                check = check and match_dict[key](card, value)
-            if check:
-                if "not" in deck_option:
-                    return not deck_option["not"]
-                return True
+            for option in deck_option:
+                for key, value in option.items():
+                    check = check and match_dict[key](card, value)
+                if check:
+                    if "not" in deck_option:
+                        return not option["not"]
+                    return True
+
     return False
 
 
@@ -87,6 +108,13 @@ def check_uses(card, uses):
     return False
 
 
+def check_text(card, text):
+    for t in text:
+        if t in card["real_text"]:
+            return True
+    return False
+
+
 def filter_by_classes(investigators):
     return {
         "guardian": [inv for inv in investigators if inv["faction_code"] == "guardian"],
@@ -96,3 +124,21 @@ def filter_by_classes(investigators):
         "survivor": [inv for inv in investigators if inv["faction_code"] == "survivor"],
         "neutral": [inv for inv in investigators if inv["faction_code"] == "neutral"],
     }
+
+
+def match_card_restrictions(investigator, card):
+    """
+    Given a Investigator and a card, it checks if the investigator can take the card +
+    (considering card restrictions).
+    """
+    if "restrictions" not in card:
+        return True
+
+    for key, value in card["restrictions"].items():
+        match key:
+            case "trait":
+                for trait in value:
+                    if trait in investigator["real_traits"].lower():
+                        return True
+
+    return False
