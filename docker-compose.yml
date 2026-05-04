@@ -1,0 +1,9 @@
+services:
+  mr-parrook:
+    build: .
+    container_name: mr-parrook
+    restart: unless-stopped
+
+  mr-parrook-test:
+    build: .
+    container_name: mr-parrook-test

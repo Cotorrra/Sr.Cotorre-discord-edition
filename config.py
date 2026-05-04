@@ -17,9 +17,6 @@ logging.info(f"ArkhamDB url: {ARKHAM_DB}")
 LANG = os.getenv("BOT_LANGUAGE")
 logging.info(f"Language: {LANG}")
 
-# You can change where the data comes from
-DATA_API = os.getenv("DATA_API")
-logging.info(f"Cotorre Data: {DATA_API}")
 
 # Advanced: If you want to change the emojis from the bot
 # [tag] -> <emoji:code>
